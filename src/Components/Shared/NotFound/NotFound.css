@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Kavoon&display=swap");
+
 .not_found_main_body {
   display: flex;
   justify-content: center;
@@ -11,6 +13,7 @@
 
 .not_found_main_body h1 {
   font-size: 200px;
+  font-family: "Kavoon", cursive;
 }
 
 .not_found_main_body h6 {
