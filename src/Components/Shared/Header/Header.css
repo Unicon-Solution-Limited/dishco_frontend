@@ -7,6 +7,7 @@
   justify-content: space-between;
   padding: 10px 0;
   border-bottom: 1px solid var(--red);
+  font-size: 1vw;
 }
 
 .contact_number {
@@ -25,8 +26,8 @@
 /* ================= Media queries =================== */
 /* For Mobile Device (768px and below) */
 @media only screen and (max-width: 768px) {
-  .auth_links {
-    display: none;
+  .upper_header {
+    font-size: 2.5vw;
   }
 }
 
