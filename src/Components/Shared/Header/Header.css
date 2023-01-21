@@ -1,0 +1,8 @@
+.header_main_body {
+  background-color: var(--black);
+  color: var(--white);
+}
+.upper_header {
+  display: flex;
+  justify-content: space-between;
+}

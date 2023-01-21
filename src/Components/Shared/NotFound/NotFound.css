@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Kavoon&display=swap");
-
 .not_found_main_body {
   display: flex;
   justify-content: center;
@@ -7,13 +5,13 @@
   flex-direction: column;
   width: auto;
   height: 100vh;
-  background-color: #64bc46;
-  color: #ed1d24;
+  background-color: var(--green);
+  color: var(--red);
 }
 
 .not_found_main_body h1 {
   font-size: 200px;
-  font-family: "Kavoon", cursive;
+  font-family: "Berkshire Swash", cursive;
 }
 
 .not_found_main_body h6 {
@@ -21,9 +19,8 @@
   margin: 20px 0;
 }
 .not_found_main_body h6 a {
-  text-decoration: none;
-  color: #f8f8ff;
-  background-color: #ed1d24;
+  color: var(--white);
+  background-color: var(--red);
   padding: 10px;
   border-radius: 5px;
 }
