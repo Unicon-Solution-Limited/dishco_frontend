@@ -57,7 +57,8 @@ h6 {
   font-family: "Berkshire Swash";
 }
 p,
-span {
+span,
+.myLinks {
   font-family: "Space Grotesk";
 }
 ul,

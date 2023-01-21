@@ -5,4 +5,35 @@
 .upper_header {
   display: flex;
   justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--red);
+}
+
+.contact_number {
+  display: flex;
+  gap: 15px;
+}
+.auth_links .myLinks {
+  color: var(--white) !important;
+}
+.auth_links .myLinks:hover {
+  color: var(--yellow) !important;
+}
+.lower_header {
+}
+
+/* ================= Media queries =================== */
+/* For Mobile Device (768px and below) */
+@media only screen and (max-width: 768px) {
+  .auth_links {
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }
