@@ -2,11 +2,15 @@
   background-color: var(--black);
   color: var(--white);
 }
+.header-separater {
+  width: 100%;
+  height: 1px;
+  background-color: var(--red);
+}
 .upper_header {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid var(--red);
   font-size: 1vw;
 }
 
@@ -20,14 +24,110 @@
 .auth_links .myLinks:hover {
   color: var(--yellow) !important;
 }
+
+/* Bottom Header */
 .lower_header {
 }
+
+.site_logo {
+  width: 10%;
+  height: auto;
+}
+.navToggleBtn {
+  font-size: 20px !important;
+  color: var(--white) !important;
+}
+
+.cartLogo {
+  font-size: 25px;
+  color: var(--white);
+}
+.cartLogo:hover {
+  color: var(--green);
+}
+.navbarItems_main_div {
+  display: flex !important;
+  gap: 20px;
+}
+.nav_link {
+  color: var(--white) !important;
+}
+.nav_sub_link {
+  color: var(--white) !important;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--white);
+}
+
+.nav_sub_link:hover {
+  background-color: hsla(358, 85%, 52%, 0.5) !important;
+}
+.dropdown-items-sub {
+  color: var(--black) !important;
+}
+
+.nav_link:hover {
+  background-color: rgba(100, 188, 70, 0.5);
+}
+.dropdown-content {
+  visibility: hidden !important;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-bottom: 0 !important;
+}
+
+.navbarItems:hover .dropdown-content {
+  display: grid !important;
+  visibility: visible !important;
+}
+
+/* 2nd Child Dropdown */
+.nav_link2 {
+  color: var(--white) !important;
+  position: relative !important;
+}
+.dropdown-content-2nd {
+  display: none !important;
+  position: absolute !important;
+  padding: 0 !important;
+  bottom: 0;
+  left: 100%;
+}
+.navbarItems2:hover .dropdown-content-2nd {
+  display: block !important;
+  /* margin-left: 0; */
+}
+/* 2nd Child Dropdown end */
+
+/* Cart Badge */
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+#CartCount {
+  font-size: 13px;
+  background: var(--red);
+  color: var(--white);
+  padding: 0;
+  vertical-align: top;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+/* Cart Badge end */
 
 /* ================= Media queries =================== */
 /* For Mobile Device (768px and below) */
 @media only screen and (max-width: 768px) {
   .upper_header {
     font-size: 2.5vw;
+  }
+  .navbarItems {
+    /* margin: 15px 0; */
   }
 }
 
