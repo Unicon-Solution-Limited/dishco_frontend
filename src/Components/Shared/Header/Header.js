@@ -28,22 +28,26 @@ const Header = () => {
         <section className="lower_header">
           <nav class="navbar navbar-dark sticky-top navbar-expand-lg">
             <div class="container-fluid">
-              <img
-                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1674363983/Frontend_images/logo/logo_o4uryk.webp"
-                alt="DishCo"
-                className="site_logo"
-              />
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon navToggleBtn"></span>
-              </button>
+              <div className="d-flex">
+                <a href="/">
+                  <img
+                    src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1674363983/Frontend_images/logo/logo_o4uryk.webp"
+                    alt="DishCo"
+                    className="site_logo"
+                  />
+                </a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon navToggleBtn"></span>
+                </button>
+              </div>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-lg-0 navbarItems_main_div">
                   <li class="nav-item dropdown navbarItems">
