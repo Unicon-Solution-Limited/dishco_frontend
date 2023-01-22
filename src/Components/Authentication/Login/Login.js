@@ -1,0 +1,110 @@
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useHistory, useLocation } from "react-router-dom";
+import googleIcon from "../../Image/google.svg";
+import { useAuth } from "../AuthContext/AuthContext";
+import "./Login.css";
+
+const Login = () => {
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const { login, signWithGoogle, setIsNavigate } = useAuth();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  // react router dom path detect and go there
+  let history = useHistory();
+  let location = useLocation();
+  let { from } = location.state || { from: { pathname: "/" } };
+
+  // navigation changer
+  useEffect(() => {
+    setIsNavigate(true);
+  });
+
+  // sign with email and password
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setError("");
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+      history.replace(from);
+    } catch (err) {
+      setError(err.message);
+    }
+    setLoading(false);
+  };
+
+  // sign with google
+  const handleGoogleSignup = async () => {
+    try {
+      setError("");
+      setLoading(true);
+      await signWithGoogle();
+      history.replace(from);
+    } catch (err) {
+      setError(err.message);
+    }
+    setLoading(false);
+  };
+  return (
+    <>
+      <div>
+        <h4>Login</h4>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              ref={emailRef}
+              className="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              required
+            />
+            <div id="emailHelp" className="form-text"></div>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputPassword1" className="form-label">
+              Password
+            </label>
+            <input
+              ref={passwordRef}
+              type="password"
+              className="form-control"
+              id="exampleInputPassword1"
+              required
+            />
+          </div>
+          {/* error showing */}
+          <p style={{ color: "red", textAlign: "center", fontWeight: "700" }}>
+            {error}
+          </p>
+          <input
+            type="submit"
+            disabled={loading}
+            value="Login"
+            className="mt-2"
+          />
+        </form>
+
+        {/* google sign button*/}
+        <div onClick={handleGoogleSignup}>
+          <button>
+            <img src={googleIcon} alt="google" />
+            <span>Continue with google</span>
+          </button>
+        </div>
+
+        <div>
+          <Link to="/forgotPassword">Forget Password ?</Link>
+
+          <Link to="/signup">Signup</Link>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Login;
