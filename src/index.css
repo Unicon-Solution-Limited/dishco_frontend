@@ -57,9 +57,13 @@ h5,
 h6 {
   font-family: "Berkshire Swash";
 }
+p {
+  margin-bottom: 0;
+}
 p,
 span,
-.myLinks {
+.myLinks,
+a {
   font-family: "Space Grotesk";
 }
 ul,

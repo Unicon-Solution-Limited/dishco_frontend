@@ -1,0 +1,95 @@
+footer {
+  background-color: var(--black);
+}
+.footer_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+.company_name h1 {
+  color: var(--red);
+}
+.company_name h5 {
+  color: var(--yellow);
+}
+.company_social_icon {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+.icon {
+  border: 1px solid var(--green);
+  padding: 3px 8px;
+  color: var(--white);
+}
+
+.icon:hover {
+  background-color: var(--green);
+  transition: 0.3s;
+  color: var(--black);
+}
+
+.footer_middle {
+  padding: 30px 0;
+}
+
+.content {
+  color: var(--white);
+  text-align: justify;
+}
+
+.links {
+  text-align: center;
+}
+
+.links ul li {
+  margin-bottom: 10px;
+}
+
+.links ul li a {
+  width: 100%;
+  color: var(--white);
+  position: relative;
+  transition: 0.3s ease;
+  display: block;
+}
+.links ul li a:hover {
+  color: var(--green);
+  transform: translateX(-8px);
+  text-shadow: 0 0 10px var(--green);
+}
+.middle_links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.address {
+  text-align: center;
+  color: var(--white);
+}
+
+.footer_bottom {
+  padding: 10px 0;
+  text-align: center;
+  color: var(--red);
+}
+.web_link {
+  color: var(--green);
+}
+.web_link:hover {
+  color: var(--yellow);
+}
+
+@media only screen and (max-width: 768px) {
+  .footer_top {
+    padding: 3%;
+  }
+  .middle_links {
+    margin: 20px 0;
+  }
+  .footer_middle {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

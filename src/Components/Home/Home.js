@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../Shared/Header/Header";
+import Footer from "../Shared/Footer/Footer";
 import "./Home.css";
 import v from "../../Media/Final Web Video 2023.mp4";
 
@@ -21,6 +22,7 @@ const Home = () => {
           </video>
         </section>
       </main>
+      <Footer />
     </>
   );
 };
