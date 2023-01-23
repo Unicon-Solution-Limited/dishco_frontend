@@ -1,0 +1,12 @@
+.video_body {
+}
+#video_content {
+  object-fit: cover;
+  height: 80vh;
+}
+
+@media only screen and (max-width: 768px) {
+  #video_content {
+    height: 100%;
+  }
+}
