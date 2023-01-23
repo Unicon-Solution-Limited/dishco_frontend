@@ -99,3 +99,8 @@ textarea:focus {
   background-color: var(--green);
   transition: 0.3s;
 }
+
+/* This Class for disabled toggle default icon */
+.dropdown-toggle::after {
+  border: none !important;
+}

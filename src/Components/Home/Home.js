@@ -10,7 +10,7 @@ const Home = () => {
       <main>
         <section className="video_body">
           <video
-            class="w-100"
+            className="w-100"
             id="video_content"
             autoPlay
             loop

@@ -47,7 +47,7 @@
 }
 .navbarItems_main_div {
   display: flex !important;
-  gap: 20px;
+  gap: 10px;
 }
 .nav_link {
   padding: 10px;
@@ -116,8 +116,7 @@
   color: var(--white);
   padding: 0;
   vertical-align: top;
-  margin-left: -5px;
-  margin-top: -5px;
+  margin-left: -10px;
 }
 /* Cart Badge end */
 
