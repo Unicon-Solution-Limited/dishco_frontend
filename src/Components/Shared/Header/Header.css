@@ -30,7 +30,7 @@
 }
 
 .site_logo {
-  width: 100%;
+  max-width: 120px;
   height: auto;
 }
 .navToggleBtn {
@@ -125,8 +125,14 @@
 /* For Mobile Device (768px and below) */
 @media only screen and (max-width: 768px) {
   .site_logo {
-    width: 20%;
+    width: 50%;
   }
+  .logo_bar {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
   .upper_header {
     font-size: 2.5vw;
   }

@@ -28,7 +28,7 @@ const Header = () => {
         <section className="lower_header">
           <nav class="navbar navbar-dark sticky-top navbar-expand-lg">
             <div class="container-fluid">
-              <div className="d-flex">
+              <div className="logo_bar">
                 <a href="/">
                   <img
                     src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1674363983/Frontend_images/logo/logo_o4uryk.webp"
