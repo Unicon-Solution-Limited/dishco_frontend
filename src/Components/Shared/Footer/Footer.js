@@ -11,55 +11,55 @@ const Footer = () => {
           <h5>Dancing Deliciousness.</h5>
         </aside>
         {/* <a href="/" className="icon" target="_blank">
-            <i class="bi bi-facebook"></i>
+            <i className="bi bi-facebook"></i>
           </a>
           <a href="/" className="icon" target="_blank">
-            <i class="bi bi-youtube"></i>
+            <i className="bi bi-youtube"></i>
           </a>
           <a href="/" className="icon" target="_blank">
-            <i class="bi bi-instagram"></i>
+            <i className="bi bi-instagram"></i>
           </a>
           <a href="/" className="icon" target="_blank">
-            <i class="bi bi-whatsapp"></i>
+            <i className="bi bi-whatsapp"></i>
           </a> */}
-        <ul class="icons company_social_icon" data-animation="to-top">
+        <ul className="icons company_social_icon" data-animation="to-top">
           <li>
             <a href="#0" target="_blank">
               <span className="icon-top">
-                <i class="bi bi-facebook"></i>
+                <i className="bi bi-facebook"></i>
               </span>
               <span className="icon-bottom">
-                <i class="bi bi-facebook" aria-hidden="true"></i>
+                <i className="bi bi-facebook" aria-hidden="true"></i>
               </span>
             </a>
           </li>
           <li>
             <a href="#0" target="_blank">
               <span className="icon-top">
-                <i class="bi bi-youtube"></i>
+                <i className="bi bi-youtube"></i>
               </span>
               <span className="icon-bottom">
-                <i class="bi bi-youtube" aria-hidden="true"></i>
+                <i className="bi bi-youtube" aria-hidden="true"></i>
               </span>
             </a>
           </li>
           <li>
             <a href="#0" target="_blank">
               <span className="icon-top">
-                <i class="bi bi-instagram"></i>
+                <i className="bi bi-instagram"></i>
               </span>
               <span className="icon-bottom">
-                <i class="bi bi-instagram" aria-hidden="true"></i>
+                <i className="bi bi-instagram" aria-hidden="true"></i>
               </span>
             </a>
           </li>
           <li>
             <a href="#0" target="_blank">
               <span className="icon-top">
-                <i class="bi bi-whatsapp"></i>
+                <i className="bi bi-whatsapp"></i>
               </span>
               <span className="icon-bottom">
-                <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                <i className="bi bi-whatsapp" aria-hidden="true"></i>
               </span>
             </a>
           </li>

@@ -4,9 +4,9 @@
   align-items: center;
   flex-direction: column;
   width: auto;
-  height: 100vh;
-  background-color: var(--green);
-  color: var(--red);
+  height: 75vh;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .not_found_main_body h1 {
