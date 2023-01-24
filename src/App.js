@@ -5,14 +5,14 @@ import RouterChangeTop from "./Components/Shared/RouterChangeTop/RouterChangeTop
 import Login from "./Components/Authentication/Login/Login";
 import Signup from "./Components/Authentication/Signup/Signup";
 import ForgotPassword from "./Components/Authentication/ForgotPassword/ForgotPassword";
-import Header from "./Components/Shared/Header/Header";
-import Footer from "./Components/Shared/Footer/Footer";
+// import Header from "./Components/Shared/Header/Header";
+// import Footer from "./Components/Shared/Footer/Footer";
 
 function App() {
   return (
     <>
       <Router>
-        <Header />
+        {/* <Header /> */}
         <RouterChangeTop />
         <Switch>
           <Route exact path="/">
@@ -40,7 +40,7 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </>
   );

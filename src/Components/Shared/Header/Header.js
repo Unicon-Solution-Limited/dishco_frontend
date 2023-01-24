@@ -25,8 +25,8 @@ const Header = () => {
       <div className="header-separater"></div>
       {/* Bottom Header */}
       <section className="container">
-        <nav className="lower_header sticky-top">
-          <nav className="navbar navbar-dark navbar-expand-lg">
+        <nav className="lower_header">
+          <nav className="navbar navbar-dark navbar-expand-lg sticky-top">
             <div className="logo_bar">
               <a href="/">
                 <img
