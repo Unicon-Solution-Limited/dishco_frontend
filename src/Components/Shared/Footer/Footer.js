@@ -10,8 +10,7 @@ const Footer = () => {
           <h1>DishCo</h1>
           <h5>Dancing Deliciousness.</h5>
         </aside>
-        <aside className="company_social_icon">
-          <a href="/" className="icon" target="_blank">
+        {/* <a href="/" className="icon" target="_blank">
             <i class="bi bi-facebook"></i>
           </a>
           <a href="/" className="icon" target="_blank">
@@ -22,8 +21,49 @@ const Footer = () => {
           </a>
           <a href="/" className="icon" target="_blank">
             <i class="bi bi-whatsapp"></i>
-          </a>
-        </aside>
+          </a> */}
+        <ul class="icons company_social_icon" data-animation="to-top">
+          <li>
+            <a href="#0" target="_blank">
+              <span className="icon-top">
+                <i class="bi bi-facebook"></i>
+              </span>
+              <span className="icon-bottom">
+                <i class="bi bi-facebook" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#0" target="_blank">
+              <span className="icon-top">
+                <i class="bi bi-youtube"></i>
+              </span>
+              <span className="icon-bottom">
+                <i class="bi bi-youtube" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#0" target="_blank">
+              <span className="icon-top">
+                <i class="bi bi-instagram"></i>
+              </span>
+              <span className="icon-bottom">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#0" target="_blank">
+              <span className="icon-top">
+                <i class="bi bi-whatsapp"></i>
+              </span>
+              <span className="icon-bottom">
+                <i class="bi bi-whatsapp" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
       </section>
       <div className="header-separater"></div>
       <section className="container footer_middle">

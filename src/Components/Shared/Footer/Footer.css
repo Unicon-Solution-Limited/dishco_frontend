@@ -18,17 +18,50 @@ footer {
   gap: 20px;
   font-size: 20px;
 }
-.icon {
+
+/* Social Icon animation */
+.icons a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.icons a span {
+  transition: transform 0.2s ease-out;
+}
+
+.icons a .icon-top {
+  display: inline-block;
   border: 1px solid var(--green);
   padding: 3px 8px;
   color: var(--white);
 }
 
-.icon:hover {
+.icons a .icon-bottom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
   background-color: var(--green);
-  transition: 0.3s;
   color: var(--black);
 }
+.icons[data-animation] a:hover .icon-bottom {
+  transform: none;
+}
+
+.icons[data-animation="to-top"] a .icon-bottom {
+  transform: translateY(100%);
+}
+
+.icons[data-animation="to-top"] a:hover .icon-top {
+  transform: translateY(-100%);
+}
+/* Social Icon animation */
 
 .footer_middle {
   padding: 30px 0;
