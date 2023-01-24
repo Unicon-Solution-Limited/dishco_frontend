@@ -24,9 +24,9 @@ const Header = () => {
       </div>
       <div className="header-separater"></div>
       {/* Bottom Header */}
-      <div className="container">
-        <section className="lower_header">
-          <nav className="navbar navbar-dark sticky-top navbar-expand-lg">
+      <section className="container">
+        <nav className="lower_header sticky-top">
+          <nav className="navbar navbar-dark navbar-expand-lg">
             <div className="logo_bar">
               <a href="/">
                 <img
@@ -244,8 +244,8 @@ const Header = () => {
               </form>
             </div>
           </nav>
-        </section>
-      </div>
+        </nav>
+      </section>
     </header>
   );
 };
