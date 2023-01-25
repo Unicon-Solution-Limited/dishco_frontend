@@ -5,6 +5,7 @@ import RouterChangeTop from "./Components/Shared/RouterChangeTop/RouterChangeTop
 import Login from "./Components/Authentication/Login/Login";
 import Signup from "./Components/Authentication/Signup/Signup";
 import ForgotPassword from "./Components/Authentication/ForgotPassword/ForgotPassword";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
 
           <Route path="/home">
             <Home />
+          </Route>
+
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
 
           <Route path="/login">
