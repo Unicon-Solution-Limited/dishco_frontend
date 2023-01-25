@@ -1,9 +1,18 @@
-.video_body {
-}
+/* ************ Video Components */
 #video_content {
   object-fit: cover;
   height: 80vh;
 }
+/* Video Components ************ */
+
+/* ************************* Welcome Section */
+.welcome_section {
+}
+.welcome_img {
+  width: 100%;
+  height: auto !important;
+}
+/* Welcome section ************************ */
 
 @media only screen and (max-width: 768px) {
   #video_content {
