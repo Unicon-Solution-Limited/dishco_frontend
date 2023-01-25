@@ -7,7 +7,6 @@ import v from "../../Media/Final Web Video 2023.mp4";
 const Home = () => {
   return (
     <div>
-      <Header />
       <div>
         <section className="video_body">
           <video
@@ -22,7 +21,6 @@ const Home = () => {
           </video>
         </section>
       </div>
-      <Footer />
     </div>
   );
 };

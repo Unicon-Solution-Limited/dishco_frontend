@@ -6,7 +6,6 @@ import "./NotFound.css";
 const NotFound = () => {
   return (
     <>
-      <Header />
       <section className="not_found_main_body">
         <h1>404</h1>
         <h3>Ops! Page Not Found.</h3>
@@ -14,7 +13,6 @@ const NotFound = () => {
           Back To <a href="/">Home</a>
         </h6>
       </section>
-      <Footer />
     </>
   );
 };
