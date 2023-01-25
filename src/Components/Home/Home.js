@@ -6,7 +6,7 @@ import v from "../../Media/Final Web Video 2023.mp4";
 
 const Home = () => {
   return (
-    <>
+    <div>
       <Header />
       <div>
         <section className="video_body">
@@ -23,7 +23,7 @@ const Home = () => {
         </section>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
