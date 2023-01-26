@@ -7,22 +7,24 @@ const Welcome = () => {
     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674642000/Frontend_images/Background_images/imrs0pmkjarmctevxguv.webp";
   return (
     <section className="welcome_section">
-      <div className="container my-5">
+      <div className="container welcome-container">
         <div className="row">
-          <aside className="col-md-4">
-            <img src={img1} alt="" className="welcome_img" />
+          <div className="col-md-4 left_image">
+            <img src={img1} alt="Dumpling" className="welcome_img" />
+          </div>
+          <aside className="col-md-4 welcome_text">
+            <h4>Country's Most Loved!</h4> <h2>Welcome</h2>{" "}
+            <h5>We Are Locally Served Food & beverage Serving Since 2021. </h5>
+            <p>
+              We served Rice Bowl, Pizza & Burger & Sandwich, Soup, Pasta, Fry
+              Basket, Steak Cuisine, Ramen Special, Korean Cuisine, Japanese
+              Cuisine, Chinese Cuisine, Indian Cuisine, Rice Cuisine, Dessert,
+              Peyala Tea, and difference kinds of beverage.
+            </p>
           </aside>
-          <aside className="col-md-4">
-            <h5>Country's Most Loved!</h5> <h2>Welcome</h2>{" "}
-            <h4>We Are Locally Served Food & beverage Serving Since 2021. </h4>
-            We served Rice Bowl, Pizza & Burger & Sandwich, Soup, Pasta, Fry
-            Basket, Steak Cuisine, Ramen Special, Korean Cuisine, Japanese
-            Cuisine, Chinese Cuisine, Indian Cuisine, Rice Cuisine, Dessert,
-            Peyala Tea, and difference kinds of beverage.
-          </aside>
-          <aside className="col-md-4">
-            <img src={img2} alt="" className="welcome_img" />
-          </aside>
+          <div className="col-md-4">
+            <img src={img2} alt="kacchi Biryani" className="welcome_img" />
+          </div>
         </div>
       </div>
     </section>
