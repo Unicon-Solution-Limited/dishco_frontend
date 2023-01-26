@@ -7,6 +7,12 @@
 
 /* ************************* Welcome Section */
 .welcome_section {
+  background-image: url("https://res.cloudinary.com/dnz6zg4on/image/upload/v1674641183/Frontend_images/Background_images/uwoqg3gettuhsptt0ijo.webp");
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
 }
 .welcome_img {
   width: 100%;
