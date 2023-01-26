@@ -8,6 +8,7 @@ import ForgotPassword from "./Components/Authentication/ForgotPassword/ForgotPas
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Header from "./Components/Shared/Header/Header";
 import Footer from "./Components/Shared/Footer/Footer";
+import CreateProduct from "./Components/Dashboard/DashboardPage/CreateProduct/CreateProduct";
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
 
           <Route path="/login">
             <Login />
+          </Route>
+
+          <Route path="/createProduct">
+            <CreateProduct />
           </Route>
 
           <Route path="/signup">
