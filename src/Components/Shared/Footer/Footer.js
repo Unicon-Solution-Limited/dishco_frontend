@@ -99,9 +99,8 @@ const Footer = () => {
               </ul>
             </aside>
           </div>
-
           <aside className="col-md-3 address">
-            <h6>Address</h6>
+            <h3>Address</h3>
             <p>
               Shop-9007, 9th Floor, Shimanto Shambhar, Dhanmondi 2, Dhaka, 1205.
             </p>

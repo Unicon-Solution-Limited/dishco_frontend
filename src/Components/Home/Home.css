@@ -18,9 +18,6 @@
   height: auto;
   padding: 100px 0;
 }
-.welcome-container {
-  overflow-x: hidden !important;
-}
 .welcome_text {
   text-align: center;
 }

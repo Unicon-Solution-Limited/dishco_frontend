@@ -6,7 +6,7 @@ import Login from "./Components/Authentication/Login/Login";
 import Signup from "./Components/Authentication/Signup/Signup";
 import ForgotPassword from "./Components/Authentication/ForgotPassword/ForgotPassword";
 import Header from "./Components/Shared/Header/Header";
-// import Footer from "./Components/Shared/Footer/Footer";
+import Footer from "./Components/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -40,7 +40,7 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </>
   );
