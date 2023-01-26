@@ -26,8 +26,10 @@
 }
 
 /* Bottom Header */
-.lower_header {
-}
+/* .lower_header {
+  position: sticky !important;
+  top: 0 !important;
+} */
 
 .site_logo {
   max-width: 120px;
