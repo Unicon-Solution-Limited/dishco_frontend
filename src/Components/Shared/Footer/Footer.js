@@ -10,60 +10,50 @@ const Footer = () => {
           <h1>DishCo</h1>
           <h5>Dancing Deliciousness.</h5>
         </aside>
-        {/* <a href="/" className="icon" target="_blank">
-            <i className="bi bi-facebook"></i>
-          </a>
-          <a href="/" className="icon" target="_blank">
-            <i className="bi bi-youtube"></i>
-          </a>
-          <a href="/" className="icon" target="_blank">
-            <i className="bi bi-instagram"></i>
-          </a>
-          <a href="/" className="icon" target="_blank">
-            <i className="bi bi-whatsapp"></i>
-          </a> */}
-        <ul className="icons company_social_icon" data-animation="to-top">
-          <li>
-            <a href="#0" target="_blank">
-              <span className="icon-top">
-                <i className="bi bi-facebook"></i>
-              </span>
-              <span className="icon-bottom">
-                <i className="bi bi-facebook" aria-hidden="true"></i>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="#0" target="_blank">
-              <span className="icon-top">
-                <i className="bi bi-youtube"></i>
-              </span>
-              <span className="icon-bottom">
-                <i className="bi bi-youtube" aria-hidden="true"></i>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="#0" target="_blank">
-              <span className="icon-top">
-                <i className="bi bi-instagram"></i>
-              </span>
-              <span className="icon-bottom">
-                <i className="bi bi-instagram" aria-hidden="true"></i>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="#0" target="_blank">
-              <span className="icon-top">
-                <i className="bi bi-whatsapp"></i>
-              </span>
-              <span className="icon-bottom">
-                <i className="bi bi-whatsapp" aria-hidden="true"></i>
-              </span>
-            </a>
-          </li>
-        </ul>
+        <aside>
+          <div className="icons company_social_icon" data-animation="to-top">
+            <li>
+              <a href="#0" target="_blank">
+                <span className="icon-top">
+                  <i className="bi bi-facebook"></i>
+                </span>
+                <span className="icon-bottom">
+                  <i className="bi bi-facebook" aria-hidden="true"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#0" target="_blank">
+                <span className="icon-top">
+                  <i className="bi bi-youtube"></i>
+                </span>
+                <span className="icon-bottom">
+                  <i className="bi bi-youtube" aria-hidden="true"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#0" target="_blank">
+                <span className="icon-top">
+                  <i className="bi bi-instagram"></i>
+                </span>
+                <span className="icon-bottom">
+                  <i className="bi bi-instagram" aria-hidden="true"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#0" target="_blank">
+                <span className="icon-top">
+                  <i className="bi bi-whatsapp"></i>
+                </span>
+                <span className="icon-bottom">
+                  <i className="bi bi-whatsapp" aria-hidden="true"></i>
+                </span>
+              </a>
+            </li>
+          </div>
+        </aside>
       </section>
       <div className="header-separater"></div>
       <section className="container footer_middle">
@@ -109,9 +99,8 @@ const Footer = () => {
               </ul>
             </aside>
           </div>
-
           <aside className="col-md-3 address">
-            <h6>Address</h6>
+            <h3>Address</h3>
             <p>
               Shop-9007, 9th Floor, Shimanto Shambhar, Dhanmondi 2, Dhaka, 1205.
             </p>

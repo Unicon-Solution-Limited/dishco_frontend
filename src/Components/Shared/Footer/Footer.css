@@ -15,7 +15,7 @@ footer {
 }
 .company_social_icon {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   font-size: 20px;
 }
 
@@ -23,7 +23,7 @@ footer {
 .icons a {
   position: relative;
   display: block;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .icons a span {
@@ -65,6 +65,7 @@ footer {
 
 .footer_middle {
   padding: 30px 0;
+  overflow-x: hidden;
 }
 
 .content {
@@ -101,6 +102,9 @@ footer {
   text-align: center;
   color: var(--white);
 }
+.address h3 {
+  color: var(--red) !important;
+}
 
 .footer_bottom {
   padding: 10px 0;
@@ -116,7 +120,10 @@ footer {
 
 @media only screen and (max-width: 768px) {
   .footer_top {
-    padding: 3%;
+    flex-direction: column;
+    justify-content: center !important;
+    padding: 10px 0;
+    text-align: center;
   }
   .middle_links {
     margin: 20px 0;

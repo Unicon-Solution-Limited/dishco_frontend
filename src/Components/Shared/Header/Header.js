@@ -51,14 +51,15 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-lg-0 navbarItems_main_div">
               <li className="nav-item dropdown navbarItems">
-                <span
+                <a
                   className="nav-link dropdown-toggle nav_link"
-                  role="button"
+                  AreaRole="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  href="/#"
                 >
                   Appetizer & Rice <i className="bi bi-chevron-down"></i>
-                </span>
+                </a>
                 <ul className="dropdown-menu dropdown-content">
                   <li>
                     <Link className="dropdown-item nav_sub_link" to="#">
