@@ -47,7 +47,6 @@
   padding: 10px 15px;
   border-radius: 15px;
   transition: 0.3s;
-  opacity: 0.6;
   transform: translateY(5px);
   position: absolute;
   right: 0;
@@ -57,8 +56,47 @@
   margin-right: auto !important;
 }
 .menu_link:hover {
-  opacity: 1;
+  background-color: var(--green);
   transform: translateY(-5px);
+  color: var(--black);
+}
+.menu_middle {
+  background-image: url("https://res.cloudinary.com/dnz6zg4on/image/upload/v1674897093/Frontend_images/Background_images/gls5451typchinlidwxo.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  margin-top: 100px;
+}
+.menu_middle_items {
+  position: relative;
+  top: -120px;
+  background-color: #fff;
+}
+.menu_middle_items .col-md-4 {
+  border: 1px solid var(--red);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  padding: 20px;
+}
+.menu_middle_items .col-md-4 span {
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+.mid_menu_imgs {
+  width: 100%;
+  height: auto;
 }
 /* Menu Section ************************* */
 
@@ -71,5 +109,9 @@
   /* ************************* Welcome Section */
   .left_image {
     margin-bottom: 30px;
+  }
+  /* ************************ Menu Section */
+  .menu_middle_items .col-md-4 {
+    border: none;
   }
 }
