@@ -100,6 +100,65 @@
 }
 /* Menu Section ************************* */
 
+/* *************************** Carousel section */
+.carousel_main {
+  text-align: center;
+}
+
+/*  Carousel section *************************** */
+
+/* *************************** Facilities section */
+.facilities_main {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  margin: 50px 0 0 0;
+  background-image: url("https://res.cloudinary.com/dnz6zg4on/image/upload/v1674641184/Frontend_images/Background_images/xsrd0uolybsbjo7bsizy.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative; /* For background Box Shadow */
+}
+.facilities_main::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.facilities_main * {
+  position: relative;
+}
+.facilities_main h2 {
+  font-size: 45px;
+}
+.facility_content {
+  font-size: 35px;
+  margin: 50px 0;
+  font-weight: bold;
+}
+.facility_content span {
+  padding: 0 30px;
+  border: 5px solid var(--deep-green);
+}
+.facility_content span:nth-child(1),
+.facility_content span:nth-child(3) {
+  color: var(--red);
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+}
+.facility_content span:nth-child(2),
+.facility_content span:nth-child(4) {
+  color: var(--deep-green);
+  border-top: none;
+}
+/*  Facilities section *************************** */
+
 @media only screen and (max-width: 768px) {
   /* ************ Video Components */
   #video_content {
@@ -113,5 +172,12 @@
   /* ************************ Menu Section */
   .menu_middle_items .col-md-4 {
     border: none;
+  }
+
+  /* ************************* Facilities */
+  .facility_content span {
+    display: block;
+    border: none;
+    padding-top: 0;
   }
 }
