@@ -8,7 +8,8 @@
 /* Video Components ************ */
 
 /* ************************* Welcome Section */
-.welcome_section {
+.welcome_section,
+.menuSection {
   background-image: url("https://res.cloudinary.com/dnz6zg4on/image/upload/v1674732164/Frontend_images/Background_images/xhrp6nnbdgtaucbniu9i.webp");
   background-position: center;
   background-repeat: no-repeat;
@@ -36,7 +37,29 @@
 /* Welcome section ************************ */
 
 /* ************************* Menu Section */
-
+.menu_content {
+  text-align: center !important;
+  padding: 40px 0 !important;
+}
+.menu_link {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 10px 15px;
+  border-radius: 15px;
+  transition: 0.3s;
+  opacity: 0.6;
+  transform: translateY(5px);
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: fit-content !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.menu_link:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
 /* Menu Section ************************* */
 
 @media only screen and (max-width: 768px) {
