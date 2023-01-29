@@ -137,7 +137,7 @@ const CreateProduct = () => {
               ref={categoriesRef}
               onClick={handleSelectCategoriesOption}
             >
-              <option value="">Choose</option>
+              <option value="">Choose Categories</option>
               <option value="Appetizer & Rice">Appetizer & Rice </option>
               <option value="Platter">Platter</option>
               <option value="Cheapo Box">Cheapo Box</option>
@@ -156,84 +156,64 @@ const CreateProduct = () => {
               Sub-Categories
             </label>
           </div>
-          <div>
+          <select
+            id="sub_categories"
+            name="sub_categories"
+            className="input-group form-select"
+            onClick={handleSubCategoriesOption}
+          >
             {selectCategoriesOption === "Appetizer & Rice" && (
-              <select
-                id="sub_categories"
-                name="sub_categories"
-                className="input-group form-select"
-              >
+              <>
                 <option value="">Choose</option>
                 <option value="Appetizer">Appetizer</option>
                 <option value="rice Cuisine">rice Cuisine</option>
-              </select>
+              </>
             )}
 
             {selectCategoriesOption === "Platter" && (
-              <select
-                id="sub_categories"
-                name="sub_categories"
-                className="input-group form-select"
-              >
+              <>
                 <option value="">Choose</option>
-                <option value="Platter">Platter</option>
-              </select>
+                <option value="DishCo Platter">DishCo Platter</option>
+              </>
             )}
 
             {selectCategoriesOption === "Cheapo Box" && (
-              <select
-                id="sub_categories"
-                name="sub_categories"
-                className="input-group form-select"
-              >
+              <>
                 <option value="">Choose</option>
                 <option value="Meat Box">Meat Box</option>
                 <option value="Rice Bowl">Rice Bowl</option>
                 <option value="Platter Cuisine"></option>
-              </select>
+              </>
             )}
 
             {selectCategoriesOption === "Cuisines" && (
-              <select
-                id="sub_categories"
-                name="sub_categories"
-                className="input-group form-select"
-                onClick={handleSubCategoriesOption}
-              >
+              <>
                 <option value="">Choose</option>
                 <option value="Indian Cuisines">Indian Cuisines</option>
                 <option value="Japanese Cuisines">Japanese Cuisines</option>
                 <option value="Korean Cuisines">Korean Cuisines</option>
                 <option value="Chinese Cuisines">Chinese Cuisines</option>
-              </select>
+              </>
             )}
             {selectCategoriesOption === "Fast Food" && (
-              <select
-                id="sub_categories"
-                name="sub_categories"
-                className="input-group form-select"
-              >
+              <>
                 <option value="">Choose</option>
                 <option value="Pizza">Pizza</option>
                 <option value="Burger and Sandwich">Burger and Sandwich</option>
                 <option value="Fry Basket">Fry Basket</option>
                 <option value="Pasta">Pasta</option>
-              </select>
+              </>
             )}
 
             {selectCategoriesOption === "Drinks" && (
-              <select
-                id="sub_categories"
-                name="sub_categories"
-                className="input-group form-select"
-              >
+              <>
                 <option value="">Choose</option>
                 <option value="Peyala Tea">Peyala Tea</option>
                 <option value="Hot Drinks">Hot Drinks</option>
                 <option value="Cold Drinks">Cold Drinks</option>
-              </select>
+              </>
             )}
-          </div>
+          </select>
         </div>
 
         <div className="mb-4">
@@ -242,18 +222,18 @@ const CreateProduct = () => {
               Child_Categories
             </label>
           </div>
-          <div>
+          <select
+            id="child_categories"
+            name="child_categories"
+            className="input-group form-select"
+          >
             {selectSubCategoriesOption === "Chinese Cuisines" && (
-              <select
-                id="child_categories"
-                name="child_categories"
-                className="input-group form-select"
-              >
+              <>
                 <option value="">Choose</option>
                 <option value="Soup">Soup</option>
-              </select>
+              </>
             )}
-          </div>
+          </select>
         </div>
 
         {/* addons */}
