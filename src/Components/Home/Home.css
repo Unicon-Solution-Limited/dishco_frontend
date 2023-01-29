@@ -178,7 +178,11 @@
   .menu_middle_items .col-md-4 {
     border: none;
   }
-
+  /* ****************** Carousel section */
+  .offer_img {
+    width: 100%;
+    height: auto;
+  }
   /* ************************* Facilities */
   .facility_content {
     flex-direction: column;
