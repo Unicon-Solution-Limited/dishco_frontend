@@ -134,7 +134,7 @@ const Header = () => {
                   </li>
                   <li>
                     <Link className="dropdown-item nav_sub_link" to="#">
-                      japanese Cuisines
+                      Japanese Cuisines
                     </Link>
                   </li>
                   <li>
