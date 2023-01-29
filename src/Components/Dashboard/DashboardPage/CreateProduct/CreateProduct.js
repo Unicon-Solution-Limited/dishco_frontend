@@ -74,9 +74,14 @@ const CreateProduct = () => {
     const allData = {
       Image: photo,
       name: nameRef.current.value,
+      foodCode: foodCodeRef.current.value,
+      categories: categoriesRef.current.value,
+      subCategories: subCategoriesRef.current.value,
+      childCategories: childCategoriesRef.current.value,
+      addonsItem: addons,
+      sizePriceItem: sizePrice,
     };
-    console.log(addons, "this is addons");
-    console.log(sizePrice, "this is price and size");
+    console.log(allData);
     setSizePrice([{ size: "", price: "" }]);
     setAddons([{ addonName: "", addonPrice: "" }]);
   };
@@ -149,7 +154,7 @@ const CreateProduct = () => {
             </select>
           </div>
         </div>
-
+        {/* sub categories */}
         <div className="mb-4">
           <div>
             <label htmlFor="sub_categories" className="form-label">
@@ -160,6 +165,7 @@ const CreateProduct = () => {
             id="sub_categories"
             name="sub_categories"
             className="input-group form-select"
+            ref={subCategoriesRef}
             onClick={handleSubCategoriesOption}
           >
             {selectCategoriesOption === "Appetizer & Rice" && (
@@ -215,7 +221,7 @@ const CreateProduct = () => {
             )}
           </select>
         </div>
-
+        {/* child categories */}
         <div className="mb-4">
           <div>
             <label htmlFor="child_categories" className="form-label">
@@ -226,6 +232,7 @@ const CreateProduct = () => {
             id="child_categories"
             name="child_categories"
             className="input-group form-select"
+            ref={childCategoriesRef}
           >
             {selectSubCategoriesOption === "Chinese Cuisines" && (
               <>
