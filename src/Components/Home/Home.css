@@ -180,7 +180,10 @@
   }
 
   /* ************************* Facilities */
-  .facility_content span {
+  .facility_content {
+    flex-direction: column;
+  }
+  .facility_content p {
     display: block;
     border: none;
     padding-top: 0;
