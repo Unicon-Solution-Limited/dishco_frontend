@@ -1,9 +1,9 @@
 import React from "react";
 
 import "./Home.css";
-import CarouselSection from "./HomeComponents/CarouselSection";
 import Facilities from "./HomeComponents/Facilities";
 import MenuSection from "./HomeComponents/MenuSection";
+import OfferSection from "./HomeComponents/OfferSection";
 import Video from "./HomeComponents/Video";
 import Welcome from "./HomeComponents/Welcome";
 
@@ -13,7 +13,7 @@ const Home = () => {
       <Video />
       <Welcome />
       <MenuSection />
-      <CarouselSection />
+      <OfferSection />
       <Facilities />
     </>
   );
