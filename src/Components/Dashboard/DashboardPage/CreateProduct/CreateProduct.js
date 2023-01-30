@@ -3,7 +3,7 @@ import axios from "axios";
 
 const CreateProduct = () => {
   const [loading, setLoading] = useState(false);
-  const [photo, setPhoto] = useState();
+  const [photo, setPhoto] = useState("");
   const nameRef = useRef();
   const foodCodeRef = useRef();
   const categoriesRef = useRef();
@@ -69,7 +69,7 @@ const CreateProduct = () => {
   };
 
   //submit funtion
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const allData = {
       Image: photo,
@@ -81,9 +81,31 @@ const CreateProduct = () => {
       addonsItem: addons,
       sizePriceItem: sizePrice,
     };
-    console.log(allData);
-    setSizePrice([{ size: "", price: "" }]);
-    setAddons([{ addonName: "", addonPrice: "" }]);
+    // add product info at mongodb
+    try {
+      const url = "http://localhost:8000/addFood";
+      const option = {
+        method: "POST",
+        body: JSON.stringify(allData),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      };
+      const response = await fetch(url, option);
+      const data = await response.json();
+      if (data) {
+        nameRef.current.value = "";
+        foodCodeRef.current.value = "";
+        categoriesRef.current.value = "";
+        subCategoriesRef.current.value = "";
+        childCategoriesRef.current.value = "";
+        setSizePrice([{ size: "", price: "" }]);
+        setAddons([{ addonName: "", addonPrice: "" }]);
+        window.location.reload();
+      }
+    } catch (error) {
+      console.log("err", error);
+    }
   };
 
   //dainamic select option according to the categories
