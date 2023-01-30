@@ -31,7 +31,7 @@ const OfferSection = () => {
     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1675070172/Frontend_images/Weekly-offer/psqwrtlb6vx06cqbi8ez.png";
 
   return (
-    <section className="carousel_main">
+    <section className="offer_main">
       <h2>Daily Deals</h2>
       <p>Only for Dine In</p>
       <div>

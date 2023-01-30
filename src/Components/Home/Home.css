@@ -37,9 +37,15 @@
 /* Welcome section ************************ */
 
 /* ************************* Menu Section */
+.menuSection {
+  padding-top: 0 !important;
+}
 .menu_content {
   text-align: center !important;
   padding: 40px 0 !important;
+}
+.menu_content P {
+  font-size: large;
 }
 .menu_link {
   background-color: var(--red);
@@ -100,14 +106,14 @@
 }
 /* Menu Section ************************* */
 
-/* *************************** Carousel section */
-.carousel_main {
+/* *************************** Offer section */
+.offer_main {
   text-align: center;
 }
-.carousel_main h2 {
+.offer_main h2 {
   font-size: 45px;
 }
-.carousel_main p {
+.offer_main p {
   font-size: 20px;
 }
 .offer_img_divs {
@@ -167,7 +173,7 @@
   top: 15px;
   right: -15px;
 }
-/*  Carousel section *************************** */
+/*  Offer section *************************** */
 
 /* *************************** Facilities section */
 .facilities_main {
