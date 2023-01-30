@@ -37,9 +37,15 @@
 /* Welcome section ************************ */
 
 /* ************************* Menu Section */
+.menuSection {
+  padding-top: 0 !important;
+}
 .menu_content {
   text-align: center !important;
   padding: 40px 0 !important;
+}
+.menu_content P {
+  font-size: large;
 }
 .menu_link {
   background-color: var(--red);
@@ -100,12 +106,74 @@
 }
 /* Menu Section ************************* */
 
-/* *************************** Carousel section */
-.carousel_main {
+/* *************************** Offer section */
+.offer_main {
   text-align: center;
 }
+.offer_main h2 {
+  font-size: 45px;
+}
+.offer_main p {
+  font-size: 20px;
+}
+.offer_img_divs {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 50px 0;
+}
 
-/*  Carousel section *************************** */
+.offer_img {
+  width: 100% !important;
+  height: auto;
+}
+.offer_img_m {
+  width: 300px;
+  height: auto;
+}
+.offer_img_divs span {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.offer_img_divs span::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 50px;
+  height: 100%;
+  transform: skewX(-30deg);
+  animation: animy 3s infinite;
+  box-shadow: rgba(237, 29, 36, 0.2) 0px 3px 8px;
+}
+@keyframes animy {
+  /* come form single side */
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+.modal-content {
+  background-color: transparent !important;
+}
+.modal-body {
+  padding: 0 !important;
+}
+.modal_close_btn {
+  display: grid;
+  margin-left: auto !important;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--red);
+  position: relative;
+  top: 15px;
+  right: -15px;
+}
+/*  Offer section *************************** */
 
 /* *************************** Facilities section */
 .facilities_main {
@@ -140,42 +208,66 @@
   font-size: 35px;
   margin: 50px 0;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
 }
-.facility_content span {
+.facility_content p {
   padding: 0 30px;
   border: 5px solid var(--deep-green);
 }
-.facility_content span:nth-child(1),
-.facility_content span:nth-child(3) {
+.facility_content p:nth-child(1),
+.facility_content p:nth-child(3) {
   color: var(--red);
   border-left: none;
   border-bottom: none;
   border-right: none;
 }
-.facility_content span:nth-child(2),
-.facility_content span:nth-child(4) {
+.facility_content p:nth-child(2),
+.facility_content p:nth-child(4) {
   color: var(--deep-green);
   border-top: none;
 }
+.facility_content p:nth-child(4) {
+  border-right: none;
+}
 /*  Facilities section *************************** */
+
+/* ********************************************************************************************************************* */
+
+/* ********************************************************************************************************************* */
 
 @media only screen and (max-width: 768px) {
   /* ************ Video Components */
   #video_content {
-    height: 100%;
+    height: 100px !important;
   }
-
   /* ************************* Welcome Section */
   .left_image {
-    margin-bottom: 30px;
+    margin-bottom: 30px !important;
   }
   /* ************************ Menu Section */
   .menu_middle_items .col-md-4 {
     border: none;
   }
+  /* ****************** Carousel section */
 
+  .offer_img_m {
+    width: 100%;
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+      font-size: 11px;
+    }
+  }
   /* ************************* Facilities */
-  .facility_content span {
+  .facility_content {
+    flex-direction: column;
+  }
+  .facility_content p {
     display: block;
     border: none;
     padding-top: 0;

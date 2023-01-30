@@ -15,10 +15,10 @@ const Facilities = () => {
       <h2>Facilities</h2>
       <img src={iCon} alt="" />
       <div className="facility_content">
-        <span data-aos="fade-right">Takeaway</span>
-        <span>Dine In</span>
-        <span>Online Order</span>
-        <span>Halal Food</span>
+        <p data-aos="fade-right">Takeaway</p>
+        <p data-aos="fade-up">Dine In</p>
+        <p data-aos="fade-down">Online Order</p>
+        <p data-aos="fade-left">Halal Food</p>
       </div>
     </section>
   );
