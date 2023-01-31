@@ -45,7 +45,7 @@ function App() {
           <Route path="/forgotPassword">
             <ForgotPassword />
           </Route>
-          <Route path="/products">
+          <Route path="/products/:navItem">
             <DisplayProduct />
           </Route>
 

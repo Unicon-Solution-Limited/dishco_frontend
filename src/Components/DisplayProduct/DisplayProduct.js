@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import "./DisplayProduct.css";
+const testP =
+  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674642000/Frontend_images/Background_images/imrs0pmkjarmctevxguv.webp";
+const imgX =
+  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp";
+const backgroundImg =
+  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1675142448/fmtlh5gqitrtpy9u9rek.webp";
 
 const DisplayProduct = () => {
-  const testP =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674642000/Frontend_images/Background_images/imrs0pmkjarmctevxguv.webp";
-  const imgX =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp";
-  const backgroundImg =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1675142448/fmtlh5gqitrtpy9u9rek.webp";
+  const { navItem } = useParams();
+  const [food, setFood] = useState([]);
+  console.log(navItem);
+
+  // getting data matching of navItem
+  useEffect(() => {
+    const fetchFood = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:8000/getSelectedFood?navItem=" + navItem
+        );
+        const data = await response.json();
+        setFood(data);
+      } catch (error) {
+        console.log("err", error);
+      }
+    };
+    fetchFood();
+  }, [navItem]);
+
   return (
     <section className="displayProduct_main">
       <div className="container my-5">

@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import HeaderOffcanvas from "./HeaderOffcanvas";
 
 const Header = () => {
-  const testImg =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp";
   return (
     <>
       {/* TOP Header */}
@@ -69,12 +68,18 @@ const Header = () => {
                 </a>
                 <ul className="dropdown-menu dropdown-content">
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"Appetizer"}`}
+                    >
                       Appetizer
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"RiceCuisine"}`}
+                    >
                       Rice Cuisine
                     </Link>
                   </li>
@@ -91,7 +96,10 @@ const Header = () => {
                 </span>
                 <ul className="dropdown-menu dropdown-content">
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"DishCoPlatter"}`}
+                    >
                       DishCo Platter
                     </Link>
                   </li>
@@ -108,17 +116,26 @@ const Header = () => {
                 </span>
                 <ul className="dropdown-menu dropdown-content">
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"MeatBox"}`}
+                    >
                       Meat Box
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"RiceBowl"}`}
+                    >
                       Rice Bowl
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"PlatterCuisine"}`}
+                    >
                       Platter Cuisine
                     </Link>
                   </li>
@@ -135,24 +152,33 @@ const Header = () => {
                 </span>
                 <ul className="dropdown-menu dropdown-content">
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"IndianCuisines"}`}
+                    >
                       Indian Cuisines
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"JapaneseCuisines"}`}
+                    >
                       Japanese Cuisines
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"KoreanCuisines"}`}
+                    >
                       Korean Cuisines
                     </Link>
                   </li>
                   {/* test */}
                   <li className="navbarItems2 nav_sub_link">
                     <Link
-                      to="#"
+                      to={`/products/${"ChineseCuisines"}`}
                       className="nav_link2"
                       role="button"
                       data-bs-toggle="dropdown"
@@ -162,7 +188,10 @@ const Header = () => {
                     </Link>
                     <ul className="dropdown-menu dropdown-content-2nd">
                       <li className="nav_sub_link">
-                        <Link to="#" className="dropdown-items-sub">
+                        <Link
+                          to={`/products/${"Soup"}`}
+                          className="dropdown-items-sub"
+                        >
                           Soup
                         </Link>
                       </li>
@@ -172,7 +201,11 @@ const Header = () => {
                 </ul>
               </li>
               <li className="nav-item navbarItems">
-                <Link to="/" className="nav-link nav_link" aria-current="page">
+                <Link
+                  to={`/products/${"Steak"}`}
+                  className="nav-link nav_link"
+                  aria-current="page"
+                >
                   Steak
                 </Link>
               </li>
@@ -187,29 +220,44 @@ const Header = () => {
                 </span>
                 <ul className="dropdown-menu dropdown-content">
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"Pizza"}`}
+                    >
                       Pizza
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"BurgerSandwich"}`}
+                    >
                       Burger and Sandwich
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"FryBasket"}`}
+                    >
                       Fry Basket
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"Pasta"}`}
+                    >
                       Pasta
                     </Link>
                   </li>
                 </ul>
               </li>
               <li className="nav-item navbarItems">
-                <Link to="/" className="nav-link nav_link">
+                <Link
+                  to={`/products/${"Dessert"}`}
+                  className="nav-link nav_link"
+                >
                   Dessert
                 </Link>
               </li>
@@ -224,17 +272,26 @@ const Header = () => {
                 </span>
                 <ul className="dropdown-menu dropdown-content">
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"PeyalaTea"}`}
+                    >
                       Peyala Tea
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"HotDrinks"}`}
+                    >
                       Hot Drinks
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item nav_sub_link" to="#">
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"ColdDrinks"}`}
+                    >
                       Cold Drinks
                     </Link>
                   </li>
@@ -260,56 +317,7 @@ const Header = () => {
         </div>
       </nav>
       {/* Offcanvas */}
-
-      <div
-        className="offcanvas offcanvas-end"
-        tabindex="-1"
-        id="cart"
-        aria-labelledby="offcanvasRightLabel"
-      >
-        <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="offcanvasRightLabel">
-            Your Cart Items
-          </h5>
-          <button
-            type="button"
-            className="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div className="offcanvas-body">
-          <div className="offcanvas_card_single_item">
-            <img src={testImg} alt="" className="offcanvas_cart_img" />
-            <span>
-              <p className="offcanvas_cart_product_name">
-                DishCo Special Ramen Items
-              </p>
-              <p className="offcanvas_cart_price_qnt">
-                <span>2</span>x <span>350 tk.</span>
-                <span>= 700 tk.</span>
-              </p>
-            </span>
-            <span className="offcanvas_cancellation">
-              <button className="btn">
-                <i className="bi bi-x-circle"></i>
-              </button>
-            </span>
-          </div>
-          <div className="offcanvas_cart_footer">
-            <h4>Subtotal: 1030 Tk.</h4>
-            <span className="offcanvas_cart_buttons">
-              <Link to="/" className="MyBtn offcanvas_cart_button">
-                View Cart
-              </Link>
-              <Link to="/" className="MyBtn offcanvas_cart_button">
-                Checkout
-              </Link>
-            </span>
-          </div>
-        </div>
-      </div>
-      {/* Offcanvas */}
+      <HeaderOffcanvas />
     </>
   );
 };

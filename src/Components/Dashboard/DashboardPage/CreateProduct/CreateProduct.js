@@ -165,12 +165,12 @@ const CreateProduct = () => {
               onClick={handleSelectCategoriesOption}
             >
               <option value="">Choose Categories</option>
-              <option value="Appetizer & Rice">Appetizer & Rice </option>
+              <option value="AppetizerRice">Appetizer & Rice </option>
               <option value="Platter">Platter</option>
-              <option value="Cheapo Box">Cheapo Box</option>
+              <option value="CheapoBox">Cheapo Box</option>
               <option value="Cuisines">Cuisines</option>
               <option value="Steak">Steak</option>
-              <option value="Fast Food">Fast Food</option>
+              <option value="FastFood">Fast Food</option>
               <option value="Dessert">Dessert</option>
               <option value="Drinks">Drinks</option>
             </select>
@@ -190,45 +190,45 @@ const CreateProduct = () => {
             ref={subCategoriesRef}
             onClick={handleSubCategoriesOption}
           >
-            {selectCategoriesOption === "Appetizer & Rice" && (
+            {selectCategoriesOption === "AppetizerRice" && (
               <>
                 <option value="">Choose</option>
                 <option value="Appetizer">Appetizer</option>
-                <option value="rice Cuisine">rice Cuisine</option>
+                <option value="riceCuisine">rice Cuisine</option>
               </>
             )}
 
             {selectCategoriesOption === "Platter" && (
               <>
                 <option value="">Choose</option>
-                <option value="DishCo Platter">DishCo Platter</option>
+                <option value="DishCoPlatter">DishCo Platter</option>
               </>
             )}
 
-            {selectCategoriesOption === "Cheapo Box" && (
+            {selectCategoriesOption === "CheapoBox" && (
               <>
                 <option value="">Choose</option>
-                <option value="Meat Box">Meat Box</option>
-                <option value="Rice Bowl">Rice Bowl</option>
-                <option value="Platter Cuisine"></option>
+                <option value="MeatBox">Meat Box</option>
+                <option value="RiceBowl">Rice Bowl</option>
+                <option value="PlatterCuisine"></option>
               </>
             )}
 
             {selectCategoriesOption === "Cuisines" && (
               <>
                 <option value="">Choose</option>
-                <option value="Indian Cuisines">Indian Cuisines</option>
-                <option value="Japanese Cuisines">Japanese Cuisines</option>
-                <option value="Korean Cuisines">Korean Cuisines</option>
-                <option value="Chinese Cuisines">Chinese Cuisines</option>
+                <option value="IndianCuisines">Indian Cuisines</option>
+                <option value="JapaneseCuisines">Japanese Cuisines</option>
+                <option value="KoreanCuisines">Korean Cuisines</option>
+                <option value="ChineseCuisines">Chinese Cuisines</option>
               </>
             )}
-            {selectCategoriesOption === "Fast Food" && (
+            {selectCategoriesOption === "FastFood" && (
               <>
                 <option value="">Choose</option>
                 <option value="Pizza">Pizza</option>
-                <option value="Burger and Sandwich">Burger and Sandwich</option>
-                <option value="Fry Basket">Fry Basket</option>
+                <option value="BurgerSandwich">Burger and Sandwich</option>
+                <option value="FryBasket">Fry Basket</option>
                 <option value="Pasta">Pasta</option>
               </>
             )}
@@ -236,9 +236,9 @@ const CreateProduct = () => {
             {selectCategoriesOption === "Drinks" && (
               <>
                 <option value="">Choose</option>
-                <option value="Peyala Tea">Peyala Tea</option>
-                <option value="Hot Drinks">Hot Drinks</option>
-                <option value="Cold Drinks">Cold Drinks</option>
+                <option value="PeyalaTea">Peyala Tea</option>
+                <option value="HotDrinks">Hot Drinks</option>
+                <option value="ColdDrinks">Cold Drinks</option>
               </>
             )}
           </select>
@@ -256,7 +256,7 @@ const CreateProduct = () => {
             className="input-group form-select"
             ref={childCategoriesRef}
           >
-            {selectSubCategoriesOption === "Chinese Cuisines" && (
+            {selectSubCategoriesOption === "ChineseCuisines" && (
               <>
                 <option value="">Choose</option>
                 <option value="Soup">Soup</option>
