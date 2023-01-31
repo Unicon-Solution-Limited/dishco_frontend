@@ -6,7 +6,7 @@ const DisplayProduct = () => {
     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674642000/Frontend_images/Background_images/imrs0pmkjarmctevxguv.webp";
   return (
     <section className="displayProduct_main">
-      <div className="container">
+      <div className="container my-5">
         <div class="input-group rounded">
           <input
             type="search"
@@ -19,30 +19,30 @@ const DisplayProduct = () => {
             <i class="bi bi-search"></i>
           </span>
         </div>
-        <div className="row">
-          <div className="col-3 product_card_body">
+        <div className="product_card_row">
+          <div className="product_card_body">
             <img src={testP} alt="" className="product_img" />
             <h6 className="product_name">DishCo Platter</h6>
             <p className="product_price">580 Tk</p>
-            <button className="btn MyBtn">View Details</button>
+            <button className="btn MyBtn product_button">View Details</button>
           </div>
-          <div className="col-3 product_card_body">
+          <div className="product_card_body">
             <img src={testP} alt="" className="product_img" />
             <h6 className="product_name">DishCo Platter</h6>
             <p className="product_price">580 Tk</p>
-            <button className="btn MyBtn">View Details</button>
+            <button className="btn MyBtn product_button">View Details</button>
           </div>
-          <div className="col-3 product_card_body">
+          <div className="product_card_body">
             <img src={testP} alt="" className="product_img" />
             <h6 className="product_name">DishCo Platter</h6>
             <p className="product_price">580 Tk</p>
-            <button className="btn MyBtn">View Details</button>
+            <button className="btn MyBtn product_button">View Details</button>
           </div>
-          <div className="col-3 product_card_body">
+          <div className="product_card_body">
             <img src={testP} alt="" className="product_img" />
             <h6 className="product_name">DishCo Platter</h6>
             <p className="product_price">580 Tk</p>
-            <button className="btn MyBtn">View Details</button>
+            <button className="btn MyBtn product_button">View Details</button>
           </div>
         </div>
       </div>
