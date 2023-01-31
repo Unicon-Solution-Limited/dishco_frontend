@@ -15,7 +15,7 @@ const DisplayProduct = () => {
           <input
             type="text"
             name="search"
-            placeholder="Search.."
+            placeholder="Search food....."
             className="search_bar"
           />
         </div>

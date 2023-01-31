@@ -1,14 +1,14 @@
-/* .search_bar_body {
+.search_bar_body {
   display: flex;
-  justify-content: flex-start;
-} */
+  justify-content: center;
+}
 .search_bar {
-  width: 130px;
+  width: 150px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
   background-image: url("https://res.cloudinary.com/dnz6zg4on/image/upload/v1675146630/Frontend_images/logo/pncsq4zgoayegchuqu5t.svg");
   background-position: 10px center;
   background-repeat: no-repeat;
@@ -23,7 +23,7 @@
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin: 20px 0 !important;
+  margin: 30px 0 !important;
   text-align: center;
 }
 .product_name {
