@@ -1,0 +1,16 @@
+.singleProduct_main {
+  margin: 50px auto;
+}
+
+.single_product_body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single_product_price:after {
+  content: " Tk.";
+}
+
+.add_to_cart_button {
+  padding: 10px 5px;
+}

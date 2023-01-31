@@ -10,6 +10,7 @@ import Header from "./Components/Shared/Header/Header";
 import Footer from "./Components/Shared/Footer/Footer";
 import CreateProduct from "./Components/Dashboard/DashboardPage/CreateProduct/CreateProduct";
 import DisplayProduct from "./Components/DisplayProduct/DisplayProduct";
+import SingleProduct from "./Components/DisplayProduct/SingleProduct/SingleProduct";
 
 function App() {
   return (
@@ -33,13 +34,12 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
 
           <Route path="/createProduct">
             <CreateProduct />
-          </Route>
-
-          <Route path="/signup">
-            <Signup />
           </Route>
 
           <Route path="/forgotPassword">
@@ -47,6 +47,9 @@ function App() {
           </Route>
           <Route path="/products">
             <DisplayProduct />
+          </Route>
+          <Route path="/SingleProduct">
+            <SingleProduct />
           </Route>
 
           {/* Not Found Page */}
