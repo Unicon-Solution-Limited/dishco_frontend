@@ -239,7 +239,7 @@
 @media only screen and (max-width: 768px) {
   /* ************ Video Components */
   #video_content {
-    height: 100px !important;
+    height: 100% !important;
   }
   /* ************************* Welcome Section */
   .left_image {
