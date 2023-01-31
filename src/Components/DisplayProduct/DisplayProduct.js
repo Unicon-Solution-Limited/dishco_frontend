@@ -11,17 +11,13 @@ const DisplayProduct = () => {
   return (
     <section className="displayProduct_main">
       <div className="container my-5">
-        <div class="input-group rounded">
+        <div class="search_bar_body">
           <input
-            type="search"
-            class="form-control rounded"
-            placeholder="Search"
-            aria-label="Search"
-            aria-describedby="search-addon"
+            type="text"
+            name="search"
+            placeholder="Search.."
+            className="search_bar"
           />
-          <span class="input-group-text border-0" id="search-addon">
-            <i class="bi bi-search"></i>
-          </span>
         </div>
         <div className="product_card_row">
           <div className="product_card_body">
