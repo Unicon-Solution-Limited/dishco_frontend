@@ -11,7 +11,7 @@ const DisplayProduct = () => {
   return (
     <section className="displayProduct_main">
       <div className="container my-5">
-        <div class="search_bar_body">
+        <div className="search_bar_body">
           <input
             type="text"
             name="search"
