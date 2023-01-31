@@ -31,7 +31,7 @@ const DisplayProduct = () => {
               />
             </span> */}
             <h5 className="product_name">DishCo Platter</h5>
-            <p className="product_price">580 Tk</p>
+            <p className="product_price">580</p>
             <button className="btn MyBtn product_button">
               View Details <i className="bi bi-eye"></i>
             </button>
@@ -39,7 +39,7 @@ const DisplayProduct = () => {
           <div className="product_card_body">
             <img src={imgX} alt="" className="product_img" />
             <h5 className="product_name">DishCo Platter</h5>
-            <p className="product_price">580 Tk</p>
+            <p className="product_price">580</p>
             <button className="btn MyBtn product_button">
               View Details <i className="bi bi-eye"></i>
             </button>
@@ -47,7 +47,7 @@ const DisplayProduct = () => {
           <div className="product_card_body">
             <img src={testP} alt="" className="product_img" />
             <h5 className="product_name">DishCo Platter</h5>
-            <p className="product_price">580 Tk</p>
+            <p className="product_price">580</p>
             <button className="btn MyBtn product_button">
               View Details <i className="bi bi-eye"></i>
             </button>
@@ -55,7 +55,7 @@ const DisplayProduct = () => {
           <div className="product_card_body">
             <img src={testP} alt="" className="product_img" />
             <h5 className="product_name">DishCo Platter</h5>
-            <p className="product_price">580 Tk</p>
+            <p className="product_price">580</p>
             <button className="btn MyBtn product_button">
               View Details <i className="bi bi-eye"></i>
             </button>
