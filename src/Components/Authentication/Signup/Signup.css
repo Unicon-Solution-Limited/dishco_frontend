@@ -1,0 +1,46 @@
+/* Same css applied for Sign up and login form */
+.auth_form {
+  width: 50%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.error {
+  color: var(--red);
+  text-align: center;
+  font-weight: 700;
+  padding-top: 20px;
+}
+
+.auth_btn {
+  padding: 5px 20px;
+}
+
+.auth_footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.google_auth {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.google_auth button {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+.google_auth img {
+  width: 25px;
+  height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .auth_form {
+    width: 100%;
+  }
+}

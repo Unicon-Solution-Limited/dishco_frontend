@@ -45,89 +45,83 @@ const Signup = () => {
 
   return (
     <>
-      <div>
-        <h4>Create an account</h4>
-        <form onSubmit={handleSubmit}>
+      <section className="container my-5">
+        <h4 className="text-center">Create an account</h4>
+        <form onSubmit={handleSubmit} className="auth_form">
           <div>
-            <div>
-              <div>
-                <label htmlFor="displayName" className="form-label">
-                  Your Name
-                </label>
-                <input
-                  ref={nameRef}
-                  required
-                  type="text"
-                  className="form-control"
-                  id="displayName"
-                  aria-describedby="nameHelp"
-                />
-              </div>
-
-              <div className="mb-2">
-                <label htmlFor="exampleInputPassword1" className="form-label">
-                  Password
-                </label>
-                <input
-                  ref={passwordRef}
-                  required
-                  type="password"
-                  className="form-control"
-                  id="exampleInputPassword1"
-                />
-              </div>
+            <div className="">
+              <label htmlFor="displayName" className="form-label">
+                Your Name
+              </label>
+              <input
+                ref={nameRef}
+                required
+                type="text"
+                className="form-control"
+                id="displayName"
+                aria-describedby="nameHelp"
+              />
             </div>
 
-            <div className="col-md-6">
-              <div className="mb-2">
-                <label htmlFor="exampleInputEmail1" className="form-label">
-                  Email address
-                </label>
-                <input
-                  ref={emailRef}
-                  required
-                  type="email"
-                  className="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-              </div>
+            <div className="mb-2">
+              <label htmlFor="exampleInputEmail1" className="form-label">
+                Email address
+              </label>
+              <input
+                ref={emailRef}
+                required
+                type="email"
+                className="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+            </div>
 
-              <div>
-                <label
-                  htmlFor="exampleInputConfirmPassword"
-                  className="form-label"
-                >
-                  Confirm password
-                </label>
-                <input
-                  ref={confirmPasswordRef}
-                  required
-                  type="password"
-                  className="form-control"
-                  id="exampleInputConfirmPassword"
-                />
-              </div>
+            <div className="mb-2">
+              <label htmlFor="exampleInputPassword1" className="form-label">
+                Password
+              </label>
+              <input
+                ref={passwordRef}
+                required
+                type="password"
+                className="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+
+            <div className="">
+              <label
+                htmlFor="exampleInputConfirmPassword"
+                className="form-label"
+              >
+                Confirm password
+              </label>
+              <input
+                ref={confirmPasswordRef}
+                required
+                type="password"
+                className="form-control"
+                id="exampleInputConfirmPassword"
+              />
             </div>
           </div>
-          <p
-            style={{
-              color: "red",
-              textAlign: "center",
-              fontWeight: "700",
-              paddingTop: "20px",
-            }}
-          >
-            {error}
-          </p>
-          <input type="submit" disabled={loading} value="Signup" />
+          <p className="error">{error}</p>
+          <input
+            type="submit"
+            disabled={loading}
+            value="Sign up"
+            className="MyBtn auth_btn d-grid mx-auto"
+          />
         </form>
 
-        <div>
-          <p>Allready have an account?</p>
-          <Link to="/login">Login</Link>
+        <div className="auth_footer">
+          <p>Already have an account?</p>
+          <Link to="/login" className="MyBtn auth_btn">
+            Login
+          </Link>
         </div>
-      </div>
+      </section>
     </>
   );
 };

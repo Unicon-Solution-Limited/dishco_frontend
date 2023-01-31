@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import googleIcon from "../../Image/google.svg";
 import { useAuth } from "../AuthContext/AuthContext";
-import "./Login.css";
+import "../Signup/Signup.css";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -50,9 +50,9 @@ const Login = () => {
   };
   return (
     <>
-      <div>
-        <h4>Login</h4>
-        <form onSubmit={handleSubmit}>
+      <section className="container my-5">
+        <h4 className="text-center">Login</h4>
+        <form onSubmit={handleSubmit} className="auth_form">
           <div>
             <label htmlFor="exampleInputEmail1">Email address</label>
             <input
@@ -77,32 +77,32 @@ const Login = () => {
               required
             />
           </div>
+          <Link to="/forgotPassword">Forget Password ?</Link>
           {/* error showing */}
-          <p style={{ color: "red", textAlign: "center", fontWeight: "700" }}>
-            {error}
-          </p>
+          <p className="error">{error}</p>
           <input
             type="submit"
             disabled={loading}
             value="Login"
-            className="mt-2"
+            className="mt-1 MyBtn auth_btn d-grid mx-auto"
           />
         </form>
-
+        <p className="text-center mt-2">-------Or-------</p>
         {/* google sign button*/}
-        <div onClick={handleGoogleSignup}>
+        <div onClick={handleGoogleSignup} className="google_auth">
           <button>
             <img src={googleIcon} alt="google" />
             <span>Continue with google</span>
           </button>
         </div>
 
-        <div>
-          <Link to="/forgotPassword">Forget Password ?</Link>
-
-          <Link to="/signup">Signup</Link>
+        <div className="auth_footer">
+          <p>Do not have an account?</p>
+          <Link to="/signup" className="MyBtn auth_btn">
+            Sign up
+          </Link>
         </div>
-      </div>
+      </section>
     </>
   );
 };
