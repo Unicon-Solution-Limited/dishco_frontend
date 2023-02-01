@@ -23,6 +23,8 @@
   border: 0;
   width: 60px;
   text-align: center;
+  border-top: 1px solid var(--red);
+  border-bottom: 1px solid var(--red);
 }
 
 .quantity_cart_input div {
@@ -36,4 +38,9 @@
 .quantity_cart_button {
   display: flex;
   gap: 30px;
+}
+.quantity_cart_input input::-webkit-inner-spin-button,
+.quantity_cart_input input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
