@@ -4,7 +4,16 @@
 
 .single_product_body {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.single_product_img img {
+  width: 100%;
+  height: auto !important;
+}
+
+.single_product_price {
+  font-size: 25px;
 }
 
 .single_product_price:after {
@@ -63,4 +72,10 @@
 .quantity_cart_input input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .single_product_body {
+    flex-direction: column;
+  }
 }

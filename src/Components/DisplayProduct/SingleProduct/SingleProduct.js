@@ -28,7 +28,7 @@ const SingleProduct = () => {
     <section className="container singleProduct_main">
       <div className="single_product_body">
         <aside className="single_product_img">
-          <img src={demo} alt="" />
+          <img src={demo} alt="food" />
         </aside>
         <aside className="single_product_details">
           <p>SKU- SP-001</p>
@@ -36,7 +36,7 @@ const SingleProduct = () => {
           <p className="single_product_description">
             Cheese, P Cheese, Slice Cheese, Special Pizza Sauce
           </p>
-          <h3 className="single_product_price my-3">315.00 – 485.00</h3>
+          <p className="single_product_price my-3">315.00 – 485.00</p>
           <select name="" id="" className="single_product_select_option mt-4">
             <option value="">Select Pizza Size</option>
             <option value="">S-8</option>

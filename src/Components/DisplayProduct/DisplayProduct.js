@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./DisplayProduct.css";
 const testP =
   "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674642000/Frontend_images/Background_images/imrs0pmkjarmctevxguv.webp";
@@ -53,33 +53,33 @@ const DisplayProduct = () => {
             </span> */}
             <h5 className="product_name">DishCo Platter</h5>
             <p className="product_price">580</p>
-            <button className="btn MyBtn product_button">
+            <Link to="/singleproduct" className="btn MyBtn product_button">
               View Details <i className="bi bi-eye"></i>
-            </button>
+            </Link>
           </div>
           <div className="product_card_body">
             <img src={imgX} alt="" className="product_img" />
             <h5 className="product_name">DishCo Platter</h5>
             <p className="product_price">580</p>
-            <button className="btn MyBtn product_button">
+            <Link to="/singleproduct" className="btn MyBtn product_button">
               View Details <i className="bi bi-eye"></i>
-            </button>
+            </Link>
           </div>
           <div className="product_card_body">
             <img src={testP} alt="" className="product_img" />
             <h5 className="product_name">DishCo Platter</h5>
             <p className="product_price">580</p>
-            <button className="btn MyBtn product_button">
+            <Link to="/singleproduct" className="btn MyBtn product_button">
               View Details <i className="bi bi-eye"></i>
-            </button>
+            </Link>
           </div>
           <div className="product_card_body">
             <img src={testP} alt="" className="product_img" />
             <h5 className="product_name">DishCo Platter</h5>
             <p className="product_price">580</p>
-            <button className="btn MyBtn product_button">
+            <Link to="/singleproduct" className="btn MyBtn product_button">
               View Details <i className="bi bi-eye"></i>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
