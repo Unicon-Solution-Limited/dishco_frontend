@@ -5,6 +5,25 @@ import { Link } from "react-router-dom";
 const SingleProduct = () => {
   const demo =
     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp";
+
+  // Increase/ Decrease
+  function increaseValue() {
+    var value = parseInt(document.getElementById("number").value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById("number").value = value;
+  }
+
+  function decreaseValue() {
+    var value = parseInt(document.getElementById("number").value, 10);
+    value = isNaN(value) ? 0 : value;
+    if (value < 2) {
+      value = 2;
+    }
+    value--;
+    document.getElementById("number").value = value;
+  }
+
   return (
     <section className="container singleProduct_main">
       <div className="single_product_body">
@@ -25,7 +44,25 @@ const SingleProduct = () => {
             <option value="">S-12</option>
           </select>
           <div className="quantity_cart_button my-3">
-            <input type="text" />
+            <span className="quantity_cart_input">
+              <div
+                class="value-button"
+                id="decrease"
+                onClick={decreaseValue}
+                value="Decrease Value"
+              >
+                -
+              </div>
+              <input type="number" id="number" value="1" />
+              <div
+                class="value-button"
+                id="increase"
+                onClick={increaseValue}
+                value="Increase Value"
+              >
+                +
+              </div>
+            </span>
             <button className="MyBtn add_to_cart_button">
               <i className="bi bi-cart-fill"></i> Add To Cart
             </button>

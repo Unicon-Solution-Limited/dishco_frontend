@@ -12,5 +12,28 @@
 }
 
 .add_to_cart_button {
-  padding: 10px 5px;
+  padding: 8px;
+}
+
+/*  */
+.quantity_cart_input {
+  display: flex;
+}
+.quantity_cart_input input {
+  border: 0;
+  width: 60px;
+  text-align: center;
+}
+
+.quantity_cart_input div {
+  background-color: #fff;
+  padding: 0 8px;
+  border: 1px solid var(--red);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.quantity_cart_button {
+  display: flex;
+  gap: 30px;
 }
