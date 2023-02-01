@@ -37,7 +37,7 @@ const SingleProduct = () => {
             Cheese, P Cheese, Slice Cheese, Special Pizza Sauce
           </p>
           <h3 className="single_product_price my-3">315.00 – 485.00</h3>
-          <select name="" id="">
+          <select name="" id="" className="single_product_select_option mt-4">
             <option value="">Select Pizza Size</option>
             <option value="">S-8</option>
             <option value="">S-10</option>
@@ -45,29 +45,29 @@ const SingleProduct = () => {
           </select>
           <div className="quantity_cart_button my-3">
             <span className="quantity_cart_input">
-              <div
+              <button
                 class="value-button"
                 id="decrease"
                 onClick={decreaseValue}
                 value="Decrease Value"
               >
                 -
-              </div>
+              </button>
               <input type="number" id="number" value="1" />
-              <div
+              <button
                 class="value-button"
                 id="increase"
                 onClick={increaseValue}
                 value="Increase Value"
               >
                 +
-              </div>
+              </button>
             </span>
             <button className="MyBtn add_to_cart_button">
               <i className="bi bi-cart-fill"></i> Add To Cart
             </button>
           </div>
-          <p className="my-3">
+          <p className="my-3 categories_link my-4">
             Categories:{" "}
             <Link to="/" className="myLinks">
               Fast Food
