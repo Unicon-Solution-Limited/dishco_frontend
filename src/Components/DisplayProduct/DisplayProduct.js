@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./DisplayProduct.css";
 
 const DisplayProduct = () => {
@@ -41,9 +41,9 @@ const DisplayProduct = () => {
 
                 <h5 className="product_name">DishCo Platter</h5>
                 <p className="product_price">580</p>
-                <button className="btn MyBtn product_button">
+                <Link to="/" className="btn MyBtn product_button">
                   View Details <i className="bi bi-eye"></i>
-                </button>
+                </Link>
               </div>
             </>
           ))}
