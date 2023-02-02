@@ -26,12 +26,14 @@ const DisplayProduct = () => {
     <section className="displayProduct_main">
       <div className="container my-5">
         <div className="search_bar_body">
-          <input
-            type="text"
-            name="search"
-            placeholder="Search food....."
-            className="search_bar"
-          />
+          <form action="">
+            <input
+              type="text"
+              name="search"
+              placeholder="Search food....."
+              className="search_bar"
+            />
+          </form>
         </div>
         <div className="product_card_row">
           {food.map((data, index) => (
@@ -47,15 +49,21 @@ const DisplayProduct = () => {
                     justifyContent: "space-around",
                   }}
                 >
-                  {data.sizePriceItem.map((sizePrice) => (
-                    <div key={sizePrice._id}>
-                      <p>{sizePrice?.price} Tk</p>
+                  {data.sizePriceItem.map((sizePrice, index2) => (
+                    <div key={index2}>
+                      <span>{sizePrice?.price} Tk</span>
                     </div>
                   ))}
                 </p>
-                <Link to="/" className="btn MyBtn product_button">
-                  View Details <i className="bi bi-eye"></i>
-                </Link>
+
+                <span>
+                  <Link
+                    to={`/singleProduct/${data?._id}`}
+                    className="btn MyBtn product_button"
+                  >
+                    View Details <i className="bi bi-eye"></i>
+                  </Link>
+                </span>
               </div>
             </div>
           ))}
