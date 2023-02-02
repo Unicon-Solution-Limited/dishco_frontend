@@ -6,6 +6,7 @@ const CreateProduct = () => {
   const [photo, setPhoto] = useState("");
   const nameRef = useRef();
   const foodCodeRef = useRef();
+  const foodDescriptionRef = useRef();
   const categoriesRef = useRef();
   const subCategoriesRef = useRef();
   const childCategoriesRef = useRef();
@@ -75,6 +76,7 @@ const CreateProduct = () => {
       Image: photo,
       name: nameRef.current.value,
       foodCode: foodCodeRef.current.value,
+      foodDescription: foodDescriptionRef.current.value,
       categories: categoriesRef.current.value,
       subCategories: subCategoriesRef.current.value,
       childCategories: childCategoriesRef.current.value,
@@ -96,6 +98,7 @@ const CreateProduct = () => {
       if (data) {
         nameRef.current.value = "";
         foodCodeRef.current.value = "";
+        foodDescriptionRef.current.value = "";
         categoriesRef.current.value = "";
         subCategoriesRef.current.value = "";
         childCategoriesRef.current.value = "";
@@ -147,6 +150,18 @@ const CreateProduct = () => {
             className="form-control"
             id="name"
             ref={foodCodeRef}
+          />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="description" className="form-label">
+            Food Description
+          </label>
+          <textarea
+            type="text"
+            className="form-control"
+            id="description"
+            ref={foodDescriptionRef}
           />
         </div>
 

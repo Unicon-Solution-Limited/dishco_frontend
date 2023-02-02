@@ -49,7 +49,7 @@ function App() {
           <Route path="/products/:navItem">
             <DisplayProduct />
           </Route>
-          <Route path="/SingleProduct">
+          <Route path="/singleProduct/:viewDetails">
             <SingleProduct />
           </Route>
 
