@@ -34,13 +34,25 @@ const DisplayProduct = () => {
           />
         </div>
         <div className="product_card_row">
-          {food?.map((data) => (
-            <div key={data._id}>
+          {food.map((data, index) => (
+            <div key={index}>
               <div className="product_card_body">
                 <img src={data.Image} alt="" className="product_img" />
 
-                <h5 className="product_name">DishCo Platter</h5>
-                <p className="product_price">580</p>
+                <h5 className="product_name">{data.name}</h5>
+                <p
+                  className="product_price"
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-around",
+                  }}
+                >
+                  {data.sizePriceItem.map((sizePrice) => (
+                    <div key={sizePrice._id}>
+                      <p>{sizePrice?.price} Tk</p>
+                    </div>
+                  ))}
+                </p>
                 <Link to="/" className="btn MyBtn product_button">
                   View Details <i className="bi bi-eye"></i>
                 </Link>
