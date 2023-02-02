@@ -1,6 +1,7 @@
 import React from "react";
 import TopbarNav from "./Layouts/TopbarNav/TopbarNav";
 import SidebarNav from "./Layouts/SidebarNav/SidebarNav";
+import "./Dashboard.css";
 
 const Dashboard = () => {
   return (
