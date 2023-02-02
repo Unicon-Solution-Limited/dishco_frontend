@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./DisplayProduct.css";
 
 const DisplayProduct = () => {
@@ -34,22 +34,18 @@ const DisplayProduct = () => {
           />
         </div>
         <div className="product_card_row">
-          {food?.map((data, index) => (
-            <div key={index}>
+          {food.map((data) => (
+            <>
               <div className="product_card_body">
                 <img src={data.Image} alt="" className="product_img" />
 
-                <h5 className="product_name">{data?.name}</h5>
-                <p className="product_price">
-                  {data?.sizePriceItem?.map((sizePrice) => (
-                    <p>{sizePrice.price} Tk.</p>
-                  ))}
-                </p>
-                <button className="btn MyBtn product_button">
+                <h5 className="product_name">DishCo Platter</h5>
+                <p className="product_price">580</p>
+                <Link to="/" className="btn MyBtn product_button">
                   View Details <i className="bi bi-eye"></i>
-                </button>
+                </Link>
               </div>
-            </div>
+            </>
           ))}
         </div>
       </div>

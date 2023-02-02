@@ -11,6 +11,7 @@ import Footer from "./Components/Shared/Footer/Footer";
 import CreateProduct from "./Components/Dashboard/DashboardPage/CreateProduct/CreateProduct";
 import DisplayProduct from "./Components/DisplayProduct/DisplayProduct";
 import SingleProduct from "./Components/DisplayProduct/SingleProduct/SingleProduct";
+import Cart from "./Components/Cart/Cart";
 
 function App() {
   return (
@@ -50,6 +51,10 @@ function App() {
           </Route>
           <Route path="/SingleProduct">
             <SingleProduct />
+          </Route>
+
+          <Route path="/cart">
+            <Cart />
           </Route>
 
           {/* Not Found Page */}
