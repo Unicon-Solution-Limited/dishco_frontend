@@ -7,7 +7,7 @@ const HeaderOffcanvas = () => {
   return (
     <div
       className="offcanvas offcanvas-end"
-      tabindex="-1"
+      tabIndex="-1"
       id="cart"
       aria-labelledby="offcanvasRightLabel"
     >

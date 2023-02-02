@@ -34,8 +34,8 @@ const DisplayProduct = () => {
           />
         </div>
         <div className="product_card_row">
-          {food.map((data) => (
-            <>
+          {food?.map((data) => (
+            <div key={data._id}>
               <div className="product_card_body">
                 <img src={data.Image} alt="" className="product_img" />
 
@@ -45,7 +45,7 @@ const DisplayProduct = () => {
                   View Details <i className="bi bi-eye"></i>
                 </Link>
               </div>
-            </>
+            </div>
           ))}
         </div>
       </div>
