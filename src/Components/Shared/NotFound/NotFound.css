@@ -12,11 +12,15 @@
 .not_found_main_body h1 {
   font-size: 200px;
   font-family: "Berkshire Swash", cursive;
+  color: var(--red);
 }
-
+.not_found_main_body h3 {
+  color: var(--red);
+}
 .not_found_main_body h6 {
   font-size: 30px;
   margin: 20px 0;
+  color: var(--white);
 }
 .not_found_main_body h6 a {
   color: var(--white);
