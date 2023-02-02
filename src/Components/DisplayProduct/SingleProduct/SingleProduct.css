@@ -16,10 +16,6 @@
   font-size: 25px;
 }
 
-.single_product_price:after {
-  content: " Tk.";
-}
-
 .add_to_cart_button {
   padding: 8px;
 }
