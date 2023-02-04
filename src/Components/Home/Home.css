@@ -81,7 +81,8 @@
   top: -120px;
   background-color: #fff;
 }
-.menu_middle_items .col-md-4 {
+
+.menu_middle_items .menu_middle_each {
   border: 1px solid var(--red);
   display: flex;
   flex-direction: column;

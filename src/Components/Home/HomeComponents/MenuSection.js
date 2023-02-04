@@ -34,7 +34,7 @@ const MenuSection = () => {
       <div className="menu_middle">
         <div className="container menu_middle_items">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4 menu_middle_each">
               <h4>Chicken Prawn Cheesy Bargu Steak </h4>{" "}
               <p>
                 {" "}
@@ -43,10 +43,10 @@ const MenuSection = () => {
               </p>{" "}
               <span>370 Tk.</span>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 menu_middle_each">
               <img src={imgA} alt="" className="mid_menu_imgs" />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 menu_middle_each">
               <h4>Juicy Beef/Chicken Burger with Fusion Sauce</h4>{" "}
               <p>
                 {" "}
@@ -56,10 +56,10 @@ const MenuSection = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4 menu_middle_each">
               <img src={imgB} alt="" className="mid_menu_imgs" />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 menu_middle_each">
               <h4>Gangnam Platter</h4>{" "}
               <p>
                 {" "}
@@ -68,20 +68,20 @@ const MenuSection = () => {
               </p>{" "}
               <span>370 Tk.</span>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 menu_middle_each">
               <img src={imgC} alt="" className="mid_menu_imgs" />
             </div>
           </div>
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4 menu_middle_each">
               <h4> Hyderabadi Biryani</h4>{" "}
               <p> Basmati Rice & Chicken/Beef Marinated in Spices.</p>{" "}
               <span> 315/370 Tk.</span>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 menu_middle_each">
               <img src={imgD} alt="" className="mid_menu_imgs" />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 menu_middle_each">
               <h4> Fruit Custard Creamy Crepe</h4>{" "}
               <p> Fruit, Custard & Cream Blast in a Crepe</p>{" "}
               <span> 190 Tk.</span>
