@@ -3,6 +3,8 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import googleIcon from "../../Image/google.svg";
 import { useAuth } from "../AuthContext/AuthContext";
 import "../Signup/Signup.css";
+import Header from "./../../Shared/Header/Header";
+import Footer from "./../../Shared/Footer/Footer";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -50,6 +52,7 @@ const Login = () => {
   };
   return (
     <>
+      <Header />
       <section className="container my-5">
         <h4 className="text-center">Login</h4>
         <form onSubmit={handleSubmit} className="auth_form">
@@ -103,6 +106,7 @@ const Login = () => {
           </Link>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

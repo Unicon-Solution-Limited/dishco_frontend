@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./Signup.css";
 import { useAuth } from "../AuthContext/AuthContext";
+import Header from "../../Shared/Header/Header";
+import Footer from "../../Shared/Footer/Footer";
 
 const Signup = () => {
   let history = useHistory();
@@ -45,6 +47,7 @@ const Signup = () => {
 
   return (
     <>
+      <Header />
       <section className="container my-5">
         <h4 className="text-center">Create an account</h4>
         <form onSubmit={handleSubmit} className="auth_form">
@@ -122,6 +125,7 @@ const Signup = () => {
           </Link>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

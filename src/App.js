@@ -6,8 +6,6 @@ import Login from "./Components/Authentication/Login/Login";
 import Signup from "./Components/Authentication/Signup/Signup";
 import ForgotPassword from "./Components/Authentication/ForgotPassword/ForgotPassword";
 import Dashboard from "./Components/Dashboard/Dashboard";
-import Header from "./Components/Shared/Header/Header";
-import Footer from "./Components/Shared/Footer/Footer";
 import CreateProduct from "./Components/Dashboard/DashboardPage/CreateProduct/CreateProduct";
 import DisplayProduct from "./Components/DisplayProduct/DisplayProduct";
 import SingleProduct from "./Components/DisplayProduct/SingleProduct/SingleProduct";
@@ -17,7 +15,6 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
         <RouterChangeTop />
         <Switch>
           <Route exact path="/">
@@ -62,7 +59,6 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
-        <Footer />
       </Router>
     </>
   );

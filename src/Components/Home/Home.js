@@ -1,4 +1,6 @@
 import React from "react";
+import Footer from "../Shared/Footer/Footer";
+import Header from "../Shared/Header/Header";
 
 import "./Home.css";
 import Facilities from "./HomeComponents/Facilities";
@@ -10,11 +12,13 @@ import Welcome from "./HomeComponents/Welcome";
 const Home = () => {
   return (
     <>
+      <Header />
       <Video />
       <Welcome />
       <MenuSection />
       <OfferSection />
       <Facilities />
+      <Footer />
     </>
   );
 };
