@@ -8,7 +8,7 @@ const Cart = () => {
     <section className="container-fluid cart_page_main">
       <aside className="cart_page_left">
         <h6>Cart Item's</h6>
-        <div className="cart_product_table">
+        <div className="cart_product_table table-responsive">
           <table>
             <thead>
               <tr>
