@@ -10,6 +10,7 @@ import CreateProduct from "./Components/Dashboard/DashboardPage/CreateProduct/Cr
 import DisplayProduct from "./Components/DisplayProduct/DisplayProduct";
 import SingleProduct from "./Components/DisplayProduct/SingleProduct/SingleProduct";
 import Cart from "./Components/Cart/Cart";
+import Checkout from "./Components/Checkout/Checkout";
 
 function App() {
   return (
@@ -18,10 +19,6 @@ function App() {
         <RouterChangeTop />
         <Switch>
           <Route exact path="/">
-            <Home />
-          </Route>
-
-          <Route path="/home">
             <Home />
           </Route>
 
@@ -52,6 +49,10 @@ function App() {
 
           <Route path="/cart">
             <Cart />
+          </Route>
+
+          <Route path="/checkout">
+            <Checkout />
           </Route>
 
           {/* Not Found Page */}
