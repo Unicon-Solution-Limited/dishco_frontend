@@ -91,7 +91,7 @@ const Footer = () => {
                   <Link to="/">All Items</Link>
                 </li>
                 <li>
-                  <Link to="/">Your Cart Item</Link>
+                  <Link to="/">Privacy policy</Link>
                 </li>
                 <li>
                   <Link to="/">Return and Refund Policy</Link>
