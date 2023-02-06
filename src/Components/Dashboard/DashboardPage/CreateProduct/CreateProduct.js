@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
+import TopbarNav from "../../Layouts/TopbarNav";
+import SidebarNav from "../../Layouts/SidebarNav";
 
 const CreateProduct = () => {
   const [loading, setLoading] = useState(false);
@@ -120,245 +122,272 @@ const CreateProduct = () => {
   };
 
   return (
-    <div>
-      <form className="container" onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="img" className="form-label">
-            Image
-          </label>
-          <input
-            type="file"
-            className="form-control"
-            id="img"
-            onChange={imageUploadHandler}
-          />
+    <>
+      <TopbarNav />
+      <div id="layoutSidenav">
+        <SidebarNav />
+        <div id="layoutSidenav_content">
+          <main>
+            <div>
+              <form className="container" onSubmit={handleSubmit}>
+                <div className="mb-4">
+                  <label htmlFor="img" className="form-label">
+                    Image
+                  </label>
+                  <input
+                    type="file"
+                    className="form-control"
+                    id="img"
+                    onChange={imageUploadHandler}
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="name" className="form-label">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="name"
+                    ref={nameRef}
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="name" className="form-label">
+                    Food Code
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="name"
+                    ref={foodCodeRef}
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="description" className="form-label">
+                    Food Description
+                  </label>
+                  <textarea
+                    type="text"
+                    className="form-control"
+                    id="description"
+                    ref={foodDescriptionRef}
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <div>
+                    <label htmlFor="categories" className="form-label">
+                      Categories
+                    </label>
+                  </div>
+                  <div>
+                    <select
+                      id="categories"
+                      name="categories"
+                      className="input-group form-select"
+                      ref={categoriesRef}
+                      onClick={handleSelectCategoriesOption}
+                    >
+                      <option value="">Choose Categories</option>
+                      <option value="AppetizerRice">Appetizer & Rice </option>
+                      <option value="Platter">Platter</option>
+                      <option value="CheapoBox">Cheapo Box</option>
+                      <option value="Cuisines">Cuisines</option>
+                      <option value="Steak">Steak</option>
+                      <option value="FastFood">Fast Food</option>
+                      <option value="Dessert">Dessert</option>
+                      <option value="Drinks">Drinks</option>
+                    </select>
+                  </div>
+                </div>
+                {/* sub categories */}
+                <div className="mb-4">
+                  <div>
+                    <label htmlFor="sub_categories" className="form-label">
+                      Sub-Categories
+                    </label>
+                  </div>
+                  <select
+                    id="sub_categories"
+                    name="sub_categories"
+                    className="input-group form-select"
+                    ref={subCategoriesRef}
+                    onClick={handleSubCategoriesOption}
+                  >
+                    {selectCategoriesOption === "AppetizerRice" && (
+                      <>
+                        <option value="">Choose</option>
+                        <option value="Appetizer">Appetizer</option>
+                        <option value="riceCuisine">rice Cuisine</option>
+                      </>
+                    )}
+
+                    {selectCategoriesOption === "Platter" && (
+                      <>
+                        <option value="">Choose</option>
+                        <option value="DishCoPlatter">DishCo Platter</option>
+                      </>
+                    )}
+
+                    {selectCategoriesOption === "CheapoBox" && (
+                      <>
+                        <option value="">Choose</option>
+                        <option value="MeatBox">Meat Box</option>
+                        <option value="RiceBowl">Rice Bowl</option>
+                        <option value="PlatterCuisine"></option>
+                      </>
+                    )}
+
+                    {selectCategoriesOption === "Cuisines" && (
+                      <>
+                        <option value="">Choose</option>
+                        <option value="IndianCuisines">Indian Cuisines</option>
+                        <option value="JapaneseCuisines">
+                          Japanese Cuisines
+                        </option>
+                        <option value="KoreanCuisines">Korean Cuisines</option>
+                        <option value="ChineseCuisines">
+                          Chinese Cuisines
+                        </option>
+                      </>
+                    )}
+                    {selectCategoriesOption === "FastFood" && (
+                      <>
+                        <option value="">Choose</option>
+                        <option value="Pizza">Pizza</option>
+                        <option value="BurgerSandwich">
+                          Burger and Sandwich
+                        </option>
+                        <option value="FryBasket">Fry Basket</option>
+                        <option value="Pasta">Pasta</option>
+                      </>
+                    )}
+
+                    {selectCategoriesOption === "Drinks" && (
+                      <>
+                        <option value="">Choose</option>
+                        <option value="PeyalaTea">Peyala Tea</option>
+                        <option value="HotDrinks">Hot Drinks</option>
+                        <option value="ColdDrinks">Cold Drinks</option>
+                      </>
+                    )}
+                  </select>
+                </div>
+                {/* child categories */}
+                <div className="mb-4">
+                  <div>
+                    <label htmlFor="child_categories" className="form-label">
+                      Child_Categories
+                    </label>
+                  </div>
+                  <select
+                    id="child_categories"
+                    name="child_categories"
+                    className="input-group form-select"
+                    ref={childCategoriesRef}
+                  >
+                    {selectSubCategoriesOption === "ChineseCuisines" && (
+                      <>
+                        <option value="">Choose</option>
+                        <option value="Soup">Soup</option>
+                      </>
+                    )}
+                  </select>
+                </div>
+
+                {/* addons */}
+                {addons.map((size, index) => (
+                  <div key={index}>
+                    <label>
+                      Addons Name:
+                      <input
+                        type="text"
+                        name="addonName"
+                        value={size.addonName}
+                        onChange={(e) => handleAddonsChange(e, index)}
+                      />
+                    </label>
+                    <label>
+                      Addons Price:
+                      <input
+                        type="number"
+                        name="addonPrice"
+                        value={size.addonPrice}
+                        onChange={(e) => handleAddonsChange(e, index)}
+                      />
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveAddons(index)}
+                    >
+                      Remove Addons
+                    </button>
+                    <br />
+                  </div>
+                ))}
+                <button
+                  type="button"
+                  className="btn btn-success mt-2"
+                  onClick={handleAddaddons}
+                >
+                  Addons Add
+                </button>
+                <br />
+                <br />
+
+                {/* size and price */}
+                {sizePrice.map((size, index) => (
+                  <div key={index}>
+                    <label>
+                      Size:
+                      <input
+                        type="text"
+                        name="size"
+                        value={size.size}
+                        onChange={(e) => handleSizePriceChange(e, index)}
+                      />
+                    </label>
+                    <label>
+                      Price:
+                      <input
+                        type="number"
+                        name="price"
+                        value={size.price}
+                        onChange={(e) => handleSizePriceChange(e, index)}
+                      />
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveSizePrice(index)}
+                    >
+                      Remove Size & Price
+                    </button>
+                    <br />
+                  </div>
+                ))}
+                <button
+                  type="button"
+                  className="btn btn-success mt-2"
+                  onClick={handleAddSizePrice}
+                >
+                  Add
+                </button>
+                <br />
+                <br />
+
+                <button type="submit" className="btn btn-primary">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </main>
         </div>
-
-        <div className="mb-4">
-          <label htmlFor="name" className="form-label">
-            Name
-          </label>
-          <input type="text" className="form-control" id="name" ref={nameRef} />
-        </div>
-
-        <div className="mb-4">
-          <label htmlFor="name" className="form-label">
-            Food Code
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            ref={foodCodeRef}
-          />
-        </div>
-
-        <div className="mb-4">
-          <label htmlFor="description" className="form-label">
-            Food Description
-          </label>
-          <textarea
-            type="text"
-            className="form-control"
-            id="description"
-            ref={foodDescriptionRef}
-          />
-        </div>
-
-        <div className="mb-4">
-          <div>
-            <label htmlFor="categories" className="form-label">
-              Categories
-            </label>
-          </div>
-          <div>
-            <select
-              id="categories"
-              name="categories"
-              className="input-group form-select"
-              ref={categoriesRef}
-              onClick={handleSelectCategoriesOption}
-            >
-              <option value="">Choose Categories</option>
-              <option value="AppetizerRice">Appetizer & Rice </option>
-              <option value="Platter">Platter</option>
-              <option value="CheapoBox">Cheapo Box</option>
-              <option value="Cuisines">Cuisines</option>
-              <option value="Steak">Steak</option>
-              <option value="FastFood">Fast Food</option>
-              <option value="Dessert">Dessert</option>
-              <option value="Drinks">Drinks</option>
-            </select>
-          </div>
-        </div>
-        {/* sub categories */}
-        <div className="mb-4">
-          <div>
-            <label htmlFor="sub_categories" className="form-label">
-              Sub-Categories
-            </label>
-          </div>
-          <select
-            id="sub_categories"
-            name="sub_categories"
-            className="input-group form-select"
-            ref={subCategoriesRef}
-            onClick={handleSubCategoriesOption}
-          >
-            {selectCategoriesOption === "AppetizerRice" && (
-              <>
-                <option value="">Choose</option>
-                <option value="Appetizer">Appetizer</option>
-                <option value="riceCuisine">rice Cuisine</option>
-              </>
-            )}
-
-            {selectCategoriesOption === "Platter" && (
-              <>
-                <option value="">Choose</option>
-                <option value="DishCoPlatter">DishCo Platter</option>
-              </>
-            )}
-
-            {selectCategoriesOption === "CheapoBox" && (
-              <>
-                <option value="">Choose</option>
-                <option value="MeatBox">Meat Box</option>
-                <option value="RiceBowl">Rice Bowl</option>
-                <option value="PlatterCuisine"></option>
-              </>
-            )}
-
-            {selectCategoriesOption === "Cuisines" && (
-              <>
-                <option value="">Choose</option>
-                <option value="IndianCuisines">Indian Cuisines</option>
-                <option value="JapaneseCuisines">Japanese Cuisines</option>
-                <option value="KoreanCuisines">Korean Cuisines</option>
-                <option value="ChineseCuisines">Chinese Cuisines</option>
-              </>
-            )}
-            {selectCategoriesOption === "FastFood" && (
-              <>
-                <option value="">Choose</option>
-                <option value="Pizza">Pizza</option>
-                <option value="BurgerSandwich">Burger and Sandwich</option>
-                <option value="FryBasket">Fry Basket</option>
-                <option value="Pasta">Pasta</option>
-              </>
-            )}
-
-            {selectCategoriesOption === "Drinks" && (
-              <>
-                <option value="">Choose</option>
-                <option value="PeyalaTea">Peyala Tea</option>
-                <option value="HotDrinks">Hot Drinks</option>
-                <option value="ColdDrinks">Cold Drinks</option>
-              </>
-            )}
-          </select>
-        </div>
-        {/* child categories */}
-        <div className="mb-4">
-          <div>
-            <label htmlFor="child_categories" className="form-label">
-              Child_Categories
-            </label>
-          </div>
-          <select
-            id="child_categories"
-            name="child_categories"
-            className="input-group form-select"
-            ref={childCategoriesRef}
-          >
-            {selectSubCategoriesOption === "ChineseCuisines" && (
-              <>
-                <option value="">Choose</option>
-                <option value="Soup">Soup</option>
-              </>
-            )}
-          </select>
-        </div>
-
-        {/* addons */}
-        {addons.map((size, index) => (
-          <div key={index}>
-            <label>
-              Addons Name:
-              <input
-                type="text"
-                name="addonName"
-                value={size.addonName}
-                onChange={(e) => handleAddonsChange(e, index)}
-              />
-            </label>
-            <label>
-              Addons Price:
-              <input
-                type="number"
-                name="addonPrice"
-                value={size.addonPrice}
-                onChange={(e) => handleAddonsChange(e, index)}
-              />
-            </label>
-            <button type="button" onClick={() => handleRemoveAddons(index)}>
-              Remove Addons
-            </button>
-            <br />
-          </div>
-        ))}
-        <button
-          type="button"
-          className="btn btn-success mt-2"
-          onClick={handleAddaddons}
-        >
-          Addons Add
-        </button>
-        <br />
-        <br />
-
-        {/* size and price */}
-        {sizePrice.map((size, index) => (
-          <div key={index}>
-            <label>
-              Size:
-              <input
-                type="text"
-                name="size"
-                value={size.size}
-                onChange={(e) => handleSizePriceChange(e, index)}
-              />
-            </label>
-            <label>
-              Price:
-              <input
-                type="number"
-                name="price"
-                value={size.price}
-                onChange={(e) => handleSizePriceChange(e, index)}
-              />
-            </label>
-            <button type="button" onClick={() => handleRemoveSizePrice(index)}>
-              Remove Size & Price
-            </button>
-            <br />
-          </div>
-        ))}
-        <button
-          type="button"
-          className="btn btn-success mt-2"
-          onClick={handleAddSizePrice}
-        >
-          Add
-        </button>
-        <br />
-        <br />
-
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
-    </div>
+      </div>
+    </>
   );
 };
 
