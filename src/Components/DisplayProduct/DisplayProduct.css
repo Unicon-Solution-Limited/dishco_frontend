@@ -16,8 +16,9 @@
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
+
 .search_bar:focus {
-  width: 100%;
+  width: 100% !important;
 }
 .product_card_row {
   display: flex;

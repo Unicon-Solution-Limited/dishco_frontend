@@ -24,21 +24,65 @@ const DisplayProduct = () => {
     fetchFood();
   }, [navItem]);
 
+  // Search
+
+  const [value, setValue] = useState("");
+
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const onSearch = (searchTerm) => {
+    setValue(searchTerm);
+    // our api to fetch the search result
+    console.log("search ", searchTerm);
+  };
+
   return (
     <>
       <Header />
       <section className="displayProduct_main">
         <div className="container my-5">
-          <div className="search_bar_body">
-            <form action="">
-              <input
-                type="text"
-                name="search"
-                placeholder="Search food....."
-                className="search_bar"
-              />
-            </form>
+          <form action="" className="search_bar_body">
+            <input
+              type="text"
+              name="search"
+              placeholder="Search food....."
+              className="search_bar"
+              value={value}
+              onChange={onChange}
+            />
+            <button
+              className="btn MyBtn search_button"
+              onClick={() => onSearch(value)}
+            >
+              Search
+            </button>
+          </form>
+          <div className="dropdown">
+            {food
+              .filter((item) => {
+                const searchTerm = value.toLowerCase();
+                const fullName = item.name.toLowerCase();
+
+                return (
+                  searchTerm &&
+                  fullName.startsWith(searchTerm) &&
+                  fullName !== searchTerm
+                );
+              })
+              .slice(0, 10)
+              .map((item) => (
+                <div
+                  onClick={() => onSearch(item.name)}
+                  className="dropdown-row"
+                  key={item.name}
+                >
+                  {item.name}
+                </div>
+              ))}
           </div>
+
           <div className="product_card_row">
             {food.map((data, index) => (
               <div key={index}>
