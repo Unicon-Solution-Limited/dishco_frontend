@@ -1,0 +1,10 @@
+.collapsed_Menu {
+  cursor: pointer;
+  color: var(--white) !important;
+}
+.collapsed_Menu:hover {
+  color: var(--yellow) !important;
+}
+.bi-chevron-double-down {
+  color: var(--green) !important;
+}

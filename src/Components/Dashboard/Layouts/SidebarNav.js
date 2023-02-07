@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Layouts.css";
 
 const SidebarNav = () => {
   return (
@@ -11,13 +12,45 @@ const SidebarNav = () => {
         >
           <div className="sb-sidenav-menu">
             <div className="nav">
-              <div className="sb-sidenav-menu-heading">Lawyer Maintenance </div>
-              <Link className="nav-link" to="/createProduct">
-                <div className="sb-nav-link-icon">
-                  <i className="bi bi-person-badge"></i>
+              <div className="sb-sidenav-menu-heading">
+                Product Maintenance{" "}
+              </div>
+              {/* Product Section start */}
+              <span
+                class="nav-link collapsed collapsed_Menu"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseLayouts"
+                aria-expanded="false"
+                aria-controls="collapseLayouts"
+              >
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-columns"></i>
                 </div>
-                Create Products
-              </Link>
+                <i class="bi bi-box2"> Products</i>
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="bi bi-chevron-double-down"></i>
+                </div>
+              </span>
+              <div
+                class="collapse"
+                id="collapseLayouts"
+                aria-labelledby="headingOne"
+                data-bs-parent="#sidenavAccordion"
+              >
+                <nav class="sb-sidenav-menu-nested nav">
+                  <Link className="nav-link" to="/createProduct">
+                    <div className="sb-nav-link-icon">
+                      <i className="bi bi-person-badge"></i>
+                    </div>
+                    Create Products
+                  </Link>
+                  <a class="nav-link" href="layout-sidenav-light.html">
+                    Light Sidenav
+                  </a>
+                </nav>
+              </div>
+              {/* Product Section end */}
+
               <Link className="nav-link" to="/rq">
                 <div className="sb-nav-link-icon">
                   <i className="bi bi-people"></i>
