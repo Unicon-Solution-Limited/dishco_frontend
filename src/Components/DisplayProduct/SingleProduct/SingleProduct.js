@@ -70,7 +70,7 @@ const SingleProduct = () => {
               <div className="quantity_cart_button my-3">
                 <span className="quantity_cart_input">
                   <button
-                    class="value-button"
+                    className="value-button"
                     id="decrease"
                     // onClick={decreaseValue}
                     // value="Decrease Value"
@@ -79,7 +79,7 @@ const SingleProduct = () => {
                   </button>
                   <input type="number" id="number" value="1" />
                   <button
-                    class="value-button"
+                    className="value-button"
                     id="increase"
                     // onClick={increaseValue}
                     // value="Increase Value"
