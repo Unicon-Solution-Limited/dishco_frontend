@@ -7,13 +7,13 @@ import Footer from "../../Shared/Footer/Footer";
 const SingleProduct = () => {
   const { viewDetails } = useParams();
   const [food, setFood] = useState([]);
+  const [selectedVariant, setSelectedVariant] = useState(null);
 
-  // getting data matching of viewDetails
   useEffect(() => {
     const fetchFood = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/getSingleFood?singleFoodId=" + viewDetails
+          `http://localhost:8000/getSingleFood?singleFoodId=${viewDetails}`
         );
         const data = await response.json();
         setFood(data);
@@ -24,23 +24,28 @@ const SingleProduct = () => {
     fetchFood();
   }, [viewDetails]);
 
-  const demo =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp";
+  const handleChange = (e) => {
+    if (food.length) {
+      setSelectedVariant(
+        food[0].sizePriceItem.find((variant) => variant.size === e.target.value)
+      );
+    }
+  };
 
   return (
     <>
       <Header />
       <section className="container singleProduct_main">
         {food.map((data) => (
-          <div className="single_product_body">
+          <div key={data._id} className="single_product_body">
             <aside className="single_product_img">
-              <img src={data?.Image} alt="food" />
+              <img src={data.Image} alt="food" />
             </aside>
             <aside className="single_product_details">
-              <p>{data?.foodCode}</p>
-              <h1 className="single_product_name">{data?.name}</h1>
+              <p>{data.foodCode}</p>
+              <h1 className="single_product_name">{data.name}</h1>
               <p className="single_product_description">
-                {data?.foodDescription}
+                {data.foodDescription}
               </p>
               <p
                 className="single_product_price my-3"
@@ -49,28 +54,32 @@ const SingleProduct = () => {
                   justifyContent: "space-around",
                 }}
               >
-                {data.sizePriceItem.map((sizePrice, index2) => (
-                  <div key={index2}>
-                    <span>{sizePrice?.price} Tk</span>
+                {data.sizePriceItem.map((sizePrice, index) => (
+                  <div key={index}>
+                    <span>{sizePrice.price} Tk</span>
                   </div>
                 ))}
               </p>
+              {/* //slected price accoring to the size */}
+              {selectedVariant && <h1>{selectedVariant.price} Tk</h1>}
               <select
                 name=""
-                id=""
+                id="food"
                 className="single_product_select_option mt-4"
+                onChange={handleChange}
               >
-                <option value="">Select Pizza Size</option>
-                {data.sizePriceItem.map((sizePrice, index3) => (
-                  <>
-                    <option value={sizePrice?.size}>{sizePrice?.size} </option>
-                  </>
+                <option value="0">choose a size</option>
+                {data.sizePriceItem.map((variant) => (
+                  <option key={variant.size} value={variant.size}>
+                    {variant.size}
+                  </option>
                 ))}
               </select>
+
               <div className="quantity_cart_button my-3">
                 <span className="quantity_cart_input">
                   <button
-                    class="value-button"
+                    className="value-button"
                     id="decrease"
                     // onClick={decreaseValue}
                     // value="Decrease Value"
@@ -79,7 +88,7 @@ const SingleProduct = () => {
                   </button>
                   <input type="number" id="number" value="1" />
                   <button
-                    class="value-button"
+                    className="value-button"
                     id="increase"
                     // onClick={increaseValue}
                     // value="Increase Value"
