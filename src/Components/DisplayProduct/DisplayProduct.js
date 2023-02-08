@@ -98,9 +98,9 @@ const DisplayProduct = () => {
                     }}
                   >
                     {data.sizePriceItem.map((sizePrice, index2) => (
-                      <div key={index2}>
+                      <span key={index2}>
                         <span>{sizePrice?.price} Tk</span>
-                      </div>
+                      </span>
                     ))}
                   </p>
 

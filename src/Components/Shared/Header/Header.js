@@ -59,7 +59,7 @@ const Header = () => {
               <li className="nav-item dropdown navbarItems">
                 <a
                   className="nav-link dropdown-toggle nav_link"
-                  AreaRole="button"
+                  arearole="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                   href="/#"
