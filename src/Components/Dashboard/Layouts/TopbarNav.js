@@ -13,7 +13,7 @@ const TopbarNav = () => {
   }
   return (
     <>
-      <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+      <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark top_nav">
         <div>
           <Link className="navbar-brand ps-3" to="/admin-law">
             Admin Dashboard

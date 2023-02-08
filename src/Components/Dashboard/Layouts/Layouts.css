@@ -1,10 +1,28 @@
+.dashboard_welcome_page {
+  text-align: center;
+}
+
+/* **************** SideNav Bar **********************/
+#sidenavAccordion {
+  background-color: #1a2902;
+}
+.sb-sidenav-menu-heading {
+  color: #778d45 !important;
+}
+
 .collapsed_Menu {
   cursor: pointer;
-  color: var(--white) !important;
+  color: #aec09a !important;
 }
 .collapsed_Menu:hover {
-  color: var(--yellow) !important;
+  color: #aec670 !important;
 }
-.bi-chevron-double-down {
+.bi-chevron-double-down,
+.bi-chevron-double-right {
   color: var(--green) !important;
+}
+
+/* **************** TopNav Bar **********************/
+.top_nav {
+  background-color: #344c11 !important;
 }

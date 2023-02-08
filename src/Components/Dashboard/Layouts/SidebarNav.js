@@ -12,90 +12,99 @@ const SidebarNav = () => {
         >
           <div className="sb-sidenav-menu">
             <div className="nav">
-              <div className="sb-sidenav-menu-heading">
-                Product Maintenance{" "}
-              </div>
+              <div className="sb-sidenav-menu-heading">Product management </div>
               {/* Product Section start */}
               <span
-                class="nav-link collapsed collapsed_Menu"
+                className="nav-link collapsed collapsed_Menu"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseLayouts"
                 aria-expanded="false"
                 aria-controls="collapseLayouts"
               >
-                <div class="sb-nav-link-icon">
-                  <i class="fas fa-columns"></i>
-                </div>
-                <i class="bi bi-box2"> Products</i>
-                <div class="sb-sidenav-collapse-arrow">
-                  <i class="bi bi-chevron-double-down"></i>
+                Products
+                <div className="sb-sidenav-collapse-arrow">
+                  <i className="bi bi-chevron-double-down"></i>
                 </div>
               </span>
               <div
-                class="collapse"
+                className="collapse"
                 id="collapseLayouts"
                 aria-labelledby="headingOne"
                 data-bs-parent="#sidenavAccordion"
               >
-                <nav class="sb-sidenav-menu-nested nav">
+                <nav className="sb-sidenav-menu-nested nav">
+                  <Link className="nav-link" to="/">
+                    <div className="sb-nav-link-icon">
+                      <i className="bi bi-bag-plus-fill"></i>
+                    </div>
+                    All Products
+                  </Link>
                   <Link className="nav-link" to="/createProduct">
                     <div className="sb-nav-link-icon">
-                      <i className="bi bi-person-badge"></i>
+                      <i className="bi bi-bag-plus-fill"></i>
                     </div>
                     Create Products
                   </Link>
-                  <a class="nav-link" href="layout-sidenav-light.html">
-                    Light Sidenav
-                  </a>
                 </nav>
               </div>
               {/* Product Section end */}
 
-              <Link className="nav-link" to="/rq">
-                <div className="sb-nav-link-icon">
-                  <i className="bi bi-people"></i>
-                </div>
-                Profile Request
-              </Link>
-              <div className="sb-sidenav-menu-heading">
-                Company Profile Interface
-              </div>
+              <div className="sb-sidenav-menu-heading">Customer Management</div>
               <Link className="nav-link" to="/about_edit">
-                <div className="sb-nav-link-icon">
-                  <i className="bi bi-person-badge"></i>
+                <span className="collapsed_Menu">Customer List </span>
+                <div className="sb-sidenav-collapse-arrow">
+                  <i className="bi bi-chevron-double-right"></i>
                 </div>
-                About Us
               </Link>
-              <Link className="nav-link" to="/career_edit">
-                <div className="sb-nav-link-icon">
-                  <i className="bi bi-person-badge"></i>
+              {/* Discount management start */}
+              <span
+                className="nav-link collapsed collapsed_Menu"
+                data-bs-toggle="collapse"
+                data-bs-target="#discount"
+                aria-expanded="false"
+                aria-controls="collapseLayouts"
+              >
+                Customer List per Range
+                <div className="sb-sidenav-collapse-arrow">
+                  <i className="bi bi-chevron-double-down"></i>
                 </div>
-                Career
-              </Link>
-              <Link className="nav-link" to="/contact_edit">
-                <div className="sb-nav-link-icon">
-                  <i className="bi bi-person-badge"></i>
-                </div>
-                Contact Us
-              </Link>
-              <Link className="nav-link" to="/mission_edit">
-                <div className="sb-nav-link-icon">
-                  <i className="bi bi-person-badge"></i>
-                </div>
-                Mission And Vision
-              </Link>
-              <Link className="nav-link" to="/newsEventEdit_edit">
-                <div className="sb-nav-link-icon">
-                  <i className="bi bi-person-badge"></i>
-                </div>
-                News And Events
-              </Link>
-              <Link className="nav-link" to="/team_edit">
-                <div className="sb-nav-link-icon">
-                  <i className="bi bi-person-badge"></i>
-                </div>
-                Teams
-              </Link>
+              </span>
+              <div
+                className="collapse"
+                id="discount"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#sidenavAccordion"
+              >
+                <nav className="sb-sidenav-menu-nested nav">
+                  <Link className="nav-link" to="/">
+                    <div className="sb-nav-link-icon">
+                      <i className="bi bi-bag-plus-fill"></i>
+                    </div>
+                    Bronze
+                  </Link>
+                  <Link className="nav-link" to="/createProduct">
+                    <div className="sb-nav-link-icon">
+                      <i className="bi bi-bag-plus-fill"></i>
+                    </div>
+                    Silver
+                  </Link>
+                  <Link className="nav-link" to="/createProduct">
+                    <div className="sb-nav-link-icon">
+                      <i className="bi bi-bag-plus-fill"></i>
+                    </div>
+                    Gold
+                  </Link>
+                  <Link className="nav-link" to="/createProduct">
+                    <div className="sb-nav-link-icon">
+                      <i className="bi bi-bag-plus-fill"></i>
+                    </div>
+                    Platinum
+                  </Link>
+                </nav>
+              </div>
+              {/* Discount management end */}
+
+              <div className="sb-sidenav-menu-heading">Order management</div>
             </div>
           </div>
         </nav>
