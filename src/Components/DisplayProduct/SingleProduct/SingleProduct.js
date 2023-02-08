@@ -42,22 +42,16 @@ const SingleProduct = () => {
               <img src={data.Image} alt="food" />
             </aside>
             <aside className="single_product_details">
-              <p>{data.foodCode}</p>
+              {/* <p>{data.foodCode}</p> */}
               <h1 className="single_product_name">{data.name}</h1>
               <p className="single_product_description">
                 {data.foodDescription}
               </p>
-              <p
-                className="single_product_price my-3"
-                style={{
-                  display: "flex",
-                  justifyContent: "space-around",
-                }}
-              >
+              <p className="single_product_price my-3">
                 {data.sizePriceItem.map((sizePrice, index) => (
-                  <div key={index}>
+                  <span key={index}>
                     <span>{sizePrice.price} Tk</span>
-                  </div>
+                  </span>
                 ))}
               </p>
               {/* //slected price accoring to the size */}

@@ -50,23 +50,10 @@
   border-radius: 0;
 }
 
-/* .product_image_body {
-  position: relative;
-}
-.product_img_background {
-  position: absolute;
-  top: -40px;
-  left: -55px;
-  bottom: 0;
-  right: 0;
-  width: 350px;
-  height: auto;
-} */
-
 .product_img {
   width: 250px;
-  min-width: 100%;
   height: auto;
+  min-height: 250px;
   object-fit: cover;
   margin-left: auto;
   margin-right: auto;
