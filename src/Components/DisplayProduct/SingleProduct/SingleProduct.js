@@ -62,13 +62,39 @@ const SingleProduct = () => {
                 className="single_product_select_option mt-4"
                 onChange={handleChange}
               >
-                <option value="0">choose a size</option>
+                <option value="0">Choose Size</option>
                 {data.sizePriceItem.map((variant) => (
                   <option key={variant.size} value={variant.size}>
                     {variant.size}
                   </option>
                 ))}
               </select>
+
+              <div className="addons_checkbox my-5">
+                <h6>Extra Items</h6>
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="inlineCheckbox1"
+                    value="option1"
+                  />
+                  <label className="form-check-label" for="inlineCheckbox1">
+                    Sauce
+                  </label>
+                </div>
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="inlineCheckbox2"
+                    value="option2"
+                  />
+                  <label className="form-check-label" for="inlineCheckbox2">
+                    Chezz
+                  </label>
+                </div>
+              </div>
 
               <div className="quantity_cart_button my-3">
                 <span className="quantity_cart_input">
