@@ -33,16 +33,13 @@ const SidebarNav = () => {
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav className="sb-sidenav-menu-nested nav">
-                  <Link className="nav-link" to="/">
-                    <div className="sb-nav-link-icon">
-                      <i className="bi bi-bag-plus-fill"></i>
-                    </div>
+                  <Link className="nav-link collapse_sub_menu" to="/">
                     All Products
                   </Link>
-                  <Link className="nav-link" to="/createProduct">
-                    <div className="sb-nav-link-icon">
-                      <i className="bi bi-bag-plus-fill"></i>
-                    </div>
+                  <Link
+                    className="nav-link collapse_sub_menu"
+                    to="/createProduct"
+                  >
                     Create Products
                   </Link>
                 </nav>
@@ -76,28 +73,25 @@ const SidebarNav = () => {
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav className="sb-sidenav-menu-nested nav">
-                  <Link className="nav-link" to="/">
-                    <div className="sb-nav-link-icon">
-                      <i className="bi bi-bag-plus-fill"></i>
-                    </div>
+                  <Link className="nav-link collapse_sub_menu" to="/">
                     Bronze
                   </Link>
-                  <Link className="nav-link" to="/createProduct">
-                    <div className="sb-nav-link-icon">
-                      <i className="bi bi-bag-plus-fill"></i>
-                    </div>
+                  <Link
+                    className="nav-link collapse_sub_menu"
+                    to="/createProduct"
+                  >
                     Silver
                   </Link>
-                  <Link className="nav-link" to="/createProduct">
-                    <div className="sb-nav-link-icon">
-                      <i className="bi bi-bag-plus-fill"></i>
-                    </div>
+                  <Link
+                    className="nav-link collapse_sub_menu"
+                    to="/createProduct"
+                  >
                     Gold
                   </Link>
-                  <Link className="nav-link" to="/createProduct">
-                    <div className="sb-nav-link-icon">
-                      <i className="bi bi-bag-plus-fill"></i>
-                    </div>
+                  <Link
+                    className="nav-link collapse_sub_menu"
+                    to="/createProduct"
+                  >
                     Platinum
                   </Link>
                 </nav>
@@ -105,6 +99,38 @@ const SidebarNav = () => {
               {/* Discount management end */}
 
               <div className="sb-sidenav-menu-heading">Order management</div>
+              {/* Order management start */}
+              <span
+                className="nav-link collapsed collapsed_Menu"
+                data-bs-toggle="collapse"
+                data-bs-target="#order"
+                aria-expanded="false"
+                aria-controls="collapseLayouts"
+              >
+                Order
+                <div className="sb-sidenav-collapse-arrow">
+                  <i className="bi bi-chevron-double-down"></i>
+                </div>
+              </span>
+              <div
+                className="collapse"
+                id="order"
+                aria-labelledby="headingThree"
+                data-bs-parent="#sidenavAccordion"
+              >
+                <nav className="sb-sidenav-menu-nested nav">
+                  <Link className="nav-link collapse_sub_menu" to="/">
+                    Pending order
+                  </Link>
+                  <Link
+                    className="nav-link collapse_sub_menu"
+                    to="/createProduct"
+                  >
+                    Completed Order
+                  </Link>
+                </nav>
+              </div>
+              {/* Order management end */}
             </div>
           </div>
         </nav>

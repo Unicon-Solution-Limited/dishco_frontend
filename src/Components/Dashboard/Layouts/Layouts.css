@@ -4,7 +4,7 @@
 
 /* **************** SideNav Bar **********************/
 #sidenavAccordion {
-  background-color: #1a2902;
+  background-color: var(--black);
 }
 .sb-sidenav-menu-heading {
   color: #778d45 !important;
@@ -14,15 +14,37 @@
   cursor: pointer;
   color: #aec09a !important;
 }
-.collapsed_Menu:hover {
+.collapsed_Menu:hover,
+.collapse_sub_menu {
   color: #aec670 !important;
+}
+.collapse_sub_menu::before {
+  content: "- ";
+  padding-right: 5px;
+}
+.collapse_sub_menu:hover {
+  color: var(--white) !important;
 }
 .bi-chevron-double-down,
 .bi-chevron-double-right {
-  color: var(--green) !important;
+  color: #aec09a !important;
 }
 
 /* **************** TopNav Bar **********************/
 .top_nav {
-  background-color: #344c11 !important;
+  background-color: var(--black) !important;
+}
+.bi-person {
+  color: var(--white) !important;
+  border: 1px solid #aec09a !important;
+  padding: 5;
+}
+.bi-person:hover {
+  background-color: #778d45;
+  transition: 0.2s;
+}
+
+.bi-list {
+  color: var(--white) !important;
+  font-size: 18px;
 }
