@@ -13,7 +13,7 @@ const TopbarNav = () => {
   }
   return (
     <>
-      <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark top_nav">
+      <nav className="sb-topnav navbar-d navbar-expand navbar-dark bg-dark top_nav">
         <div>
           <Link className="navbar-brand ps-3" to="/admin-law">
             Admin Dashboard
@@ -48,7 +48,7 @@ const TopbarNav = () => {
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="/search">
+                <a className="dropdown-item" href="/">
                   <i className="bi bi-house"></i> Home
                 </a>
               </li>
