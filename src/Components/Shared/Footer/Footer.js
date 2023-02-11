@@ -72,29 +72,29 @@ const Footer = () => {
                   <Link to="/">My Account</Link>
                 </li>
                 <li>
-                  <Link to="/">Contact Us</Link>
+                  <Link to="/contact-us">Contact Us</Link>
                 </li>
                 <li>
-                  <Link to="/">About Us</Link>
+                  <Link to="/about-us">About Us</Link>
                 </li>
                 <li>
-                  <Link to="/">Terms & Conditions</Link>
+                  <Link to="/t_and_c">Terms & Conditions</Link>
                 </li>
               </ul>
             </aside>
             <aside className="links">
               <ul>
                 <li>
-                  <Link to="/">Menu Card</Link>
+                  <Link to="/menus">Menu Card</Link>
                 </li>
                 <li>
-                  <Link to="/">All Items</Link>
+                  <Link to="/shop">All Items</Link>
                 </li>
                 <li>
-                  <Link to="/">Privacy policy</Link>
+                  <Link to="/privacy-policy">Privacy policy</Link>
                 </li>
                 <li>
-                  <Link to="/">Return and Refund Policy</Link>
+                  <Link to="/return-policy">Return and Refund Policy</Link>
                 </li>
               </ul>
             </aside>

@@ -1,0 +1,36 @@
+.cart_product_table {
+  overflow: auto;
+}
+.cart_cancel_row {
+  width: 20px !important;
+}
+.cart_page_product_img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.cart_product_cancel_button {
+  border: 0 !important;
+  background-color: transparent !important;
+}
+.update_cart_button_section {
+  margin-bottom: 30px;
+}
+.cart_page_bottom_main {
+  display: flex;
+  justify-content: flex-end;
+}
+.cart_page_bottom {
+  display: grid;
+  justify-content: end;
+  gap: 20px;
+  background: #dddddd;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .cart_page_bottom {
+    justify-content: center;
+  }
+}

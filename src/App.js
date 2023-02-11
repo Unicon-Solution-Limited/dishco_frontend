@@ -12,8 +12,15 @@ import AllProduct from "./Components/Dashboard/DashboardPage/ProductManagement/A
 // ************** Dashboard router end
 import DisplayProduct from "./Components/DisplayProduct/DisplayProduct";
 import SingleProduct from "./Components/DisplayProduct/SingleProduct/SingleProduct";
-import Cart from "./Components/Cart/Cart";
-import Checkout from "./Components/Checkout/Checkout";
+import Cart from "./Components/Pages/Cart/Cart";
+import Checkout from "./Components/Pages/Checkout/Checkout";
+import AboutUs from "./Components/Pages/FooterPages/AboutUs";
+import ContactUs from "./Components/Pages/FooterPages/ContactUs";
+import MenuCard from "./Components/Pages/FooterPages/MenuCard";
+import PrivacyPolicy from "./Components/Pages/FooterPages/PrivacyPolicy";
+import Returnpolicy from "./Components/Pages/FooterPages/Returnpolicy";
+import Shop from "./Components/Pages/FooterPages/Shop";
+import T_and_C from "./Components/Pages/FooterPages/T_and_C";
 
 function App() {
   return (
@@ -58,11 +65,31 @@ function App() {
           <Route path="/cart">
             <Cart />
           </Route>
-
           <Route path="/checkout">
             <Checkout />
           </Route>
-
+          {/* Footer Pages Router */}
+          <Route path="/about-us">
+            <AboutUs />
+          </Route>
+          <Route path="/contact-us">
+            <ContactUs />
+          </Route>
+          <Route path="/menus">
+            <MenuCard />
+          </Route>
+          <Route path="/privacy-policy">
+            <PrivacyPolicy />
+          </Route>
+          <Route path="/return-policy">
+            <Returnpolicy />
+          </Route>
+          <Route path="/shop">
+            <Shop />
+          </Route>
+          <Route path="/t_and_c">
+            <T_and_C />
+          </Route>
           {/* Not Found Page */}
           <Route path="*">
             <NotFound />
