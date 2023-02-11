@@ -128,10 +128,11 @@ const CreateProduct = () => {
       <div id="layoutSidenav">
         <SidebarNav />
         <div id="layoutSidenav_content">
-          <main>
+          <main className="container my-5">
+            <h5 className="text-center">Create a new Product</h5>
             <div>
-              <form className="container" onSubmit={handleSubmit}>
-                <div className="mb-4">
+              <form className="row" onSubmit={handleSubmit}>
+                <div className="col-6 mb-4">
                   <label htmlFor="img" className="form-label">
                     Image
                   </label>
@@ -143,7 +144,7 @@ const CreateProduct = () => {
                   />
                 </div>
 
-                <div className="mb-4">
+                <div className="col-6 mb-4">
                   <label htmlFor="name" className="form-label">
                     Name
                   </label>
@@ -155,7 +156,7 @@ const CreateProduct = () => {
                   />
                 </div>
 
-                <div className="mb-4">
+                <div className="col-6 mb-4">
                   <label htmlFor="name" className="form-label">
                     Food Code
                   </label>
@@ -167,7 +168,20 @@ const CreateProduct = () => {
                   />
                 </div>
 
-                <div className="mb-4">
+                <div className="col-6 mb-4">
+                  <label htmlFor="name" className="form-label">
+                    Product Stock
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option value="SI">Stock In</option>
+                    <option value="SO">Stock Out</option>
+                  </select>
+                </div>
+
+                <div className="col-12 mb-4">
                   <label htmlFor="description" className="form-label">
                     Food Description
                   </label>
@@ -179,7 +193,7 @@ const CreateProduct = () => {
                   />
                 </div>
 
-                <div className="mb-4">
+                <div className="col-4 mb-4">
                   <div>
                     <label htmlFor="categories" className="form-label">
                       Categories
@@ -206,7 +220,7 @@ const CreateProduct = () => {
                   </div>
                 </div>
                 {/* sub categories */}
-                <div className="mb-4">
+                <div className="col-4 mb-4">
                   <div>
                     <label htmlFor="sub_categories" className="form-label">
                       Sub-Categories
@@ -279,7 +293,7 @@ const CreateProduct = () => {
                   </select>
                 </div>
                 {/* child categories */}
-                <div className="mb-4">
+                <div className="col-4 mb-4">
                   <div>
                     <label htmlFor="child_categories" className="form-label">
                       Child_Categories
@@ -301,86 +315,103 @@ const CreateProduct = () => {
                 </div>
 
                 {/* addons */}
-                {addons.map((size, index) => (
-                  <div key={index}>
-                    <label>
-                      Addons Name:
-                      <input
-                        type="text"
-                        name="addonName"
-                        value={size.addonName}
-                        onChange={(e) => handleAddonsChange(e, index)}
-                      />
-                    </label>
-                    <label>
-                      Addons Price:
-                      <input
-                        type="number"
-                        name="addonPrice"
-                        value={size.addonPrice}
-                        onChange={(e) => handleAddonsChange(e, index)}
-                      />
-                    </label>
-                    <button
-                      type="button"
-                      onClick={() => handleRemoveAddons(index)}
-                    >
-                      Remove Addons
-                    </button>
-                    <br />
-                  </div>
-                ))}
-                <button
-                  type="button"
-                  className="btn btn-success mt-2"
-                  onClick={handleAddaddons}
-                >
-                  Addons Add
-                </button>
-                <br />
-                <br />
+                <div className="my-5 col-6">
+                  {addons.map((size, index) => (
+                    <div key={index}>
+                      <label>
+                        Addons Name:
+                        <input
+                          type="text"
+                          name="addonName"
+                          value={size.addonName}
+                          onChange={(e) => handleAddonsChange(e, index)}
+                          class="form-control"
+                          placeholder="Ex. Extra Cheese"
+                        />
+                      </label>
+                      ---
+                      <label>
+                        Addons Price:
+                        <input
+                          type="number"
+                          name="addonPrice"
+                          value={size.addonPrice}
+                          onChange={(e) => handleAddonsChange(e, index)}
+                          class="form-control"
+                          placeholder="30 tk."
+                        />
+                      </label>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveAddons(index)}
+                        className="btn btn-danger"
+                      >
+                        <i class="bi bi-trash"></i>
+                      </button>
+                      <br />
+                    </div>
+                  ))}
+                  <button
+                    type="button"
+                    className="btn btn-success mt-2"
+                    onClick={handleAddaddons}
+                  >
+                    Addons Add
+                  </button>
+                </div>
+                {/* addons */}
 
                 {/* size and price */}
-                {sizePrice.map((size, index) => (
-                  <div key={index}>
-                    <label>
-                      Size:
-                      <input
-                        type="text"
-                        name="size"
-                        value={size.size}
-                        onChange={(e) => handleSizePriceChange(e, index)}
-                      />
-                    </label>
-                    <label>
-                      Price:
-                      <input
-                        type="number"
-                        name="price"
-                        value={size.price}
-                        onChange={(e) => handleSizePriceChange(e, index)}
-                      />
-                    </label>
-                    <button
-                      type="button"
-                      onClick={() => handleRemoveSizePrice(index)}
-                    >
-                      Remove Size & Price
-                    </button>
-                    <br />
-                  </div>
-                ))}
-                <button
-                  type="button"
-                  className="btn btn-success mt-2"
-                  onClick={handleAddSizePrice}
-                >
-                  Add
-                </button>
-                <br />
-                <br />
+                <div className="col-6 my-5">
+                  {sizePrice.map((size, index) => (
+                    <div key={index}>
+                      <label>
+                        Size:
+                        <input
+                          type="text"
+                          name="size"
+                          value={size.size}
+                          onChange={(e) => handleSizePriceChange(e, index)}
+                          class="form-control"
+                          placeholder="8"
+                        />
+                      </label>
+                      ---
+                      <label>
+                        Price:
+                        <input
+                          type="number"
+                          name="price"
+                          value={size.price}
+                          onChange={(e) => handleSizePriceChange(e, index)}
+                          class="form-control"
+                          placeholder="390 tk."
+                        />
+                      </label>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveSizePrice(index)}
+                        className="btn btn-danger"
+                      >
+                        <i class="bi bi-trash"></i>
+                      </button>
+                      <br />
+                    </div>
+                  ))}
+                  <button
+                    type="button"
+                    className="btn btn-success mt-2"
+                    onClick={handleAddSizePrice}
+                  >
+                    Add
+                  </button>
+                </div>
+                {/* size and price */}
 
-                <button type="submit" className="btn btn-primary">
+                <button
+                  type="submit"
+                  className="col-6 mx-auto btn MyBtn product_submit_button"
+                >
                   Submit
                 </button>
               </form>

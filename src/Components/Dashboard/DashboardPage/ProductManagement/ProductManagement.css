@@ -33,8 +33,24 @@
   border-radius: 50%;
   object-fit: contain;
 }
-
 /* Dashboard Product Display end ******************* */
 
 /* ******************* Dashboard Create Product Start */
+.product_submit_button {
+  font-size: 25px;
+  margin-top: 50px;
+}
+::placeholder {
+  color: var(--black) !important;
+  opacity: 0.3 !important;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--black);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--black);
+}
 /* Dashboard Create Product end ******************* */
