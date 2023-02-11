@@ -33,7 +33,7 @@ const SidebarNav = () => {
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav className="sb-sidenav-menu-nested nav">
-                  <Link className="nav-link collapse_sub_menu" to="/">
+                  <Link className="nav-link collapse_sub_menu" to="/allProduct">
                     All Products
                   </Link>
                   <Link

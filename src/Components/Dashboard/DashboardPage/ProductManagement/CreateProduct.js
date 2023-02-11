@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import axios from "axios";
 import TopbarNav from "../../Layouts/TopbarNav";
 import SidebarNav from "../../Layouts/SidebarNav";
+import "./ProductManagement.css";
 
 const CreateProduct = () => {
   const [loading, setLoading] = useState(false);
