@@ -173,7 +173,7 @@ const CreateProduct = () => {
                     Product Stock
                   </label>
                   <select
-                    class="form-select"
+                    className="form-select"
                     aria-label="Default select example"
                   >
                     <option value="SI">Stock In</option>
@@ -325,7 +325,7 @@ const CreateProduct = () => {
                           name="addonName"
                           value={size.addonName}
                           onChange={(e) => handleAddonsChange(e, index)}
-                          class="form-control"
+                          className="form-control"
                           placeholder="Ex. Extra Cheese"
                         />
                       </label>
@@ -337,7 +337,7 @@ const CreateProduct = () => {
                           name="addonPrice"
                           value={size.addonPrice}
                           onChange={(e) => handleAddonsChange(e, index)}
-                          class="form-control"
+                          className="form-control"
                           placeholder="30 tk."
                         />
                       </label>
@@ -346,7 +346,7 @@ const CreateProduct = () => {
                         onClick={() => handleRemoveAddons(index)}
                         className="btn btn-danger"
                       >
-                        <i class="bi bi-trash"></i>
+                        <i className="bi bi-trash"></i>
                       </button>
                       <br />
                     </div>
@@ -372,7 +372,7 @@ const CreateProduct = () => {
                           name="size"
                           value={size.size}
                           onChange={(e) => handleSizePriceChange(e, index)}
-                          class="form-control"
+                          className="form-control"
                           placeholder="8"
                         />
                       </label>
@@ -384,7 +384,7 @@ const CreateProduct = () => {
                           name="price"
                           value={size.price}
                           onChange={(e) => handleSizePriceChange(e, index)}
-                          class="form-control"
+                          className="form-control"
                           placeholder="390 tk."
                         />
                       </label>
@@ -393,7 +393,7 @@ const CreateProduct = () => {
                         onClick={() => handleRemoveSizePrice(index)}
                         className="btn btn-danger"
                       >
-                        <i class="bi bi-trash"></i>
+                        <i className="bi bi-trash"></i>
                       </button>
                       <br />
                     </div>
