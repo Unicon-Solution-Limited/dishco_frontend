@@ -25,6 +25,15 @@
 .action_button button {
   margin: 0 5px;
 }
+
+/* Modal content Design */
+.single_product_modal_image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
 /* Dashboard Product Display end ******************* */
 
 /* ******************* Dashboard Create Product Start */
