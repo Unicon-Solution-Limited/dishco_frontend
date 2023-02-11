@@ -1,0 +1,31 @@
+/* ***************************** This Page Contain all pages of product management section in Dashboard
+********************************************************************************************************/
+
+/* ******************* Dashboard Product Display Start */
+.dashboard_product_searchbar {
+  display: flex;
+  justify-content: flex-end;
+}
+.dashboard_product_searchbar input {
+  padding: 5px 10px;
+  border: 1px solid var(--deep-green);
+}
+.dashboard_product_display_table {
+  overflow: auto;
+}
+.product_name_tc {
+  width: 50% !important;
+}
+.dashboard_all_product_img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.action_button button {
+  margin: 0 5px;
+}
+/* Dashboard Product Display end ******************* */
+
+/* ******************* Dashboard Create Product Start */
+/* Dashboard Create Product end ******************* */
