@@ -157,10 +157,10 @@
   }
 }
 
-.modal-content {
+.home_page_modal_content {
   background-color: transparent !important;
 }
-.modal-body {
+.home_page_modal_body {
   padding: 0 !important;
 }
 .modal_close_btn {

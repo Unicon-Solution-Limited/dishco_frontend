@@ -41,31 +41,13 @@ const AllProduct = () => {
                     <td className="product_name_tc">DishCo Pizza</td>
                     <td>500 tk.</td>
                     <td className="action_button">
-                      <button className="btn btn-info">View</button>
-                      <button className="btn btn-success">Edit</button>
-                      <button className="btn btn-danger">
-                        <i class="bi bi-trash"></i>
+                      <button
+                        className="btn btn-info"
+                        data-bs-toggle="modal"
+                        data-bs-target="#view"
+                      >
+                        View
                       </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>
-                      {" "}
-                      <img
-                        src={demo}
-                        alt=""
-                        className="dashboard_all_product_img"
-                      />
-                    </td>
-                    <td className="product_name_tc">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Incidunt totam in nulla corrupti distinctio tenetur ut
-                      omnis nisi quod ab.
-                    </td>
-                    <td>500 tk.</td>
-                    <td className="action_button">
-                      <button className="btn btn-info">View</button>
                       <button className="btn btn-success">Edit</button>
                       <button className="btn btn-danger">
                         <i class="bi bi-trash"></i>
@@ -78,6 +60,40 @@ const AllProduct = () => {
           </main>
         </div>
       </div>
+
+      {/* ****** Single Product View Modal ******* */}
+      <div
+        class="modal fade"
+        id="view"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="viewLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="viewLabel">
+                Product Details
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer">
+              <button type="button" class="btn MyBtn" data-bs-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* ////// Single Product View Modal ////// */}
     </>
   );
 };

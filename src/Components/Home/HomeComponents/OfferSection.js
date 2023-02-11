@@ -73,8 +73,8 @@ const OfferSection = () => {
         aria-hidden="true"
       >
         <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-body">
+          <div className="modal-content home_page_modal_content">
+            <div className="modal-body home_page_modal_body">
               <button
                 type="button"
                 className="btn-close active modal_close_btn"
@@ -96,8 +96,8 @@ const OfferSection = () => {
         aria-hidden="true"
       >
         <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-body">
+          <div className="modal-content home_page_modal_content">
+            <div className="modal-body home_page_modal_body">
               <button
                 type="button"
                 className="btn-close active modal_close_btn"
@@ -119,8 +119,8 @@ const OfferSection = () => {
         aria-hidden="true"
       >
         <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-body">
+          <div className="modal-content home_page_modal_content">
+            <div className="modal-body home_page_modal_body">
               <button
                 type="button"
                 className="btn-close active modal_close_btn"
@@ -142,8 +142,8 @@ const OfferSection = () => {
         aria-hidden="true"
       >
         <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-body">
+          <div className="modal-content home_page_modal_content">
+            <div className="modal-body home_page_modal_body">
               <button
                 type="button"
                 className="btn-close active modal_close_btn"
@@ -165,8 +165,8 @@ const OfferSection = () => {
         aria-hidden="true"
       >
         <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-body">
+          <div className="modal-content home_page_modal_content">
+            <div className="modal-body home_page_modal_body">
               <button
                 type="button"
                 className="btn-close active modal_close_btn"
@@ -188,8 +188,8 @@ const OfferSection = () => {
         aria-hidden="true"
       >
         <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-body">
+          <div className="modal-content home_page_modal_content">
+            <div className="modal-body home_page_modal_body">
               <button
                 type="button"
                 className="btn-close active modal_close_btn"
@@ -211,8 +211,8 @@ const OfferSection = () => {
         aria-hidden="true"
       >
         <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-body">
+          <div className="modal-content home_page_modal_content">
+            <div className="modal-body home_page_modal_body">
               <button
                 type="button"
                 className="btn-close active modal_close_btn"
