@@ -117,6 +117,17 @@ const Signup = () => {
             className="MyBtn auth_btn d-grid mx-auto"
           />
         </form>
+        <p className="text-center mt-2">-------Or-------</p>
+        {/* google sign button*/}
+        <div className="google_auth">
+          <button>
+            <img
+              src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1676276581/Frontend_images/logo/f9v6yxevk0isj4d8k4w1.svg"
+              alt="google"
+            />
+            <span>Continue with google</span>
+          </button>
+        </div>
 
         <div className="auth_footer">
           <p>Already have an account?</p>

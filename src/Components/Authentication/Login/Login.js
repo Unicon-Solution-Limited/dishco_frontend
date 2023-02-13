@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import googleIcon from "../../Image/google.svg";
 import { useAuth } from "../AuthContext/AuthContext";
 import "../Signup/Signup.css";
 import Header from "./../../Shared/Header/Header";
@@ -94,7 +93,10 @@ const Login = () => {
         {/* google sign button*/}
         <div onClick={handleGoogleSignup} className="google_auth">
           <button>
-            <img src={googleIcon} alt="google" />
+            <img
+              src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1676276581/Frontend_images/logo/f9v6yxevk0isj4d8k4w1.svg"
+              alt="google"
+            />
             <span>Continue with google</span>
           </button>
         </div>
