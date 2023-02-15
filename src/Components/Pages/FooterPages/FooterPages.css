@@ -1,5 +1,19 @@
 /* ***************************** This page contain all footer page css
 ********************************************************************** */
 
+.footerPage_basic {
+  padding: 50px 0;
+  text-align: justify;
+}
+
 /* *********** Privacy policy */
+.privacy_policy {
+  background-image: url("https://res.cloudinary.com/dnz6zg4on/image/upload/v1674732164/Frontend_images/Background_images/xhrp6nnbdgtaucbniu9i.webp");
+  width: 100%;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+}
 /* Privacy policy *********** */
