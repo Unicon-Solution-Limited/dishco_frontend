@@ -8,6 +8,7 @@ const SingleProduct = () => {
   const { viewDetails } = useParams();
   const [food, setFood] = useState([]);
   const [selectedVariant, setSelectedVariant] = useState(null);
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const fetchFood = async () => {
@@ -24,12 +25,37 @@ const SingleProduct = () => {
     fetchFood();
   }, [viewDetails]);
 
+  //matching the size
   const handleChange = (e) => {
     if (food.length) {
       setSelectedVariant(
         food[0].sizePriceItem.find((variant) => variant.size === e.target.value)
       );
     }
+  };
+
+  //quantity increase
+  const handleIncrease = () => {
+    setQuantity(quantity + 1);
+  };
+
+  //quantity decrease
+  const handleDecrease = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
+  //add to cart system
+  const addToCart = () => {
+    const item = {
+      id: food[0]._id,
+      name: food[0].name,
+      size: selectedVariant.size,
+      price: selectedVariant.price,
+      quantity,
+    };
+    console.log(item);
   };
 
   return (
@@ -42,7 +68,7 @@ const SingleProduct = () => {
               <img src={data.Image} alt="food" />
             </aside>
             <aside className="single_product_details">
-              {/* <p>{data.foodCode}</p> */}
+              <p>{data.foodCode}</p>
               <h1 className="single_product_name">{data.name}</h1>
               <p className="single_product_description">
                 {data.foodDescription}
@@ -101,33 +127,35 @@ const SingleProduct = () => {
                   <button
                     className="value-button"
                     id="decrease"
-                    // onClick={decreaseValue}
-                    // value="Decrease Value"
+                    onClick={() => handleDecrease()}
                   >
                     -
                   </button>
-                  <input type="number" id="number" value="1" />
+                  <input type="number" id="number" value={quantity} />
                   <button
                     className="value-button"
                     id="increase"
-                    // onClick={increaseValue}
-                    // value="Increase Value"
+                    onClick={() => handleIncrease()}
                   >
                     +
                   </button>
                 </span>
-                <button className="MyBtn add_to_cart_button">
+                {/* add to card button */}
+                <button
+                  onClick={() => addToCart()}
+                  className="MyBtn add_to_cart_button"
+                >
                   <i className="bi bi-cart-fill"></i> Add To Cart
                 </button>
               </div>
               <p className="my-3 categories_link my-4">
                 Categories:{" "}
                 <Link to="/" className="myLinks">
-                  Fast Food
+                  {data.categories}
                 </Link>{" "}
                 <i className="bi bi-chevron-right"></i>{" "}
                 <Link to="/" className="myLinks">
-                  Pizza
+                  {data.name}
                 </Link>
               </p>
             </aside>
