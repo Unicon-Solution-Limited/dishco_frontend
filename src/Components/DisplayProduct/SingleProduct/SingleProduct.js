@@ -7,7 +7,8 @@ import Footer from "../../Shared/Footer/Footer";
 const SingleProduct = () => {
   const { viewDetails } = useParams();
   const [food, setFood] = useState([]);
-  const [selectedVariant, setSelectedVariant] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedExtras, setSelectedExtras] = useState([]);
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
@@ -25,37 +26,59 @@ const SingleProduct = () => {
     fetchFood();
   }, [viewDetails]);
 
-  //matching the size
-  const handleChange = (e) => {
-    if (food.length) {
-      setSelectedVariant(
-        food[0].sizePriceItem.find((variant) => variant.size === e.target.value)
-      );
+  const handleChange = (event) => {
+    setSelectedSize(event.target.value);
+  };
+
+  //add to refresh off
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  //addons
+  const handleExtraChange = (event) => {
+    const extra = event.target.value;
+    if (selectedExtras.includes(extra)) {
+      setSelectedExtras(selectedExtras.filter((e) => e !== extra));
+    } else {
+      setSelectedExtras([...selectedExtras, extra]);
     }
   };
 
-  //quantity increase
+  const handleDecrease = () => {
+    setQuantity(Math.max(quantity - 1, 1));
+  };
+
   const handleIncrease = () => {
     setQuantity(quantity + 1);
   };
 
-  //quantity decrease
-  const handleDecrease = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-
-  //add to cart system
   const addToCart = () => {
+    // matching the size's-price according to selected size
+    const selectedFoodPrice = food.map(
+      (data) => data?.sizePriceItem?.find((v) => v?.size === selectedSize).price
+    );
+
     const item = {
-      id: food[0]._id,
-      name: food[0].name,
-      size: selectedVariant.size,
-      price: selectedVariant.price,
-      quantity,
+      size: selectedSize,
+      price: parseInt(selectedFoodPrice),
+      extras: selectedExtras,
+      quantity: quantity,
     };
-    console.log(item);
+
+    // duplicate item chacking then send it to the localstroage
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    const existingItemIndex = cartItems.findIndex(
+      (cartItem) => cartItem.id === item.id && cartItem.size === item.size
+    );
+
+    if (existingItemIndex === -1) {
+      cartItems.push(item);
+    }
+
+    // Store the updated cart items in local storage
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
   return (
@@ -80,74 +103,84 @@ const SingleProduct = () => {
                   </span>
                 ))}
               </p>
-              {/* //slected price accoring to the size */}
-              {selectedVariant && <h1>{selectedVariant.price} Tk</h1>}
-              <select
-                name=""
-                id="food"
-                className="single_product_select_option mt-4"
-                onChange={handleChange}
-              >
-                <option value="0">Choose Size</option>
-                {data.sizePriceItem.map((variant) => (
-                  <option key={variant.size} value={variant.size}>
-                    {variant.size}
-                  </option>
-                ))}
-              </select>
-
-              <div className="addons_checkbox my-5">
-                <h6>Extra Items</h6>
-                <div className="form-check form-check-inline">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="inlineCheckbox1"
-                    value="option1"
-                  />
-                  <label className="form-check-label" for="inlineCheckbox1">
-                    Sauce
-                  </label>
-                </div>
-                <div className="form-check form-check-inline">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="inlineCheckbox2"
-                    value="option2"
-                  />
-                  <label className="form-check-label" for="inlineCheckbox2">
-                    Chezz
-                  </label>
-                </div>
-              </div>
-
-              <div className="quantity_cart_button my-3">
-                <span className="quantity_cart_input">
-                  <button
-                    className="value-button"
-                    id="decrease"
-                    onClick={() => handleDecrease()}
-                  >
-                    -
-                  </button>
-                  <input type="number" id="number" value={quantity} />
-                  <button
-                    className="value-button"
-                    id="increase"
-                    onClick={() => handleIncrease()}
-                  >
-                    +
-                  </button>
-                </span>
-                {/* add to card button */}
-                <button
-                  onClick={() => addToCart()}
-                  className="MyBtn add_to_cart_button"
+              <form onSubmit={handleSubmit}>
+                {selectedSize && (
+                  <h1>
+                    {
+                      data.sizePriceItem.find((v) => v.size === selectedSize)
+                        .price
+                    }
+                    Tk
+                  </h1>
+                )}
+                <select
+                  name=""
+                  id="food"
+                  className="single_product_select_option mt-4"
+                  onChange={handleChange}
+                  required
                 >
-                  <i className="bi bi-cart-fill"></i> Add To Cart
-                </button>
-              </div>
+                  <option value="">Choose Size</option>
+                  {data.sizePriceItem.map((variant) => (
+                    <option key={variant.size} value={variant.size}>
+                      {variant.size}
+                    </option>
+                  ))}
+                </select>
+
+                <div className="addons_checkbox my-5">
+                  <h6>Extra Items</h6>
+                  {data?.addonsItem?.map((addons, a) => (
+                    <div key={a} className="form-check form-check-inline">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        id="inlineCheckbox1"
+                        value={addons?.addonName}
+                        onChange={handleExtraChange}
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor="inlineCheckbox1"
+                      >
+                        {addons?.addonName}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="quantity_cart_button my-3">
+                  <span className="quantity_cart_input">
+                    <button
+                      className="value-button"
+                      id="decrease"
+                      onClick={handleDecrease}
+                    >
+                      -
+                    </button>
+                    <input
+                      type="number"
+                      id="number"
+                      value={quantity}
+                      readOnly
+                    />
+                    <button
+                      className="value-button"
+                      id="increase"
+                      onClick={handleIncrease}
+                    >
+                      +
+                    </button>
+                  </span>
+                  <button
+                    onClick={addToCart}
+                    className="MyBtn add_to_cart_button"
+                    type="submit"
+                  >
+                    <i className="bi bi-cart-fill"></i> Add To Cart
+                  </button>
+                </div>
+              </form>
               <p className="my-3 categories_link my-4">
                 Categories:{" "}
                 <Link to="/" className="myLinks">
