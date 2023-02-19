@@ -71,12 +71,16 @@ const SingleProduct = () => {
       (data) => data?.sizePriceItem?.find((v) => v?.size === selectedSize).price
     );
 
+    //item object
     const item = {
       id: food[0]._id,
+      name: food[0].name,
       size: selectedSize,
       price: parseInt(selectedFoodPrice),
+      foodCode: food[0].foodCode,
       extras: selectedExtras,
       quantity: quantity,
+      stock: food[0].stock,
     };
 
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -95,6 +99,7 @@ const SingleProduct = () => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
+  //cartItem remove
   const handleClearCart = () => {
     localStorage.removeItem("cartItems");
   };

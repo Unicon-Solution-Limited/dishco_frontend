@@ -10,6 +10,7 @@ const CreateProduct = () => {
   const nameRef = useRef();
   const foodCodeRef = useRef();
   const foodDescriptionRef = useRef();
+  const stockRef = useRef();
   const categoriesRef = useRef();
   const subCategoriesRef = useRef();
   const childCategoriesRef = useRef();
@@ -80,6 +81,7 @@ const CreateProduct = () => {
       name: nameRef.current.value,
       foodCode: foodCodeRef.current.value,
       foodDescription: foodDescriptionRef.current.value,
+      stock: stockRef.current.value,
       categories: categoriesRef.current.value,
       subCategories: subCategoriesRef.current.value,
       childCategories: childCategoriesRef.current.value,
@@ -102,6 +104,7 @@ const CreateProduct = () => {
         nameRef.current.value = "";
         foodCodeRef.current.value = "";
         foodDescriptionRef.current.value = "";
+        stockRef.current.value = "";
         categoriesRef.current.value = "";
         subCategoriesRef.current.value = "";
         childCategoriesRef.current.value = "";
@@ -175,9 +178,12 @@ const CreateProduct = () => {
                   <select
                     className="form-select"
                     aria-label="Default select example"
+                    required
+                    ref={stockRef}
                   >
-                    <option value="SI">Stock In</option>
-                    <option value="SO">Stock Out</option>
+                    <option value="Choose Your Stock">Choose Stock</option>
+                    <option value="stockIn">Stock In</option>
+                    <option value="stockOut">Stock Out</option>
                   </select>
                 </div>
 
