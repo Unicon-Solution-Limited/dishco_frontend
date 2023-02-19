@@ -72,28 +72,31 @@ const SingleProduct = () => {
     );
 
     const item = {
+      id: food[0]._id,
       size: selectedSize,
       price: parseInt(selectedFoodPrice),
       extras: selectedExtras,
       quantity: quantity,
     };
 
-    console.log(item);
-
-    // duplicate item chacking then send it to the localstroage
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+    // Check if the new item already exists in the cart
     const existingItemIndex = cartItems.findIndex(
-      (cartItem) => cartItem.id === item.id && cartItem.size === item.size
+      (cartItem) => cartItem.id === item.id
     );
 
-    //pushing data of non-matched
-    if (existingItemIndex === -1) {
+    if (existingItemIndex !== -1) {
+    } else {
+      // Add the new item to the cart
       cartItems.push(item);
     }
 
-    // Store the updated cart items in local storage
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  };
+
+  const handleClearCart = () => {
+    localStorage.removeItem("cartItems");
   };
 
   return (
@@ -198,6 +201,12 @@ const SingleProduct = () => {
                     <i className="bi bi-cart-fill"></i> Add To Cart
                   </button>
                 </div>
+                <button
+                  className="MyBtn add_to_cart_button"
+                  onClick={() => handleClearCart()}
+                >
+                  <i className="bi bi-trash3"></i> Clear Cart
+                </button>
               </form>
               <p className="my-3 categories_link my-4">
                 Categories:{" "}
