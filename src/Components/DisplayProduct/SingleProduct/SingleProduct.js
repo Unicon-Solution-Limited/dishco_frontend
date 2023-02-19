@@ -99,15 +99,12 @@ const SingleProduct = () => {
       cartItems.push(item);
     }
 
-    //set cart data into the
+    //set cart data into the context api and localstroage also
     setCartData(item);
   };
 
   //cartItem remove
   const handleClearCart = () => {
-    // Clear the cart items from localStorage
-    localStorage.setItem("cartItems", JSON.stringify([]));
-
     // Clear the cart data in the CartProvider
     setCartData([]);
   };
