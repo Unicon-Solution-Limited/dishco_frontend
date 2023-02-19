@@ -12,6 +12,7 @@ const SingleProduct = () => {
   const [selectedExtras, setSelectedExtras] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [cartData, setCartData] = useContext(CartProvider);
+  const [successMsg, setSuccessMsg] = useState(false);
 
   useEffect(() => {
     const fetchFood = async () => {
@@ -97,6 +98,10 @@ const SingleProduct = () => {
     } else {
       // Add the new item to the cart
       cartItems.push(item);
+      setSuccessMsg(true);
+      setTimeout(() => {
+        setSuccessMsg(false);
+      }, 10000);
     }
 
     //set cart data into the context api and localstroage also
@@ -105,13 +110,13 @@ const SingleProduct = () => {
 
   //cartItem remove
   const handleClearCart = () => {
-    // Clear the cart data in the CartProvider
     setCartData([]);
   };
 
   return (
     <>
       <Header />
+      {successMsg && <h1>Food Successfully added to your cart</h1>}
       <section className="container singleProduct_main">
         {food.map((data) => (
           <div key={data._id} className="single_product_body">
