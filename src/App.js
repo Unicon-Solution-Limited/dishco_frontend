@@ -20,7 +20,7 @@ import MenuCard from "./Components/Pages/FooterPages/MenuCard";
 import PrivacyPolicy from "./Components/Pages/FooterPages/PrivacyPolicy";
 import Returnpolicy from "./Components/Pages/FooterPages/Returnpolicy";
 import Shop from "./Components/Pages/FooterPages/Shop";
-import T_and_C from "./Components/Pages/FooterPages/T_and_C";
+import TandC from "./Components/Pages/FooterPages/TandC";
 
 function App() {
   return (
@@ -88,7 +88,7 @@ function App() {
             <Shop />
           </Route>
           <Route path="/t_and_c">
-            <T_and_C />
+            <TandC />
           </Route>
           {/* Not Found Page */}
           <Route path="*">
