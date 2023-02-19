@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./SingleProduct.css";
 import { Link, useParams } from "react-router-dom";
 import Header from "./../../Shared/Header/Header";
 import Footer from "../../Shared/Footer/Footer";
+import { CartProvider } from "../../AllContext/CartContext";
 
 const SingleProduct = () => {
   const { viewDetails } = useParams();
@@ -10,6 +11,7 @@ const SingleProduct = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedExtras, setSelectedExtras] = useState([]);
   const [quantity, setQuantity] = useState(1);
+  const [cartData, setCartData] = useContext(CartProvider);
 
   useEffect(() => {
     const fetchFood = async () => {
@@ -83,6 +85,7 @@ const SingleProduct = () => {
       stock: food[0].stock,
     };
 
+    //getting the cart item for matching
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
     // Check if the new item already exists in the cart
@@ -96,12 +99,17 @@ const SingleProduct = () => {
       cartItems.push(item);
     }
 
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    //set cart data into the
+    setCartData(item);
   };
 
   //cartItem remove
   const handleClearCart = () => {
-    localStorage.removeItem("cartItems");
+    // Clear the cart items from localStorage
+    localStorage.setItem("cartItems", JSON.stringify([]));
+
+    // Clear the cart data in the CartProvider
+    setCartData([]);
   };
 
   return (
