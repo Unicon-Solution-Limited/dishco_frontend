@@ -15,132 +15,73 @@ const MenuCard = () => {
   const m5 =
     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721659/Frontend_images/menus/nb4zrmf7reup1wpyja1n.webp";
   const m6 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/apflz6oqupbus9y66jpa.webp";
   const m7 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/qf31lshwbfi5lcdagbar.webp";
   const m8 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721662/Frontend_images/menus/t20afzpsahmuvtkbm6ym.webp";
   const m9 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/qldjadyjmyrusfvycwrj.webp";
   const m10 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/ns94itznlefe7c9o7v49.webp";
   const m11 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721661/Frontend_images/menus/vkessceox9luogbnz0ie.webp";
   const m12 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721661/Frontend_images/menus/k02rbbxpyop1b400djkm.webp";
   const m13 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721662/Frontend_images/menus/p0dk9hkek4dtto0nnt5o.webp";
   const m14 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721661/Frontend_images/menus/ztn92yq8nvyqcvfvtzy8.webp";
   const m15 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721661/Frontend_images/menus/rfkg7urmeox24eljoszo.webp";
   const m16 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721662/Frontend_images/menus/h8wdhluskcasmwc2gklg.webp";
   const m17 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721662/Frontend_images/menus/xmphagqtrmz4hvtzy7te.webp";
   const m18 =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721660/Frontend_images/menus/gw8zpwqmzb2odme6hmtp.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1676721659/Frontend_images/menus/zhgps9f8nvlost916t2i.webp";
   return (
     <>
       <Header />
-      <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src={m1} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m2} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m3} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m4} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m5} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m6} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m7} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m8} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m9} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m10} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m11} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m12} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m13} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m14} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m15} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m16} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m17} class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src={m18} class="d-block w-100" alt="..." />
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+      <img src={m1} class="d-block w-100" alt="MenuCard-Design-Front-Page" />
+      <img src={m2} class="d-block w-100" alt="MenuCard-Design-Appetizer" />
+      <img
+        src={m3}
+        class="d-block w-100"
+        alt="MenuCard-Design-Appetizer-Meatbox-Working"
+      />
+      <img
+        src={m4}
+        class="d-block w-100"
+        alt="MenuCard-Design-Pizza-Burger-Sandwich"
+      />
+      <img
+        src={m5}
+        class="d-block w-100"
+        alt="MenuCard-Design-Soup-Pasta-Chicken-Fry-Working"
+      />
+      <img
+        src={m6}
+        class="d-block w-100"
+        alt="MenuCard-Design-DishCo-Platter"
+      />
+      <img
+        src={m7}
+        class="d-block w-100"
+        alt="MenuCard-Design-Platter-Steak-Cuisine"
+      />
+      <img src={m8} class="d-block w-100" alt="MenuCard-Design-Ramen-Special" />
+      <img src={m9} class="d-block w-100" alt="Korean-Cuisine" />
+      <img src={m10} class="d-block w-100" alt="Japanese-Cuisine" />
+      <img src={m11} class="d-block w-100" alt="Japanese-Cuisine" />
+      <img src={m12} class="d-block w-100" alt="Chinese-Cuisine" />
+      <img src={m13} class="d-block w-100" alt="Indian-Cuisine" />
+      <img src={m14} class="d-block w-100" alt="Indian-Cuisine-Rice-Cuisine" />
+      <img src={m15} class="d-block w-100" alt="Dessert-Peyala-Tea" />
+      <img src={m16} class="d-block w-100" alt="DishCo-Drinks" />
+      <img src={m17} class="d-block w-100" alt="DishCo-Drinks" />
+      <img src={m18} class="d-block w-100" alt="MenuCard-Design-Back Side" />
+
       <Footer />
     </>
   );
