@@ -78,6 +78,7 @@ const SingleProduct = () => {
     //item object
     const item = {
       id: food[0]._id,
+      image: food[0].image,
       name: food[0].name,
       size: selectedSize,
       price: parseInt(selectedFoodPrice),

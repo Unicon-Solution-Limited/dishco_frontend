@@ -76,7 +76,7 @@ const CreateProduct = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const allData = {
-      Image: photo,
+      image: photo,
       name: nameRef.current.value,
       foodCode: foodCodeRef.current.value,
       foodDescription: foodDescriptionRef.current.value,

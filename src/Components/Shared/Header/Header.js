@@ -310,7 +310,6 @@ const Header = () => {
               <button className="btn" type="submit">
                 <i className="bi bi-cart-fill cartLogo"></i>
                 <span className="badge badge-warning" id="CartCount">
-                  {" "}
                   {cartData.length}
                 </span>
               </button>
