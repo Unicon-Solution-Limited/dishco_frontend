@@ -43,12 +43,16 @@ const HeaderOffcanvas = () => {
         <div className="offcanvas_cart_footer">
           <h4>Subtotal: 1030 Tk.</h4>
           <span className="offcanvas_cart_buttons">
-            <Link to="/" className="MyBtn offcanvas_cart_button">
-              View Cart
-            </Link>
-            <Link to="/" className="MyBtn offcanvas_cart_button">
-              Checkout
-            </Link>
+            <button className="btn" data-bs-dismiss="offcanvas">
+              <Link to="/cart" className="MyBtn offcanvas_cart_button">
+                View Cart
+              </Link>
+            </button>
+            <button className="btn" data-bs-dismiss="offcanvas">
+              <Link to="/checkout" className="MyBtn offcanvas_cart_button">
+                Checkout
+              </Link>
+            </button>
           </span>
         </div>
       </div>
