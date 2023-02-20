@@ -96,7 +96,7 @@ const SingleProduct = () => {
     );
 
     if (existingItemIndex !== -1) {
-      // if the item already exists, update the quantity instead of adding a new item
+      // if the item already exists, update the quantity instead of adding a new item when press the add button
       // cartItems[existingItemIndex].quantity += 1;
     } else {
       // if the item is new, add it to the cartItems array
