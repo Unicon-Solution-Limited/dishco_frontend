@@ -97,14 +97,11 @@ const SingleProduct = () => {
 
     if (existingItemIndex !== -1) {
       // if the item already exists, update the quantity instead of adding a new item when press the add button
-      // cartItems[existingItemIndex].quantity += 1;
+      cart[existingItemIndex].quantity = quantity;
     } else {
       // if the item is new, add it to the cartItems array
       cart.push(item);
     }
-
-    // set the updated cart items array in local storage
-    localStorage.setItem("cartItems", JSON.stringify(cart));
 
     // update the cart data in the context
     setCartData(cart);
