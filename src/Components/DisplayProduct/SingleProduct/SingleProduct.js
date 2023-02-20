@@ -88,10 +88,10 @@ const SingleProduct = () => {
     };
 
     // get existing cart items from local storage
-    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
 
     // find the existing item index if the item already exists in the cart
-    const existingItemIndex = cartItems.findIndex(
+    const existingItemIndex = cart.findIndex(
       (cartItem) => cartItem.id === item.id
     );
 
@@ -100,14 +100,14 @@ const SingleProduct = () => {
       // cartItems[existingItemIndex].quantity += 1;
     } else {
       // if the item is new, add it to the cartItems array
-      cartItems.push(item);
+      cart.push(item);
     }
 
     // set the updated cart items array in local storage
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    localStorage.setItem("cartItems", JSON.stringify(cart));
 
     // update the cart data in the context
-    setCartData(cartItems);
+    setCartData(cart);
   };
 
   //cartItem remove
