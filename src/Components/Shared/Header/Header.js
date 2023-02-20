@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartProvider } from "../../AllContext/CartContext";
 import "./Header.css";
 import HeaderOffcanvas from "./HeaderOffcanvas";
 
 const Header = () => {
+  const [cartData, setCartData] = useContext(CartProvider);
   return (
     <>
       {/* TOP Header */}
@@ -309,7 +311,7 @@ const Header = () => {
                 <i className="bi bi-cart-fill cartLogo"></i>
                 <span className="badge badge-warning" id="CartCount">
                   {" "}
-                  7{" "}
+                  {cartData.length}
                 </span>
               </button>
             </div>

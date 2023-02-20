@@ -88,7 +88,7 @@ const SingleProduct = () => {
     };
 
     // get existing cart items from local storage
-    let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     // find the existing item index if the item already exists in the cart
     const existingItemIndex = cart.findIndex(
@@ -98,6 +98,9 @@ const SingleProduct = () => {
     if (existingItemIndex !== -1) {
       // if the item already exists, update the quantity instead of adding a new item when press the add button
       cart[existingItemIndex].quantity = quantity;
+      cart[existingItemIndex].extras = selectedExtras;
+      cart[existingItemIndex].size = selectedSize;
+      cart[existingItemIndex].price = parseInt(selectedFoodPrice);
     } else {
       // if the item is new, add it to the cartItems array
       cart.push(item);
