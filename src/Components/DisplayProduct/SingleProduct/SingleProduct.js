@@ -67,11 +67,12 @@ const SingleProduct = () => {
     setQuantity(quantity + 1);
   };
 
-  //addToCart Function
+  //hande add to cart system
   const addToCart = () => {
     // matching the size's-price according to selected size
     const selectedFoodPrice = food.map(
-      (data) => data?.sizePriceItem?.find((v) => v?.size === selectedSize).price
+      (data) =>
+        data?.sizePriceItem?.find((v) => v?.size === selectedSize)?.price || 0
     );
 
     //item object
@@ -82,30 +83,31 @@ const SingleProduct = () => {
       price: parseInt(selectedFoodPrice),
       foodCode: food[0].foodCode,
       extras: selectedExtras,
-      quantity: quantity,
       stock: food[0].stock,
+      quantity: quantity,
     };
 
-    //getting the cart item for matching
+    // get existing cart items from local storage
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-    // Check if the new item already exists in the cart
+    // find the existing item index if the item already exists in the cart
     const existingItemIndex = cartItems.findIndex(
       (cartItem) => cartItem.id === item.id
     );
 
     if (existingItemIndex !== -1) {
+      // if the item already exists, update the quantity instead of adding a new item
+      // cartItems[existingItemIndex].quantity += 1;
     } else {
-      // Add the new item to the cart
+      // if the item is new, add it to the cartItems array
       cartItems.push(item);
-      setSuccessMsg(true);
-      setTimeout(() => {
-        setSuccessMsg(false);
-      }, 10000);
     }
 
-    //set cart data into the context api and localstroage also
-    setCartData(item);
+    // set the updated cart items array in local storage
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+    // update the cart data in the context
+    setCartData(cartItems);
   };
 
   //cartItem remove
