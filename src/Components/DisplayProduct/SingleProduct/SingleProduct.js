@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SingleProduct.css";
 import { Link, useParams } from "react-router-dom";
 import Header from "./../../Shared/Header/Header";
 import Footer from "../../Shared/Footer/Footer";
-import { CartProvider } from "../../AllContext/CartContext";
 
 const SingleProduct = () => {
   const { viewDetails } = useParams();
@@ -11,8 +10,6 @@ const SingleProduct = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedExtras, setSelectedExtras] = useState([]);
   const [quantity, setQuantity] = useState(1);
-  const [cartData, setCartData] = useContext(CartProvider);
-  const [successMsg, setSuccessMsg] = useState(false);
 
   useEffect(() => {
     const fetchFood = async () => {
@@ -67,58 +64,44 @@ const SingleProduct = () => {
     setQuantity(quantity + 1);
   };
 
-  //hande add to cart system
+  //addToCart Function
   const addToCart = () => {
     // matching the size's-price according to selected size
     const selectedFoodPrice = food.map(
-      (data) =>
-        data?.sizePriceItem?.find((v) => v?.size === selectedSize)?.price || 0
+      (data) => data?.sizePriceItem?.find((v) => v?.size === selectedSize).price
     );
 
-    //item object
     const item = {
       id: food[0]._id,
-      name: food[0].name,
       size: selectedSize,
       price: parseInt(selectedFoodPrice),
-      foodCode: food[0].foodCode,
       extras: selectedExtras,
-      stock: food[0].stock,
       quantity: quantity,
     };
 
-    // get existing cart items from local storage
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-    // find the existing item index if the item already exists in the cart
+    // Check if the new item already exists in the cart
     const existingItemIndex = cartItems.findIndex(
       (cartItem) => cartItem.id === item.id
     );
 
     if (existingItemIndex !== -1) {
-      // if the item already exists, update the quantity instead of adding a new item when press the add button
-      // cartItems[existingItemIndex].quantity += 1;
     } else {
-      // if the item is new, add it to the cartItems array
+      // Add the new item to the cart
       cartItems.push(item);
     }
 
-    // set the updated cart items array in local storage
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
-
-    // update the cart data in the context
-    setCartData(cartItems);
   };
 
-  //cartItem remove
   const handleClearCart = () => {
-    setCartData([]);
+    localStorage.removeItem("cartItems");
   };
 
   return (
     <>
       <Header />
-      {successMsg && <h1>Food Successfully added to your cart</h1>}
       <section className="container singleProduct_main">
         {food.map((data) => (
           <div key={data._id} className="single_product_body">
