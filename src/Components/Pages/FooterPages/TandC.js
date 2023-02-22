@@ -35,6 +35,19 @@ const TandC = () => {
             Please note that additional fees or charges may apply depending on
             your chosen payment method.
           </p>
+          <div className="mt-5">
+            <h5>ACCESS TO THE WEBSITE CONTINUOUSLY:</h5>
+            <p>
+              We will take all reasonable steps to ensure that access to the
+              Site is always available and error-free. However, this cannot be
+              guaranteed due to the nature of the Internet and the Site's
+              structure. Therefore, your access to the Site may be temporarily
+              suspended or restricted without notice to allow for repairs,
+              maintenance, or the addition of new features or services. We'll
+              attempt to minimize any suspensions or restrictions to a bare
+              minimum in frequency and duration.
+            </p>
+          </div>
         </div>
       </section>
 
