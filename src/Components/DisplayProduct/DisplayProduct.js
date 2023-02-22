@@ -87,7 +87,7 @@ const DisplayProduct = () => {
             {food.map((data, index) => (
               <div key={index}>
                 <div className="product_card_body">
-                  <img src={data.Image} alt="" className="product_img" />
+                  <img src={data.image} alt="" className="product_img" />
 
                   <h5 className="product_name">{data.name}</h5>
                   <p

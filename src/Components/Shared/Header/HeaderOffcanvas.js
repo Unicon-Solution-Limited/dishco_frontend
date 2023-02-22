@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartProvider } from "../../AllContext/CartContext";
 
 const HeaderOffcanvas = () => {
+  const [cartData, setCartData] = useContext(CartProvider);
+  console.log(cartData);
   const testImg =
     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp";
   return (

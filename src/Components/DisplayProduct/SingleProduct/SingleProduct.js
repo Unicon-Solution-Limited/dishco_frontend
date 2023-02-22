@@ -124,7 +124,7 @@ const SingleProduct = () => {
         {food.map((data) => (
           <div key={data._id} className="single_product_body">
             <aside className="single_product_img">
-              <img src={data.Image} alt="food" />
+              <img src={data?.image} alt="food" />
             </aside>
             <aside className="single_product_details">
               <p>{data.foodCode}</p>
