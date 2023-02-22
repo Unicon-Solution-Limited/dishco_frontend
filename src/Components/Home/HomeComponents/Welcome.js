@@ -13,13 +13,16 @@ const Welcome = () => {
             <img src={img1} alt="Dumpling" className="welcome_img" />
           </div>
           <aside className="col-md-4 welcome_text">
-            <h4>Country's Most Loved!</h4> <h2>Welcome</h2>{" "}
-            <h5>We Are Locally Served Food & beverage Serving Since 2021. </h5>
+            <h4>Flavors of life!</h4> <h2>Welcome</h2>{" "}
+            <h5>
+              We are the finest multi-cuisine restaurant close to your home.{" "}
+            </h5>
             <p>
-              We served Rice Bowl, Pizza & Burger & Sandwich, Soup, Pasta, Fry
-              Basket, Steak Cuisine, Ramen Special, Korean Cuisine, Japanese
-              Cuisine, Chinese Cuisine, Indian Cuisine, Rice Cuisine, Dessert,
-              Peyala Tea, and difference kinds of beverage.
+              What do we provide? Our magic of the kitchen provides
+              mouthwatering multi-cuisine foods from Korean, Japanese, Chinese,
+              Indian, Italian, Mexican, American to local favorite foods are
+              always experimenting innovating & adding new fusty food on our
+              food craft.
             </p>
           </aside>
           <div className="col-md-4">
