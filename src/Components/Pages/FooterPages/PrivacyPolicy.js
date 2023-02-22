@@ -83,7 +83,7 @@ const PrivacyPolicy = () => {
             Our website is not intended for children under the age of 13, and we
             do not knowingly collect personal information from children. If you
             are a parent or guardian and believe we have collected personal
-            information from a child under the
+            information from a child under the children law.
           </p>{" "}
         </div>
       </section>
