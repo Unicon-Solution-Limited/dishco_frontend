@@ -78,7 +78,7 @@ const Footer = () => {
                   <Link to="/about-us">About Us</Link>
                 </li>
                 <li>
-                  <Link to="/t_and_c">Terms & Conditions</Link>
+                  <Link to="/tc">Terms & Conditions</Link>
                 </li>
               </ul>
             </aside>
