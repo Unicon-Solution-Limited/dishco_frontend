@@ -115,6 +115,9 @@ const SingleProduct = () => {
   const handleClearCart = (id) => {
     let newData = cartData.filter((item) => item.id !== id);
     setCartData(newData);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   };
 
   return (
