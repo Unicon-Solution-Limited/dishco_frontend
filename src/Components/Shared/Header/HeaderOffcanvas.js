@@ -3,20 +3,9 @@ import { Link } from "react-router-dom";
 import { CartProvider } from "../../AllContext/CartContext";
 
 const HeaderOffcanvas = () => {
-  const [cartData, setCartData] = useContext(CartProvider);
-
-  //Calculate the total Addons price of all items in the cart
-  const finaltotalAddonPrice = cartData?.reduce((accumulator, cartDt) => {
-    const addonsPrice = cartDt?.extras?.reduce((accumulator, addon) => {
-      return accumulator + addon.priceOfAddon;
-    }, 0);
-    return accumulator + addonsPrice;
-  }, 0);
-
-  // Calculate the total price of all items in the cart
-  const subTotalPrice = cartData.reduce((total, item) => {
-    return total + item.price * item.quantity;
-  }, 0);
+  //all context
+  const [cartData, setCartData, finaltotalAddonPrice, subTotalPrice] =
+    useContext(CartProvider);
 
   // Delete items from cart
   const deleteItem = (id) => {
@@ -45,7 +34,7 @@ const HeaderOffcanvas = () => {
       </div>
       <div className="offcanvas-body">
         {cartData.map((cartDt) => (
-          <div className="offcanvas_card_single_item" key={cartDt?._id}>
+          <div key={cartDt?.id} className="offcanvas_card_single_item">
             <img src={cartDt?.image} alt="" className="offcanvas_cart_img" />
             <span>
               <p className="offcanvas_cart_product_name">{cartDt?.name}</p>

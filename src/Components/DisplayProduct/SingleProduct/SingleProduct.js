@@ -112,8 +112,9 @@ const SingleProduct = () => {
   };
 
   //cartItem remove
-  const handleClearCart = () => {
-    setCartData([]);
+  const handleClearCart = (id) => {
+    let newData = cartData.filter((item) => item.id !== id);
+    setCartData(newData);
   };
 
   return (
@@ -221,7 +222,7 @@ const SingleProduct = () => {
                 </div>
                 <button
                   className="MyBtn add_to_cart_button"
-                  onClick={() => handleClearCart()}
+                  onClick={() => handleClearCart(data?._id)}
                 >
                   <i className="bi bi-trash3"></i> Clear Cart
                 </button>
