@@ -9,7 +9,6 @@ const HeaderOffcanvas = () => {
 
   // Delete items from cart
   const deleteItem = (id) => {
-    console.log(id);
     let newData = cartData.filter((item) => item.id !== id);
     setCartData(newData);
   };
