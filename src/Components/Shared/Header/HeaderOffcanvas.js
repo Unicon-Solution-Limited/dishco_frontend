@@ -5,21 +5,7 @@ import { CartProvider } from "../../AllContext/CartContext";
 const HeaderOffcanvas = () => {
   const [cartData, setCartData] = useContext(CartProvider);
 
-  console.log(cartData, "cartData");
-  console.log(cartData?.extras);
-
-  //total addonPrice
-  // const totalAddonPrice = cartData.map((cartDt) =>
-  //   cartDt?.extras.reduce((accumulator, addon) => {
-  //     return accumulator + addon.priceOfAddon;
-  //   }, 0)
-  // );
-  // const FinaltotalAddonPrice = totalAddonPrice.reduce(
-  //   (accumulator, currentValue) => {
-  //     return accumulator + currentValue;
-  //   },
-  //   0
-  // );
+  //Calculate the total Addons price of all items in the cart
   const finaltotalAddonPrice = cartData?.reduce((accumulator, cartDt) => {
     const addonsPrice = cartDt?.extras?.reduce((accumulator, addon) => {
       return accumulator + addon.priceOfAddon;
@@ -27,16 +13,10 @@ const HeaderOffcanvas = () => {
     return accumulator + addonsPrice;
   }, 0);
 
-  console.log(finaltotalAddonPrice, "price");
-
   // Calculate the total price of all items in the cart
-  // const totalPrice = cartData.reduce(
-  //   (acc, item) => acc + item.quantity * item.price,
-  //   0
-  // );
-
-  // Add the total addon price to the subtotal
-  // const subtotal = totalPrice + totalAddonPrice;
+  const subTotalPrice = cartData.reduce((total, item) => {
+    return total + item.price * item.quantity;
+  }, 0);
 
   // Delete items from cart
   const deleteItem = (id) => {
@@ -79,7 +59,14 @@ const HeaderOffcanvas = () => {
                   )}
                   tk.
                 </span>
-                <span>= 0</span>
+                <span>
+                  =
+                  {cartDt?.quantity * cartDt?.price +
+                    cartDt?.extras.reduce(
+                      (acc, addon) => acc + addon.priceOfAddon,
+                      0
+                    )}
+                </span>
               </p>
             </span>
             <span className="offcanvas_cancellation">
@@ -90,7 +77,7 @@ const HeaderOffcanvas = () => {
           </div>
         ))}
         <div className="offcanvas_cart_footer">
-          {/* <h4>Subtotal: {subtotal} Tk.</h4> */}
+          <h4>Subtotal: {subTotalPrice + finaltotalAddonPrice} Tk.</h4>
           <span className="offcanvas_cart_buttons">
             <button className="btn" data-bs-dismiss="offcanvas">
               <Link to="/cart" className="MyBtn offcanvas_cart_button">
