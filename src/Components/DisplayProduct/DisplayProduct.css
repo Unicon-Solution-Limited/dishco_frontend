@@ -37,7 +37,8 @@
   background-color: var(--black);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  max-width: 25%;
+  /* gap: 10px; */
   color: var(--white);
   min-width: 270px;
   min-height: 400px;
@@ -61,7 +62,13 @@
 
 @media only screen and (max-width: 768px) {
   .product_card_row {
-    flex-direction: column;
-    gap: 20px;
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+  .product_card_body {
+    min-width: 90vw;
+  }
+  .product_img {
+    min-width: 100%;
   }
 }
