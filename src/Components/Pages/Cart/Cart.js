@@ -8,21 +8,36 @@ const Cart = () => {
   //all context
   const [cartData, setCartData, finaltotalAddonPrice, subTotalPrice] =
     useContext(CartProvider);
-  const [quantity, setQuantity] = useState(0);
-  console.log(quantity);
+  // const [quantity, setQuantity] = useState(0);
 
   //handleDecrese
-  const handleDecrease = (selectedId) => {
-    let newQuantity;
-    cartData.map((cartDataId) => {
-      if (selectedId === cartDataId.id) {
-      }
-    });
+  const handleDecrease = (item) => {
+    const itemToUpdate = cartData.find(
+      (cartDataItem) => cartDataItem.id === item.id
+    );
+
+    if (itemToUpdate && itemToUpdate.quantity > 1) {
+      const updatedCartData = [...cartData];
+      const itemIndex = updatedCartData.indexOf(itemToUpdate);
+      updatedCartData[itemIndex] = {
+        ...itemToUpdate,
+        quantity: itemToUpdate.quantity - 1,
+      };
+      setCartData(updatedCartData);
+    }
   };
 
   //handleIncrease
-  const handleIncrease = (selectedId) => {
-    // setQuantity(setQuantity(quantity + 1));
+  const handleIncrease = (item) => {
+    const itemToUpdateIndex = cartData.findIndex(
+      (cartDataItem) => cartDataItem.id === item.id
+    );
+
+    if (itemToUpdateIndex !== -1) {
+      const updatedCartData = [...cartData];
+      updatedCartData[itemToUpdateIndex].quantity += 1;
+      setCartData(updatedCartData);
+    }
   };
 
   return (
@@ -86,20 +101,20 @@ const Cart = () => {
                         <button
                           className="value-button"
                           id="decrease"
-                          onClick={() => handleDecrease(cartDt?.id)}
+                          onClick={() => handleDecrease(cartDt)}
                         >
                           -
                         </button>
                         <input
                           type="number"
                           id="number"
-                          value={cartDt.quantity + quantity}
+                          value={cartDt.quantity}
                           readOnly
                         />
                         <button
                           className="value-button"
                           id="increase"
-                          onClick={() => handleIncrease(cartDt?.id)}
+                          onClick={() => handleIncrease(cartDt)}
                         >
                           +
                         </button>
