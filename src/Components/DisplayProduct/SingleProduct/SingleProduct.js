@@ -89,7 +89,7 @@ const SingleProduct = () => {
     };
 
     // get existing cart items from local storage
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cart = JSON.parse(localStorage.getItem("foodCart")) || [];
 
     // find the existing item index if the item already exists in the cart
     const existingItemIndex = cart.findIndex(
@@ -127,7 +127,6 @@ const SingleProduct = () => {
   return (
     <>
       <Header />
-
       <section className="container singleProduct_main">
         {food.map((data) => (
           <div key={data._id} className="single_product_body">
