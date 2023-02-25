@@ -219,9 +219,10 @@ const SingleProduct = () => {
                     </button>
                   </span>
                   <button
-                    onClick={addToCart}
+                    // onClick={addToCart}
                     className="MyBtn add_to_cart_button"
                     type="submit"
+                    onClick={selectedSize ? addToCart : null}
                   >
                     <i className="bi bi-cart-fill"></i> Add To Cart
                   </button>
