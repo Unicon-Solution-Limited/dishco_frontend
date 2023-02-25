@@ -1,0 +1,14 @@
+.status {
+  padding: 3px;
+  border-radius: 5px;
+}
+.pending {
+  background-color: var(--yellow) !important;
+}
+.processing {
+  background-color: var(--red);
+  color: var(--white);
+}
+.shipped {
+  background-color: var(--green) !important;
+}
