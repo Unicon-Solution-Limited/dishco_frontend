@@ -49,6 +49,15 @@ const Cart = () => {
   return (
     <>
       <Header />
+      {cartData.length === 0 && (
+        <div
+          className="alert alert-danger"
+          role="alert"
+          style={{ width: "100%", textAlign: "center" }}
+        >
+          <h1>Cart is Empty...!!</h1>
+        </div>
+      )}
       <section className="container-fluid cart_page_main my-5">
         <aside className="cart_page_top">
           <h4>Cart Item's</h4>
@@ -135,9 +144,6 @@ const Cart = () => {
                 ))}
               </tbody>
             </table>
-            <div className="d-flex justify-content-end update_cart_button_section">
-              <button className="btn MyBtn">Update Cart</button>
-            </div>
           </div>
         </aside>
         <div className="cart_page_bottom_main">
