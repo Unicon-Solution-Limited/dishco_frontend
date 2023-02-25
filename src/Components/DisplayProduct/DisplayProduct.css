@@ -28,9 +28,9 @@
   text-align: center;
 }
 .product_name {
-  color: var(--red);
+  color: var(--white);
   margin-top: 10px;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .product_card_body {
