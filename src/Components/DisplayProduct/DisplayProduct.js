@@ -88,7 +88,7 @@ const DisplayProduct = () => {
               <div key={index}>
                 <div className="product_card_body">
                   <img src={data.image} alt="" className="product_img" />
-                  <h5 className="product_name">{data.name}</h5>
+                  <h6 className="product_name">{data.name.slice(0, 30)}</h6>
                   <p className="product_price">
                     {data.sizePriceItem.map((sizePrice, index2) => (
                       <span key={index2}>
