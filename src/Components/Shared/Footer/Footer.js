@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
@@ -6,11 +6,11 @@ const Footer = () => {
   return (
     <footer>
       <section className="container footer_top">
-        <aside className="company_name">
+        <aside className="company_name" data-aos="flip-down">
           <h1>DishCo</h1>
           <h5>Dancing Deliciousness.</h5>
         </aside>
-        <aside>
+        <aside data-aos="flip-up">
           <div className="icons company_social_icon" data-animation="to-top">
             <li>
               <a href="#0" target="_blank">

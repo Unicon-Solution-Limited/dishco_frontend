@@ -16,14 +16,9 @@ const MenuSection = () => {
     <>
       <section className="menuSection">
         <div className="container menu_content">
-          <img src={iconTop} alt="" className="my-3" />
+          <img src={iconTop} alt="" className="mb-3" />
           <h2 className="my-3">Our Menu</h2>
           <h5 className="my-4">Quality Ingredients, Tasty Meals</h5>
-          <p className="my-3">
-            Congue, gravida. Placeat nibh sunt semper elementum anim! Integer
-            lectus debitis auctor. Molestias vivamus eligendi ut, cupidatat nisl
-            iaculis etiam! Laboris aenean.
-          </p>
           <div className="my-5">
             <Link to="/" className="menu_link">
               Entire Menu <i className="bi bi-arrow-right-short"></i>

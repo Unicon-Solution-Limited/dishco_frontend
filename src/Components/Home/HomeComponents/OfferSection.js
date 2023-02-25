@@ -36,29 +36,29 @@ const OfferSection = () => {
       <p>Only for Dine In</p>
       <div>
         <div className="offer_img_divs">
-          <span data-bs-toggle="modal" data-bs-target="#sat">
+          <span data-bs-toggle="modal" data-bs-target="#sat" data-aos="zoom-in">
             <img src={satM} alt="" className="offer_img_m" />
           </span>
-          <span data-bs-toggle="modal" data-bs-target="#sun">
+          <span data-bs-toggle="modal" data-bs-target="#sun" data-aos="zoom-in">
             <img src={sunM} alt="" className="offer_img_m" />
           </span>
         </div>
         <div className="offer_img_divs">
-          <span data-bs-toggle="modal" data-bs-target="#mon">
+          <span data-bs-toggle="modal" data-bs-target="#mon" data-aos="zoom-in">
             <img src={monM} alt="" className="offer_img_m" />
           </span>
-          <span data-bs-toggle="modal" data-bs-target="#tue">
+          <span data-bs-toggle="modal" data-bs-target="#tue" data-aos="zoom-in">
             <img src={tueM} alt="" className="offer_img_m" />
           </span>
-          <span data-bs-toggle="modal" data-bs-target="#wed">
+          <span data-bs-toggle="modal" data-bs-target="#wed" data-aos="zoom-in">
             <img src={wedM} alt="" className="offer_img_m" />
           </span>
         </div>
         <div className="offer_img_divs">
-          <span data-bs-toggle="modal" data-bs-target="#thu">
+          <span data-bs-toggle="modal" data-bs-target="#thu" data-aos="zoom-in">
             <img src={thuM} alt="" className="offer_img_m" />
           </span>
-          <span data-bs-toggle="modal" data-bs-target="#fri">
+          <span data-bs-toggle="modal" data-bs-target="#fri" data-aos="zoom-in">
             <img src={friM} alt="" className="offer_img_m" />
           </span>
         </div>
