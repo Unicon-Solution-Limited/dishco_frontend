@@ -48,7 +48,7 @@ const AllOrders = () => {
           </div>
 
           <div
-            class="modal fade"
+            class="modal fade modal-lg"
             id="singleOrderProduct"
             tabindex="-1"
             aria-labelledby="exampleModalLabel"
@@ -58,7 +58,7 @@ const AllOrders = () => {
               <div class="modal-content">
                 <div class="modal-header">
                   <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Order Id: dsk-223025
+                    Order Date & Time: 20-06-2023 12.30 PM
                   </h1>
                   <button
                     type="button"
@@ -67,7 +67,13 @@ const AllOrders = () => {
                     aria-label="Close"
                   ></button>
                 </div>
-                <div class="modal-body">...</div>
+                <div class="modal-body">
+                  <img
+                    src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp"
+                    alt=""
+                    className="single_product_modal_image"
+                  />
+                </div>
                 <div class="modal-footer">
                   <button
                     type="button"
