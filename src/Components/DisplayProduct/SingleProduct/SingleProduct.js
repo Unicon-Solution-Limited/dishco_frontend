@@ -201,7 +201,7 @@ const SingleProduct = () => {
                     <button
                       className="value-button"
                       id="decrease"
-                      onClick={handleDecrease}
+                      onClick={() => handleDecrease()}
                     >
                       -
                     </button>
@@ -214,7 +214,7 @@ const SingleProduct = () => {
                     <button
                       className="value-button"
                       id="increase"
-                      onClick={handleIncrease}
+                      onClick={() => handleIncrease()}
                     >
                       +
                     </button>
@@ -246,7 +246,7 @@ const SingleProduct = () => {
                 </Link>{" "}
                 <i className="bi bi-chevron-right"></i>{" "}
                 <Link to="/" className="myLinks">
-                  {data.name}
+                  {data.subCategories}
                 </Link>
               </p>
             </aside>
