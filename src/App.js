@@ -22,6 +22,7 @@ import Returnpolicy from "./Components/Pages/FooterPages/Returnpolicy";
 import Shop from "./Components/Pages/FooterPages/Shop";
 import TandC from "./Components/Pages/FooterPages/TandC";
 import CartContext from "./Components/AllContext/CartContext";
+import AllOrders from "./Components/Dashboard/DashboardPage/OrderManagement/AllOrders";
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
             </Route>
             <Route path="/allProduct">
               <AllProduct />
+            </Route>
+            <Route path="/allOrders">
+              <AllOrders />
             </Route>
             {/* Dashboard router end */}
 

@@ -119,14 +119,8 @@ const SidebarNav = () => {
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav className="sb-sidenav-menu-nested nav">
-                  <Link className="nav-link collapse_sub_menu" to="/">
-                    Pending order
-                  </Link>
-                  <Link
-                    className="nav-link collapse_sub_menu"
-                    to="/createProduct"
-                  >
-                    Completed Order
+                  <Link className="nav-link collapse_sub_menu" to="/allOrders">
+                    list of orders
                   </Link>
                 </nav>
               </div>
