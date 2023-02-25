@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { CartProvider } from "../../AllContext/CartContext";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
 import "./Cart.css";
 
 const Cart = () => {
-  const demo =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp";
+  //all context
+  const [cartData, setCartData, finaltotalAddonPrice, subTotalPrice] =
+    useContext(CartProvider);
+  const [quantity, setQuantity] = useState(0);
+  console.log(quantity);
+
+  //handleDecrese
+  const handleDecrease = (selectedId) => {
+    let newQuantity;
+    cartData.map((cartDataId) => {
+      if (selectedId === cartDataId.id) {
+      }
+    });
+  };
+
+  //handleIncrease
+  const handleIncrease = (selectedId) => {
+    // setQuantity(setQuantity(quantity + 1));
+  };
+
   return (
     <>
       <Header />
@@ -21,6 +40,8 @@ const Cart = () => {
                   </th>
                   <th scope="col">Images</th>
                   <th scope="col">Product</th>
+                  <th scope="col">Addon Price</th>
+                  <th scope="col">+</th>
                   <th scope="col">Price</th>
                   <th>
                     <i className="bi bi-x"></i>
@@ -34,44 +55,60 @@ const Cart = () => {
               </thead>
 
               <tbody className="table-group-divider">
-                <tr className="cart_single_product">
-                  <td className="cart_cancel_row">
-                    <button className="cart_product_cancel_button">
-                      {" "}
-                      <i className="bi bi-x-circle"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <img src={demo} alt="" className="cart_page_product_img" />
-                  </td>
-                  <td>DishCo Special Dishes</td>
-                  <td>600 tk</td>
-                  <td>
-                    <i className="bi bi-x"></i>
-                  </td>
-                  <td className="cart_quantity_row">2</td>
-                  <td>=</td>
-                  <td>1200 tk</td>
-                </tr>
-                <tr className="cart_single_product">
-                  <td className="cart_cancel_row">
-                    <button className="cart_product_cancel_button">
-                      {" "}
-                      <i className="bi bi-x-circle"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <img src={demo} alt="" className="cart_page_product_img" />
-                  </td>
-                  <td>DishCo Special Dishes DishCo Special Dishes</td>
-                  <td>600 tk</td>
-                  <td>
-                    <i className="bi bi-x"></i>
-                  </td>
-                  <td className="cart_quantity_row">2</td>
-                  <td>=</td>
-                  <td>1200 tk</td>
-                </tr>
+                {cartData.map((cartDt) => (
+                  <tr className="cart_single_product" key={cartDt?.id}>
+                    <td className="cart_cancel_row">
+                      <button className="cart_product_cancel_button">
+                        <i className="bi bi-x-circle"></i>
+                      </button>
+                    </td>
+                    <td>
+                      <img
+                        src={cartDt.image}
+                        alt=""
+                        className="cart_page_product_img"
+                      />
+                    </td>
+                    <td>{cartDt.name}</td>
+                    <td>
+                      {cartDt?.extras.reduce(
+                        (acc, addon) => acc + addon.priceOfAddon,
+                        0
+                      )}
+                    </td>
+                    <td>+</td>
+                    <td>{cartDt?.price}</td>
+                    <td>
+                      <i className="bi bi-x"></i>
+                    </td>
+                    <td className="cart_quantity_row">
+                      <span className="quantity_cart_input">
+                        <button
+                          className="value-button"
+                          id="decrease"
+                          onClick={() => handleDecrease(cartDt?.id)}
+                        >
+                          -
+                        </button>
+                        <input
+                          type="number"
+                          id="number"
+                          value={cartDt.quantity + quantity}
+                          readOnly
+                        />
+                        <button
+                          className="value-button"
+                          id="increase"
+                          onClick={() => handleIncrease(cartDt?.id)}
+                        >
+                          +
+                        </button>
+                      </span>
+                    </td>
+                    <td>=</td>
+                    <td>1200 tk</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
             <div className="d-flex justify-content-end update_cart_button_section">
