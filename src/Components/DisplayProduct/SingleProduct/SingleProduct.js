@@ -105,6 +105,10 @@ const SingleProduct = () => {
     } else {
       // if the item is new, add it to the cartItems array
       cart.push(item);
+      setSuccessMsg(true);
+      setTimeout(() => {
+        setSuccessMsg(false);
+      }, 5000);
     }
 
     // update the cart data in the context
@@ -123,7 +127,7 @@ const SingleProduct = () => {
   return (
     <>
       <Header />
-      {successMsg && <h1>Food Successfully added to your cart</h1>}
+
       <section className="container singleProduct_main">
         {food.map((data) => (
           <div key={data._id} className="single_product_body">
@@ -229,6 +233,11 @@ const SingleProduct = () => {
                 >
                   <i className="bi bi-trash3"></i> Clear Cart
                 </button>
+                {successMsg && (
+                  <p className="mt-2" style={{ color: "green" }}>
+                    Food Successfully added to the cart
+                  </p>
+                )}
               </form>
               <p className="my-3 categories_link my-4">
                 Categories:{" "}
