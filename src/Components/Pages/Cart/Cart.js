@@ -40,6 +40,12 @@ const Cart = () => {
     }
   };
 
+  //cartItem remove
+  const handleClearCart = (id) => {
+    let newData = cartData.filter((item) => item.id !== id);
+    setCartData(newData);
+  };
+
   return (
     <>
       <Header />
@@ -73,7 +79,10 @@ const Cart = () => {
                 {cartData.map((cartDt) => (
                   <tr className="cart_single_product" key={cartDt?.id}>
                     <td className="cart_cancel_row">
-                      <button className="cart_product_cancel_button">
+                      <button
+                        className="cart_product_cancel_button"
+                        onClick={() => handleClearCart(cartDt?.id)}
+                      >
                         <i className="bi bi-x-circle"></i>
                       </button>
                     </td>
