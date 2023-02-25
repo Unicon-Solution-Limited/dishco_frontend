@@ -6,7 +6,7 @@ export const CartProvider = createContext();
 const getLocalStorageCartData = () => {
   let cartData;
   if (typeof window !== "undefined") {
-    const localData = JSON.parse(localStorage.getItem("cart")) || [];
+    const localData = JSON.parse(localStorage.getItem("foodCart")) || [];
     cartData = localData;
   }
   return cartData;
@@ -18,7 +18,7 @@ const CartContext = ({ children }) => {
   // save cart-data to localStorage
   useEffect(() => {
     if (typeof window !== "undefined") {
-      localStorage.setItem("cart", JSON.stringify(cartData || []));
+      localStorage.setItem("foodCart", JSON.stringify(cartData || []));
     }
   }, [cartData]);
 
