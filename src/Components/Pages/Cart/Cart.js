@@ -139,7 +139,13 @@ const Cart = () => {
                       </span>
                     </td>
                     <td>=</td>
-                    <td>1200 tk</td>
+                    <td>
+                      {cartDt?.quantity * cartDt?.price +
+                        cartDt?.extras.reduce(
+                          (acc, addon) => acc + addon.priceOfAddon,
+                          0
+                        )}
+                    </td>
                   </tr>
                 ))}
               </tbody>
