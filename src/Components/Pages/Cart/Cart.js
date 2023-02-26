@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { CartProvider } from "../../AllContext/CartContext";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
@@ -139,7 +140,15 @@ const Cart = () => {
                       </span>
                     </td>
                     <td>=</td>
-                    <td>1200 tk</td>
+                    <td>
+                      {" "}
+                      {cartDt?.quantity * cartDt?.price +
+                        cartDt?.extras.reduce(
+                          (acc, addon) => acc + addon.priceOfAddon,
+                          0
+                        )}{" "}
+                      tk
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -150,15 +159,21 @@ const Cart = () => {
           <aside className="cart_page_bottom">
             <h4>Cart Total</h4>
             <p>
-              <b>Subtotal:</b> 1000 tk.
+              <b>Subtotal:</b> {subTotalPrice + finaltotalAddonPrice} tk.
             </p>
             <p>
               <b> Shipping Flat rate:</b> 80.00৳ Shipping to Dhaka.
             </p>
-            <p>
-              <b> Total:</b> 2000 tk.
-            </p>
-            <button className="btn MyBtn">Process to checkout</button>
+            {cartData.length && (
+              <p>
+                <b> Grand Total:</b>
+                {""} {subTotalPrice + finaltotalAddonPrice} + 80 ={" "}
+                {subTotalPrice + finaltotalAddonPrice + 80} tk.
+              </p>
+            )}
+            <Link to="/checkout" className="btn MyBtn">
+              <button className="btn MyBtn">Process to checkout</button>
+            </Link>
           </aside>
         </div>
       </section>
