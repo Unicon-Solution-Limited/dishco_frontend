@@ -78,7 +78,7 @@ const Checkout = () => {
           <aside className="billing_form">
             <h5>Shipping Address</h5>
             <div className="mb-3">
-              <label for="inputName" className="form-label mandatory_field">
+              <label htmlFor="inputName" className="form-label mandatory_field">
                 Your name
               </label>
               <input
@@ -90,7 +90,7 @@ const Checkout = () => {
               />
             </div>
             <div className="mb-3">
-              <label for="area" className="form-label mandatory_field">
+              <label htmlFor="area" className="form-label mandatory_field">
                 Area
               </label>
               <select
@@ -105,7 +105,10 @@ const Checkout = () => {
               </select>
             </div>
             <div className="mb-3">
-              <label for="inputAddress" className="form-label mandatory_field">
+              <label
+                htmlFor="inputAddress"
+                className="form-label mandatory_field"
+              >
                 Details Address
               </label>
               <input
@@ -118,7 +121,10 @@ const Checkout = () => {
             </div>
 
             <div className="mb-3">
-              <label for="inputContact" className="form-label mandatory_field">
+              <label
+                htmlFor="inputContact"
+                className="form-label mandatory_field"
+              >
                 Contact Number
               </label>
               <input
@@ -130,7 +136,10 @@ const Checkout = () => {
               />
             </div>
             <div className="mb-3">
-              <label for="inputEmail" className="form-label mandatory_field">
+              <label
+                htmlFor="inputEmail"
+                className="form-label mandatory_field"
+              >
                 Email
               </label>
               <input
@@ -144,7 +153,7 @@ const Checkout = () => {
             </div>
 
             <div className="mb-3">
-              <label for="extraInfo" className="form-label">
+              <label htmlFor="extraInfo" className="form-label">
                 Order Note(Optional)
               </label>
               <textarea
@@ -218,7 +227,7 @@ const Checkout = () => {
                 id="exampleCheck1"
                 onChange={() => setTermCondition(!termCondition)}
               />
-              <label className="form-check-label" for="exampleCheck1">
+              <label className="form-check-label" htmlFor="exampleCheck1">
                 I have read and agree to the website{" "}
                 <Link to="/" className="myLinks TandC_link">
                   Terms and Conditions
