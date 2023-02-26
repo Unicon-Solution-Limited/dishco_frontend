@@ -23,6 +23,7 @@ import Shop from "./Components/Pages/FooterPages/Shop";
 import TandC from "./Components/Pages/FooterPages/TandC";
 import CartContext from "./Components/AllContext/CartContext";
 import AllOrders from "./Components/Dashboard/DashboardPage/OrderManagement/AllOrders";
+import PrivateRoute from "./Components/Authentication/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -64,16 +65,16 @@ function App() {
             <Route path="/products/:navItem">
               <DisplayProduct />
             </Route>
-            <Route path="/singleProduct/:viewDetails">
+            <PrivateRoute path="/singleProduct/:viewDetails">
               <SingleProduct />
-            </Route>
+            </PrivateRoute>
 
-            <Route path="/cart">
+            <PrivateRoute path="/cart">
               <Cart />
-            </Route>
-            <Route path="/checkout">
+            </PrivateRoute>
+            <PrivateRoute path="/checkout">
               <Checkout />
-            </Route>
+            </PrivateRoute>
             {/* Footer Pages Router */}
             <Route path="/about-us">
               <AboutUs />
