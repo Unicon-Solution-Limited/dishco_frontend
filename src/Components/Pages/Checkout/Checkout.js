@@ -195,7 +195,10 @@ const Checkout = () => {
             </div>
             <div className="table_row total">
               <strong>Total</strong>
-              <span>{finaltotalAddonPrice + subTotalPrice + 80} Tk.</span>
+              <span>
+                {cartData.length && finaltotalAddonPrice + subTotalPrice + 80}{" "}
+                Tk.
+              </span>
             </div>
             <select
               className="form-select"
