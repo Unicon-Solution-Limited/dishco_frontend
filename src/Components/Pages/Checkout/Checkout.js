@@ -8,6 +8,7 @@ import { CartProvider } from "../../AllContext/CartContext";
 import { useAuth } from "./../../Authentication/AuthContext/AuthContext";
 
 const Checkout = () => {
+  const cityRef = useRef();
   const addressRef = useRef();
   const phoneNumberRef = useRef();
   const emailRef = useRef();
@@ -30,13 +31,16 @@ const Checkout = () => {
       total_amount: grandTotal,
       orderedData: cartData,
       cus_name: currentUser?.displayName,
+      cus_city: cityRef?.current.value,
       cus_email: currentUser?.email,
       cus_phone: phoneNumberRef.current.value,
       cus_add1: addressRef.current.value,
-      product_status: "Processing",
+      product_status: "Pending",
       payment_method: PaymentRef.current.value,
       orderTime: Date(),
     };
+
+    console.log(confirmOderData);
 
     //conditionally check the payment and hit the api
     if (confirmOderData.payment_method === "Online Payment") {
@@ -96,6 +100,7 @@ const Checkout = () => {
               <select
                 className="form-select"
                 aria-label="Default select example"
+                ref={cityRef}
                 required
               >
                 <option value="">Select Your Area</option>
