@@ -241,7 +241,7 @@ const Checkout = () => {
             <button
               type="submit"
               className="btn MyBtn placeOrder_btn"
-              disabled={!termCondition}
+              disabled={!termCondition || cartData.length === 0}
             >
               {paymnetLoading ? (
                 <div className="d-flex justify-content-center">
