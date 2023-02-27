@@ -24,6 +24,7 @@ import TandC from "./Components/Pages/FooterPages/TandC";
 import CartContext from "./Components/AllContext/CartContext";
 import AllOrders from "./Components/Dashboard/DashboardPage/OrderManagement/AllOrders";
 import PrivateRoute from "./Components/Authentication/PrivateRoute/PrivateRoute";
+import Success from "./Components/Pages/Checkout/Success";
 
 function App() {
   return (
@@ -75,6 +76,9 @@ function App() {
             <PrivateRoute path="/checkout">
               <Checkout />
             </PrivateRoute>
+            <Route path="/success">
+              <Success />
+            </Route>
             {/* Footer Pages Router */}
             <Route path="/about-us">
               <AboutUs />

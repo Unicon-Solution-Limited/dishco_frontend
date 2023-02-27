@@ -85,3 +85,29 @@
     text-align: center;
   }
 }
+
+/* *********************** Success page ************* */
+.success_main {
+  display: flex;
+  justify-content: center;
+}
+.success_body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  text-align: center;
+  background-color: #d9d9d9;
+  padding: 80px;
+}
+.success_redirect_button {
+  display: flex;
+  justify-content: space-around;
+}
+
+.success_icon {
+  font-size: 40px;
+  background-color: var(--green);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
