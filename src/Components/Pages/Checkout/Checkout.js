@@ -12,7 +12,7 @@ const Checkout = () => {
   const addressRef = useRef();
   const phoneNumberRef = useRef();
   const emailRef = useRef();
-  const noteRef = useRef();
+  const extra_informationRef = useRef();
   const PaymentRef = useRef();
   const { currentUser } = useAuth();
   const history = useHistory();
@@ -33,6 +33,7 @@ const Checkout = () => {
       cus_name: currentUser?.displayName,
       cus_city: cityRef?.current.value,
       cus_email: currentUser?.email,
+      extra_information: extra_informationRef?.current.value,
       cus_phone: phoneNumberRef.current.value,
       cus_add1: addressRef.current.value,
       product_status: "Pending",
@@ -162,7 +163,7 @@ const Checkout = () => {
                 Order Note(Optional)
               </label>
               <textarea
-                ref={noteRef}
+                ref={extra_informationRef}
                 className="form-control"
                 id="extraInfo"
                 rows="3"
