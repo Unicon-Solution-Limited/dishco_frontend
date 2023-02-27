@@ -223,14 +223,17 @@ const Checkout = () => {
               .
             </p>
 
-            <div className="mb-3 form-check">
+            <div className="mb-3 form-check checkBox_main">
               <input
                 type="checkbox"
-                className="form-check-input"
+                className="form-check-input checkBox_input"
                 id="exampleCheck1"
                 onChange={() => setTermCondition(!termCondition)}
               />
-              <label className="form-check-label" htmlFor="exampleCheck1">
+              <label
+                className="form-check-label checkBox_label"
+                htmlFor="exampleCheck1"
+              >
                 I have read and agree to the website{" "}
                 <Link to="/" className="myLinks TandC_link">
                   Terms and Conditions

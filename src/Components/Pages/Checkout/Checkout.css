@@ -57,6 +57,19 @@
   border: 1px solid black;
 }
 
+.checkBox_main {
+  display: flex;
+  align-items: center;
+}
+
+.checkBox_input {
+  border: 1px solid black;
+}
+
+.checkBox_label {
+  margin: 0 5px 0 5px !important;
+}
+
 @media only screen and (max-width: 768px) {
   .checkout_body {
     flex-direction: column;
