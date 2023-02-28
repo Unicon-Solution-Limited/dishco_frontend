@@ -18,8 +18,8 @@ const AllOrders = () => {
               <table className="table table-striped align-middle">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Product Name</th>
+                    <th scope="col">Order Id</th>
+                    <th scope="col">Item/'s</th>
                     <th scope="col">Customer Name</th>
                     <th scope="col">Phone Number</th>
                     <th scope="col">Status</th>
@@ -28,8 +28,8 @@ const AllOrders = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Special Pasta with rice</td>
+                    <th scope="row">23-001</th>
+                    <td>1</td>
                     <td>MD. Moinul Hossain</td>
                     <td>01681894386</td>
                     <td>
@@ -74,26 +74,30 @@ const AllOrders = () => {
                   </div>
                   <div className="modal-body order_details">
                     <div className="product_details">
-                      <img
-                        src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp"
-                        alt=""
-                        className="single_product_modal_image"
-                      />
-                      <p>
-                        <strong>DishCo special platter rice</strong>
-                      </p>
-                      <p>
-                        <strong>Price:</strong> 600 tk.
-                      </p>
-                      <p>
-                        <strong>Size:</strong> 8"
-                      </p>
-                      <aside>
-                        <strong>Extra Items:</strong>
-                        <p>Sauce (+30tk)</p>
-                        <p>mayonnaise (+30tk)</p>
-                      </aside>
+                      <div className="order_product_single">
+                        <img
+                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp"
+                          alt=""
+                          className="single_product_modal_image"
+                        />
+                        <p>
+                          <strong>DishCo special platter rice</strong>
+                        </p>
+                        <p>
+                          <strong>Price:</strong> 600 tk.
+                        </p>
+                        <p>
+                          <strong>Size:</strong> 8"
+                        </p>
+                        <aside>
+                          <strong>Extra Items:</strong>
+                          <p>Sauce (+30tk)</p>
+                          <p>mayonnaise (+30tk)</p>
+                        </aside>
+                      </div>
+                      <div className="divider"></div>
                     </div>
+
                     <div className="customer_details">
                       <h6>Customer Details</h6>
                       <hr />
