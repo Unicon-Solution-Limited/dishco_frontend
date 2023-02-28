@@ -10,85 +10,140 @@ const AllOrders = () => {
       <div id="layoutSidenav">
         <SidebarNav />
         <div id="layoutSidenav_content">
-          <div class="table-responsive">
-            <table class="table table-striped align-middle">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Product Name</th>
-                  <th scope="col">Customer Name</th>
-                  <th scope="col">Phone Number</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Special Pasta with rice</td>
-                  <td>MD. Moinul Hossain</td>
-                  <td>01681894386</td>
-                  <td>
-                    <span className="status pending">Pending</span>
-                    <span className="status processing">Processing</span>
-                    <span className="status shipped">Shipped</span>
-                  </td>
-                  <td>
-                    <button
-                      className="btn MyBtn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#singleOrderProduct"
-                    >
-                      Details
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <main className="px-1">
+            <div className="dashboard_product_searchbar my-3">
+              <input type="search" placeholder="search product" />
+            </div>
+            <div className="table-responsive">
+              <table className="table table-striped align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Special Pasta with rice</td>
+                    <td>MD. Moinul Hossain</td>
+                    <td>01681894386</td>
+                    <td>
+                      <span className="status pending">Pending</span>
+                      {/* <span className="status processing">Processing</span>
+                      <span className="status shipped">Shipped</span> */}
+                    </td>
+                    <td>
+                      <button
+                        className="btn MyBtn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#singleOrderProduct"
+                      >
+                        Details
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-          <div
-            class="modal fade modal-lg"
-            id="singleOrderProduct"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Order Date & Time: 20-06-2023 12.30 PM
-                  </h1>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <img
-                    src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp"
-                    alt=""
-                    className="single_product_modal_image"
-                  />
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Close
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    Save changes
-                  </button>
+            {/* Modal for single order */}
+            <div
+              className="modal fade modal-lg"
+              id="singleOrderProduct"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">
+                      Order Date & Time: 20-06-2023 12.30 PM
+                    </h1>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body order_details">
+                    <div className="product_details">
+                      <img
+                        src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp"
+                        alt=""
+                        className="single_product_modal_image"
+                      />
+                      <p>
+                        <strong>DishCo special platter rice</strong>
+                      </p>
+                      <p>
+                        <strong>Price:</strong> 600 tk.
+                      </p>
+                      <p>
+                        <strong>Size:</strong> 8"
+                      </p>
+                      <aside>
+                        <strong>Extra Items:</strong>
+                        <p>Sauce (+30tk)</p>
+                        <p>mayonnaise (+30tk)</p>
+                      </aside>
+                    </div>
+                    <div className="customer_details">
+                      <h6>Customer Details</h6>
+                      <hr />
+                      <p>
+                        <strong>Name:</strong> MD. MOINUL HOSSAIN
+                      </p>
+                      <p>
+                        <strong>Phone:</strong> +88 01681894386
+                      </p>
+                      <p>
+                        <strong>Email:</strong> moinul@gmail.com
+                      </p>
+                      <p>
+                        <strong>Address:</strong> 270, Japan Garden City,
+                        Mohammadpur, Dhaka-1207
+                      </p>
+                      <hr />
+                      <hr />
+                      <p>
+                        <strong>Discount(If any):</strong> - 80 tk.{" "}
+                      </p>
+                      <p>
+                        <strong>Delivery Charge:</strong> + 80 tk.{" "}
+                      </p>
+                      <p>
+                        <strong>Total=</strong> 690 tk.{" "}
+                      </p>
+                      <p>
+                        <strong>Payment Option:</strong> Cash on delivery
+                      </p>
+                    </div>
+                  </div>
+                  <div className="order_modal_footer">
+                    <select
+                      className="form-select status_select_option"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Status</option>
+                      <option value="Pending">Pending</option>
+                      <option value="Processing">Processing</option>
+                      <option value="Shipped">Shipped</option>
+                    </select>
+                    <button type="button" className="btn MyBtn">
+                      Update Status
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </main>
         </div>
       </div>
     </>

@@ -20,6 +20,7 @@
   --white: #e5e3e4;
   --black: #000000;
   --dark-red: #2b161b;
+  --ash: #cccccc;
 }
 ::selection {
   background-color: var(--red);

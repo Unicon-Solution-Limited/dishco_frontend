@@ -7,7 +7,7 @@ const Success = () => {
       <div className="success_body">
         <h2 className="mb-2">Your Order has been received.</h2>
         <span className="success_icon">
-          <i class="bi bi-check-circle"></i>
+          <i className="bi bi-check-circle"></i>
         </span>
         <p className="mt-2">Thank you for your purchase.</p>
         <strong>Your Order ID is: FVBG458741236</strong>

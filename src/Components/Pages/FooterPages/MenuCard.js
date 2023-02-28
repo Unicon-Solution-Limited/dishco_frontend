@@ -43,44 +43,60 @@ const MenuCard = () => {
   return (
     <>
       <Header />
-      <img src={m1} class="d-block w-100" alt="MenuCard-Design-Front-Page" />
-      <img src={m2} class="d-block w-100" alt="MenuCard-Design-Appetizer" />
+      <img
+        src={m1}
+        className="d-block w-100"
+        alt="MenuCard-Design-Front-Page"
+      />
+      <img src={m2} className="d-block w-100" alt="MenuCard-Design-Appetizer" />
       <img
         src={m3}
-        class="d-block w-100"
+        className="d-block w-100"
         alt="MenuCard-Design-Appetizer-Meatbox-Working"
       />
       <img
         src={m4}
-        class="d-block w-100"
+        className="d-block w-100"
         alt="MenuCard-Design-Pizza-Burger-Sandwich"
       />
       <img
         src={m5}
-        class="d-block w-100"
+        className="d-block w-100"
         alt="MenuCard-Design-Soup-Pasta-Chicken-Fry-Working"
       />
       <img
         src={m6}
-        class="d-block w-100"
+        className="d-block w-100"
         alt="MenuCard-Design-DishCo-Platter"
       />
       <img
         src={m7}
-        class="d-block w-100"
+        className="d-block w-100"
         alt="MenuCard-Design-Platter-Steak-Cuisine"
       />
-      <img src={m8} class="d-block w-100" alt="MenuCard-Design-Ramen-Special" />
-      <img src={m9} class="d-block w-100" alt="Korean-Cuisine" />
-      <img src={m10} class="d-block w-100" alt="Japanese-Cuisine" />
-      <img src={m11} class="d-block w-100" alt="Japanese-Cuisine" />
-      <img src={m12} class="d-block w-100" alt="Chinese-Cuisine" />
-      <img src={m13} class="d-block w-100" alt="Indian-Cuisine" />
-      <img src={m14} class="d-block w-100" alt="Indian-Cuisine-Rice-Cuisine" />
-      <img src={m15} class="d-block w-100" alt="Dessert-Peyala-Tea" />
-      <img src={m16} class="d-block w-100" alt="DishCo-Drinks" />
-      <img src={m17} class="d-block w-100" alt="DishCo-Drinks" />
-      <img src={m18} class="d-block w-100" alt="MenuCard-Design-Back Side" />
+      <img
+        src={m8}
+        className="d-block w-100"
+        alt="MenuCard-Design-Ramen-Special"
+      />
+      <img src={m9} className="d-block w-100" alt="Korean-Cuisine" />
+      <img src={m10} className="d-block w-100" alt="Japanese-Cuisine" />
+      <img src={m11} className="d-block w-100" alt="Japanese-Cuisine" />
+      <img src={m12} className="d-block w-100" alt="Chinese-Cuisine" />
+      <img src={m13} className="d-block w-100" alt="Indian-Cuisine" />
+      <img
+        src={m14}
+        className="d-block w-100"
+        alt="Indian-Cuisine-Rice-Cuisine"
+      />
+      <img src={m15} className="d-block w-100" alt="Dessert-Peyala-Tea" />
+      <img src={m16} className="d-block w-100" alt="DishCo-Drinks" />
+      <img src={m17} className="d-block w-100" alt="DishCo-Drinks" />
+      <img
+        src={m18}
+        className="d-block w-100"
+        alt="MenuCard-Design-Back Side"
+      />
 
       <Footer />
     </>
