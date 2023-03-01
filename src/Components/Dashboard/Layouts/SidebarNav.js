@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Layouts.css";
+import toggler from "./toggler";
 
 const SidebarNav = () => {
   return (
@@ -10,6 +11,9 @@ const SidebarNav = () => {
           className="sb-sidenav accordion sb-sidenav-dark"
           id="sidenavAccordion"
         >
+          <button className="btn cross_btn" onClick={toggler}>
+            <i className="bi bi-x-lg"></i>
+          </button>
           <div className="sb-sidenav-menu">
             <div className="nav">
               <div className="sb-sidenav-menu-heading">Product management </div>

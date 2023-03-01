@@ -30,6 +30,13 @@
   color: #aec09a !important;
 }
 
+.cross_btn {
+  text-align: right !important;
+  padding-right: 10%;
+  background-color: var(--black);
+  color: var(--white);
+}
+
 /* **************** TopNav Bar **********************/
 .top_nav {
   background-color: var(--black) !important;
@@ -47,4 +54,10 @@
 .bi-list {
   color: var(--white) !important;
   font-size: 18px;
+}
+
+@media only screen and (min-width: 960px) {
+  .cross_btn {
+    display: none;
+  }
 }

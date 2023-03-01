@@ -1,16 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "./../../Authentication/AuthContext/AuthContext";
+import toggler from "./toggler";
 
 const TopbarNav = () => {
   const { logout } = useAuth();
-  function toggler() {
-    document.body.classList.toggle("sb-sidenav-toggled");
-    localStorage.setItem(
-      "sb|sidebar-toggle",
-      document.body.classList.contains("sb-sidenav-toggled")
-    );
-  }
   return (
     <>
       <nav className="sb-topnav navbar-d navbar-expand navbar-dark bg-dark top_nav">
