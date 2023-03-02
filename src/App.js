@@ -25,6 +25,7 @@ import CartContext from "./Components/AllContext/CartContext";
 import AllOrders from "./Components/Dashboard/DashboardPage/OrderManagement/AllOrders";
 import PrivateRoute from "./Components/Authentication/PrivateRoute/PrivateRoute";
 import Success from "./Components/Pages/Checkout/Success";
+import EditProduct from "./Components/Dashboard/DashboardPage/ProductManagement/EditProduct";
 
 function App() {
   return (
@@ -54,6 +55,9 @@ function App() {
             </Route>
             <Route path="/allProduct">
               <AllProduct />
+            </Route>
+            <Route path="/editProduct">
+              <EditProduct />
             </Route>
             <Route path="/allOrders">
               <AllOrders />

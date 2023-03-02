@@ -2,6 +2,7 @@ import React from "react";
 import SidebarNav from "../../Layouts/SidebarNav";
 import TopbarNav from "../../Layouts/TopbarNav";
 import "./ProductManagement.css";
+import { Link } from "react-router-dom";
 
 const AllProduct = () => {
   const demo =
@@ -48,7 +49,9 @@ const AllProduct = () => {
                       >
                         View
                       </button>
-                      <button className="btn btn-success">Edit</button>
+                      <Link to="/editProduct" className="btn btn-success">
+                        Edit
+                      </Link>
                       <button className="btn btn-danger">
                         <i className="bi bi-trash"></i>
                       </button>
