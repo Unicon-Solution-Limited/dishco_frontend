@@ -54,3 +54,16 @@
   color: var(--black);
 }
 /* Dashboard Create Product end ******************* */
+
+/* ******************* Dashboard edit Product Start */
+.edit_form ::placeholder {
+  color: var(--black) !important;
+  opacity: 1 !important;
+}
+.edit_form :-ms-input-placeholder {
+  color: var(--black) !important;
+}
+.edit_form ::-ms-input-placeholder {
+  color: var(--black) !important;
+}
+/* Dashboard edit Product end ******************* */
