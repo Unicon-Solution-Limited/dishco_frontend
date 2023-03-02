@@ -12,7 +12,7 @@ const AllOrders = () => {
         <div id="layoutSidenav_content">
           <main className="px-1">
             <div className="dashboard_product_searchbar my-3">
-              <input type="search" placeholder="search product" />
+              <input type="search" placeholder="search orders" />
             </div>
             <div className="table-responsive">
               <table className="table table-striped align-middle">
