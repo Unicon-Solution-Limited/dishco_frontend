@@ -22,7 +22,7 @@ const Checkout = () => {
   const [termCondition, setTermCondition] = useState(false);
 
   //calculation of grand total
-  const grandTotal = Number(finaltotalAddonPrice) + Number(subTotalPrice) + 10;
+  const grandTotal = Number(finaltotalAddonPrice) + Number(subTotalPrice) + 80;
 
   const handleConfirmOrder = (e) => {
     e.preventDefault();
@@ -202,7 +202,7 @@ const Checkout = () => {
             <div className="table_row total">
               <strong>Total</strong>
               <span>
-                {cartData.length && finaltotalAddonPrice + subTotalPrice + 10}{" "}
+                {cartData.length && finaltotalAddonPrice + subTotalPrice + 80}{" "}
                 Tk.
               </span>
             </div>
