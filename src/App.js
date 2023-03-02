@@ -80,7 +80,7 @@ function App() {
             <PrivateRoute path="/checkout">
               <Checkout />
             </PrivateRoute>
-            <Route path="/success">
+            <Route path="/success/:tran_id">
               <Success />
             </Route>
             {/* Footer Pages Router */}

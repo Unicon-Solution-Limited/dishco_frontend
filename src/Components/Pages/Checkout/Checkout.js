@@ -22,7 +22,7 @@ const Checkout = () => {
   const [termCondition, setTermCondition] = useState(false);
 
   //calculation of grand total
-  const grandTotal = Number(finaltotalAddonPrice) + Number(subTotalPrice) + 10;
+  const grandTotal = Number(finaltotalAddonPrice) + Number(subTotalPrice) + 80;
 
   const handleConfirmOrder = (e) => {
     e.preventDefault();
@@ -180,11 +180,7 @@ const Checkout = () => {
               <strong>Product</strong>
               <strong>Subtotal</strong>
             </div>
-            {/* <div className="table_row checkout_product_row">
-              <span>Calamari Prawn Crunch Cocktail</span>
-              <span>× 1 =</span>
-              <span>410.00 Tk.</span>
-            </div> */}
+
             <div className="table_row subtotal">
               <strong>Total Food Price</strong>
               <span>{subTotalPrice} Tk.</span>
@@ -202,7 +198,7 @@ const Checkout = () => {
             <div className="table_row total">
               <strong>Total</strong>
               <span>
-                {cartData.length && finaltotalAddonPrice + subTotalPrice + 10}{" "}
+                {cartData.length && finaltotalAddonPrice + subTotalPrice + 80}{" "}
                 Tk.
               </span>
             </div>
