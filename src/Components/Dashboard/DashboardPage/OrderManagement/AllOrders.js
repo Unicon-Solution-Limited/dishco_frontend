@@ -61,7 +61,17 @@ const AllOrders = () => {
                       <td>{order?.cus_name}</td>
                       <td>{order?.cus_phone}</td>
                       <td>
-                        <span className="status pending">
+                        <span
+                          className={`status ${
+                            order?.product_status == "Pending"
+                              ? "pending"
+                              : order?.product_status == "Processing"
+                              ? "processing"
+                              : order?.product_status == "Shipped"
+                              ? "shipped"
+                              : ""
+                          }`}
+                        >
                           {order?.product_status}
                         </span>
                         {/* <span className="status processing">Processing</span>

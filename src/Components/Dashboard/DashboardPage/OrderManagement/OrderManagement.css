@@ -1,16 +1,21 @@
 .status {
-  padding: 3px;
+  padding: 8px;
   border-radius: 5px;
+  font-weight: bold;
 }
+
 .pending {
   background-color: var(--yellow) !important;
 }
+
 .processing {
-  background-color: var(--red);
+  background-color: var(--red) !important;
   color: var(--white);
 }
+
 .shipped {
   background-color: var(--green) !important;
+  color: var(--white);
 }
 
 .order_details {

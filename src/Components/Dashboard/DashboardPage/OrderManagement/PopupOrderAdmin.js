@@ -1,6 +1,33 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
 const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
+  const statusRef = useRef();
+  const [statusMessage, setStatusMessage] = useState(false);
+
+  // //handle status
+  const handleStatusSubmit = async (item_id, e) => {
+    e.preventDefault();
+    const product_status = statusRef?.current?.value;
+
+    try {
+      const url = `http://localhost:8000/updateStatus/${item_id}`;
+      const option = {
+        method: "PATCH",
+        body: JSON.stringify({ product_status }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      await fetch(url, option);
+    } catch (error) {
+      console.log(error);
+    }
+    setStatusMessage(true);
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+  };
+
   return (
     <div
       className="modal fade modal-lg"
@@ -91,20 +118,26 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
               </p>
             </div>
           </div>
-          <div className="order_modal_footer">
-            <select
-              className="form-select status_select_option"
-              aria-label="Default select example"
-            >
-              <option selected>Status</option>
-              <option value="Pending">Pending</option>
-              <option value="Processing">Processing</option>
-              <option value="Shipped">Shipped</option>
-            </select>
-            <button type="button" className="btn MyBtn">
-              Update Status
-            </button>
-          </div>
+          <h3 className="container">{orderDetailsForPopup?.product_status}</h3>
+          <form
+            onSubmit={(e) => handleStatusSubmit(orderDetailsForPopup._id, e)}
+          >
+            <div className="order_modal_footer">
+              <select
+                className="form-select status_select_option"
+                aria-label="Default select example"
+                ref={statusRef}
+              >
+                <option value="">Status</option>
+                <option value="Pending">Pending</option>
+                <option value="Processing">Processing</option>
+                <option value="Shipped">Shipped</option>
+              </select>
+              <button type="submit" className="btn MyBtn">
+                Update Status
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
