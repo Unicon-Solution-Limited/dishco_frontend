@@ -153,6 +153,11 @@ const CustomerOrder = () => {
                   <span className="status pending">Pending</span>
                 </p>
               </aside>
+              <aside className="order_cancel MyBtn">
+                <button className="btn">
+                  Cancel order <i class="bi bi-trash"></i>
+                </button>
+              </aside>
             </div>
           </main>
         </div>

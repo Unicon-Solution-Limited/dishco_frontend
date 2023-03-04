@@ -77,7 +77,6 @@
   border-top: 1px solid var(--green);
   border-bottom: 1px solid var(--green);
   padding: 5px 0;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .order_image {
@@ -101,5 +100,9 @@
 .order_slide_btn {
   display: none;
   padding: 20px 0 !important;
+}
+
+.order_cancel button {
+  color: var(--white) !important;
 }
 /* Orders page design of Customer Order ************end*********** */
