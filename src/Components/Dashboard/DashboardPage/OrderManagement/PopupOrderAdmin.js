@@ -1,12 +1,11 @@
 import React from "react";
 
 const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
-  console.log(orderDetailsForPopup);
   return (
     <div
       className="modal fade modal-lg"
       id="adminOrderProduct"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
@@ -14,7 +13,7 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
         <div className="modal-content">
           <div className="modal-header">
             <h1 className="modal-title fs-5" id="exampleModalLabel">
-              Order Date & Time: 20-06-2023 12.30 PM
+              Order Date & Time: {orderDetailsForPopup?.orderTime}
             </h1>
             <button
               type="button"
@@ -24,60 +23,71 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
             ></button>
           </div>
           <div className="modal-body order_details">
-            <div className="product_details">
-              <div className="order_product_single">
-                <img
-                  src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp"
-                  alt=""
-                  className="single_product_modal_image"
-                />
-                <p>
-                  <strong>DishCo special platter rice</strong>
-                </p>
-                <p>
-                  <strong>Price:</strong> 600 tk.
-                </p>
-                <p>
-                  <strong>Size:</strong> 8"
-                </p>
-                <aside>
-                  <strong>Extra Items:</strong>
-                  <p>Sauce (+30tk)</p>
-                  <p>mayonnaise (+30tk)</p>
-                </aside>
-              </div>
-              <div className="divider"></div>
-            </div>
+            {orderDetailsForPopup?.orderedData?.map((orderDt) => (
+              <div className="product_details" key={orderDt.id}>
+                <div className="order_product_single">
+                  <img
+                    src={orderDt.image}
+                    alt=""
+                    className="single_product_modal_image"
+                  />
+                  <p>
+                    <strong>{orderDt?.name}</strong>
+                  </p>
+                  <p>
+                    <strong>Price:</strong> {orderDt?.price} tk.
+                  </p>
+                  <p>
+                    <strong>Quantity:</strong> {orderDt?.quantity}
+                  </p>
+                  <p>
+                    <strong>Size:</strong> {orderDt?.size}
+                  </p>
 
+                  <strong>Extra Items:</strong>
+                  {orderDt?.extras.map((extra, index) => (
+                    <aside key={index}>
+                      <p>
+                        {extra?.nameOfAddon} {extra?.priceOfAddon}tk.{" "}
+                      </p>
+                    </aside>
+                  ))}
+                </div>
+                <div className="divider"></div>
+              </div>
+            ))}
             <div className="customer_details">
               <h6>Customer Details</h6>
               <hr />
               <p>
-                <strong>Name:</strong> MD. MOINUL HOSSAIN
+                <strong>Name:</strong> {orderDetailsForPopup?.cus_name}
               </p>
               <p>
-                <strong>Phone:</strong> +88 01681894386
+                <strong>Phone:</strong> {orderDetailsForPopup?.cus_phone}
               </p>
               <p>
-                <strong>Email:</strong> moinul@gmail.com
+                <strong>Email:</strong> {orderDetailsForPopup.cus_email}
               </p>
               <p>
-                <strong>Address:</strong> 270, Japan Garden City, Mohammadpur,
-                Dhaka-1207
+                <strong>Area:</strong> {orderDetailsForPopup?.ship_city}
+              </p>
+              <p>
+                <strong>Address:</strong> {orderDetailsForPopup?.cus_add1}
               </p>
               <hr />
               <hr />
-              <p>
-                <strong>Discount(If any):</strong> - 80 tk.{" "}
-              </p>
+              {/* <p>
+              <strong>Discount(If any):</strong> - 00 tk.{" "}
+            </p> */}
               <p>
                 <strong>Delivery Charge:</strong> + 80 tk.{" "}
               </p>
               <p>
-                <strong>Total=</strong> 690 tk.{" "}
+                <strong>Total=</strong> {orderDetailsForPopup?.total_amount} tk.{" "}
               </p>
               <p>
-                <strong>Payment Option:</strong> Cash on delivery
+                <strong>Payment Option:</strong>{" "}
+                {orderDetailsForPopup?.payment_method}
               </p>
             </div>
           </div>

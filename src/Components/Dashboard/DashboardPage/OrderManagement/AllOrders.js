@@ -22,7 +22,7 @@ const AllOrders = () => {
   //handle the trand_id and matching it with the backend of order for show it in the popup page by props
   const handleOrderInfoAdmin = (tran_id) => {
     axios
-      .get(`http://localhost:8000/adminOrdersDetails/${tran_id}`)
+      .get(`http://localhost:8000/adminOrdersDetails?tran_id=` + tran_id)
       .then((response) => {
         setOrderDetailsForPopup(response?.data);
       })
@@ -55,7 +55,7 @@ const AllOrders = () => {
                 </thead>
                 <tbody>
                   {orders.map((order) => (
-                    <tr key={order?.id}>
+                    <tr key={order?.tran_id}>
                       <th scope="row">{order?.tran_id}</th>
                       <td>{order?.orderedData?.length}</td>
                       <td>{order?.cus_name}</td>
