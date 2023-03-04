@@ -1,3 +1,5 @@
+/* ********start*************** Order List page design of admin order list */
+
 .status {
   padding: 3px;
   border-radius: 5px;
@@ -42,3 +44,9 @@
 .status_select_option {
   width: 50%;
 }
+
+/* Order List page design of admin order list *************end********** */
+
+/* ************start*********** Orders page design of Customer Order */
+
+/* Orders page design of Customer Order ************end*********** */
