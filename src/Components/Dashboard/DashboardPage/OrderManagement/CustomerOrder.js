@@ -22,30 +22,119 @@ const CustomerOrder = () => {
                   <strong>Order Id:</strong> dJfv-05BG
                 </p>
               </aside>
-              <aside className="my-2">
-                <img src={demo} alt="" className="order_image mb-2" />
-                <h6>DishCo Special Platter With japanese vegetable.</h6>
-              </aside>
-              <aside className="order_info">
-                <p>
-                  <strong>Price:</strong> 600 tk.
-                </p>
-                <p>
-                  <strong>Quantity:</strong> 2
-                </p>
-              </aside>
-              <aside className="order_info">
-                <p>
-                  <strong>Extra Items:</strong>{" "}
-                  <ul>
-                    <li>Sause 30 tk.</li>
-                    <li>Mewonese 30 tk.</li>
-                  </ul>
-                </p>
-                <p>
-                  <strong>Size(If Any):</strong> 8"
-                </p>
-              </aside>
+              {/* //////////////// Per Items each order */}
+              <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  {/* Items 1 */}
+                  <div class="carousel-item active">
+                    <aside className="my-2">
+                      <img src={demo} alt="" className="order_image mb-2" />
+                      <h6>DishCo Special Platter With japanese vegetable.</h6>
+                    </aside>
+                    <aside className="order_info">
+                      <p>
+                        <strong>Price:</strong> 600 tk.
+                      </p>
+                      <p>
+                        <strong>Quantity:</strong> 2
+                      </p>
+                    </aside>
+                    <aside className="order_info">
+                      <p>
+                        <strong>Extra Items:</strong>{" "}
+                        <ul>
+                          <li>Sause 30 tk.</li>
+                          <li>Mewonese 30 tk.</li>
+                        </ul>
+                      </p>
+                      <p>
+                        <strong>Size(If Any):</strong> 8"
+                      </p>
+                    </aside>
+                  </div>
+                  {/* Items 2 */}
+                  <div class="carousel-item">
+                    <aside className="my-2">
+                      <img src={demo} alt="" className="order_image mb-2" />
+                      <h6>DishCo Special Platter With japanese vegetable.</h6>
+                    </aside>
+                    <aside className="order_info">
+                      <p>
+                        <strong>Price:</strong> 600 tk.
+                      </p>
+                      <p>
+                        <strong>Quantity:</strong> 2
+                      </p>
+                    </aside>
+                    <aside className="order_info">
+                      <p>
+                        <strong>Extra Items:</strong>{" "}
+                        <ul>
+                          <li>Sause 30 tk.</li>
+                          <li>Mewonese 30 tk.</li>
+                        </ul>
+                      </p>
+                      <p>
+                        <strong>Size(If Any):</strong> 8"
+                      </p>
+                    </aside>
+                  </div>
+                  {/* Items 3 */}
+                  <div class="carousel-item">
+                    <aside className="my-2">
+                      <img src={demo} alt="" className="order_image mb-2" />
+                      <h6>DishCo Special Platter With japanese vegetable.</h6>
+                    </aside>
+                    <aside className="order_info">
+                      <p>
+                        <strong>Price:</strong> 600 tk.
+                      </p>
+                      <p>
+                        <strong>Quantity:</strong> 2
+                      </p>
+                    </aside>
+                    <aside className="order_info">
+                      <p>
+                        <strong>Extra Items:</strong>{" "}
+                        <ul>
+                          <li>Sause 30 tk.</li>
+                          <li>Mewonese 30 tk.</li>
+                        </ul>
+                      </p>
+                      <p>
+                        <strong>Size(If Any):</strong> 8"
+                      </p>
+                    </aside>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon order_slide_btn"
+                    aria-hidden="true"
+                  ></span>
+                  <i class="bi bi-chevron-left order_slide_btn_previous"></i>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon order_slide_btn"
+                    aria-hidden="true"
+                  ></span>
+                  <i class="bi bi-chevron-right order_slide_btn_next"></i>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              {/* Per Items each order ////////////// */}
               <hr />
               <aside className="order_info">
                 <p>

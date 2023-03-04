@@ -84,4 +84,22 @@
   width: 150px;
   height: auto;
 }
+
+.order_slide_btn_previous,
+.order_slide_btn_next {
+  color: var(--deep-green);
+  font-size: 30px;
+  margin-bottom: -35px !important;
+}
+.order_slide_btn_previous {
+  margin-left: -30px !important;
+}
+.order_slide_btn_next {
+  margin-right: -30px !important;
+}
+
+.order_slide_btn {
+  display: none;
+  padding: 20px 0 !important;
+}
 /* Orders page design of Customer Order ************end*********** */
