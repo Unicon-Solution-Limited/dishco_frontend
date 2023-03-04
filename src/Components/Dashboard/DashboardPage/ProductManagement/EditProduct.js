@@ -10,41 +10,41 @@ const EditProduct = () => {
       </Link>
 
       <form className="edit_form my-5">
-        <div class="mb-3">
-          <label for="exampleInputImage" class="form-label">
+        <div className="mb-3">
+          <label for="exampleInputImage" className="form-label">
             <strong>Product Image: </strong>
           </label>
           <div className="d-flex">
             <input
               type="file"
-              class="form-control editInput"
+              className="form-control editInput"
               id="exampleInputImage"
             />
-            <button type="submit" class="btn MyBtn">
+            <button type="submit" className="btn MyBtn">
               <i className="bi bi-check2-square"></i>
             </button>
           </div>
         </div>
 
-        <div class="mb-3">
-          <label for="exampleInputText" class="form-label">
+        <div className="mb-3">
+          <label for="exampleInputText" className="form-label">
             <strong>Product Name: </strong>
           </label>
           <div className="d-flex">
             <input
               type="text"
-              class="form-control editInput"
+              className="form-control editInput"
               id="exampleInputText"
               placeholder="DishCo Special Pizza"
             />
-            <button type="submit" class="btn MyBtn">
+            <button type="submit" className="btn MyBtn">
               <i className="bi bi-check2-square"></i>
             </button>
           </div>
         </div>
 
-        <div class="mb-3">
-          <label for="exampleInputPrice" class="form-label">
+        <div className="mb-3">
+          <label for="exampleInputPrice" className="form-label">
             <strong>Product Price and Size: </strong>
           </label>
           {/* size and price */}
