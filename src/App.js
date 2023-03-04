@@ -26,6 +26,7 @@ import AllOrders from "./Components/Dashboard/DashboardPage/OrderManagement/AllO
 import PrivateRoute from "./Components/Authentication/PrivateRoute/PrivateRoute";
 import Success from "./Components/Pages/Checkout/Success";
 import EditProduct from "./Components/Dashboard/DashboardPage/ProductManagement/EditProduct";
+import CustomerOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CustomerOrder";
 
 function App() {
   return (
@@ -61,6 +62,9 @@ function App() {
             </Route>
             <Route path="/allOrders">
               <AllOrders />
+            </Route>
+            <Route path="/MyOrder">
+              <CustomerOrder />
             </Route>
             {/* Dashboard router end */}
 

@@ -1,3 +1,5 @@
+/* ********start*************** Order List page design of admin order list */
+
 .status {
   padding: 3px;
   border-radius: 5px;
@@ -42,3 +44,65 @@
 .status_select_option {
   width: 50%;
 }
+
+/* Order List page design of admin order list *************end********** */
+
+/* ************start*********** Orders page design of Customer Order */
+.customer_order {
+  margin: 30px 0;
+}
+.single_order {
+  background-color: #c0e4b4;
+  border: 10px solid var(--white);
+  padding: 0;
+  text-align: center;
+  position: relative;
+}
+.order_date_id {
+  border-top: 1px solid var(--green);
+  border-bottom: 1px solid var(--green);
+  padding: 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.order_info {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.order_total_status {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid var(--green);
+  border-bottom: 1px solid var(--green);
+  padding: 5px 0;
+}
+
+.order_image {
+  width: 150px;
+  height: auto;
+}
+
+.order_slide_btn_previous,
+.order_slide_btn_next {
+  color: var(--deep-green);
+  font-size: 30px;
+  margin-bottom: -35px !important;
+}
+.order_slide_btn_previous {
+  margin-left: -30px !important;
+}
+.order_slide_btn_next {
+  margin-right: -30px !important;
+}
+
+.order_slide_btn {
+  display: none;
+  padding: 20px 0 !important;
+}
+
+.order_cancel button {
+  color: var(--white) !important;
+}
+/* Orders page design of Customer Order ************end*********** */
