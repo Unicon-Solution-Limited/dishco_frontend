@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SidebarNav from "../../Layouts/SidebarNav";
 import TopbarNav from "../../Layouts/TopbarNav";
 import "./ProductManagement.css";
 import { Link } from "react-router-dom";
 import ViewProductDetails from "./ViewProductDetails";
+import axios from "axios";
 
 const AllProduct = () => {
+  const [allFoods, setAllFoods] = useState([]);
+
+  useEffect(() => {
+    const fetchAllFood = () => {
+      axios
+        .get("http://localhost:8000/getAllProducts")
+        .then((response) => setAllFoods(response?.data))
+        .catch((error) => console.log(error));
+    };
+    fetchAllFood();
+  }, []);
+
+  console.log(allFoods);
+
   return (
     <>
       <TopbarNav />
@@ -27,32 +42,46 @@ const AllProduct = () => {
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
-                <tbody className="table-group-divider">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>
-                      {" "}
-                      <img alt="" className="dashboard_all_product_img" />
-                    </td>
-                    <td className="product_name_tc">DishCo Pizza</td>
-                    <td>500 tk.</td>
-                    <td className="action_button">
-                      <button
-                        className="btn btn-info"
-                        data-bs-toggle="modal"
-                        data-bs-target="#view"
-                      >
-                        View
-                      </button>
-                      <Link to="/editProduct" className="btn btn-success">
-                        Edit
-                      </Link>
-                      <button className="btn btn-danger">
-                        <i className="bi bi-trash"></i>
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
+                {allFoods.map((foodDt, index) => (
+                  <tbody className="table-group-divider" key={foodDt._id}>
+                    <tr>
+                      <th scope="row">{index + 1}</th>
+                      <td>
+                        {" "}
+                        <img
+                          src={foodDt.image}
+                          alt=""
+                          className="dashboard_all_product_img"
+                        />
+                      </td>
+                      <td className="product_name_tc">{foodDt.name}</td>
+                      <td>
+                        {" "}
+                        {foodDt?.sizePriceItem?.map((sizePrice, k) => (
+                          <span key={k}>
+                            <span>{sizePrice.price} </span>
+                          </span>
+                        ))}{" "}
+                        tk.
+                      </td>
+                      <td className="action_button">
+                        <button
+                          className="btn btn-info"
+                          data-bs-toggle="modal"
+                          data-bs-target="#view"
+                        >
+                          View
+                        </button>
+                        <Link to="/editProduct" className="btn btn-success">
+                          Edit
+                        </Link>
+                        <button className="btn btn-danger">
+                          <i className="bi bi-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                ))}
               </table>
             </div>
           </main>
