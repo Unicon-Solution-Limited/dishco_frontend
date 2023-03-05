@@ -22,11 +22,11 @@ import Returnpolicy from "./Components/Pages/FooterPages/Returnpolicy";
 import Shop from "./Components/Pages/FooterPages/Shop";
 import TandC from "./Components/Pages/FooterPages/TandC";
 import CartContext from "./Components/AllContext/CartContext";
-import AllOrders from "./Components/Dashboard/DashboardPage/OrderManagement/AllOrders";
+import AllOrdersForAdmin from "./Components/Dashboard/DashboardPage/OrderManagement/AllOrdersForAdmin";
 import PrivateRoute from "./Components/Authentication/PrivateRoute/PrivateRoute";
 import Success from "./Components/Pages/Checkout/Success";
 import EditProduct from "./Components/Dashboard/DashboardPage/ProductManagement/EditProduct";
-import CustomerOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CustomerOrder";
+import CustomerOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CustomerOrders";
 
 function App() {
   return (
@@ -61,7 +61,7 @@ function App() {
               <EditProduct />
             </Route>
             <Route path="/allOrders">
-              <AllOrders />
+              <AllOrdersForAdmin />
             </Route>
             <Route path="/MyOrder">
               <CustomerOrder />

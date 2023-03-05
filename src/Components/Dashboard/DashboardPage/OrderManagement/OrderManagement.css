@@ -53,21 +53,21 @@
 /* Order List page design of admin order list *************end********** */
 
 /* ************start*********** Orders page design of Customer Order */
+.single_order_section {
+  background-color: var(--green);
+  color: var(--black);
+  padding: 20px;
+}
+.single_order_section:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
 .customer_order {
-  margin: 30px 0;
+  margin: 30px;
 }
-.single_order {
-  background-color: #c0e4b4;
-  border: 10px solid var(--white);
-  padding: 0;
-  text-align: center;
-  position: relative;
-}
+
 .order_date_id {
-  border-top: 1px solid var(--green);
-  border-bottom: 1px solid var(--green);
   padding: 5px 0;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .order_info {

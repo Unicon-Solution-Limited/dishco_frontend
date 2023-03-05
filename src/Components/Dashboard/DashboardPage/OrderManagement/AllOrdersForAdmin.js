@@ -5,7 +5,7 @@ import "./OrderManagement.css";
 import axios from "axios";
 import PopupOrderAdmin from "./PopupOrderAdmin";
 
-const AllOrders = () => {
+const AllOrdersForAdmin = () => {
   const [orders, setOrders] = useState([]);
   const [orderDetailsForPopup, setOrderDetailsForPopup] = useState([]);
 
@@ -102,4 +102,4 @@ const AllOrders = () => {
   );
 };
 
-export default AllOrders;
+export default AllOrdersForAdmin;
