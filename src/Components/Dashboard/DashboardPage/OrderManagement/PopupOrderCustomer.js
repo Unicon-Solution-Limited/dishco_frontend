@@ -48,11 +48,9 @@ const PopupOrderCustomer = () => {
               </section>
               <aside className="order_info">
                 <span>
-                  <strong>Extra Items:</strong>{" "}
-                  <ul>
-                    <li>Sause 30 tk.</li>
-                    <li>Mewonese 30 tk.</li>
-                  </ul>
+                  <strong>Extra Items:</strong>
+                  <li>Sause 30 tk.</li>
+                  <li>Mewonese 30 tk.</li>
                 </span>
                 <p className="mt-3">
                   <strong>Size(If Any):</strong> 8"
