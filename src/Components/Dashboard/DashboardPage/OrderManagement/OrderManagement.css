@@ -70,22 +70,32 @@
   padding: 5px 0;
 }
 
+.product_single_order_items {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.product_single_order_first_col {
+  display: flex;
+  gap: 30px;
+}
 .order_info {
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   margin: 10px 0;
 }
 
-.order_total_status {
+.order_total_status,
+.discount_delivery_charge {
   display: flex;
   justify-content: space-around;
   border-top: 1px solid var(--green);
-  border-bottom: 1px solid var(--green);
   padding: 10px 0;
 }
 
 .order_image {
-  width: 150px;
+  width: 100px;
   height: auto;
 }
 
@@ -105,6 +115,17 @@
 .order_slide_btn {
   display: none;
   padding: 20px 0 !important;
+}
+.invoice_btn {
+  background-color: var(--green);
+  color: #000 !important;
+}
+.invoice_btn:hover {
+  background-color: var(--red);
+}
+.single_order_modal_footer {
+  display: flex;
+  justify-content: space-between;
 }
 
 .order_cancel button {
