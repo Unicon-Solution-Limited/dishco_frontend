@@ -8,7 +8,7 @@ const PopupOrderCustomer = () => {
     <div
       className="modal fade"
       id="singleOrderModal"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="singleOrderModalLabel"
       aria-hidden="true"
     >
@@ -47,13 +47,13 @@ const PopupOrderCustomer = () => {
                 </aside>
               </section>
               <aside className="order_info">
-                <p>
+                <span>
                   <strong>Extra Items:</strong>{" "}
                   <ul>
                     <li>Sause 30 tk.</li>
                     <li>Mewonese 30 tk.</li>
                   </ul>
-                </p>
+                </span>
                 <p className="mt-3">
                   <strong>Size(If Any):</strong> 8"
                 </p>

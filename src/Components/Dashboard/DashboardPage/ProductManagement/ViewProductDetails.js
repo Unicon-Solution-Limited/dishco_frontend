@@ -10,7 +10,7 @@ const ViewProductDetails = () => {
       id="view"
       data-bs-backdrop="static"
       data-bs-keyboard="false"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="viewLabel"
       aria-hidden="true"
     >
