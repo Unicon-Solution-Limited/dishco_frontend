@@ -22,23 +22,24 @@
 
 .order_details {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 50px;
 }
-.product_details,
+.product_details {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 30px;
+}
 .customer_details {
-  width: 50%;
-}
-
-.divider {
-  margin: 5px 0;
-  width: 50px;
-  height: 1px;
-  background-color: var(--red);
+  display: flex;
+  justify-content: space-around;
 }
 
 .single_product_modal_image {
-  width: 100px;
-  height: auto;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }
 .order_modal_footer {
   display: flex !important;

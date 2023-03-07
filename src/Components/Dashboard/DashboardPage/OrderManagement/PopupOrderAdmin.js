@@ -36,12 +36,14 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div className="modal-dialog">
+      <div className="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div className="modal-content">
           <div className="modal-header">
-            <h1 className="modal-title fs-5" id="exampleModalLabel">
-              Order Date & Time: {orderDetailsForPopup?.orderTime}
-            </h1>
+            <p className="modal-title fs-5" id="exampleModalLabel">
+              <strong>Order Date & Time:</strong>{" "}
+              {orderDetailsForPopup?.orderTime}
+              {/* .slice(4, 25) */}
+            </p>
             <button
               type="button"
               className="btn-close"
@@ -50,75 +52,82 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
             ></button>
           </div>
           <div className="modal-body order_details">
-            {orderDetailsForPopup?.orderedData?.map((orderDt) => (
-              <div className="product_details" key={orderDt.id}>
-                <div className="order_product_single">
-                  <img
-                    src={orderDt.image}
-                    alt=""
-                    className="single_product_modal_image"
-                  />
-                  <p>
-                    <strong>{orderDt?.name}</strong>
-                  </p>
-                  <p>
-                    <strong>Price:</strong> {orderDt?.price} tk.
-                  </p>
-                  <p>
-                    <strong>Quantity:</strong> {orderDt?.quantity}
-                  </p>
-                  <p>
-                    <strong>Size:</strong> {orderDt?.size}
-                  </p>
+            <div className="product_details">
+              {orderDetailsForPopup?.orderedData?.map((orderDt) => (
+                <>
+                  <div className="order_product_single" key={orderDt.id}>
+                    <img
+                      src={orderDt.image}
+                      alt=""
+                      className="single_product_modal_image"
+                    />
+                    <p className="mt-3">
+                      <strong>{orderDt?.name}</strong>
+                    </p>
+                    <p>
+                      <strong>Price:</strong> {orderDt?.price} tk.
+                    </p>
+                    <p>
+                      <strong>Quantity:</strong> {orderDt?.quantity}
+                    </p>
+                    <p>
+                      <strong>Size:</strong> {orderDt?.size}
+                    </p>
 
-                  <strong>Extra Items:</strong>
-                  {orderDt?.extras.map((extra, index) => (
-                    <aside key={index}>
-                      <p>
-                        {extra?.nameOfAddon} {extra?.priceOfAddon}tk.{" "}
-                      </p>
-                    </aside>
-                  ))}
-                </div>
-                <div className="divider"></div>
+                    <strong>Extra Items:</strong>
+                    {orderDt?.extras.map((extra, index) => (
+                      <aside key={index}>
+                        <p>
+                          {extra?.nameOfAddon} {extra?.priceOfAddon}tk.{" "}
+                        </p>
+                      </aside>
+                    ))}
+                  </div>
+                </>
+              ))}
+            </div>
+
+            <div>
+              <h3 className="text-center">Customer Details</h3>
+              <hr />
+              <div className="customer_details">
+                <span>
+                  <p>
+                    <strong>Name:</strong> {orderDetailsForPopup?.cus_name}
+                  </p>
+                  <p>
+                    <strong>Phone:</strong> {orderDetailsForPopup?.cus_phone}
+                  </p>
+                  <p>
+                    <strong>Email:</strong> {orderDetailsForPopup.cus_email}
+                  </p>
+                  <p>
+                    <strong>Area:</strong> {orderDetailsForPopup?.ship_city}
+                  </p>
+                  <p>
+                    <strong>Address:</strong> {orderDetailsForPopup?.cus_add1}
+                  </p>
+                </span>
+                <span>
+                  <p>
+                    <strong>Discount(If any):</strong> - 00 tk.{" "}
+                  </p>
+                  <p>
+                    <strong>Delivery Charge:</strong> + 80 tk.{" "}
+                  </p>
+                  <p>
+                    <strong>Total=</strong> {orderDetailsForPopup?.total_amount}{" "}
+                    tk.{" "}
+                  </p>
+                  <p>
+                    <strong>Payment Option:</strong>{" "}
+                    {orderDetailsForPopup?.payment_method}
+                  </p>
+                </span>
               </div>
-            ))}
-            <div className="customer_details">
-              <h6>Customer Details</h6>
-              <hr />
-              <p>
-                <strong>Name:</strong> {orderDetailsForPopup?.cus_name}
-              </p>
-              <p>
-                <strong>Phone:</strong> {orderDetailsForPopup?.cus_phone}
-              </p>
-              <p>
-                <strong>Email:</strong> {orderDetailsForPopup.cus_email}
-              </p>
-              <p>
-                <strong>Area:</strong> {orderDetailsForPopup?.ship_city}
-              </p>
-              <p>
-                <strong>Address:</strong> {orderDetailsForPopup?.cus_add1}
-              </p>
-              <hr />
-              <hr />
-              {/* <p>
-              <strong>Discount(If any):</strong> - 00 tk.{" "}
-            </p> */}
-              <p>
-                <strong>Delivery Charge:</strong> + 80 tk.{" "}
-              </p>
-              <p>
-                <strong>Total=</strong> {orderDetailsForPopup?.total_amount} tk.{" "}
-              </p>
-              <p>
-                <strong>Payment Option:</strong>{" "}
-                {orderDetailsForPopup?.payment_method}
-              </p>
             </div>
           </div>
-          <h3 className="container">{orderDetailsForPopup?.product_status}</h3>
+          {/* <h3 className="container">{orderDetailsForPopup?.product_status}</h3> */}
           <form
             onSubmit={(e) => handleStatusSubmit(orderDetailsForPopup._id, e)}
           >
