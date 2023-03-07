@@ -3,14 +3,14 @@ import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
 import "./FooterPages.css";
 
-const Shop = () => {
+const GiftAndRanking = () => {
   return (
     <>
       <Header />
-      All Items
+      Gift And Ranking
       <Footer />
     </>
   );
 };
 
-export default Shop;
+export default GiftAndRanking;

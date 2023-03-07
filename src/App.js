@@ -19,7 +19,7 @@ import ContactUs from "./Components/Pages/FooterPages/ContactUs";
 import MenuCard from "./Components/Pages/FooterPages/MenuCard";
 import PrivacyPolicy from "./Components/Pages/FooterPages/PrivacyPolicy";
 import Returnpolicy from "./Components/Pages/FooterPages/Returnpolicy";
-import Shop from "./Components/Pages/FooterPages/Shop";
+import GiftAndRanking from "./Components/Pages/FooterPages/GiftAndRanking";
 import TandC from "./Components/Pages/FooterPages/TandC";
 import CartContext from "./Components/AllContext/CartContext";
 import AllOrdersForAdmin from "./Components/Dashboard/DashboardPage/OrderManagement/AllOrdersForAdmin";
@@ -103,8 +103,8 @@ function App() {
             <Route path="/return-policy">
               <Returnpolicy />
             </Route>
-            <Route path="/shop">
-              <Shop />
+            <Route path="/gift_ranking">
+              <GiftAndRanking />
             </Route>
             <Route path="/tc">
               <TandC />

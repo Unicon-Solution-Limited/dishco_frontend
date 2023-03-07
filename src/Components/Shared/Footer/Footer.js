@@ -88,7 +88,7 @@ const Footer = () => {
                   <Link to="/menus">Menu Card</Link>
                 </li>
                 <li>
-                  <Link to="/shop">All Items</Link>
+                  <Link to="/gift_ranking">Gift and Ranking</Link>
                 </li>
                 <li>
                   <Link to="/privacy-policy">Privacy policy</Link>
