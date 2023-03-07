@@ -44,3 +44,61 @@
 /* *********** Menu Card */
 
 /* Menu Card *********** */
+
+/* *********** Gift and Ranking */
+.rank_body_main {
+  background-color: var(--black);
+  color: var(--white);
+}
+.rank_headline {
+  color: var(--green);
+}
+.rank_body_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.rank_body {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  color: var(--black);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+  text-transform: uppercase;
+  box-shadow: rgba(100, 188, 70, 0.25) 0px 50px 100px -20px,
+    rgba(100, 188, 70, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.bronze {
+  background-color: #cd7f32;
+}
+.silver {
+  background-color: #c0c0c0;
+}
+.gold {
+  background-color: #ffd700;
+}
+.platinum {
+  background-color: #d3d2d2;
+}
+.note {
+  color: var(--red);
+}
+.bi-infinity {
+  font-size: 30px;
+  vertical-align: middle;
+}
+@media only screen and (max-width: 960px) {
+  .rank_body_main {
+    flex-direction: column;
+  }
+  .rank_body {
+    margin: 20px 0;
+  }
+}
+/* Gift and Ranking *********** */
