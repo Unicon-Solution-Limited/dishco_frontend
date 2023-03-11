@@ -57,7 +57,9 @@ const CustomerOrders = () => {
                 onClick={() => handleCustomerTranId(allCustomerOrder?.tran_id)}
               >
                 {allCustomerOrder?.orderTime} <br />
-                <strong>Order ID:</strong> {allCustomerOrder?.tran_id}
+                <strong>Order ID:</strong> {allCustomerOrder?.tran_id} <br />
+                <strong>Order Status:</strong>{" "}
+                {allCustomerOrder?.product_status}
               </button>
             ))}
             <PopupOrderCustomer customerOrderDetails={customerOrderDetails} />

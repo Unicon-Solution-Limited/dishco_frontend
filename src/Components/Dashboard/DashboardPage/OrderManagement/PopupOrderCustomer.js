@@ -84,7 +84,9 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
               <div className="modal-footer single_order_modal_footer">
                 <p>
                   <strong>Status:</strong>
-                  <span className="status pending">Pending</span>
+                  <span className="status pending">
+                    {customerOrderDtls?.product_status}
+                  </span>
                 </p>
                 <aside className="order_cancel">
                   <button className="btn invoice_btn">Invoice</button>
