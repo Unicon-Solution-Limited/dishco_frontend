@@ -5,12 +5,12 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
   const [statusMessage, setStatusMessage] = useState(false);
 
   // //handle status
-  const handleStatusSubmit = async (item_id, e) => {
+  const handleStatusSubmit = async (id, e) => {
     e.preventDefault();
     const product_status = statusRef?.current?.value;
 
     try {
-      const url = `http://localhost:8000/updateStatus/${item_id}`;
+      const url = `http://localhost:8000/updateStatus/${id}`;
       const option = {
         method: "PATCH",
         body: JSON.stringify({ product_status }),

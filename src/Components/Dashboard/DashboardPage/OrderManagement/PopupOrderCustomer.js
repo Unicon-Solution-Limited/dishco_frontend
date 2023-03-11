@@ -2,6 +2,26 @@ import React from "react";
 import "./OrderManagement.css";
 
 const PopupOrderCustomer = ({ customerOrderDetails }) => {
+  const handleCancel = async (value, id) => {
+    const product_status = value;
+    try {
+      const url = `http://localhost:8000/updateStatus/${id}`;
+      const option = {
+        method: "PATCH",
+        body: JSON.stringify({ product_status }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      await fetch(url, option);
+    } catch (error) {
+      console.log(error);
+    }
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+  };
   return (
     <>
       <div
@@ -92,9 +112,16 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
                   <button className="btn invoice_btn">Invoice</button>
                 </aside>
                 <aside className="order_cancel MyBtn">
-                  <button className="btn">
-                    Cancel order <i className="bi bi-trash"></i>
-                  </button>
+                  {customerOrderDtls.product_status === "Pending" && (
+                    <button
+                      className="btn"
+                      onClick={() =>
+                        handleCancel("canceled", customerOrderDtls._id)
+                      }
+                    >
+                      Cancel order <i className="bi bi-trash"></i>
+                    </button>
+                  )}
                 </aside>
               </div>
             </div>
