@@ -1,7 +1,18 @@
 import React from "react";
+import { useContext } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { CartProvider } from "../../AllContext/CartContext";
 
 const Success = () => {
+  const [cartData, setCartData, finaltotalAddonPrice, subTotalPrice] =
+    useContext(CartProvider);
+
+  useEffect(() => {
+    setCartData([]);
+    localStorage.removeItem("foodCart");
+  }, [setCartData]);
+
   return (
     <section className="success_main">
       <div className="success_body">

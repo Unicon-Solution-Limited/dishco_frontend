@@ -70,7 +70,7 @@ const Checkout = () => {
           setPaymentLoading(false);
           console.log(data);
         });
-      history.push("/dashboard");
+      history.push("/success/cashOnDelivery");
     }
   };
 
