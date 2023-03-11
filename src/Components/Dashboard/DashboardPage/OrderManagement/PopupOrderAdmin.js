@@ -64,6 +64,10 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
                     <p className="mt-3">
                       <strong>{orderDt?.name}</strong>
                     </p>
+
+                    <p>
+                      <strong>Code:</strong> {orderDt?.foodCode} tk.
+                    </p>
                     <p>
                       <strong>Price:</strong> {orderDt?.price} tk.
                     </p>
@@ -78,7 +82,7 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
                     {orderDt?.extras.map((extra, index) => (
                       <aside key={index}>
                         <p>
-                          {extra?.nameOfAddon} {extra?.priceOfAddon}tk.{" "}
+                          {extra?.nameOfAddon} ({extra?.priceOfAddon})tk.{" "}
                         </p>
                       </aside>
                     ))}
