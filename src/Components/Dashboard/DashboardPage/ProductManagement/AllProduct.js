@@ -30,13 +30,13 @@ const AllProduct = () => {
       const data = response.data;
       if (data) {
         setDeleteMessage("food deleted successfully");
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       }
     } catch (error) {
       console.log("Error deleting product:", error);
     }
-    setTimeout(() => {
-      window.location.reload();
-    }, 500);
   };
 
   return (
