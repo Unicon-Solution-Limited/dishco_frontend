@@ -8,6 +8,7 @@ import axios from "axios";
 
 const AllProduct = () => {
   const [allFoods, setAllFoods] = useState([]);
+  const [deleteMessage, setDeleteMessage] = useState("");
 
   useEffect(() => {
     const fetchAllFood = () => {
@@ -19,7 +20,24 @@ const AllProduct = () => {
     fetchAllFood();
   }, []);
 
-  console.log(allFoods);
+  //delete food from database
+  const handleFoodDelete = async (id) => {
+    try {
+      setDeleteMessage("");
+      const response = await axios.delete(
+        `http://localhost:8000/deleteFood/${id}`
+      );
+      const data = response.data;
+      if (data) {
+        setDeleteMessage("food deleted successfully");
+      }
+    } catch (error) {
+      console.log("Error deleting product:", error);
+    }
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+  };
 
   return (
     <>
@@ -75,7 +93,10 @@ const AllProduct = () => {
                         <Link to="/editProduct" className="btn btn-success">
                           Edit
                         </Link>
-                        <button className="btn btn-danger">
+                        <button
+                          className="btn btn-danger"
+                          onClick={() => handleFoodDelete(foodDt._id)}
+                        >
                           <i className="bi bi-trash"></i>
                         </button>
                       </td>

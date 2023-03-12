@@ -41,8 +41,6 @@ const Checkout = () => {
       orderTime: Date(),
     };
 
-    console.log(confirmOderData);
-
     //conditionally check the payment and hit the api
     if (confirmOderData.payment_method === "Online Payment") {
       fetch(`http://localhost:8000/onileInit`, {
