@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./ProductManagement.css";
 
@@ -11,6 +11,7 @@ const EditProduct = () => {
   const foodCodeRef = useRef();
   const stockRef = useRef();
   const descriptionRef = useRef();
+  const [selectedFood, setSelectedFood] = useState([]);
 
   // Handle Image Upload (image upload by api in cloudenery)
   const imageUploadHandler = async (e) => {
@@ -159,6 +160,24 @@ const EditProduct = () => {
       });
     setMessage("Your Product Udpade Successfully");
   };
+
+  //get selected food for update the addons name, price and food price with size
+  useEffect(() => {
+    const fetchFood = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8000/getFoodForEdit?foodEditId=${editPdId}`
+        );
+        const data = await response.json();
+        setSelectedFood(data);
+      } catch (error) {
+        console.log("err", error);
+      }
+    };
+    fetchFood();
+  }, [editPdId]);
+
+  console.log(selectedFood, "this is selected food");
 
   return (
     <section className="container py-5">
