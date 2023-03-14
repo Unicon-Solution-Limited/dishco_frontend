@@ -182,7 +182,6 @@ const EditProduct = () => {
 
   //remove addons
   const handleRemoveAddon = async (id) => {
-    console.log(id);
     try {
       const response = await axios.delete(
         `http://localhost:8000/deleteAddons/${id}`
@@ -232,7 +231,9 @@ const EditProduct = () => {
           console.log("suceesfully added");
           if (response.data) {
             setAddons([{ addonName: "", addonPrice: "" }]);
-            // window.location.reload();
+            setTimeout(() => {
+              window.location.reload();
+            }, 500);
           }
         }
       })
