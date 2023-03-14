@@ -90,7 +90,10 @@ const AllProduct = () => {
                         >
                           View
                         </button>
-                        <Link to="/editProduct" className="btn btn-success">
+                        <Link
+                          to={`/editProduct/${foodDt._id} `}
+                          className="btn btn-success"
+                        >
                           Edit
                         </Link>
                         <button

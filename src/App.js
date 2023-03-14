@@ -57,7 +57,7 @@ function App() {
             <Route path="/allProduct">
               <AllProduct />
             </Route>
-            <Route path="/editProduct">
+            <Route path="/editProduct/:editPdId">
               <EditProduct />
             </Route>
             <Route path="/allOrders">

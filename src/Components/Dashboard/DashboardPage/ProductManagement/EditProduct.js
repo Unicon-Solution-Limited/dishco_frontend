@@ -1,16 +1,173 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useRef, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import "./ProductManagement.css";
 
 const EditProduct = () => {
+  const { editPdId } = useParams();
+  const [message, setMessage] = useState(false);
+  const [photo, setPhoto] = useState("");
+  const foodNameRef = useRef();
+  const foodCodeRef = useRef();
+  const stockRef = useRef();
+  const descriptionRef = useRef();
+
+  // Handle Image Upload (image upload by api in cloudenery)
+  const imageUploadHandler = async (e) => {
+    // setLoading(true);
+    const imageFile = e.target.files[0];
+    const data = new FormData();
+    data.append("file", imageFile);
+    //your folder name
+    data.append("upload_preset", "dishcofood");
+    try {
+      const result = await axios.post(
+        //aykhne [Your Cloudinary Cloud Name] baki link thik thak thakbe
+        "https://api.cloudinary.com/v1_1/dnz6zg4on/upload",
+        data
+      );
+      setPhoto(result?.data?.url);
+      // setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  //img submit handle
+  const editHandleImgSubmit = (e) => {
+    e.preventDefault();
+    const editImg = {
+      image: photo,
+    };
+
+    axios
+      .patch(`http://localhost:8000/updateImage/${editPdId}`, editImg, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        if (response.data) {
+          console.log("suceesfully added");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setMessage("Your Product Udpade Successfully");
+  };
+
+  //Product name update
+  const handleFoodNameSubmit = (e) => {
+    e.preventDefault();
+    const editName = {
+      name: foodNameRef?.current?.value,
+    };
+
+    axios
+      .patch(`http://localhost:8000/updateName/${editPdId}`, editName, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        if (response.data) {
+          foodNameRef.current.value = "";
+          console.log("suceesfully added");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setMessage("Your Product Udpade Successfully");
+  };
+
+  //product code update
+  const handleFoodCodeSubmit = (e) => {
+    e.preventDefault();
+    const editCode = {
+      foodCode: foodCodeRef.current.value,
+    };
+
+    axios
+      .patch(`http://localhost:8000/updateCode/${editPdId}`, editCode, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        if (response.data) {
+          foodCodeRef.current.value = "";
+          console.log("suceesfully added");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setMessage("Your Product Udpade Successfully");
+  };
+
+  //Product Stock update
+  const handleFoodStockSubmit = (e) => {
+    e.preventDefault();
+    const editStock = {
+      stock: stockRef.current.value,
+    };
+
+    axios
+      .patch(`http://localhost:8000/updateStock/${editPdId}`, editStock, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        if (response.data) {
+          stockRef.current.value = "";
+          console.log("suceesfully added");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setMessage("Your Product Udpade Successfully");
+  };
+
+  //Description update
+  const handleFoodDesSubmit = (e) => {
+    e.preventDefault();
+    const editDescription = {
+      foodDescription: descriptionRef.current.value,
+    };
+
+    axios
+      .patch(
+        `http://localhost:8000/updateDescription/${editPdId}`,
+        editDescription,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        if (response.data) {
+          descriptionRef.current.value = "";
+          console.log("suceesfully added");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setMessage("Your Product Udpade Successfully");
+  };
+
   return (
     <section className="container py-5">
       <Link to="/allProduct" className="btn MyBtn">
         <i className="bi bi-chevron-double-left"></i> Back
       </Link>
 
-      <form className="edit_form my-5 row">
-        <div className="col-6 mb-3">
+      <div className="edit_form my-5 row">
+        <form className="col-6 mb-3" onSubmit={editHandleImgSubmit}>
           <label for="exampleInputImage" className="form-label">
             <strong>Product Image: </strong>
           </label>
@@ -19,14 +176,15 @@ const EditProduct = () => {
               type="file"
               className="form-control editInput"
               id="exampleInputImage"
+              onChange={imageUploadHandler}
             />
             <button type="submit" className="btn MyBtn">
               <i className="bi bi-check2-square"></i>
             </button>
           </div>
-        </div>
+        </form>
 
-        <div className="col-6 mb-3">
+        <form className="col-6 mb-3" onSubmit={handleFoodNameSubmit}>
           <label for="exampleInputText" className="form-label">
             <strong>Product Name: </strong>
           </label>
@@ -36,14 +194,15 @@ const EditProduct = () => {
               className="form-control editInput"
               id="exampleInputText"
               placeholder="DishCo Special Pizza"
+              ref={foodNameRef}
             />
             <button type="submit" className="btn MyBtn">
               <i className="bi bi-check2-square"></i>
             </button>
           </div>
-        </div>
+        </form>
 
-        <div className="mb-3 col-6">
+        <form className="mb-3 col-6" onSubmit={handleFoodCodeSubmit}>
           <label for="exampleInputText" className="form-label">
             <strong>Product Code: </strong>
           </label>
@@ -53,28 +212,30 @@ const EditProduct = () => {
               className="form-control editInput"
               id="exampleInputText"
               placeholder="DSP-20P"
+              ref={foodCodeRef}
             />
             <button type="submit" className="btn MyBtn">
               <i className="bi bi-check2-square"></i>
             </button>
           </div>
-        </div>
+        </form>
 
-        <div className="col-6 mb-3">
+        <form className="col-6 mb-3" onSubmit={handleFoodStockSubmit}>
           <label htmlFor="name" className="form-label">
             <strong>Product Stock</strong>
           </label>
           <select
             className="form-select"
             aria-label="Default select example"
-            // ref={stockRef}
+            ref={stockRef}
           >
             <option value="Stock_In">Stock In</option>
             <option value="Stock_Out">Stock Out</option>
           </select>
-        </div>
+          <button className="btn MyBtn">Update</button>
+        </form>
 
-        <div className="col-12 mb-4">
+        <form className="col-12 mb-4" onSubmit={handleFoodDesSubmit}>
           <label htmlFor="description" className="form-label">
             <strong>Food Description</strong>
           </label>
@@ -82,112 +243,10 @@ const EditProduct = () => {
             type="text"
             className="form-control"
             id="description"
-            // ref={foodDescriptionRef}
+            ref={descriptionRef}
           />
           <button className="btn MyBtn">Update</button>
-        </div>
-
-        <div className="col-4 mb-4">
-          <div>
-            <label htmlFor="categories" className="form-label">
-              Categories
-            </label>
-          </div>
-          <div>
-            <select
-              id="categories"
-              name="categories"
-              className="input-group form-select"
-              // ref={categoriesRef}
-              // onClick={handleSelectCategoriesOption}
-            >
-              <option value="">Choose Categories</option>
-              <option value="AppetizerRice">Appetizer & Rice </option>
-              <option value="Platter">Platter</option>
-              <option value="CheapoBox">Cheapo Box</option>
-              <option value="Cuisines">Cuisines</option>
-              <option value="Steak">Steak</option>
-              <option value="FastFood">Fast Food</option>
-              <option value="Dessert">Dessert</option>
-              <option value="Drinks">Drinks</option>
-            </select>
-          </div>
-        </div>
-        {/* sub categories */}
-        <div className="col-4 mb-4">
-          <div>
-            <label htmlFor="sub_categories" className="form-label">
-              Sub-Categories
-            </label>
-          </div>
-          <select
-            id="sub_categories"
-            name="sub_categories"
-            className="input-group form-select"
-            // ref={subCategoriesRef}
-            // onClick={handleSubCategoriesOption}
-          >
-            <>
-              <option value="">Choose</option>
-              <option value="Appetizer">Appetizer</option>
-              <option value="riceCuisine">rice Cuisine</option>
-            </>
-
-            <>
-              <option value="">Choose</option>
-              <option value="DishCoPlatter">DishCo Platter</option>
-            </>
-
-            <>
-              <option value="">Choose</option>
-              <option value="MeatBox">Meat Box</option>
-              <option value="RiceBowl">Rice Bowl</option>
-              <option value="PlatterCuisine"></option>
-            </>
-
-            <>
-              <option value="">Choose</option>
-              <option value="IndianCuisines">Indian Cuisines</option>
-              <option value="JapaneseCuisines">Japanese Cuisines</option>
-              <option value="KoreanCuisines">Korean Cuisines</option>
-              <option value="ChineseCuisines">Chinese Cuisines</option>
-            </>
-
-            <>
-              <option value="">Choose</option>
-              <option value="Pizza">Pizza</option>
-              <option value="BurgerSandwich">Burger and Sandwich</option>
-              <option value="FryBasket">Fry Basket</option>
-              <option value="Pasta">Pasta</option>
-            </>
-
-            <>
-              <option value="">Choose</option>
-              <option value="PeyalaTea">Peyala Tea</option>
-              <option value="HotDrinks">Hot Drinks</option>
-              <option value="ColdDrinks">Cold Drinks</option>
-            </>
-          </select>
-        </div>
-        {/* child categories */}
-        <div className="mb-4 col-4">
-          <div>
-            <label htmlFor="child_categories" className="form-label">
-              Child_Categories
-            </label>
-          </div>
-          <select
-            id="child_categories"
-            name="child_categories"
-            className="input-group form-select"
-            // ref={childCategoriesRef}
-          >
-            <>
-              <option value="">Choose</option>
-              <option value="Soup">Soup</option>
-            </>
-          </select>
-        </div>
+        </form>
 
         <div className="mb-3 col-6">
           <label for="exampleInputPrice" className="form-label">
@@ -287,7 +346,9 @@ const EditProduct = () => {
           </button>
         </div>
         {/* addons */}
-      </form>
+      </div>
+
+      <h3 style={{ color: "green", textAlign: "center" }}>{message}</h3>
     </section>
   );
 };
