@@ -12,6 +12,7 @@ const EditProduct = () => {
   const stockRef = useRef();
   const descriptionRef = useRef();
   const [selectedFood, setSelectedFood] = useState([]);
+  const [addons, setAddons] = useState([{ addonName: "", addonPrice: "" }]);
 
   // Handle Image Upload (image upload by api in cloudenery)
   const imageUploadHandler = async (e) => {
@@ -179,6 +180,68 @@ const EditProduct = () => {
 
   console.log(selectedFood, "this is selected food");
 
+  //remove addons
+  const handleRemoveAddon = async (id) => {
+    console.log(id);
+    try {
+      const response = await axios.delete(
+        `http://localhost:8000/deleteAddons/${id}`
+      );
+      const data = response.data;
+      if (data) {
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
+      }
+    } catch (error) {
+      console.log("Error deleting product:", error);
+    }
+  };
+
+  //dynamic addons adding
+  const handleAddonsChange = (event, index) => {
+    const newAddons = [...addons];
+    newAddons[index][event.target.name] = event.target.value;
+    setAddons(newAddons);
+  };
+
+  const handleAddaddons = () => {
+    setAddons([...addons, { addonName: "", addonPrice: "" }]);
+  };
+
+  const handleRemoveAddons = (index) => {
+    setAddons(addons.filter((s, i) => i !== index));
+  };
+
+  //now submit funtion update the addons to the backend
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const allData = {
+      addonsItem: addons,
+    };
+    // update the new adon info at mongodb
+    axios
+      .patch(`http://localhost:8000/updateNewAddons/${editPdId}`, allData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        if (response.data) {
+          stockRef.current.value = "";
+          console.log("suceesfully added");
+          if (response.data) {
+            setAddons([{ addonName: "", addonPrice: "" }]);
+            // window.location.reload();
+          }
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setMessage("Your Product Udpade Successfully");
+  };
+
   return (
     <section className="container py-5">
       <Link to="/allProduct" className="btn MyBtn">
@@ -267,101 +330,61 @@ const EditProduct = () => {
           <button className="btn MyBtn">Update</button>
         </form>
 
-        <div className="mb-3 col-6">
-          <label for="exampleInputPrice" className="form-label">
-            <strong>Product Price and Size: </strong>
-          </label>
-          {/* size and price */}
-          <div>
-            <div>
-              <label>
-                Size:
-                <input
-                  type="text"
-                  name="size"
-                  //   value={size.size}
-                  //   onChange={(e) => handleSizePriceChange(e, index)}
-                  className="form-control"
-                  placeholder="8"
-                />
-              </label>
-              ---
-              <label>
-                Price:
-                <input
-                  type="number"
-                  name="price"
-                  //   value={size.price}
-                  //   onChange={(e) => handleSizePriceChange(e, index)}
-                  className="form-control"
-                  placeholder="390 tk."
-                />
-              </label>
-              <button
-                type="button"
-                // onClick={() => handleRemoveSizePrice(index)}
-                className="btn btn-danger"
-              >
-                <i className="bi bi-trash"></i>
-              </button>
-              <br />
-            </div>
+        {/* addons */}
+        <div className="my-5 col-6">
+          <form onSubmit={handleSubmit}>
+            {addons.map((size, index) => (
+              <div key={index}>
+                <label>
+                  Addons Name:
+                  <input
+                    type="text"
+                    name="addonName"
+                    value={size.addonName}
+                    onChange={(e) => handleAddonsChange(e, index)}
+                    className="form-control"
+                    placeholder="Ex. Extra Cheese"
+                  />
+                </label>
+                ---
+                <label>
+                  Addons Price:
+                  <input
+                    type="number"
+                    name="addonPrice"
+                    value={size.addonPrice}
+                    onChange={(e) => handleAddonsChange(e, index)}
+                    className="form-control"
+                    placeholder="30 tk."
+                  />
+                </label>
+                <button
+                  type="button"
+                  onClick={() => handleRemoveAddons(index)}
+                  className="btn btn-danger"
+                >
+                  <i className="bi bi-trash"></i>
+                </button>
+                <br />
+              </div>
+            ))}
 
             <button
               type="button"
               className="btn btn-success mt-2"
-              // onClick={handleAddSizePrice}
+              onClick={handleAddaddons}
             >
-              Add
+              Addons Add
             </button>
-          </div>
-          {/* size and price */}
-        </div>
-
-        {/* addons */}
-        <div className="mb-3 col-6">
-          <label for="exampleInputPrice" className="form-label">
-            <strong>Extra Items Name and Price: </strong>
-          </label>
-          <div>
-            <label>
-              Name:
-              <input
-                type="text"
-                name="addonName"
-                // value={size.addonName}
-                // onChange={(e) => handleAddonsChange(e, index)}
-                className="form-control"
-                placeholder="Ex. Extra Cheese"
-              />
-            </label>
-            ---
-            <label>
-              Price:
-              <input
-                type="number"
-                name="addonPrice"
-                // value={size.addonPrice}
-                // onChange={(e) => handleAddonsChange(e, index)}
-                className="form-control"
-                placeholder="30 tk."
-              />
-            </label>
-            <button
-              type="button"
-              // onClick={() => handleRemoveAddons(index)}
-              className="btn btn-danger"
-            >
-              <i className="bi bi-trash"></i>
+            <button className="btn btn-success mt-2" type="submit">
+              submit
             </button>
-            <br />
-          </div>
+          </form>
           <button
-            type="button"
             className="btn btn-success mt-2"
-            // onClick={handleAddaddons}
+            onClick={() => handleRemoveAddon(editPdId)}
           >
-            Add
+            DELETE PREVIOUS ADDONS
           </button>
         </div>
         {/* addons */}
