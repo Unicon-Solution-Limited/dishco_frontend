@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductManagement.css";
 
-const ViewProductDetails = () => {
-  const demo =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674643571/Frontend_images/Background_images/ah3nx1cd824n7wr2vx4n.webp";
+const ViewProductDetails = ({ viewProductId }) => {
+  const [selectedFood, setSelectedFood] = useState([]);
+
+  //get selected food for update the addons name, price and food price with size
+  useEffect(() => {
+    const fetchFood = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8000/getFoodForEdit?foodEditId=${viewProductId}`
+        );
+        const data = await response.json();
+        setSelectedFood(data);
+      } catch (error) {
+        console.log("err", error);
+      }
+    };
+    fetchFood();
+  }, [viewProductId]);
+
   return (
     <div
       className="modal fade"
@@ -28,23 +44,27 @@ const ViewProductDetails = () => {
             ></button>
           </div>
           <div className="modal-body text-center">
-            <p>
-              <strong>SKU:</strong> DSF-001
-            </p>
-            <img
-              src={demo}
-              alt="product_Image"
-              className="single_product_modal_image my-2"
-            />
-            <h6>DishCo Special Platter</h6>
-            <p className="my-2">Price: 500 Tk.</p>
-            <p>Size: 8' 10 ' 12'</p>
-            <p className="my-3 text-justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-              officia dolores, quidem quasi qui nemo beatae iusto illo eaque
-              commodi, debitis consequatur quas fugit harum delectus facere est
-              animi ipsa!
-            </p>
+            {selectedFood.map((slFood) => (
+              <div key={slFood._id}>
+                <p>
+                  <strong>SKU:</strong> {slFood?.foodCode}
+                </p>
+                <img
+                  src={slFood?.image}
+                  alt="product_Image"
+                  className="single_product_modal_image my-2"
+                />
+                <h6>{slFood?.name}</h6>{" "}
+                {slFood?.sizePriceItem?.map((sizePrice, k) => (
+                  <span key={k}>
+                    {/* <span>{sizePrice.price} </span> */}
+                    <p className="my-2">Price: {sizePrice.price} Tk.</p>
+                    <p>Size: {sizePrice.size}</p>
+                  </span>
+                ))}{" "}
+                <p className="my-3 text-justify">{slFood.foodDescription}</p>
+              </div>
+            ))}
           </div>
           <div className="modal-footer">
             <button type="button" className="btn MyBtn" data-bs-dismiss="modal">

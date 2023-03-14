@@ -11,7 +11,6 @@ const EditProduct = () => {
   const foodCodeRef = useRef();
   const stockRef = useRef();
   const descriptionRef = useRef();
-  const [selectedFood, setSelectedFood] = useState([]);
   const [addons, setAddons] = useState([{ addonName: "", addonPrice: "" }]);
 
   // Handle Image Upload (image upload by api in cloudenery)
@@ -161,24 +160,6 @@ const EditProduct = () => {
       });
     setMessage("Your Product Udpade Successfully");
   };
-
-  //get selected food for update the addons name, price and food price with size
-  useEffect(() => {
-    const fetchFood = async () => {
-      try {
-        const response = await fetch(
-          `http://localhost:8000/getFoodForEdit?foodEditId=${editPdId}`
-        );
-        const data = await response.json();
-        setSelectedFood(data);
-      } catch (error) {
-        console.log("err", error);
-      }
-    };
-    fetchFood();
-  }, [editPdId]);
-
-  console.log(selectedFood, "this is selected food");
 
   //remove addons
   const handleRemoveAddon = async (id) => {

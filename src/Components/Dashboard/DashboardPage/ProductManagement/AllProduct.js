@@ -102,6 +102,8 @@ const AllProduct = () => {
                         >
                           <i className="bi bi-trash"></i>
                         </button>
+                        {/* ****** Single Product View Modal ******* */}
+                        <ViewProductDetails viewProductId={foodDt._id} />
                       </td>
                     </tr>
                   </tbody>
@@ -111,9 +113,6 @@ const AllProduct = () => {
           </main>
         </div>
       </div>
-
-      {/* ****** Single Product View Modal ******* */}
-      <ViewProductDetails />
     </>
   );
 };
