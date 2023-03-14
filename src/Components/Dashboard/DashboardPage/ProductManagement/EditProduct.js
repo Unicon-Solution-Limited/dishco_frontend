@@ -232,7 +232,7 @@ const EditProduct = () => {
 
       <div className="edit_form my-5 row">
         <form className="col-6 mb-3" onSubmit={editHandleImgSubmit}>
-          <label for="exampleInputImage" className="form-label">
+          <label htmlFor="exampleInputImage" className="form-label">
             <strong>Product Image: </strong>
           </label>
           <div className="d-flex">
@@ -249,7 +249,7 @@ const EditProduct = () => {
         </form>
 
         <form className="col-6 mb-3" onSubmit={handleFoodNameSubmit}>
-          <label for="exampleInputText" className="form-label">
+          <label htmlFor="exampleInputText" className="form-label">
             <strong>Product Name: </strong>
           </label>
           <div className="d-flex">
@@ -267,7 +267,7 @@ const EditProduct = () => {
         </form>
 
         <form className="mb-3 col-6" onSubmit={handleFoodCodeSubmit}>
-          <label for="exampleInputText" className="form-label">
+          <label htmlFor="exampleInputText" className="form-label">
             <strong>Product Code: </strong>
           </label>
           <div className="d-flex">
