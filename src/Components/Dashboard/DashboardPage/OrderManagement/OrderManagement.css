@@ -50,6 +50,18 @@
 .status_select_option {
   width: 50%;
 }
+.action_btns {
+  display: flex;
+  gap: 10px;
+}
+.details_btn {
+  background-color: var(--black);
+  color: var(--green);
+}
+.details_btn:hover {
+  background-color: var(--green);
+  color: var(--black);
+}
 
 /* Order List page design of admin order list *************end********** */
 

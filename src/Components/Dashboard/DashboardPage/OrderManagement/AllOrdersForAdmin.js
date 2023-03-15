@@ -9,6 +9,22 @@ const AllOrdersForAdmin = () => {
   const [orders, setOrders] = useState([]);
   const [orderDetailsForPopup, setOrderDetailsForPopup] = useState([]);
 
+  const orderDelete = async (id) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:8000/deleteOrder/${id}`
+      );
+      const data = response.data;
+      if (data) {
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
+      }
+    } catch (error) {
+      console.log("Error deleting order:", error);
+    }
+  };
+
   //get all the orders for admin
   useEffect(() => {
     axios
@@ -77,14 +93,20 @@ const AllOrdersForAdmin = () => {
                         {/* <span className="status processing">Processing</span>
                       <span className="status shipped">Shipped</span> */}
                       </td>
-                      <td>
+                      <td className="action_btns">
                         <button
-                          className="btn MyBtn"
+                          className="btn details_btn"
                           data-bs-toggle="modal"
                           data-bs-target="#adminOrderProduct"
                           onClick={() => handleOrderInfoAdmin(order?.tran_id)}
                         >
                           Details
+                        </button>
+                        <button
+                          className="btn MyBtn"
+                          onClick={() => orderDelete(order?.tran_id)}
+                        >
+                          <i className="bi bi-trash"></i>
                         </button>
                       </td>
                     </tr>
