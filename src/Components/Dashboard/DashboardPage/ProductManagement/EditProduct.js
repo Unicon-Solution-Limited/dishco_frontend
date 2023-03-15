@@ -12,6 +12,7 @@ const EditProduct = () => {
   const stockRef = useRef();
   const descriptionRef = useRef();
   const [addons, setAddons] = useState([{ addonName: "", addonPrice: "" }]);
+  const [sizePrice, setSizePrice] = useState([{ size: "", price: "" }]);
 
   // Handle Image Upload (image upload by api in cloudenery)
   const imageUploadHandler = async (e) => {
@@ -158,17 +159,18 @@ const EditProduct = () => {
       .catch((error) => {
         console.log(error);
       });
-    setMessage("Your Product Udpade Successfully");
+    setMessage("Your Product Update Successfully");
   };
 
-  //remove addons
-  const handleRemoveAddon = async (id) => {
+  //delete selected all addons
+  const deleteAllAddon = async (id) => {
     try {
       const response = await axios.delete(
         `http://localhost:8000/deleteAddons/${id}`
       );
       const data = response.data;
       if (data) {
+        setMessage("Addons Delete Successfully");
         setTimeout(() => {
           window.location.reload();
         }, 500);
@@ -194,7 +196,7 @@ const EditProduct = () => {
   };
 
   //now submit funtion update the addons to the backend
-  const handleSubmit = async (event) => {
+  const handleAdonSubmit = async (event) => {
     event.preventDefault();
     const allData = {
       addonsItem: addons,
@@ -202,6 +204,70 @@ const EditProduct = () => {
     // update the new adon info at mongodb
     axios
       .patch(`http://localhost:8000/updateNewAddons/${editPdId}`, allData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        if (response.data) {
+          stockRef.current.value = "";
+          console.log("suceesfully added");
+          if (response.data) {
+            setAddons([{ addonName: "", addonPrice: "" }]);
+            setTimeout(() => {
+              window.location.reload();
+            }, 500);
+          }
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setMessage("Your Product Update Successfully");
+  };
+
+  //dynamic size price adding
+  const handleSizePriceChange = (event, index) => {
+    const newSizePrice = [...sizePrice];
+    newSizePrice[index][event.target.name] = event.target.value;
+    setSizePrice(newSizePrice);
+  };
+
+  const handleAddSizePrice = () => {
+    setSizePrice([...sizePrice, { size: "", price: "" }]);
+  };
+
+  const handleRemoveSizePrice = (index) => {
+    setSizePrice(sizePrice.filter((s, i) => i !== index));
+  };
+
+  //delete selected all price and size
+  const deleteAllSizePrice = async (id) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:8000/deleteSizePriceEdit/${id}`
+      );
+      const data = response.data;
+      if (data) {
+        setMessage("Your Size and Price Delete Successfully");
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
+      }
+    } catch (error) {
+      console.log("Error deleting product:", error);
+    }
+  };
+
+  //now submit funtion update the size and price to the backend
+  const handleSizePriceSubmit = async (event) => {
+    event.preventDefault();
+    const allData = {
+      sizePriceItem: sizePrice,
+    };
+    // update the new size price info at mongodb
+    axios
+      .patch(`http://localhost:8000/updateNewSizePrice/${editPdId}`, allData, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -314,7 +380,7 @@ const EditProduct = () => {
 
         {/* addons */}
         <div className="my-5 col-6">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleAdonSubmit}>
             {addons.map((size, index) => (
               <div key={index}>
                 <label>
@@ -364,12 +430,71 @@ const EditProduct = () => {
           </form>
           <button
             className="btn btn-success mt-2"
-            onClick={() => handleRemoveAddon(editPdId)}
+            onClick={() => deleteAllAddon(editPdId)}
           >
             DELETE PREVIOUS ADDONS
           </button>
         </div>
         {/* addons */}
+
+        {/* size and price */}
+        <div className="my-5 col-6">
+          <form onSubmit={handleSizePriceSubmit}>
+            {sizePrice.map((size, index) => (
+              <div key={index}>
+                <label>
+                  Size:
+                  <input
+                    type="text"
+                    name="size"
+                    value={size.size}
+                    onChange={(e) => handleSizePriceChange(e, index)}
+                    className="form-control"
+                    placeholder="8"
+                  />
+                </label>
+                ---
+                <label>
+                  Price:
+                  <input
+                    type="number"
+                    name="price"
+                    value={size.price}
+                    onChange={(e) => handleSizePriceChange(e, index)}
+                    className="form-control"
+                    placeholder="390 tk."
+                  />
+                </label>
+                <button
+                  type="button"
+                  onClick={() => handleRemoveSizePrice(index)}
+                  className="btn btn-danger"
+                >
+                  <i className="bi bi-trash"></i>
+                </button>
+                <br />
+              </div>
+            ))}
+            <button
+              type="button"
+              className="btn btn-success mt-2"
+              onClick={handleAddSizePrice}
+            >
+              Add
+            </button>
+
+            <button className="btn btn-success mt-2" type="submit">
+              submit
+            </button>
+          </form>
+          <button
+            className="btn btn-success mt-2"
+            onClick={() => deleteAllSizePrice(editPdId)}
+          >
+            DELETE PREVIOUS SIZE PRICE
+          </button>
+        </div>
+        {/* size and price */}
       </div>
 
       <h3 style={{ color: "green", textAlign: "center" }}>{message}</h3>
