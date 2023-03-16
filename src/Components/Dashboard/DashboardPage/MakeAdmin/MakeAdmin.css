@@ -1,0 +1,13 @@
+.makeAdminMainDiv {
+  /* border: 1px solid var(--yellow); */
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-top: 10px;
+}
+.makeAdminFrom {
+  margin-top: 25px;
+  padding: 35px;
+}
+.makeAdminButton {
+  width: 100px;
+  box-shadow: none !important;
+}

@@ -27,6 +27,7 @@ import PrivateRoute from "./Components/Authentication/PrivateRoute/PrivateRoute"
 import Success from "./Components/Pages/Checkout/Success";
 import EditProduct from "./Components/Dashboard/DashboardPage/ProductManagement/EditProduct";
 import CustomerOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CustomerOrders";
+import MakeAdmin from "./Components/Dashboard/DashboardPage/MakeAdmin/MakeAdmin";
 
 function App() {
   return (
@@ -39,9 +40,9 @@ function App() {
               <Home />
             </Route>
 
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard />
-            </Route>
+            </PrivateRoute>
 
             <Route path="/login">
               <Login />
@@ -108,6 +109,9 @@ function App() {
             </Route>
             <Route path="/tc">
               <TandC />
+            </Route>
+            <Route path="/make_admin">
+              <MakeAdmin />
             </Route>
             {/* Not Found Page */}
             <Route path="*">
