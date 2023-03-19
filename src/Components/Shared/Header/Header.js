@@ -10,6 +10,7 @@ const Header = () => {
   const [searchValue, setSearchValue] = useState("");
   const [allFoods, setAllFoods] = useState([]);
   const history = useHistory();
+  const [suggestions, setSuggestions] = useState([]); // new state for storing search suggestions
 
   //get all food
   useEffect(() => {
@@ -22,7 +23,18 @@ const Header = () => {
     fetchAllFood();
   }, []);
 
-  // sendign the daynamic  search value into the browser search bar and also redrict search component
+  // function to update search suggestions
+  const updateSuggestions = (value) => {
+    if (value.length === 0) {
+      setSuggestions([]);
+      return;
+    }
+    const regex = new RegExp(`^${value}`, "i");
+    const results = allFoods.filter((food) => regex.test(food.name));
+    setSuggestions(results.slice(0, 5));
+  };
+
+  // sendign the daynamic search value into the browser search bar and also redirect search component
   const handleSearch = (e) => {
     e.preventDefault();
     history.push(`/Search/${searchValue}`);
@@ -49,11 +61,26 @@ const Header = () => {
                 placeholder="Search food....."
                 className="search_bar"
                 method="GET"
-                onChange={(e) => setSearchValue(e.target.value)}
+                value={searchValue}
+                onChange={(e) => {
+                  setSearchValue(e.target.value);
+                  updateSuggestions(e.target.value);
+                }}
+                autoComplete="off"
               />
               <button className="search_button" type="submit">
                 <i className="bi bi-search"></i>
               </button>
+
+              {suggestions.length > 0 && (
+                <ul className="suggestions">
+                  {suggestions.map((food, f) => (
+                    <li key={f} onClick={() => setSearchValue(food.name)}>
+                      {food.name}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </form>
             <aside className="auth_links">
               <Link className="myLinks" to="/login">
