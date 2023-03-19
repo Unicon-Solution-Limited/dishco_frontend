@@ -18,6 +18,9 @@
   display: flex;
   gap: 15px;
 }
+.auth_links {
+  text-align: right;
+}
 .auth_links .myLinks {
   color: var(--white) !important;
 }
@@ -27,7 +30,7 @@
 
 .search_bar {
   padding: 3px 6px;
-  width: 500px;
+  width: 35vw;
   border: none !important;
   border-radius: 3px 0 0 3px;
   box-shadow: inset 1000px 10px 10px #c7c7c7;
@@ -36,6 +39,7 @@
   padding: 3px 6px;
   border: none !important;
   background-color: var(--red);
+  color: var(--white) !important;
   border-radius: 0 3px 3px 0;
 }
 /* Bottom Header */
@@ -184,6 +188,18 @@
   .upper_header {
     font-size: 2.5vw;
   }
+  .auth_links,
+  .contact_number {
+    display: none !important;
+  }
+  .search_bar {
+    width: 85vw;
+    padding: 8px 6px;
+  }
+  .search_button {
+    padding: 8px;
+  }
+
   .dropdown-content {
     visibility: visible !important;
   }
