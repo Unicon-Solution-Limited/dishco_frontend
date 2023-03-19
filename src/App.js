@@ -28,6 +28,7 @@ import Success from "./Components/Pages/Checkout/Success";
 import EditProduct from "./Components/Dashboard/DashboardPage/ProductManagement/EditProduct";
 import CustomerOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CustomerOrders";
 import MakeAdmin from "./Components/Dashboard/DashboardPage/MakeAdmin/MakeAdmin";
+import Invoice from "./Components/Dashboard/DashboardPage/OrderManagement/Invoice";
 
 function App() {
   return (
@@ -66,6 +67,9 @@ function App() {
             </Route>
             <Route path="/MyOrder">
               <CustomerOrder />
+            </Route>
+            <Route path="/invoice">
+              <Invoice />
             </Route>
             {/* Dashboard router end */}
 

@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
   const statusRef = useRef();
@@ -146,6 +147,15 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
                 <option value="Processing">Processing</option>
                 <option value="Shipped">Shipped</option>
               </select>
+              <button
+                className="btn"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <Link to="/invoice" className="btn MyBtn">
+                  Invoice
+                </Link>
+              </button>
               <button type="submit" className="btn MyBtn">
                 Update Status
               </button>
