@@ -1,11 +1,33 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { CartProvider } from "../../AllContext/CartContext";
 import "./Header.css";
 import HeaderOffcanvas from "./HeaderOffcanvas";
 
 const Header = () => {
   const [cartData, setCartData] = useContext(CartProvider);
+  const [searchValue, setSearchValue] = useState("");
+  const [allFoods, setAllFoods] = useState([]);
+  const history = useHistory();
+
+  //get all food
+  useEffect(() => {
+    const fetchAllFood = () => {
+      axios
+        .get("http://localhost:8000/getAllProducts")
+        .then((response) => setAllFoods(response?.data))
+        .catch((error) => console.log(error));
+    };
+    fetchAllFood();
+  }, []);
+
+  // sendign the daynamic  search value into the browser search bar and also redrict search component
+  const handleSearch = (e) => {
+    e.preventDefault();
+    history.push(`/Search/${searchValue}`);
+  };
+
   return (
     <>
       {/* TOP Header */}
@@ -20,14 +42,16 @@ const Header = () => {
                 <i className="bi bi-envelope-fill"></i> dishco@uniconbd.com
               </span>
             </aside>
-            <form action="" className="search_bar_body">
+            <form className="search_bar_body" onSubmit={handleSearch}>
               <input
                 type="text"
                 name="search"
                 placeholder="Search food....."
                 className="search_bar"
+                method="GET"
+                onChange={(e) => setSearchValue(e.target.value)}
               />
-              <button className="search_button">
+              <button className="search_button" type="submit">
                 <i className="bi bi-search"></i>
               </button>
             </form>
