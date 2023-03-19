@@ -18,8 +18,16 @@
   display: flex;
   gap: 15px;
 }
-.auth_links {
-  text-align: right;
+.auth_login {
+  font-size: 16px;
+  color: var(--white);
+  background-color: var(--red);
+  padding: 0 5px;
+}
+.auth_login:hover {
+  background-color: var(--green);
+  color: var(--black);
+  transition: 0.3s;
 }
 .auth_links .myLinks {
   color: var(--white) !important;

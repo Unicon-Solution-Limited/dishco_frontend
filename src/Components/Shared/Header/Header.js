@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartProvider } from "../../AllContext/CartContext";
+import { useAuth } from "../../Authentication/AuthContext/AuthContext";
 import "./Header.css";
 import HeaderOffcanvas from "./HeaderOffcanvas";
 
 const Header = () => {
   const [cartData, setCartData] = useContext(CartProvider);
+  const { currentUser } = useAuth();
+
   return (
     <>
       {/* TOP Header */}
@@ -31,15 +34,26 @@ const Header = () => {
                 <i className="bi bi-search"></i>
               </button>
             </form>
-            <aside className="auth_links">
-              <Link className="myLinks" to="/login">
-                Login
-              </Link>{" "}
-              /{" "}
-              <Link className="myLinks" to="/signup">
-                Sign Up
-              </Link>
-            </aside>
+
+            {currentUser ? (
+              <>
+                <Link to="/dashboard" className="auth_login">
+                  Dashboard
+                </Link>
+              </>
+            ) : (
+              <>
+                <aside className="auth_links">
+                  <Link className="myLinks" to="/login">
+                    Login
+                  </Link>{" "}
+                  /{" "}
+                  <Link className="myLinks" to="/signup">
+                    Sign Up
+                  </Link>
+                </aside>
+              </>
+            )}
           </section>
         </div>
       </nav>
