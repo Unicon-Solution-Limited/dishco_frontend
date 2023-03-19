@@ -43,7 +43,7 @@ const DisplayProduct = () => {
       <Header />
       <section className="displayProduct_main">
         <div className="container my-5">
-          <form action="" className="search_bar_body">
+          {/* <form action="" className="search_bar_body">
             <input
               type="text"
               name="search"
@@ -58,7 +58,7 @@ const DisplayProduct = () => {
             >
               Search
             </button>
-          </form>
+          </form> */}
           <div className="dropdown">
             {food
               .filter((item) => {

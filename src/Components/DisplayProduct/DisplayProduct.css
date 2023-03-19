@@ -1,25 +1,3 @@
-.search_bar_body {
-  display: flex;
-  justify-content: center;
-}
-.search_bar {
-  width: 150px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.6);
-  background-image: url("https://res.cloudinary.com/dnz6zg4on/image/upload/v1675146630/Frontend_images/logo/pncsq4zgoayegchuqu5t.svg");
-  background-position: 10px center;
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.search_bar:focus {
-  width: 100% !important;
-}
 .product_card_row {
   display: grid;
   grid-template-columns: repeat(4, 25%);

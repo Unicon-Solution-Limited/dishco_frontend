@@ -20,6 +20,17 @@ const Header = () => {
                 <i className="bi bi-envelope-fill"></i> dishco@uniconbd.com
               </span>
             </aside>
+            <form action="" className="search_bar_body">
+              <input
+                type="text"
+                name="search"
+                placeholder="Search food....."
+                className="search_bar"
+              />
+              <button className="search_button">
+                <i className="bi bi-search"></i>
+              </button>
+            </form>
             <aside className="auth_links">
               <Link className="myLinks" to="/login">
                 Login
