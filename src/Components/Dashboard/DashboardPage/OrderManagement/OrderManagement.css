@@ -145,3 +145,94 @@
   color: var(--white) !important;
 }
 /* Orders page design of Customer Order ************end*********** */
+
+/* ************************** Invoice Design */
+.invoice {
+  width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+.invoice_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  font-weight: bold;
+}
+.invoice_btn_admin {
+  cursor: pointer;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #555;
+}
+.header img {
+  max-width: 150px;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+}
+.details .info {
+  width: 45%;
+}
+.details .info h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+.details .info p {
+  font-size: 16px;
+  color: #888;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.details .items {
+  width: 100%;
+}
+.details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.details table th {
+  text-align: left;
+  background-color: #eee;
+  padding: 10px;
+  font-size: 18px;
+  color: #555;
+  border: 1px solid #ddd;
+}
+.details table td {
+  padding: 10px;
+  font-size: 16px;
+  color: #888;
+  border: 1px solid #ddd;
+}
+.details table td.qty {
+  text-align: center;
+}
+.details table td.total {
+  text-align: right;
+  font-weight: bold;
+  color: #555;
+}
+.details .total {
+  text-align: right;
+  margin-top: 20px;
+}
+.details .total span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+}
