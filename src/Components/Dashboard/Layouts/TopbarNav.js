@@ -4,7 +4,9 @@ import { useAuth } from "./../../Authentication/AuthContext/AuthContext";
 import toggler from "./toggler";
 
 const TopbarNav = () => {
-  const { logout } = useAuth();
+  const { logout, currentUser } = useAuth();
+  console.log(currentUser.displayName);
+
   return (
     <>
       <nav className="sb-topnav navbar-d navbar-expand navbar-dark bg-dark top_nav">
@@ -30,7 +32,13 @@ const TopbarNav = () => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i className="bi bi-person"></i>
+              {currentUser ? (
+                <span className="userName_login">
+                  {currentUser.displayName.slice(0, 1)}
+                </span>
+              ) : (
+                <i className="bi bi-person"></i>
+              )}
             </Link>
             <ul
               className="dropdown-menu dropdown-menu-end"
@@ -49,7 +57,7 @@ const TopbarNav = () => {
               <li>
                 <hr className="dropdown-divider" />
               </li>
-              <li onClick={logout}>
+              <li onClick={logout} className="logout_dropdown_btn">
                 <div className="dropdown-item">
                   <i onClick={logout} className="bi bi-box-arrow-left"></i>{" "}
                   Logout

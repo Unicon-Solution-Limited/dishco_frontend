@@ -55,6 +55,19 @@
   color: var(--white) !important;
   font-size: 18px;
 }
+.userName_login {
+  background-color: var(--red);
+  padding: 3px 10px;
+  color: var(--white) !important;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+.userName_login:hover {
+  background-color: var(--green);
+}
+.logout_dropdown_btn {
+  cursor: pointer;
+}
 
 @media only screen and (min-width: 960px) {
   .cross_btn {
