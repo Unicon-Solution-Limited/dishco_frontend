@@ -108,9 +108,7 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
                     {customerOrderDtls?.product_status}
                   </span>
                 </p>
-                <aside className="order_cancel">
-                  <button className="btn invoice_btn">Invoice</button>
-                </aside>
+
                 <aside className="order_cancel MyBtn">
                   {customerOrderDtls.product_status === "Pending" && (
                     <button
