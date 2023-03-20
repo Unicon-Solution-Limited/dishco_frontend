@@ -37,29 +37,29 @@ const OfferSection = () => {
       <div>
         <div className="offer_img_divs">
           <span data-bs-toggle="modal" data-bs-target="#sat" data-aos="zoom-in">
-            <img src={satM} alt="" className="offer_img_m" />
+            <img src={satM} alt="" className="offer_img_m" loading="lazy" />
           </span>
           <span data-bs-toggle="modal" data-bs-target="#sun" data-aos="zoom-in">
-            <img src={sunM} alt="" className="offer_img_m" />
+            <img src={sunM} alt="" className="offer_img_m" loading="lazy" />
           </span>
         </div>
         <div className="offer_img_divs">
           <span data-bs-toggle="modal" data-bs-target="#mon" data-aos="zoom-in">
-            <img src={monM} alt="" className="offer_img_m" />
+            <img src={monM} alt="" className="offer_img_m" loading="lazy" />
           </span>
           <span data-bs-toggle="modal" data-bs-target="#tue" data-aos="zoom-in">
-            <img src={tueM} alt="" className="offer_img_m" />
+            <img src={tueM} alt="" className="offer_img_m" loading="lazy" />
           </span>
           <span data-bs-toggle="modal" data-bs-target="#wed" data-aos="zoom-in">
-            <img src={wedM} alt="" className="offer_img_m" />
+            <img src={wedM} alt="" className="offer_img_m" loading="lazy" />
           </span>
         </div>
         <div className="offer_img_divs">
           <span data-bs-toggle="modal" data-bs-target="#thu" data-aos="zoom-in">
-            <img src={thuM} alt="" className="offer_img_m" />
+            <img src={thuM} alt="" className="offer_img_m" loading="lazy" />
           </span>
           <span data-bs-toggle="modal" data-bs-target="#fri" data-aos="zoom-in">
-            <img src={friM} alt="" className="offer_img_m" />
+            <img src={friM} alt="" className="offer_img_m" loading="lazy" />
           </span>
         </div>
       </div>
@@ -104,7 +104,7 @@ const OfferSection = () => {
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
-              <img src={sun} alt="" className="offer_img" />
+              <img src={sun} alt="" className="offer_img" loading="lazy" />
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@ const OfferSection = () => {
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
-              <img src={mon} alt="" className="offer_img" />
+              <img src={mon} alt="" className="offer_img" loading="lazy" />
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@ const OfferSection = () => {
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
-              <img src={tue} alt="" className="offer_img" />
+              <img src={tue} alt="" className="offer_img" loading="lazy" />
             </div>
           </div>
         </div>
@@ -173,7 +173,7 @@ const OfferSection = () => {
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
-              <img src={wed} alt="" className="offer_img" />
+              <img src={wed} alt="" className="offer_img" loading="lazy" />
             </div>
           </div>
         </div>
@@ -196,7 +196,7 @@ const OfferSection = () => {
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
-              <img src={thu} alt="" className="offer_img" />
+              <img src={thu} alt="" className="offer_img" loading="lazy" />
             </div>
           </div>
         </div>
@@ -219,7 +219,7 @@ const OfferSection = () => {
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
-              <img src={fri} alt="" className="offer_img" />
+              <img src={fri} alt="" className="offer_img" loading="lazy" />
             </div>
           </div>
         </div>

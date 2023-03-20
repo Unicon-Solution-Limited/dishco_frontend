@@ -20,6 +20,7 @@ const Video = () => {
           src={fallback}
           title="Your browser does not support the <video> tag"
           alt="DishCo- Dancing Deliciousness"
+          loading="lazy"
         ></img>
       </video>
     </section>

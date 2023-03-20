@@ -61,6 +61,7 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
                       src={orderDt.image}
                       alt=""
                       className="single_product_modal_image"
+                      loading="lazy"
                     />
                     <p className="mt-3">
                       <strong>{orderDt?.name}</strong>

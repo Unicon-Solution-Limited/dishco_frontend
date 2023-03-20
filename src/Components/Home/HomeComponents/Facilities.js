@@ -13,7 +13,7 @@ const Facilities = () => {
   return (
     <section className="facilities_main">
       <h2>Facilities</h2>
-      <img src={iCon} alt="" />
+      <img src={iCon} alt="facilities" loading="lazy" />
       <div className="facility_content">
         <p data-aos="fade-right">Takeaway</p>
         <p data-aos="fade-up">Dine In</p>

@@ -10,7 +10,12 @@ const Welcome = () => {
       <div className="container welcome-container">
         <div className="row">
           <div className="col-md-4 left_image">
-            <img src={img1} alt="Dumpling" className="welcome_img" />
+            <img
+              src={img1}
+              alt="Dumpling"
+              className="welcome_img"
+              loading="lazy"
+            />
           </div>
           <aside className="col-md-4 welcome_text">
             <h4>Flavors of life!</h4> <h2>Welcome</h2>{" "}
@@ -26,7 +31,12 @@ const Welcome = () => {
             </p>
           </aside>
           <div className="col-md-4">
-            <img src={img2} alt="kacchi Biryani" className="welcome_img" />
+            <img
+              src={img2}
+              alt="kacchi Biryani"
+              className="welcome_img"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>

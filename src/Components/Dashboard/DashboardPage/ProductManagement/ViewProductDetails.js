@@ -53,6 +53,7 @@ const ViewProductDetails = ({ viewProductId }) => {
                   src={slFood?.image}
                   alt="product_Image"
                   className="single_product_modal_image my-2"
+                  loading="lazy"
                 />
                 <h6>{slFood?.name}</h6>{" "}
                 {slFood?.sizePriceItem?.map((sizePrice, k) => (

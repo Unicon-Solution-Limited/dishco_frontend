@@ -34,7 +34,12 @@ const HeaderOffcanvas = () => {
       <div className="offcanvas-body">
         {cartData.map((cartDt) => (
           <div key={cartDt?.id} className="offcanvas_card_single_item">
-            <img src={cartDt?.image} alt="" className="offcanvas_cart_img" />
+            <img
+              src={cartDt?.image}
+              alt=""
+              className="offcanvas_cart_img"
+              loading="lazy"
+            />
             <span>
               <p className="offcanvas_cart_product_name">{cartDt?.name}</p>
               <p className="offcanvas_cart_price_qnt">

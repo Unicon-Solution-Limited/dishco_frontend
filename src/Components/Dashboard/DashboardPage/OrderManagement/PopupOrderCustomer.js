@@ -59,6 +59,7 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
                           src={orderDt.image}
                           alt=""
                           className="order_image"
+                          loading="lazy"
                         />
                       </aside>
                       <aside className="order_info">

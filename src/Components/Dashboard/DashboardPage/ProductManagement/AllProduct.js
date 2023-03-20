@@ -70,6 +70,7 @@ const AllProduct = () => {
                           src={foodDt.image}
                           alt=""
                           className="dashboard_all_product_img"
+                          loading="lazy"
                         />
                       </td>
                       <td className="product_name_tc">{foodDt.name}</td>

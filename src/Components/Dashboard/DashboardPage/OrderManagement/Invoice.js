@@ -13,6 +13,7 @@ const Invoice = () => {
             alt="DishCo"
             onClick={() => window.print()}
             className="invoice_btn_admin"
+            loading="lazy"
           />
         </div>
         <div class="details">

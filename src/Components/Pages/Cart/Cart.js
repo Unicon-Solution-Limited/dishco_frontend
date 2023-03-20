@@ -101,6 +101,7 @@ const Cart = () => {
                         src={cartDt.image}
                         alt=""
                         className="cart_page_product_img"
+                        loading="lazy"
                       />
                     </td>
                     <td>{cartDt.name}</td>

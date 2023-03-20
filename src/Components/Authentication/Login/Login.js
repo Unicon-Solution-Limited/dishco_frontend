@@ -96,6 +96,7 @@ const Login = () => {
             <img
               src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1676276581/Frontend_images/logo/f9v6yxevk0isj4d8k4w1.svg"
               alt="google"
+              loading="lazy"
             />
             <span>Continue with google</span>
           </button>

@@ -16,7 +16,7 @@ const MenuSection = () => {
     <>
       <section className="menuSection">
         <div className="container menu_content">
-          <img src={iconTop} alt="" className="mb-3" />
+          <img src={iconTop} alt="" className="mb-3" loading="lazy" />
           <h2 className="my-3">Our Menu</h2>
           <h5 className="my-4">Quality Ingredients, Tasty Meals</h5>
           <div className="my-5">
@@ -39,7 +39,7 @@ const MenuSection = () => {
               <span>370 Tk.</span>
             </div>
             <div className="col-md-4 menu_middle_each">
-              <img src={imgA} alt="" className="mid_menu_imgs" />
+              <img src={imgA} alt="" className="mid_menu_imgs" loading="lazy" />
             </div>
             <div className="col-md-4 menu_middle_each">
               <h4>Juicy Beef/Chicken Burger with Fusion Sauce</h4>{" "}
@@ -52,7 +52,7 @@ const MenuSection = () => {
           </div>
           <div className="row">
             <div className="col-md-4 menu_middle_each">
-              <img src={imgB} alt="" className="mid_menu_imgs" />
+              <img src={imgB} alt="" className="mid_menu_imgs" loading="lazy" />
             </div>
             <div className="col-md-4 menu_middle_each">
               <h4>Gangnam Platter</h4>{" "}
@@ -64,7 +64,7 @@ const MenuSection = () => {
               <span>370 Tk.</span>
             </div>
             <div className="col-md-4 menu_middle_each">
-              <img src={imgC} alt="" className="mid_menu_imgs" />
+              <img src={imgC} alt="" className="mid_menu_imgs" loading="lazy" />
             </div>
           </div>
           <div className="row">
@@ -74,7 +74,7 @@ const MenuSection = () => {
               <span> 315/370 Tk.</span>
             </div>
             <div className="col-md-4 menu_middle_each">
-              <img src={imgD} alt="" className="mid_menu_imgs" />
+              <img src={imgD} alt="" className="mid_menu_imgs" loading="lazy" />
             </div>
             <div className="col-md-4 menu_middle_each">
               <h4> Fruit Custard Creamy Crepe</h4>{" "}

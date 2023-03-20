@@ -67,6 +67,7 @@ const Header = () => {
                 src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1674363983/Frontend_images/logo/logo_o4uryk.webp"
                 alt="DishCo"
                 className="site_logo"
+                loading="lazy"
               />
             </a>
             <button
