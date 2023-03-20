@@ -81,17 +81,15 @@ const Header = () => {
                 <i className="bi bi-search"></i>
               </button>
 
-              <div className="pt-1" style={{ cursor: "pointer" }}>
-                {suggestions.length > 0 && (
-                  <ul className="suggestions">
-                    {suggestions.map((food, f) => (
-                      <li key={f} onClick={() => setSearchValue(food.name)}>
-                        {food.name}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+              {suggestions.length > 0 && (
+                <div className="suggestions">
+                  {suggestions.map((food, f) => (
+                    <h6 key={f} onClick={() => setSearchValue(food.name)}>
+                      {food.name}
+                    </h6>
+                  ))}
+                </div>
+              )}
             </form>
 
             {currentUser ? (

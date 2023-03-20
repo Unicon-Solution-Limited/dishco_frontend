@@ -41,21 +41,29 @@
   width: 35vw;
   border: none !important;
   border-radius: 3px 0 0 3px;
-  box-shadow: inset 1000px 10px 10px #c7c7c7;
 }
 .search_button {
-  padding: 3px 6px;
+  padding: 3px 12px;
   border: none !important;
   background-color: var(--red);
   color: var(--white) !important;
   border-radius: 0 3px 3px 0;
-  width: 60px;
+}
+.suggestions {
+  background-color: var(--black);
+  color: var(--white) !important;
+  padding: 5px;
+  position: absolute;
+  z-index: 9999;
+  width: 35%;
+}
+.suggestions h6 {
+  cursor: pointer;
+  padding: 5px;
+  border-bottom: 1px solid var(--red);
+  color: var(--white) !important;
 }
 /* Bottom Header */
-/* .lower_header {
-  position: sticky !important;
-  top: 0 !important;
-} */
 
 .site_logo {
   max-width: 120px;
@@ -193,12 +201,12 @@
     width: 100% !important;
     justify-content: space-between !important;
   }
-
   .upper_header {
     font-size: 2.5vw;
   }
   .auth_links,
-  .contact_number {
+  .contact_number,
+  .auth_login {
     display: none !important;
   }
   .search_bar {
