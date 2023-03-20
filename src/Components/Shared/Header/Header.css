@@ -58,10 +58,14 @@
   width: 35%;
 }
 .suggestions h6 {
+  border-bottom: 1px solid var(--red);
+}
+.suggestions_btn {
+  border: none;
+  background-color: transparent;
+  color: var(--white) !important;
   cursor: pointer;
   padding: 5px;
-  border-bottom: 1px solid var(--red);
-  color: var(--white) !important;
 }
 /* Bottom Header */
 

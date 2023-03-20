@@ -85,7 +85,9 @@ const Header = () => {
                 <div className="suggestions">
                   {suggestions.map((food, f) => (
                     <h6 key={f} onClick={() => setSearchValue(food.name)}>
-                      {food.name}
+                      <button type="submit" className="suggestions_btn">
+                        {food.name}
+                      </button>
                     </h6>
                   ))}
                 </div>
@@ -119,14 +121,14 @@ const Header = () => {
       <nav className="navbar navbar-dark navbar-expand-lg sticky-top header_main_body">
         <div className="container lower_header">
           <div className="logo_bar">
-            <a href="/">
+            <Link to="/">
               <img
                 src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1674363983/Frontend_images/logo/logo_o4uryk.webp"
                 alt="DishCo"
                 className="site_logo"
                 loading="lazy"
               />
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
