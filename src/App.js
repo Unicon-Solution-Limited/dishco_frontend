@@ -29,6 +29,7 @@ import EditProduct from "./Components/Dashboard/DashboardPage/ProductManagement/
 import CustomerOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CustomerOrders";
 import MakeAdmin from "./Components/Dashboard/DashboardPage/MakeAdmin/MakeAdmin";
 import Invoice from "./Components/Dashboard/DashboardPage/OrderManagement/Invoice";
+import SearchProductDisplay from "./Components/DisplayProduct/SearchProductDisplay/SearchProductDisplay";
 
 function App() {
   return (
@@ -114,6 +115,11 @@ function App() {
             <Route path="/tc">
               <TandC />
             </Route>
+
+            <Route path="/Search/:searchProductName">
+              <SearchProductDisplay />
+            </Route>
+
             <Route path="/make_admin">
               <MakeAdmin />
             </Route>

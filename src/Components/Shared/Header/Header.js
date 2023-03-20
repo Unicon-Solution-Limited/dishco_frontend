@@ -1,13 +1,52 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { CartProvider } from "../../AllContext/CartContext";
 import { useAuth } from "../../Authentication/AuthContext/AuthContext";
 import "./Header.css";
 import HeaderOffcanvas from "./HeaderOffcanvas";
+import debounce from "lodash/debounce";
 
 const Header = () => {
   const [cartData, setCartData] = useContext(CartProvider);
+
   const { currentUser } = useAuth();
+
+  const [searchValue, setSearchValue] = useState("");
+  const [allFoods, setAllFoods] = useState([]);
+  const history = useHistory();
+  const [suggestions, setSuggestions] = useState([]); // new state for storing search suggestions
+
+  // function to update search suggestions
+  const updateSuggestions = (value) => {
+    if (value.length === 0) {
+      setSuggestions([]);
+      return;
+    }
+    const regex = new RegExp(`^${value}`, "i");
+    const results = allFoods.filter((food) => regex.test(food.name));
+    setSuggestions(results.slice(0, 5));
+  };
+
+  // debounce the updateSuggestions function
+  const delayedUpdateSuggestions = debounce(updateSuggestions, 500);
+
+  //get all food
+  useEffect(() => {
+    const fetchAllFood = () => {
+      axios
+        .get("http://localhost:8000/getAllProducts")
+        .then((response) => setAllFoods(response?.data))
+        .catch((error) => console.log(error));
+    };
+    fetchAllFood();
+  }, []);
+
+  // sendign the daynamic  search value into the browser search bar and also redrict search component
+  const handleSearch = (e) => {
+    e.preventDefault();
+    history.push(`/Search/${searchValue}`);
+  };
 
   return (
     <>
@@ -23,16 +62,35 @@ const Header = () => {
                 <i className="bi bi-envelope-fill"></i> dishco@uniconbd.com
               </span>
             </aside>
-            <form action="" className="search_bar_body">
+            <form className="search_bar_body" onSubmit={handleSearch}>
               <input
                 type="text"
                 name="search"
                 placeholder="Search food....."
                 className="search_bar"
+                method="GET"
+                value={searchValue}
+                onChange={(e) => {
+                  setSearchValue(e.target.value);
+                  delayedUpdateSuggestions(e.target.value);
+                }}
+                autoComplete="off"
               />
-              <button className="search_button">
+              <button className="search_button" type="submit">
                 <i className="bi bi-search"></i>
               </button>
+
+              <div className="pt-1" style={{ cursor: "pointer" }}>
+                {suggestions.length > 0 && (
+                  <ul className="suggestions">
+                    {suggestions.map((food, f) => (
+                      <li key={f} onClick={() => setSearchValue(food.name)}>
+                        {food.name}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </form>
 
             {currentUser ? (
