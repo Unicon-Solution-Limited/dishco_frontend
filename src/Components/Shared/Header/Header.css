@@ -49,6 +49,7 @@
   background-color: var(--red);
   color: var(--white) !important;
   border-radius: 0 3px 3px 0;
+  width: 60px;
 }
 /* Bottom Header */
 /* .lower_header {
