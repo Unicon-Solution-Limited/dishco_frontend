@@ -70,8 +70,8 @@ const AllOrdersForAdmin = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {orders.map((order) => (
-                    <tr key={order?.tran_id}>
+                  {orders.map((order, ou) => (
+                    <tr key={ou}>
                       <th scope="row">{order?.tran_id}</th>
                       <td>{order?.orderedData?.length}</td>
                       <td>{order?.cus_name}</td>

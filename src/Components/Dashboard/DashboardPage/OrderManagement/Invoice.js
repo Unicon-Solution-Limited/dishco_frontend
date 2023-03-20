@@ -1,10 +1,16 @@
 import React from "react";
+import { useLocation } from "react-router";
 
 const Invoice = () => {
+  const location = useLocation();
+  const order = location.state.orderDetailsForInvoice;
+
+  console.log(order);
+
   return (
     <>
-      <div class="invoice">
-        <div class="header">
+      <div className="invoice">
+        <div className="header">
           <h1 onClick={() => window.print()} className="invoice_btn_admin">
             Invoice
           </h1>
@@ -16,8 +22,8 @@ const Invoice = () => {
             loading="lazy"
           />
         </div>
-        <div class="details">
-          <div class="info">
+        <div className="details">
+          <div className="info">
             <h2>Billing Information</h2>
             <p>
               John Doe
@@ -32,7 +38,7 @@ const Invoice = () => {
             </p>
           </div>
 
-          <div class="items">
+          <div className="items">
             <table>
               <thead>
                 <tr>
@@ -45,45 +51,45 @@ const Invoice = () => {
               <tbody>
                 <tr>
                   <td>Steak</td>
-                  <td class="qty">2</td>
+                  <td className="qty">2</td>
                   <td>TK. 25.00</td>
-                  <td class="total">TK. 50.</td>
+                  <td className="total">TK. 50.</td>
                 </tr>
                 <tr>
                   <td>Salmon</td>
-                  <td class="qty">1</td>
+                  <td className="qty">1</td>
                   <td>TK. 30.00</td>
-                  <td class="total">TK. 30.00</td>
+                  <td className="total">TK. 30.00</td>
                 </tr>
                 <tr>
                   <td>Cheesecake</td>
-                  <td class="qty">2</td>
+                  <td className="qty">2</td>
                   <td>TK. 10.00</td>
-                  <td class="total">TK. 20.00</td>
+                  <td className="total">TK. 20.00</td>
                 </tr>
                 <tr>
-                  <td colspan="3">
+                  <td colSpan="3">
                     <strong>Subtotal</strong>
                   </td>
-                  <td class="total">TK. 100.00</td>
+                  <td className="total">TK. 100.00</td>
                 </tr>
                 <tr>
-                  <td colspan="3">
+                  <td colSpan="3">
                     <strong>Discount</strong> (-)
                   </td>
-                  <td class="total">TK. 9.00</td>
+                  <td className="total">TK. 9.00</td>
                 </tr>
                 <tr>
-                  <td colspan="3">
+                  <td colSpan="3">
                     <strong>Delivery Charge (+)</strong>
                   </td>
-                  <td class="total">TK. 9.00</td>
+                  <td className="total">TK. 9.00</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <div class="total">
+          <div className="total">
             <span>Total: 109.00 TK.</span>
           </div>
         </div>

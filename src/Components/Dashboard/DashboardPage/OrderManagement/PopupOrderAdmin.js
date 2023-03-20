@@ -153,7 +153,14 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
                 data-bs-dismiss="modal"
                 aria-label="Close"
               >
-                <Link to="/invoice" className="btn MyBtn">
+                {/* send order data with link */}
+                <Link
+                  to={{
+                    pathname: "/invoice",
+                    state: { orderDetailsForInvoice: orderDetailsForPopup },
+                  }}
+                  className="btn MyBtn"
+                >
                   Invoice
                 </Link>
               </button>
