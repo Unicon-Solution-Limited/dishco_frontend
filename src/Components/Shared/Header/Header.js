@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { CartProvider } from "../../AllContext/CartContext";
 import "./Header.css";
 import HeaderOffcanvas from "./HeaderOffcanvas";
+import debounce from "lodash/debounce";
 
 const Header = () => {
   const [cartData, setCartData] = useContext(CartProvider);
@@ -11,17 +12,6 @@ const Header = () => {
   const [allFoods, setAllFoods] = useState([]);
   const history = useHistory();
   const [suggestions, setSuggestions] = useState([]); // new state for storing search suggestions
-
-  //get all food
-  useEffect(() => {
-    const fetchAllFood = () => {
-      axios
-        .get("http://localhost:8000/getAllProducts")
-        .then((response) => setAllFoods(response?.data))
-        .catch((error) => console.log(error));
-    };
-    fetchAllFood();
-  }, []);
 
   // function to update search suggestions
   const updateSuggestions = (value) => {
@@ -34,7 +24,21 @@ const Header = () => {
     setSuggestions(results.slice(0, 5));
   };
 
-  // sendign the daynamic search value into the browser search bar and also redirect search component
+  // debounce the updateSuggestions function
+  const delayedUpdateSuggestions = debounce(updateSuggestions, 500);
+
+  //get all food
+  useEffect(() => {
+    const fetchAllFood = () => {
+      axios
+        .get("http://localhost:8000/getAllProducts")
+        .then((response) => setAllFoods(response?.data))
+        .catch((error) => console.log(error));
+    };
+    fetchAllFood();
+  }, []);
+
+  // sendign the daynamic  search value into the browser search bar and also redrict search component
   const handleSearch = (e) => {
     e.preventDefault();
     history.push(`/Search/${searchValue}`);
@@ -64,7 +68,7 @@ const Header = () => {
                 value={searchValue}
                 onChange={(e) => {
                   setSearchValue(e.target.value);
-                  updateSuggestions(e.target.value);
+                  delayedUpdateSuggestions(e.target.value);
                 }}
                 autoComplete="off"
               />
@@ -72,15 +76,17 @@ const Header = () => {
                 <i className="bi bi-search"></i>
               </button>
 
-              {suggestions.length > 0 && (
-                <ul className="suggestions">
-                  {suggestions.map((food, f) => (
-                    <li key={f} onClick={() => setSearchValue(food.name)}>
-                      {food.name}
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <div className="pt-1" style={{ cursor: "pointer" }}>
+                {suggestions.length > 0 && (
+                  <ul className="suggestions">
+                    {suggestions.map((food, f) => (
+                      <li key={f} onClick={() => setSearchValue(food.name)}>
+                        {food.name}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </form>
             <aside className="auth_links">
               <Link className="myLinks" to="/login">
