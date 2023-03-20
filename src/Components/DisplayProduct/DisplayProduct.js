@@ -43,22 +43,6 @@ const DisplayProduct = () => {
       <Header />
       <section className="displayProduct_main">
         <div className="container my-5">
-          {/* <form action="" className="search_bar_body">
-            <input
-              type="text"
-              name="search"
-              placeholder="Search food....."
-              className="search_bar"
-              value={value}
-              onChange={onChange}
-            />
-            <button
-              className="btn MyBtn search_button"
-              onClick={() => onSearch(value)}
-            >
-              Search
-            </button>
-          </form> */}
           <div className="dropdown">
             {food
               .filter((item) => {
