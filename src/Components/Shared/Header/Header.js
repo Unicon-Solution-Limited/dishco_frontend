@@ -75,6 +75,7 @@ const Header = () => {
                   delayedUpdateSuggestions(e.target.value);
                 }}
                 autoComplete="off"
+                required
               />
               <button className="search_button" type="submit">
                 <i className="bi bi-search"></i>
