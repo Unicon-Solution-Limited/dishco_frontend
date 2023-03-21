@@ -1,15 +1,12 @@
 import React, { useContext } from "react";
 import { useLocation } from "react-router";
-import { CartProvider } from "../../../AllContext/CartContext";
+import { Link } from "react-router-dom";
 
 const Invoice = () => {
   const location = useLocation();
   const data = location.state.orderDetailsForInvoice;
 
   //all context
-  const [cartData, setCartData, finaltotalAddonPrice, subTotalPrice] =
-    useContext(CartProvider);
-
   console.log(data);
 
   return (
@@ -31,15 +28,15 @@ const Invoice = () => {
           <div className="info">
             <h2>Billing Information</h2>
             <p>
-              John Doe
+              {data?.cus_name}
               <br />
-              123 Main Street
+              {data?.cus_add1}
               <br />
-              Anytown, USA 12345
+              {data?.cus_city}
               <br />
-              +88 01681894386
+              {data?.cus_phone}
               <br />
-              john.doe@example.com
+              {data?.cus_email}
             </p>
           </div>
 
@@ -82,10 +79,18 @@ const Invoice = () => {
             </table>
           </div>
 
-          <div className="total">
-            <span>Total: {data.total_amount - 80} TK.</span> <br />
-            <span>Delivery Charge: 80 TK.</span> <br />
-            <span>Grand Total: {data.total_amount} TK.</span>
+          <div className="total_calculation">
+            <span>
+              <strong>Total:</strong> {data.total_amount - 80} TK.
+            </span>{" "}
+            <br />
+            <span>
+              <strong>Delivery Charge:</strong> 80 TK.
+            </span>{" "}
+            <br />
+            <span>
+              <strong>Grand Total:</strong> {data.total_amount} TK.
+            </span>
           </div>
         </div>
         <div className="invoice_footer">

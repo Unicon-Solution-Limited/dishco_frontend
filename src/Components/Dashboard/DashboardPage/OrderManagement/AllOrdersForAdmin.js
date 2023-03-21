@@ -90,8 +90,6 @@ const AllOrdersForAdmin = () => {
                         >
                           {order?.product_status}
                         </span>
-                        {/* <span className="status processing">Processing</span>
-                      <span className="status shipped">Shipped</span> */}
                       </td>
                       <td className="action_btns">
                         <button
