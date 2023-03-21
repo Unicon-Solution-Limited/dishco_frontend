@@ -55,7 +55,6 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
           <div className="modal-header">
             <p className="modal-title fs-5" id="exampleModalLabel">
               <strong>Order Date & Time:</strong> {formattedDateTime}
-              {/* .slice(4, 25) */}
             </p>
             <button
               type="button"

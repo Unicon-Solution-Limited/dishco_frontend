@@ -61,7 +61,7 @@ const AllOrdersForAdmin = () => {
               <table className="table table-striped align-middle">
                 <thead>
                   <tr>
-                    <th scope="col">Order Id</th>
+                    <th scope="col">Date and Time</th>
                     <th scope="col">Item/'s</th>
                     <th scope="col">Customer Name</th>
                     <th scope="col">Phone Number</th>
@@ -72,7 +72,13 @@ const AllOrdersForAdmin = () => {
                 <tbody>
                   {orders.map((order, ou) => (
                     <tr key={ou}>
-                      <th scope="row">{order?.tran_id}</th>
+                      <th scope="row">
+                        {new Date(order?.orderTime).toLocaleString("en-GB", {
+                          dateStyle: "short",
+                          timeStyle: "short",
+                          hour12: true,
+                        })}
+                      </th>
                       <td>{order?.orderedData?.length}</td>
                       <td>{order?.cus_name}</td>
                       <td>{order?.cus_phone}</td>
