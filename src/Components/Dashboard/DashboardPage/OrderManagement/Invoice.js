@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLocation } from "react-router";
+import { CartProvider } from "../../../AllContext/CartContext";
 
 const Invoice = () => {
   const location = useLocation();
-  const order = location.state.orderDetailsForInvoice;
+  const data = location.state.orderDetailsForInvoice;
 
-  console.log(order);
+  //all context
+  const [cartData, setCartData, finaltotalAddonPrice, subTotalPrice] =
+    useContext(CartProvider);
+
+  console.log(data);
 
   return (
     <>
@@ -44,53 +49,43 @@ const Invoice = () => {
                 <tr>
                   <th>Item</th>
                   <th>Quantity</th>
-                  <th>Price</th>
+                  <th>Food Price</th>
+                  <th>Extra Item Price</th>
                   <th>Total</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Steak</td>
-                  <td className="qty">2</td>
-                  <td>TK. 25.00</td>
-                  <td className="total">TK. 50.</td>
-                </tr>
-                <tr>
-                  <td>Salmon</td>
-                  <td className="qty">1</td>
-                  <td>TK. 30.00</td>
-                  <td className="total">TK. 30.00</td>
-                </tr>
-                <tr>
-                  <td>Cheesecake</td>
-                  <td className="qty">2</td>
-                  <td>TK. 10.00</td>
-                  <td className="total">TK. 20.00</td>
-                </tr>
-                <tr>
-                  <td colSpan="3">
-                    <strong>Subtotal</strong>
-                  </td>
-                  <td className="total">TK. 100.00</td>
-                </tr>
-                <tr>
-                  <td colSpan="3">
-                    <strong>Discount</strong> (-)
-                  </td>
-                  <td className="total">TK. 9.00</td>
-                </tr>
-                <tr>
-                  <td colSpan="3">
-                    <strong>Delivery Charge (+)</strong>
-                  </td>
-                  <td className="total">TK. 9.00</td>
-                </tr>
-              </tbody>
+              {data?.orderedData.map((dt, i) => (
+                <tbody key={i}>
+                  <tr>
+                    <td>{dt?.name}</td>
+                    <td className="qty">{dt?.quantity}</td>
+
+                    <td>TK. {dt?.price}</td>
+                    <td>
+                      TK.{" "}
+                      {dt?.extras.reduce(
+                        (acc, addon) => acc + addon.priceOfAddon,
+                        0
+                      )}
+                    </td>
+                    <td className="total">
+                      TK.{" "}
+                      {dt?.quantity * dt?.price +
+                        dt?.extras.reduce(
+                          (acc, addon) => acc + addon.priceOfAddon,
+                          0
+                        )}
+                    </td>
+                  </tr>
+                </tbody>
+              ))}
             </table>
           </div>
 
           <div className="total">
-            <span>Total: 109.00 TK.</span>
+            <span>Total: {data.total_amount - 80} TK.</span> <br />
+            <span>Delivery Charge: 80 TK.</span> <br />
+            <span>Grand Total: {data.total_amount} TK.</span>
           </div>
         </div>
         <div className="invoice_footer">
