@@ -55,41 +55,39 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
           <div className="modal-body order_details">
             <div className="product_details">
               {orderDetailsForPopup?.orderedData?.map((orderDt) => (
-                <>
-                  <div className="order_product_single" key={orderDt.id}>
-                    <img
-                      src={orderDt.image}
-                      alt=""
-                      className="single_product_modal_image"
-                      loading="lazy"
-                    />
-                    <p className="mt-3">
-                      <strong>{orderDt?.name}</strong>
-                    </p>
+                <div className="order_product_single" key={orderDt.id}>
+                  <img
+                    src={orderDt.image}
+                    alt=""
+                    className="single_product_modal_image"
+                    loading="lazy"
+                  />
+                  <p className="mt-3">
+                    <strong>{orderDt?.name}</strong>
+                  </p>
 
-                    <p>
-                      <strong>Code:</strong> {orderDt?.foodCode} tk.
-                    </p>
-                    <p>
-                      <strong>Price:</strong> {orderDt?.price} tk.
-                    </p>
-                    <p>
-                      <strong>Quantity:</strong> {orderDt?.quantity}
-                    </p>
-                    <p>
-                      <strong>Size:</strong> {orderDt?.size}
-                    </p>
+                  <p>
+                    <strong>Code:</strong> {orderDt?.foodCode} tk.
+                  </p>
+                  <p>
+                    <strong>Price:</strong> {orderDt?.price} tk.
+                  </p>
+                  <p>
+                    <strong>Quantity:</strong> {orderDt?.quantity}
+                  </p>
+                  <p>
+                    <strong>Size:</strong> {orderDt?.size}
+                  </p>
 
-                    <strong>Extra Items:</strong>
-                    {orderDt?.extras.map((extra, index) => (
-                      <aside key={index}>
-                        <p>
-                          {extra?.nameOfAddon} ({extra?.priceOfAddon})tk.{" "}
-                        </p>
-                      </aside>
-                    ))}
-                  </div>
-                </>
+                  <strong>Extra Items:</strong>
+                  {orderDt?.extras.map((extra, index) => (
+                    <aside key={index}>
+                      <p>
+                        {extra?.nameOfAddon} ({extra?.priceOfAddon})tk.{" "}
+                      </p>
+                    </aside>
+                  ))}
+                </div>
               ))}
             </div>
 
