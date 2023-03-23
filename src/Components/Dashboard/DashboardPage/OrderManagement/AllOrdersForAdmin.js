@@ -4,10 +4,22 @@ import TopbarNav from "../../Layouts/TopbarNav";
 import "./OrderManagement.css";
 import axios from "axios";
 import PopupOrderAdmin from "./PopupOrderAdmin";
+import { DebounceInput } from "react-debounce-input";
 
 const AllOrdersForAdmin = () => {
   const [orders, setOrders] = useState([]);
   const [orderDetailsForPopup, setOrderDetailsForPopup] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // filter the orders based on search term
+  const filteredOrders = orders.filter((order) =>
+    order?.product_status.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // handle search input change
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
   const orderDelete = async (id) => {
     try {
@@ -55,7 +67,14 @@ const AllOrdersForAdmin = () => {
         <div id="layoutSidenav_content">
           <main className="px-1">
             <div className="dashboard_product_searchbar my-3">
-              <input type="search" placeholder="search orders" />
+              <DebounceInput
+                type="search"
+                placeholder="search  product_status"
+                value={searchTerm}
+                onChange={handleSearchChange}
+                minLength={2}
+                debounceTimeout={300}
+              />
             </div>
             <div className="table-responsive">
               <table className="table table-striped align-middle">
@@ -70,7 +89,7 @@ const AllOrdersForAdmin = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {orders.map((order, ou) => (
+                  {filteredOrders.map((order, ou) => (
                     <tr key={ou}>
                       <th scope="row">
                         {new Date(order?.orderTime).toLocaleString("en-GB", {

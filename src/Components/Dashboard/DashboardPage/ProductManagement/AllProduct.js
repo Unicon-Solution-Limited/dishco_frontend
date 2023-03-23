@@ -5,10 +5,23 @@ import "./ProductManagement.css";
 import { Link } from "react-router-dom";
 import ViewProductDetails from "./ViewProductDetails";
 import axios from "axios";
+import { DebounceInput } from "react-debounce-input";
 
 const AllProduct = () => {
   const [allFoods, setAllFoods] = useState([]);
   const [deleteMessage, setDeleteMessage] = useState("");
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // filter the orders based on search term
+  const filteredOrders = allFoods.filter((order) =>
+    order?.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // handle search input change
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
   useEffect(() => {
     const fetchAllFood = () => {
@@ -47,7 +60,14 @@ const AllProduct = () => {
         <div id="layoutSidenav_content">
           <main className="px-1">
             <div className="dashboard_product_searchbar my-3">
-              <input type="search" placeholder="search product" />
+              <DebounceInput
+                type="search"
+                placeholder="search product name"
+                value={searchTerm}
+                onChange={handleSearchChange}
+                minLength={2}
+                debounceTimeout={300}
+              />
             </div>
             <div className="table-responsive">
               <table className="w-100 table table-striped table-hover align-middle dashboard_product_display_table">
@@ -60,7 +80,7 @@ const AllProduct = () => {
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
-                {allFoods.map((foodDt, index) => (
+                {filteredOrders.map((foodDt, index) => (
                   <tbody className="table-group-divider" key={foodDt._id}>
                     <tr>
                       <th scope="row">{index + 1}</th>
