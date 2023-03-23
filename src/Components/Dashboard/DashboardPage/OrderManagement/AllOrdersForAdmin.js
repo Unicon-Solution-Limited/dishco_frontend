@@ -37,14 +37,24 @@ const AllOrdersForAdmin = () => {
     }
   };
 
-  //get all the orders for admin
+  //get all the orders for admin, update every 5 minutes
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/getAllOrderAdmin")
-      .then((res) => {
-        setOrders(res?.data);
-      })
-      .catch((error) => console.log(error));
+    const fetchOrders = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8000/getAllOrderAdmin"
+        );
+        setOrders(response?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchOrders();
+    const interval = setInterval(() => {
+      fetchOrders();
+    }, 300000);
+
+    return () => clearInterval(interval);
   }, []);
 
   //handle the trand_id and matching it with the backend of order for show it in the popup page by props
