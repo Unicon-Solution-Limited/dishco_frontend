@@ -21,9 +21,7 @@ const TopbarNav = () => {
             <i className="bi bi-list"></i>
           </button>
         </div>
-        <div className="new_order_animation">
-          <p>New Order</p>
-        </div>
+
         <ul className="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
           <li className="nav-item dropdown">
             <Link

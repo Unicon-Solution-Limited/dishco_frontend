@@ -8,15 +8,16 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
   // Date Formate Change
   const orderTime = new Date(orderDetailsForPopup?.orderTime);
   const formattedDate = orderTime.toLocaleDateString(undefined, {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
+    year: "2-digit",
+    month: "2-digit",
+    day: "2-digit",
   });
   const formattedTime = orderTime.toLocaleTimeString(undefined, {
-    hour: "numeric",
-    minute: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
   });
-  const formattedDateTime = `${formattedDate}, ${formattedTime}`;
+  const formattedDateTime = `${formattedDate}${formattedTime}`;
 
   // //handle status
   const handleStatusSubmit = async (id, e) => {
@@ -54,7 +55,7 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
         <div className="modal-content">
           <div className="modal-header">
             <p className="modal-title fs-5" id="exampleModalLabel">
-              <strong>Order Date & Time:</strong> {formattedDateTime}
+              <strong>Order Id:</strong> {formattedDateTime}
             </p>
             <button
               type="button"

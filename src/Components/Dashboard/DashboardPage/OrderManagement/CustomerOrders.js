@@ -11,6 +11,8 @@ const CustomerOrders = () => {
   const [allCustomerOders, setallCustomerOrders] = useState([]);
   const [customerOrderDetails, setCustomerOrderDetails] = useState([]);
 
+  console.log(allCustomerOders);
+
   //getting the customer order according the email
   useEffect(() => {
     const fetchCustomerOrders = async () => {
@@ -40,6 +42,8 @@ const CustomerOrders = () => {
       });
   };
 
+  // For order ID
+
   return (
     <>
       <TopbarNav />
@@ -57,7 +61,7 @@ const CustomerOrders = () => {
                 onClick={() => handleCustomerTranId(allCustomerOrder?.tran_id)}
               >
                 {allCustomerOrder?.orderTime} <br />
-                <strong>Order ID:</strong> {allCustomerOrder?.tran_id} <br />
+                <strong>Order ID:</strong> <br />
                 <strong>Order Status:</strong>{" "}
                 {allCustomerOrder?.product_status}
               </button>
