@@ -78,7 +78,7 @@ const SidebarNav = () => {
                   <div className="sb-sidenav-menu-heading">
                     Customer Management
                   </div>
-                  <Link className="nav-link" to="/about_edit">
+                  <Link className="nav-link" to="/cus_list">
                     <span className="collapsed_Menu">Customer List </span>
                     <div className="sb-sidenav-collapse-arrow">
                       <i className="bi bi-chevron-double-right"></i>

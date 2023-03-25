@@ -30,6 +30,7 @@ import CustomerOrder from "./Components/Dashboard/DashboardPage/OrderManagement/
 import MakeAdmin from "./Components/Dashboard/DashboardPage/MakeAdmin/MakeAdmin";
 import Invoice from "./Components/Dashboard/DashboardPage/OrderManagement/Invoice";
 import SearchProductDisplay from "./Components/DisplayProduct/SearchProductDisplay/SearchProductDisplay";
+import CustomerList from "./Components/Dashboard/DashboardPage/CustomerList/CustomerList";
 
 function App() {
   return (
@@ -118,6 +119,10 @@ function App() {
 
             <Route path="/Search/:searchProductName">
               <SearchProductDisplay />
+            </Route>
+
+            <Route path="/cus_List">
+              <CustomerList />
             </Route>
 
             <Route path="/make_admin">
