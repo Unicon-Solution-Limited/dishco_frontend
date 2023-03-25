@@ -1,0 +1,10 @@
+.single_customer_body {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.single_customer_footer {
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
