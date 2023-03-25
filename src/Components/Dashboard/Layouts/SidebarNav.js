@@ -86,54 +86,6 @@ const SidebarNav = () => {
                   </Link>
                 </div>
               )}
-              {/* Discount management start */}
-              {isAdmin && (
-                <div>
-                  <span
-                    className="nav-link collapsed collapsed_Menu"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#discount"
-                    aria-expanded="false"
-                    aria-controls="collapseLayouts"
-                  >
-                    Customer List per Range
-                    <div className="sb-sidenav-collapse-arrow">
-                      <i className="bi bi-chevron-double-down"></i>
-                    </div>
-                  </span>
-                  <div
-                    className="collapse"
-                    id="discount"
-                    aria-labelledby="headingTwo"
-                    data-bs-parent="#sidenavAccordion"
-                  >
-                    <nav className="sb-sidenav-menu-nested nav">
-                      <Link className="nav-link collapse_sub_menu" to="/">
-                        Bronze
-                      </Link>
-                      <Link
-                        className="nav-link collapse_sub_menu"
-                        to="/createProduct"
-                      >
-                        Silver
-                      </Link>
-                      <Link
-                        className="nav-link collapse_sub_menu"
-                        to="/createProduct"
-                      >
-                        Gold
-                      </Link>
-                      <Link
-                        className="nav-link collapse_sub_menu"
-                        to="/createProduct"
-                      >
-                        Platinum
-                      </Link>
-                    </nav>
-                  </div>
-                </div>
-              )}
-              {/* Discount management end */}
 
               <div className="sb-sidenav-menu-heading">Order management</div>
               {/* Order management start */}
