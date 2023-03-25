@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
+import TopbarNav from "../../Layouts/TopbarNav";
 import "./MakeAdmin.css";
+import SidebarNav from "./../../Layouts/SidebarNav";
 
 const MakeAdmin = () => {
   const adminRef = useRef();
@@ -23,36 +25,49 @@ const MakeAdmin = () => {
       });
   };
   return (
-    <div>
-      <div className="makeAdminMainDiv">
-        <form className="makeAdminFrom" onSubmit={handleAdminSubmit}>
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Email address
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="exampleInputEmail1"
-              ref={adminRef}
-              aria-describedby="emailHelp"
-              required
-            />
-          </div>
+    <>
+      <TopbarNav />
+      <div id="layoutSidenav">
+        <SidebarNav />
+        <div id="layoutSidenav_content">
+          <main>
+            <div className="container-fluid p-4">
+              <div className="makeAdminMainDiv">
+                <form className="makeAdminFrom" onSubmit={handleAdminSubmit}>
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputEmail1" className="form-label">
+                      Email address
+                    </label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="exampleInputEmail1"
+                      ref={adminRef}
+                      aria-describedby="emailHelp"
+                      required
+                    />
+                  </div>
 
-          <button type="submit" className="makeAdminButton btn MyBtn mb-3">
-            Submit
-          </button>
-          <br />
-          {isAdminAdd && (
-            <span className="text-success">
-              <i className="bi bi-check-circle"></i>
-              Admin added Succuessfully
-            </span>
-          )}
-        </form>
+                  <button
+                    type="submit"
+                    className="makeAdminButton btn MyBtn mb-3"
+                  >
+                    Submit
+                  </button>
+                  <br />
+                  {isAdminAdd && (
+                    <span className="text-success">
+                      <i className="bi bi-check-circle"></i>
+                      Admin added Succuessfully
+                    </span>
+                  )}
+                </form>
+              </div>
+            </div>
+          </main>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
