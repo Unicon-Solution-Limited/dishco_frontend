@@ -13,8 +13,8 @@ const CustomerList = () => {
         <div id="layoutSidenav_content">
           <main className="container-fluid p-4">
             <h2 className="text-center">Customers</h2>
-            <div class="table-responsive">
-              <table class="table align-middle table-hover">
+            <div className="table-responsive">
+              <table className="table align-middle table-hover">
                 <thead>
                   <tr>
                     <th scope="col">#ID</th>
