@@ -64,7 +64,7 @@
   height: 300px;
   border-radius: 10px;
   display: flex;
-  color: var(--black);
+  color: var(--white);
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -73,10 +73,15 @@
   box-shadow: rgba(100, 188, 70, 0.25) 0px 50px 100px -20px,
     rgba(100, 188, 70, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  padding: 20px;
 }
-.bronze {
+.logo_for_rank {
+  width: 100%;
+  height: auto;
+}
+/* .bronze {
   background-color: #cd7f32;
-}
+} */
 .silver {
   background-color: #c0c0c0;
 }
