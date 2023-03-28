@@ -30,6 +30,42 @@ const SidebarNav = () => {
           </button>
           <div className="sb-sidenav-menu">
             <div className="nav">
+              <div>
+                <div className="sb-sidenav-menu-heading">
+                  Profile Management{" "}
+                </div>
+                {/* Product Section start */}
+                <span
+                  className="nav-link collapsed collapsed_Menu"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseLayouts"
+                  aria-expanded="false"
+                  aria-controls="collapseLayouts"
+                >
+                  Profile
+                  <div className="sb-sidenav-collapse-arrow">
+                    <i className="bi bi-chevron-double-down"></i>
+                  </div>
+                </span>
+                <div
+                  className="collapse"
+                  id="collapseLayouts"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#sidenavAccordion"
+                >
+                  <nav className="sb-sidenav-menu-nested nav">
+                    <Link className="nav-link collapse_sub_menu" to="/profile">
+                      View Profile
+                    </Link>
+                    <Link
+                      className="nav-link collapse_sub_menu"
+                      to="/createProduct"
+                    >
+                      Coupon
+                    </Link>
+                  </nav>
+                </div>
+              </div>
               {isAdmin && (
                 <div>
                   <div className="sb-sidenav-menu-heading">

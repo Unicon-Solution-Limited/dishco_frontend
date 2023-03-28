@@ -31,6 +31,7 @@ import MakeAdmin from "./Components/Dashboard/DashboardPage/MakeAdmin/MakeAdmin"
 import Invoice from "./Components/Dashboard/DashboardPage/OrderManagement/Invoice";
 import SearchProductDisplay from "./Components/DisplayProduct/SearchProductDisplay/SearchProductDisplay";
 import CustomerList from "./Components/Dashboard/DashboardPage/CustomerList/CustomerList";
+import ViewProfile from "./Components/Dashboard/DashboardPage/ProfileManagement/ViewProfile";
 
 function App() {
   return (
@@ -55,6 +56,9 @@ function App() {
             </Route>
 
             {/* Dashboard router start */}
+            <Route path="/profile">
+              <ViewProfile />
+            </Route>
             <Route path="/createProduct">
               <CreateProduct />
             </Route>
