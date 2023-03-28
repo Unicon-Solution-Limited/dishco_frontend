@@ -45,14 +45,14 @@ const TopbarNav = () => {
               aria-labelledby="navbarDropdown"
             >
               <li>
-                <a className="dropdown-item" href="/">
+                <Link className="dropdown-item" to="/">
                   <i className="bi bi-house"></i> Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="dropdown-item" href="#!">
+                <Link className="dropdown-item" to="/profile">
                   <i className="bi bi-gear"></i> Profile
-                </a>
+                </Link>
               </li>
               <li>
                 <hr className="dropdown-divider" />

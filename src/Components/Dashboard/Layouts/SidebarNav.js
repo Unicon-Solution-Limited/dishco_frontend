@@ -38,7 +38,7 @@ const SidebarNav = () => {
                 <span
                   className="nav-link collapsed collapsed_Menu"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseLayouts"
+                  data-bs-target="#ProfileManagement"
                   aria-expanded="false"
                   aria-controls="collapseLayouts"
                 >
@@ -49,7 +49,7 @@ const SidebarNav = () => {
                 </span>
                 <div
                   className="collapse"
-                  id="collapseLayouts"
+                  id="ProfileManagement"
                   aria-labelledby="headingOne"
                   data-bs-parent="#sidenavAccordion"
                 >
