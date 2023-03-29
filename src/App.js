@@ -31,6 +31,7 @@ import MakeAdmin from "./Components/Dashboard/DashboardPage/MakeAdmin/MakeAdmin"
 import Invoice from "./Components/Dashboard/DashboardPage/OrderManagement/Invoice";
 import SearchProductDisplay from "./Components/DisplayProduct/SearchProductDisplay/SearchProductDisplay";
 import CustomerList from "./Components/Dashboard/DashboardPage/CustomerList/CustomerList";
+import SingleCustomer from "./Components/Dashboard/DashboardPage/CustomerList/SingleCustomer";
 
 function App() {
   return (
@@ -83,6 +84,10 @@ function App() {
             </Route>
             <PrivateRoute path="/singleProduct/:viewDetails">
               <SingleProduct />
+            </PrivateRoute>
+
+            <PrivateRoute path="/singleCustomer/:singleCustomerEmail">
+              <SingleCustomer />
             </PrivateRoute>
 
             <PrivateRoute path="/cart">

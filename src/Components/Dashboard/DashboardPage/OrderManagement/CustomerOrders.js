@@ -11,8 +11,6 @@ const CustomerOrders = () => {
   const [allCustomerOders, setallCustomerOrders] = useState([]);
   const [customerOrderDetails, setCustomerOrderDetails] = useState([]);
 
-  console.log(allCustomerOders);
-
   //getting the customer order according the email
   useEffect(() => {
     const fetchCustomerOrders = async () => {
