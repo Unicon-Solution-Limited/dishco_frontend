@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  font-size: 1vw;
+  font-size: 14px;
 }
 
 .contact_number {
@@ -38,7 +38,8 @@
 
 .search_bar {
   padding: 3px 6px;
-  width: 35vw;
+  width: 500px;
+  min-width: auto;
   border: none !important;
   border-radius: 3px 0 0 3px;
 }
