@@ -79,7 +79,6 @@ const CustomerList = () => {
           </main>
         </div>
       </div>
-      <SingleCustomer selectedEmail={selectedEmail} />
     </>
   );
 };
