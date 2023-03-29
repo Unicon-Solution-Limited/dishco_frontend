@@ -32,6 +32,7 @@ import Invoice from "./Components/Dashboard/DashboardPage/OrderManagement/Invoic
 import SearchProductDisplay from "./Components/DisplayProduct/SearchProductDisplay/SearchProductDisplay";
 import CustomerList from "./Components/Dashboard/DashboardPage/CustomerList/CustomerList";
 import ViewProfile from "./Components/Dashboard/DashboardPage/ProfileManagement/ViewProfile";
+import SingleCustomer from "./Components/Dashboard/DashboardPage/CustomerList/SingleCustomer";
 
 function App() {
   return (
@@ -87,6 +88,10 @@ function App() {
             </Route>
             <PrivateRoute path="/singleProduct/:viewDetails">
               <SingleProduct />
+            </PrivateRoute>
+
+            <PrivateRoute path="/singleCustomer/:singleCustomerEmail">
+              <SingleCustomer />
             </PrivateRoute>
 
             <PrivateRoute path="/cart">
