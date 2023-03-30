@@ -76,8 +76,13 @@ const SingleCustomer = () => {
                             className="single_product_modal_image"
                           />{" "}
                         </p>
-                        <p>Food Name: {orderDt?.name}</p>
-                        <p>Food Code: {orderDt.foodCode}</p>
+                        <h6>{orderDt?.name}</h6>
+                        <p>
+                          <strong>Food Code:</strong> {orderDt.foodCode}
+                        </p>
+                        <p>
+                          <strong>Quantity:</strong> {orderDt.quantity}
+                        </p>
                       </div>
                     ))}
                   </aside>
@@ -92,10 +97,11 @@ const SingleCustomer = () => {
               <h4>Total Points</h4>
               <p>{Math.round(totalAmount / 10)}</p>
             </aside>
-            <p>
-              <strong>Number of Orders:</strong> {singleOrder?.length}
-            </p>
+            <hr />
             <aside className="d-flex justify-content-between mt-2">
+              <p>
+                <strong>Number of Orders:</strong> {singleOrder?.length}
+              </p>
               <p className="text-success">
                 <strong>Completed Orders:</strong> {successfulPaymentsCount}
               </p>
