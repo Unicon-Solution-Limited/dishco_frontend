@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
+import TopbarNav from "./../../Layouts/TopbarNav";
+import SidebarNav from "./../../Layouts/SidebarNav";
 
 const SingleCustomer = () => {
   const { singleCustomerEmail } = useParams();
@@ -39,6 +41,12 @@ const SingleCustomer = () => {
   }, [singleOrder]);
   const successfulPaymentsCount = successfulPayments.length;
 
+  // calculate pending orders
+  const pending = useMemo(() => {
+    return singleOrder.filter((item) => item?.product_status === "Pending");
+  }, [singleOrder]);
+  const pendingCount = pending.length;
+
   // calculate canceled orders
   const cancelData = useMemo(() => {
     return singleOrder.filter((item) => item?.product_status === "canceled");
@@ -47,48 +55,60 @@ const SingleCustomer = () => {
 
   return (
     <>
-      {singleOrder.map((data) => (
-        <div key={data?._id}>
-          <div>
-            <p>Date: {data?.orderTime}</p>
-          </div>
-          <div className="modal-body single_customer_body">
-            <aside>
-              {data?.orderedData.map((orderDt) => (
-                <div key={orderDt.id}>
-                  <p>
-                    <img
-                      src={orderDt.image}
-                      alt="loading"
-                      className="single_product_modal_image"
-                    />{" "}
-                  </p>
-                  <p>Food Name: {orderDt?.name}</p>
-                  <p>Food Code: {orderDt.foodCode}</p>
+      <TopbarNav />
+      <div id="layoutSidenav">
+        <SidebarNav />
+        <div id="layoutSidenav_content">
+          <div className="row mx-2 py-5">
+            {singleOrder.map((data) => (
+              <div key={data?._id} className="col-md-3">
+                <div>
+                  <p>Date: {data?.orderTime}</p>
                 </div>
-              ))}
+                <div className="modal-body single_customer_body">
+                  <aside>
+                    {data?.orderedData.map((orderDt) => (
+                      <div key={orderDt.id}>
+                        <p>
+                          <img
+                            src={orderDt.image}
+                            alt="loading"
+                            className="single_product_modal_image"
+                          />{" "}
+                        </p>
+                        <p>Food Name: {orderDt?.name}</p>
+                        <p>Food Code: {orderDt.foodCode}</p>
+                      </div>
+                    ))}
+                  </aside>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="single_customer_footer">
+            <aside>
+              <h4>Total purchased Amount</h4>
+              <p>{totalAmount} tk.</p>
+              <h4>Total Points</h4>
+              <p>{Math.round(totalAmount / 10)}</p>
+            </aside>
+            <p>
+              <strong>Number of Orders:</strong> {singleOrder?.length}
+            </p>
+            <aside className="d-flex justify-content-between mt-2">
+              <p className="text-success">
+                <strong>Completed Orders:</strong> {successfulPaymentsCount}
+              </p>
+              <p className="text-primary">
+                {" "}
+                <strong>Pending Order: {pendingCount}</strong>
+              </p>
+              <p className="text-danger">
+                <strong>Cancelled orders:</strong> {cancelDataLength}
+              </p>
             </aside>
           </div>
         </div>
-      ))}
-      <div className="single_customer_footer">
-        <aside>
-          <h4>Total purchased Amount</h4>
-          <p>{totalAmount} tk.</p>
-          <h4>Total Points</h4>
-          <p>{Math.round(totalAmount / 10)}</p>
-        </aside>
-        <p>
-          <strong>Number of Orders:</strong> {singleOrder?.length}
-        </p>
-        <aside className="d-flex justify-content-between mt-2">
-          <p className="text-success">
-            <strong>Completed Orders:</strong> {successfulPaymentsCount}
-          </p>
-          <p className="text-danger">
-            <strong>Cancelled orders:</strong> {cancelDataLength}
-          </p>
-        </aside>
       </div>
     </>
   );
