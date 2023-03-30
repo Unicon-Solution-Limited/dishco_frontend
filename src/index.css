@@ -106,6 +106,7 @@ textarea:focus {
 }
 .MyBtn:hover {
   background-color: var(--green);
+  color: var(--white);
   transition: 0.3s;
 }
 
