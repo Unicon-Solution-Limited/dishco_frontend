@@ -33,6 +33,7 @@ import SearchProductDisplay from "./Components/DisplayProduct/SearchProductDispl
 import CustomerList from "./Components/Dashboard/DashboardPage/CustomerList/CustomerList";
 import ViewProfile from "./Components/Dashboard/DashboardPage/ProfileManagement/ViewProfile";
 import SingleCustomer from "./Components/Dashboard/DashboardPage/CustomerList/SingleCustomer";
+import EditProfile from "./Components/Dashboard/DashboardPage/ProfileManagement/EditProfile/EditProfile";
 
 function App() {
   return (
@@ -59,6 +60,9 @@ function App() {
             {/* Dashboard router start */}
             <Route path="/profile">
               <ViewProfile />
+            </Route>
+            <Route path="/editProfile">
+              <EditProfile />
             </Route>
             <Route path="/createProduct">
               <CreateProduct />

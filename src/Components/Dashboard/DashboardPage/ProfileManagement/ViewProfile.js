@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ProfileManagement.css";
 import TopbarNav from "./../../Layouts/TopbarNav";
 import SidebarNav from "./../../Layouts/SidebarNav";
+import { useAuth } from "../../../Authentication/AuthContext/AuthContext";
+import axios from "axios";
 
 const ViewProfile = () => {
+  const [allCustomerOrders, setAllCustomerOrders] = useState([]);
+  const { currentUser } = useAuth();
+  //getting the customer order according the email
+  useEffect(() => {
+    const fetchCustomerOrders = async () => {
+      if (currentUser) {
+        try {
+          const response = await axios.get(
+            `http://localhost:8000/getCustomerOrders?email=${currentUser.email}`
+          );
+          setAllCustomerOrders(response?.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+    fetchCustomerOrders();
+  }, [currentUser]);
   return (
     <>
       <TopbarNav />
