@@ -59,9 +59,9 @@ const SingleCustomer = () => {
       <div id="layoutSidenav">
         <SidebarNav />
         <div id="layoutSidenav_content">
-          <div className="row mx-2 py-5">
+          <div className="row mx-2 my-5">
             {singleOrder.map((data) => (
-              <div key={data?._id} className="col-md-3">
+              <div key={data?._id} className="single_customer_orders col-md-3">
                 <div>
                   <p>
                     Date:{" "}

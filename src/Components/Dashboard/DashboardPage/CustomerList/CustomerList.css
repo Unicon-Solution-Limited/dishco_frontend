@@ -1,6 +1,11 @@
 .single_customer_body {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
+}
+.single_customer_orders {
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 1px 4px,
+    rgba(51, 51, 51, 0.7) 0px 0px 0px 1px;
   text-align: center;
 }
 .single_customer_footer {
