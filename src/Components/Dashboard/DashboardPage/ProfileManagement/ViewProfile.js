@@ -7,7 +7,34 @@ import axios from "axios";
 
 const ViewProfile = () => {
   const [allCustomerOrders, setAllCustomerOrders] = useState([]);
+  const [profileData, setProfileData] = useState([]);
+  const [image, setImage] = useState();
   const { currentUser } = useAuth();
+  const [loading, setLoading] = useState(false);
+
+  //seeting the image in the backend / update
+  const handleChange = async (event) => {
+    setLoading(true);
+    const imageFile = event.target.files[0];
+    const data = new FormData();
+    data.append("file", imageFile);
+    // your folder name
+    data.append("upload_preset", "dishcofood");
+
+    try {
+      const result = await axios.post(
+        // aykhne [Your Cloudinary Cloud Name] baki link thik thak thakbe
+        "https://api.cloudinary.com/v1_1/dnz6zg4on/upload",
+        data
+      );
+      setImage(result.data.url);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   //getting the customer order according the email
   useEffect(() => {
     const fetchCustomerOrders = async () => {
@@ -24,6 +51,24 @@ const ViewProfile = () => {
     };
     fetchCustomerOrders();
   }, [currentUser]);
+
+  //get profile image according to the email
+  useEffect(() => {
+    const fetchCustomerOrders = async () => {
+      if (currentUser) {
+        try {
+          const response = await axios.get(
+            `http://localhost:8000/getProfileImage?profileEmail=${currentUser.email}`
+          );
+          setProfileData(response?.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+    fetchCustomerOrders();
+  }, [currentUser]);
+
   return (
     <>
       <TopbarNav />
@@ -32,11 +77,42 @@ const ViewProfile = () => {
         <div id="layoutSidenav_content">
           <main className="container view_profile">
             <div className="card mb-3 p-3">
-              <img
-                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1674642000/Frontend_images/Background_images/imrs0pmkjarmctevxguv.webp"
-                className="card-img-top"
-                alt="User"
-              />
+              {profileData.length == "" ? (
+                <div className="image-upload-circle">
+                  <label htmlFor="image-upload" className="image-upload-label">
+                    {image ? (
+                      <img
+                        src={image}
+                        alt="uploaded profile"
+                        className="uploaded-image"
+                      />
+                    ) : (
+                      <div className="placeholder-image">
+                        <i className="bi bi-cloud-arrow-up-fill upload-icon"></i>
+                      </div>
+                    )}
+                  </label>
+
+                  <input
+                    id="image-upload"
+                    className="card-img-top"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              ) : (
+                profileData.map((profileDt, i) => (
+                  <img
+                    key={i}
+                    src={profileDt.profileImage}
+                    className="card-img-top"
+                    alt="User"
+                  />
+                ))
+              )}
+
               <div className="card-body">
                 <h5 className="card-title view_profile_name">
                   md. moinul hossain
