@@ -63,7 +63,14 @@ const SingleCustomer = () => {
             {singleOrder.map((data) => (
               <div key={data?._id} className="col-md-3">
                 <div>
-                  <p>Date: {data?.orderTime}</p>
+                  <p>
+                    Date:{" "}
+                    {new Date(data?.orderTime).toLocaleString("en-GB", {
+                      dateStyle: "short",
+                      timeStyle: "short",
+                      hour12: true,
+                    })}
+                  </p>
                 </div>
                 <div className="modal-body single_customer_body">
                   <aside>
@@ -76,7 +83,7 @@ const SingleCustomer = () => {
                             className="single_product_modal_image"
                           />{" "}
                         </p>
-                        <h6>{orderDt?.name}</h6>
+                        <h6 className="mt-2">{orderDt?.name}</h6>
                         <p>
                           <strong>Food Code:</strong> {orderDt.foodCode}
                         </p>
