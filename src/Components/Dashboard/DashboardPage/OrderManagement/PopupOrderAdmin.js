@@ -5,7 +5,7 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
   const statusRef = useRef();
   const [statusMessage, setStatusMessage] = useState(false);
 
-  // Date Formate Change
+  // For Order ID
   const orderTime = new Date(orderDetailsForPopup?.orderTime);
   const formattedDate = orderTime.toLocaleDateString(undefined, {
     year: "2-digit",

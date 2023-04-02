@@ -22,6 +22,7 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
       window.location.reload();
     }, 500);
   };
+
   return (
     <>
       <div
@@ -35,13 +36,16 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
           {customerOrderDetails.map((customerOrderDtls) => (
             <div className="modal-content" key={customerOrderDtls._id}>
               <div className="modal-header">
-                <aside className="order_date_id">
-                  <p>
-                    <strong>Date & Time:</strong> {customerOrderDtls?.orderTime}
-                  </p>
-                  <p>
-                    <strong>Order Id:</strong> {customerOrderDtls?.tran_id}
-                  </p>
+                <aside>
+                  <strong>Order Details on:</strong>{" "}
+                  {new Date(customerOrderDtls?.orderTime).toLocaleString(
+                    "en-GB",
+                    {
+                      dateStyle: "long",
+                      timeStyle: "short",
+                      hour12: true,
+                    }
+                  )}
                 </aside>
                 <button
                   type="button"
@@ -57,7 +61,7 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
                       <aside className="my-2">
                         <img
                           src={orderDt.image}
-                          alt=""
+                          alt="Loading"
                           className="order_image"
                           loading="lazy"
                         />
@@ -115,7 +119,7 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
                     <button
                       className="btn"
                       onClick={() =>
-                        handleCancel("canceled", customerOrderDtls._id)
+                        handleCancel("Canceled", customerOrderDtls._id)
                       }
                     >
                       Cancel order <i className="bi bi-trash"></i>

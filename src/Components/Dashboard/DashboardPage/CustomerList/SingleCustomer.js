@@ -49,7 +49,7 @@ const SingleCustomer = () => {
 
   // calculate canceled orders
   const cancelData = useMemo(() => {
-    return singleOrder.filter((item) => item?.product_status === "canceled");
+    return singleOrder.filter((item) => item?.product_status === "Canceled");
   }, [singleOrder]);
   const cancelDataLength = cancelData.length;
 

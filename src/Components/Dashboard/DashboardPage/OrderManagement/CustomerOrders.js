@@ -11,6 +11,8 @@ const CustomerOrders = () => {
   const [allCustomerOders, setallCustomerOrders] = useState([]);
   const [customerOrderDetails, setCustomerOrderDetails] = useState([]);
 
+  console.log(allCustomerOders);
+
   //getting the customer order according the email
   useEffect(() => {
     const fetchCustomerOrders = async () => {
@@ -40,8 +42,6 @@ const CustomerOrders = () => {
       });
   };
 
-  // For order ID
-
   return (
     <>
       <TopbarNav />
@@ -49,7 +49,7 @@ const CustomerOrders = () => {
         <SidebarNav />
         <div id="layoutSidenav_content">
           <main className="customer_order">
-            <h3 className="mb-5">Your Order List's per Date</h3>
+            <h3 className="mb-5">Your Order List's per Date. </h3>
             {allCustomerOders.map((allCustomerOrder) => (
               <button
                 className="btn single_order_section"
@@ -58,8 +58,12 @@ const CustomerOrders = () => {
                 key={allCustomerOrder._id}
                 onClick={() => handleCustomerTranId(allCustomerOrder?.tran_id)}
               >
-                {allCustomerOrder?.orderTime} <br />
-                <strong>Order ID:</strong> <br />
+                {new Date(allCustomerOrder?.orderTime).toLocaleString("en-GB", {
+                  dateStyle: "long",
+                  timeStyle: "short",
+                  hour12: true,
+                })}{" "}
+                <br />
                 <strong>Order Status:</strong>{" "}
                 {allCustomerOrder?.product_status}
               </button>
