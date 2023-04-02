@@ -10,7 +10,7 @@ const TopbarNav = () => {
     <>
       <nav className="sb-topnav navbar-d navbar-expand navbar-dark bg-dark top_nav">
         <div>
-          <Link className="navbar-brand ps-3" to="/admin-law">
+          <Link className="navbar-brand ps-3" to="/dashboard">
             Admin Dashboard
           </Link>
           <button
