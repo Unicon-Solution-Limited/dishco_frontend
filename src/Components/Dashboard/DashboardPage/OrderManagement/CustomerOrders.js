@@ -52,7 +52,7 @@ const CustomerOrders = () => {
             <h3 className="mb-5">Your Order List's per Date</h3>
             {allCustomerOders.map((allCustomerOrder) => (
               <button
-                className="btn single_order_section m-2"
+                className="btn single_order_section"
                 data-bs-toggle="modal"
                 data-bs-target="#singleOrderModal"
                 key={allCustomerOrder._id}

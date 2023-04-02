@@ -70,6 +70,9 @@
   background-color: var(--green);
   color: var(--black);
   padding: 20px;
+  margin: 10px;
+  width: 250px;
+  height: auto;
 }
 .single_order_section:hover {
   background-color: var(--red);
@@ -143,6 +146,13 @@
 
 .order_cancel button {
   color: var(--white) !important;
+}
+
+@media only screen and (max-width: 960px) {
+  .single_order_section {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
 /* Orders page design of Customer Order ************end*********** */
 
