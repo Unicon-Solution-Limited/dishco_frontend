@@ -49,7 +49,10 @@ const CustomerOrders = () => {
         <SidebarNav />
         <div id="layoutSidenav_content">
           <main className="customer_order">
-            <h3 className="mb-5">Your Order List's per Date. </h3>
+            <div className="mb-5">
+              <h3>Your Order List's per Date.</h3>
+              <p>(Click to view details)</p>
+            </div>
             {allCustomerOders.map((allCustomerOrder) => (
               <button
                 className="btn single_order_section"

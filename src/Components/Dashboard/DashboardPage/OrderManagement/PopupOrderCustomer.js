@@ -108,8 +108,18 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
               </div>
               <div className="modal-footer single_order_modal_footer">
                 <p>
-                  <strong>Status:</strong>
-                  <span className="status pending">
+                  <strong>Status: </strong>
+                  <span
+                    className={`status ${
+                      customerOrderDtls?.product_status == "Pending"
+                        ? "pending"
+                        : customerOrderDtls?.product_status == "canceled"
+                        ? "cancel"
+                        : customerOrderDtls?.product_status == "Shipped"
+                        ? "shipped"
+                        : ""
+                    }`}
+                  >
                     {customerOrderDtls?.product_status}
                   </span>
                 </p>

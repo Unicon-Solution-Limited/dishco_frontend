@@ -10,7 +10,8 @@
   background-color: var(--yellow) !important;
 }
 
-.processing {
+.processing,
+.cancel {
   background-color: var(--red) !important;
   color: var(--white);
 }
