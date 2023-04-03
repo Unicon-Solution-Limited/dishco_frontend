@@ -5,6 +5,7 @@ import SidebarNav from "./../../Layouts/SidebarNav";
 import { useAuth } from "../../../Authentication/AuthContext/AuthContext";
 import axios from "axios";
 import { useMemo } from "react";
+import { Link } from "react-router-dom";
 
 const ViewProfile = () => {
   const [allCustomerOrders, setAllCustomerOrders] = useState([]);
@@ -75,18 +76,16 @@ const ViewProfile = () => {
                   />
                 ))
               ) : (
-                <div className="image-upload-circle">
-                  <label htmlFor="image-upload" className="image-upload-label">
-                    <div className="placeholder-image"></div>
-                  </label>
-                  <input
-                    id="image-upload"
-                    className="ProfilePicInput"
-                    readOnly
-                  />
+                <div className="image-circle">
+                  <i className="bi bi-person-fill"></i>
                 </div>
               )}
 
+              <div className="edit_link">
+                <Link to="/editProfile">
+                  <i class="bi bi-pencil-square"></i> Edit
+                </Link>
+              </div>
               <div className="card-body">
                 <div>
                   <h5 className="card-title view_profile_name">
@@ -100,7 +99,15 @@ const ViewProfile = () => {
                   </p>
                 </div>
 
-                {(totalAmount <= 4990 && "brong") ||
+                {(totalAmount <= 4990 && (
+                  <>
+                    <img
+                      src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1679982155/Frontend_images/logo/bzczji4nlplgwwjud8bi.webp"
+                      alt="Rank"
+                      className="view_profile_rank_img mt-5"
+                    />
+                  </>
+                )) ||
                   (totalAmount <= 29990 && "Silver") ||
                   (totalAmount <= 69990 && "Gold") ||
                   (totalAmount <= 70000 && "Platinum")}

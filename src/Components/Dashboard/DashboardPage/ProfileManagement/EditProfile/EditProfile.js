@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../../../Authentication/AuthContext/AuthContext";
 
 const EditProfile = () => {
@@ -93,7 +93,7 @@ const EditProfile = () => {
         window.location.reload();
       })
       .catch(() => {
-        setError("Faild to update your profile or already exist");
+        setError("Failed to update your profile or already exist");
       })
       .finally(() => {
         setLoading(false);
@@ -115,7 +115,7 @@ const EditProfile = () => {
         window.location.reload();
       })
       .catch(() => {
-        setError("Faild to update your profile or already exist");
+        setError("Failed to update your profile or already exist");
       })
       .finally(() => {
         setLoading(false);
@@ -142,7 +142,7 @@ const EditProfile = () => {
         window.location.reload();
       })
       .catch(() => {
-        setError("password must be 6 character");
+        setError("Password must be 6 character");
       })
       .finally(() => {
         setLoading(false);
@@ -150,23 +150,25 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="container">
-      <form onSubmit={handleImageSubmit}>
-        <div className="image-upload-circle">
-          <label htmlFor="image-upload" className="image-upload-label">
+    <div className="container my-5">
+      <Link to="/profile" className="btn MyBtn">
+        <i class="bi bi-chevron-double-left"></i> Back
+      </Link>
+      <form onSubmit={handleImageSubmit} className="upload_image_section">
+        <div>
+          <label htmlFor="image-upload">
             {image ? (
               <img
                 src={image}
                 alt="uploaded profile"
-                className="uploaded-image"
+                className="uploaded_image"
               />
             ) : (
-              <div className="placeholder-image">
-                <i className="bi bi-cloud-arrow-up-fill upload-icon"></i>
+              <div className="image-upload-circle">
+                <i class="bi bi-upload"></i>
               </div>
             )}
           </label>
-
           <input
             id="image-upload"
             className="ProfilePicInput"
@@ -176,14 +178,15 @@ const EditProfile = () => {
             required
           />
         </div>
-
-        <button type="submit">Submit Image</button>
+        <button type="submit" className="btn MyBtn">
+          Save Image
+        </button>
       </form>
-
+      <br />
       {/* name edit*/}
       <form onSubmit={handleNameSubmit}>
         <label htmlFor="inputUserName1" className="form-label">
-          Enter new name
+          <strong>Enter new name</strong>
         </label>
         <div className="input-group">
           <input
@@ -195,18 +198,18 @@ const EditProfile = () => {
             name="name"
             placeholder="Type your new name"
           />
-          <button className="popup-edit-save-btn">
+          <button className="btn MyBtn">
             <i className="bi bi-check2-circle p-2"></i>
             Save
           </button>
         </div>
       </form>
-
+      <br />
       {/* email edit */}
       <div className="pb-5">
         <form onSubmit={handleEmailSubmit}>
           <label htmlFor="inputUserEmail1" className="form-label pt-2">
-            Enter new email
+            <strong>Enter new email</strong>
           </label>
           <div className="input-group">
             <input
@@ -219,7 +222,7 @@ const EditProfile = () => {
               placeholder="Type your new email"
             />
 
-            <button className="popup-edit-save-btn">
+            <button className="btn MyBtn">
               <i className="bi bi-check2-circle p-2"></i>
               Save
             </button>
@@ -232,7 +235,7 @@ const EditProfile = () => {
         <form onSubmit={handlePasswordSubmit}>
           <div className="mb-3">
             <label htmlFor="inputPassword1" className="form-label pt-2">
-              Enter new password
+              <strong>Enter new password</strong>
             </label>
             <input
               type="password"
@@ -242,10 +245,10 @@ const EditProfile = () => {
               placeholder="Type your new password"
             />
           </div>
-
+          <br />
           {/* <div className="mb-3"> */}
           <label htmlFor="passwordConfirm" className="form-label">
-            Password Confirmation
+            <strong> Password Confirmation</strong>
           </label>
           <div className="input-group">
             <input
@@ -255,7 +258,7 @@ const EditProfile = () => {
               ref={passwordConfirmRef}
               placeholder="Confirm your password"
             />
-            <button className="popup-edit-save-btn">
+            <button className="btn MyBtn">
               <i className="bi bi-check2-circle p-2"></i>
               Save
             </button>
