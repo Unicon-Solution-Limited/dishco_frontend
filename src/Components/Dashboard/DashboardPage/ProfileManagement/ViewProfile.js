@@ -83,7 +83,7 @@ const ViewProfile = () => {
 
               <div className="edit_link">
                 <Link to="/editProfile">
-                  <i class="bi bi-pencil-square"></i> Edit
+                  <i className="bi bi-pencil-square"></i> Edit
                 </Link>
               </div>
               <div className="card-body">

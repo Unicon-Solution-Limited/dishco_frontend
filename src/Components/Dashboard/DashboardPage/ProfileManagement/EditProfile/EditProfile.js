@@ -152,7 +152,7 @@ const EditProfile = () => {
   return (
     <div className="container my-5">
       <Link to="/profile" className="btn MyBtn">
-        <i class="bi bi-chevron-double-left"></i> Back
+        <i className="bi bi-chevron-double-left"></i> Back
       </Link>
       <form onSubmit={handleImageSubmit} className="upload_image_section">
         <div>
@@ -165,7 +165,7 @@ const EditProfile = () => {
               />
             ) : (
               <div className="image-upload-circle">
-                <i class="bi bi-upload"></i>
+                <i className="bi bi-upload"></i>
               </div>
             )}
           </label>
