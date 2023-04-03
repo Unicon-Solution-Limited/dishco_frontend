@@ -152,44 +152,32 @@ const EditProfile = () => {
   return (
     <div className="container">
       <form onSubmit={handleImageSubmit}>
-        {profileData.length == "" ? (
-          <div className="image-upload-circle">
-            <label htmlFor="image-upload" className="image-upload-label">
-              {image ? (
-                <img
-                  src={image}
-                  alt="uploaded profile"
-                  className="uploaded-image"
-                />
-              ) : (
-                <div className="placeholder-image">
-                  <i className="bi bi-cloud-arrow-up-fill upload-icon"></i>
-                </div>
-              )}
-            </label>
+        <div className="image-upload-circle">
+          <label htmlFor="image-upload" className="image-upload-label">
+            {image ? (
+              <img
+                src={image}
+                alt="uploaded profile"
+                className="uploaded-image"
+              />
+            ) : (
+              <div className="placeholder-image">
+                <i className="bi bi-cloud-arrow-up-fill upload-icon"></i>
+              </div>
+            )}
+          </label>
 
-            <input
-              id="image-upload"
-              className="ProfilePicInput"
-              type="file"
-              accept="image/*"
-              onChange={handleChange}
-              required
-            />
-          </div>
-        ) : (
-          profileData.map((profileDt, i) => (
-            <img
-              key={i}
-              src={profileDt.profileImage}
-              className="card-img-top"
-              alt="User"
-            />
-          ))
-        )}
-        {profileData.length == "" && (
-          <button type="submit">Submit Image</button>
-        )}
+          <input
+            id="image-upload"
+            className="ProfilePicInput"
+            type="file"
+            accept="image/*"
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <button type="submit">Submit Image</button>
       </form>
 
       {/* name edit*/}

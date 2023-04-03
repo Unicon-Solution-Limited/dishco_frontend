@@ -4,36 +4,13 @@ import TopbarNav from "./../../Layouts/TopbarNav";
 import SidebarNav from "./../../Layouts/SidebarNav";
 import { useAuth } from "../../../Authentication/AuthContext/AuthContext";
 import axios from "axios";
+import { useMemo } from "react";
 
 const ViewProfile = () => {
   const [allCustomerOrders, setAllCustomerOrders] = useState([]);
   const [profileData, setProfileData] = useState([]);
-  const [image, setImage] = useState();
   const { currentUser } = useAuth();
   const [loading, setLoading] = useState(false);
-
-  //seeting the image in the backend / update
-  const handleChange = async (event) => {
-    setLoading(true);
-    const imageFile = event.target.files[0];
-    const data = new FormData();
-    data.append("file", imageFile);
-    // your folder name
-    data.append("upload_preset", "dishcofood");
-
-    try {
-      const result = await axios.post(
-        // aykhne [Your Cloudinary Cloud Name] baki link thik thak thakbe
-        "https://api.cloudinary.com/v1_1/dnz6zg4on/upload",
-        data
-      );
-      setImage(result.data.url);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   //getting the customer order according the email
   useEffect(() => {
@@ -69,6 +46,17 @@ const ViewProfile = () => {
     fetchCustomerOrders();
   }, [currentUser]);
 
+  // calculate the total product cost (all)
+  const totalAmount = useMemo(() => {
+    return allCustomerOrders.reduce(
+      (accumulator, currentValue) =>
+        accumulator + (currentValue?.total_amount ?? 0),
+      0
+    );
+  }, [allCustomerOrders]);
+
+  console.log(totalAmount);
+
   return (
     <>
       <TopbarNav />
@@ -77,32 +65,7 @@ const ViewProfile = () => {
         <div id="layoutSidenav_content">
           <main className="container view_profile">
             <div className="card mb-3 p-3">
-              {profileData.length == "" ? (
-                <div className="image-upload-circle">
-                  <label htmlFor="image-upload" className="image-upload-label">
-                    {image ? (
-                      <img
-                        src={image}
-                        alt="uploaded profile"
-                        className="uploaded-image"
-                      />
-                    ) : (
-                      <div className="placeholder-image">
-                        <i className="bi bi-cloud-arrow-up-fill upload-icon"></i>
-                      </div>
-                    )}
-                  </label>
-
-                  <input
-                    id="image-upload"
-                    className="card-img-top"
-                    type="file"
-                    accept="image/*"
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              ) : (
+              {profileData.length ? (
                 profileData.map((profileDt, i) => (
                   <img
                     key={i}
@@ -111,33 +74,45 @@ const ViewProfile = () => {
                     alt="User"
                   />
                 ))
+              ) : (
+                <div className="image-upload-circle">
+                  <label htmlFor="image-upload" className="image-upload-label">
+                    <div className="placeholder-image"></div>
+                  </label>
+                  <input
+                    id="image-upload"
+                    className="ProfilePicInput"
+                    readOnly
+                  />
+                </div>
               )}
 
               <div className="card-body">
-                <h5 className="card-title view_profile_name">
-                  md. moinul hossain
-                </h5>
-                <p className="card-text view_profile_contact">
-                  <span>
-                    <i className="bi bi-telephone-fill"></i> +88 01681894386
-                  </span>
-                  <span>
-                    <i className="bi bi-envelope-fill"></i>{" "}
-                    mmoinulh100@gmail.com
-                  </span>
-                </p>
-                <p>
-                  Road# 8, House# 17, C-Block, Baitul aman Housing, Mohammadpur.
-                </p>
+                <div>
+                  <h5 className="card-title view_profile_name">
+                    {currentUser?.displayName}
+                  </h5>
+                  <p className="card-text view_profile_contact">
+                    <span>
+                      <i className="bi bi-envelope-fill"></i>{" "}
+                      {currentUser?.email}
+                    </span>
+                  </p>
+                </div>
 
-                <img
+                {(totalAmount <= 4990 && "brong") ||
+                  (totalAmount <= 29990 && "Silver") ||
+                  (totalAmount <= 69990 && "Gold") ||
+                  (totalAmount <= 70000 && "Platinum")}
+
+                {/* <img
                   src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1679982155/Frontend_images/logo/bzczji4nlplgwwjud8bi.webp"
                   alt="Rank"
                   className="view_profile_rank_img mt-5"
                 />
                 <p className="mt-2">
                   <strong>Points:</strong> 1200
-                </p>
+                </p> */}
               </div>
             </div>
           </main>
