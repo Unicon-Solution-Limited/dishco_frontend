@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../AuthContext/AuthContext";
-import "./ForgotPassword.css";
+
+import "../ForgotPassword/ForgotPassword.css";
 
 const ForgotPassword = () => {
   const [error, setError] = useState("");
@@ -24,12 +25,14 @@ const ForgotPassword = () => {
     setLoading(false);
   };
   return (
-    <div>
+    <div className="main-box-forgotPassword">
       <div>
-        <h4>Password Reset</h4>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <span id="basic-addon1">@</span>
+        <h4 className="text-center mt-5">Password Reset</h4>
+        <form className="from-box px-5 pt-4" onSubmit={handleSubmit}>
+          <div className="input-group mb-3">
+            <span className="input-group-text email-logo" id="basic-addon1">
+              @
+            </span>
             <input
               required
               ref={emailRef}
@@ -45,6 +48,9 @@ const ForgotPassword = () => {
             type="submit"
             disabled={loading}
             value={`${loading ? "Sending" : "Submit"}`}
+            // type="submit"
+            // value="Login"
+            className="login-btn-forgotPassword mt-2"
           />
         </form>
       </div>
@@ -64,9 +70,11 @@ const ForgotPassword = () => {
         {error}
       </p>
 
-      <div>
+      <div className="switch-registration-text container">
         <p>Already have an account ?</p>
-        <Link to="/login">Login</Link>
+        <Link to="/login" className="forgotPassword-login-text">
+          Login
+        </Link>
       </div>
     </div>
   );
