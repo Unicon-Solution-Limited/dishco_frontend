@@ -66,60 +66,52 @@ const ViewProfile = () => {
         <div id="layoutSidenav_content">
           <main className="container view_profile">
             <div className="card mb-3 p-3">
-              {profileData.length ? (
-                profileData.map((profileDt, i) => (
-                  <img
-                    key={i}
-                    src={profileDt.profileImage}
-                    className="card-img-top"
-                    alt="User"
-                  />
-                ))
-              ) : (
-                <div className="image-circle">
-                  <i className="bi bi-person-fill"></i>
-                </div>
-              )}
-
               <div className="edit_link">
                 <Link to="/editProfile">
                   <i className="bi bi-pencil-square"></i> Edit
                 </Link>
               </div>
-              <div className="card-body">
+              <div className="card-body profile_card">
                 <div>
+                  {profileData.length ? (
+                    profileData.map((profileDt, i) => (
+                      <img
+                        key={i}
+                        src={profileDt.profileImage}
+                        className="card-img-top"
+                        alt="User"
+                      />
+                    ))
+                  ) : (
+                    <div className="image-circle">
+                      <i className="bi bi-person-fill"></i>
+                    </div>
+                  )}
                   <h5 className="card-title view_profile_name">
                     {currentUser?.displayName}
                   </h5>
                   <p className="card-text view_profile_contact">
-                    <span>
-                      <i className="bi bi-envelope-fill"></i>{" "}
-                      {currentUser?.email}
-                    </span>
+                    <i className="bi bi-envelope-fill"> {currentUser?.email}</i>
+                  </p>
+                  <p className="mt-2">
+                    <strong>In Total Earned Points:</strong> {totalAmount / 10}
                   </p>
                 </div>
 
-                {(totalAmount <= 4990 && (
-                  <>
-                    <img
-                      src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1679982155/Frontend_images/logo/bzczji4nlplgwwjud8bi.webp"
-                      alt="Rank"
-                      className="view_profile_rank_img mt-5"
-                    />
-                  </>
-                )) ||
-                  (totalAmount <= 29990 && "Silver") ||
-                  (totalAmount <= 69990 && "Gold") ||
-                  (totalAmount <= 70000 && "Platinum")}
-
-                {/* <img
-                  src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1679982155/Frontend_images/logo/bzczji4nlplgwwjud8bi.webp"
-                  alt="Rank"
-                  className="view_profile_rank_img mt-5"
-                />
-                <p className="mt-2">
-                  <strong>Points:</strong> 1200
-                </p> */}
+                <div>
+                  {(totalAmount <= 4990 && (
+                    <>
+                      <img
+                        src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1679982155/Frontend_images/logo/caj3pktvujd45qvbjm61.webp"
+                        alt="Rank"
+                        className="view_profile_rank_img"
+                      />
+                    </>
+                  )) ||
+                    (totalAmount <= 29990 && "Silver") ||
+                    (totalAmount <= 69990 && "Gold") ||
+                    (totalAmount <= 70000 && "Platinum")}
+                </div>
               </div>
             </div>
           </main>
