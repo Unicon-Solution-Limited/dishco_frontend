@@ -164,19 +164,27 @@ const EditProfile = () => {
                 className="uploaded_image"
               />
             ) : (
-              <div className="image-upload-circle">
-                <i className="bi bi-upload"></i>
-              </div>
+              <>
+                <div className="image-upload-circle">
+                  <i className="bi bi-upload"></i>
+                </div>
+              </>
             )}
           </label>
           <input
             id="image-upload"
             className="ProfilePicInput"
             type="file"
-            accept="image/*"
+            accept=".jpg,.jpeg,.png,.webp"
+            maxLength="20480"
             onChange={handleChange}
             required
           />
+        </div>
+        <div className="image_note">
+          <p>NB:</p>
+          <p>Image Size Max: 20kb</p>
+          <p>width: 150px, height: 150px.</p>
         </div>
         <button type="submit" className="btn MyBtn">
           Save Image
