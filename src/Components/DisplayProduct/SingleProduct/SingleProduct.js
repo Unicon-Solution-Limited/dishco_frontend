@@ -224,15 +224,25 @@ const SingleProduct = () => {
                     type="submit"
                     onClick={selectedSize ? addToCart : null}
                   >
-                    <i className="bi bi-cart-fill"></i> Add To Cart
+                    <i class="bi bi-cart-plus-fill"></i> Add To Cart
                   </button>
                 </div>
-                <button
-                  className="MyBtn add_to_cart_button"
-                  onClick={() => handleClearCart(data?._id)}
-                >
-                  <i className="bi bi-trash3"></i> Clear Cart
-                </button>
+                <div className="quantity_cart_button my-3">
+                  <button
+                    className="MyBtn add_to_cart_button"
+                    onClick={() => handleClearCart(data?._id)}
+                  >
+                    <i class="bi bi-x-circle"></i> Clear Cart
+                  </button>
+                  <button
+                    className="MyBtn add_to_cart_button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#cart"
+                    aria-controls="cart"
+                  >
+                    <i className="bi bi-cart-fill"></i> Basket
+                  </button>
+                </div>
                 {successMsg && (
                   <p className="mt-2" style={{ color: "green" }}>
                     Food Successfully added to the cart
