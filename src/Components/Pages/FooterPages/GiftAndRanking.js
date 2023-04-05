@@ -37,7 +37,7 @@ const GiftAndRanking = () => {
             </div>
             <div className="rank_body">
               <img
-                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1679982155/Frontend_images/logo/wkogtc6hr1r8pwhnfcnr.webp"
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1680676068/Frontend_images/logo/ikwdurwsltnd3zl1il3d.webp"
                 alt="Platinum"
                 className="logo_for_rank"
               />
