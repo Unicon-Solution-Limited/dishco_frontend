@@ -60,6 +60,9 @@ const ViewProfile = () => {
 
   console.log(totalAmount);
 
+  const totalPoint = totalAmount / 10;
+  const percentize = totalPoint * 0.0143;
+
   const marks = [
     {
       value: 0,
@@ -140,11 +143,11 @@ const ViewProfile = () => {
                     {totalAmount && (
                       <Slider
                         aria-label="Custom marks"
-                        defaultValue={totalAmount}
+                        defaultValue={percentize}
                         // getAriaValueText={valuetext}
                         step={0}
-                        valueLabelDisplay="auto"
-                        marks={marks}
+                        valueLabelDisplay="on"
+                        // marks={marks}
                       />
                     )}
                   </Box>
