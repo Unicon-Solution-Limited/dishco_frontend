@@ -6,6 +6,8 @@ import { useAuth } from "../../../Authentication/AuthContext/AuthContext";
 import axios from "axios";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
 
 const ViewProfile = () => {
   const [allCustomerOrders, setAllCustomerOrders] = useState([]);
@@ -58,6 +60,31 @@ const ViewProfile = () => {
 
   console.log(totalAmount);
 
+  const marks = [
+    {
+      value: 0,
+      label: "Bronze",
+    },
+    {
+      value: 35,
+      label: "Silver",
+    },
+    {
+      value: 70,
+      label: "Gold",
+    },
+    {
+      value: 100,
+      label: "Platinum",
+    },
+  ];
+
+  function valuetext(value) {
+    // Calculate percentage
+    const percentage = Math.round((value / 100) * totalAmount);
+    return `${percentage}%`;
+  }
+
   return (
     <>
       <TopbarNav />
@@ -65,14 +92,14 @@ const ViewProfile = () => {
         <SidebarNav />
         <div id="layoutSidenav_content">
           <main className="container view_profile">
-            <div className="card mb-3 p-3">
+            <div className="mb-3 p-3 profile_card_body">
               <div className="edit_link">
                 <Link to="/editProfile">
                   <i className="bi bi-pencil-square"></i> Edit
                 </Link>
               </div>
               <div className="card-body profile_card">
-                <div>
+                <div className="customer_info">
                   {profileData.length ? (
                     profileData.map((profileDt, i) => (
                       <img
@@ -111,6 +138,20 @@ const ViewProfile = () => {
                     (totalAmount <= 29990 && "Silver") ||
                     (totalAmount <= 69990 && "Gold") ||
                     (totalAmount <= 70000 && "Platinum")}
+
+                  <br />
+                  <br />
+                  <br />
+                  <Box sx={{ width: 400 }} className="slide_box">
+                    <Slider
+                      aria-label="Custom marks"
+                      defaultValue={totalAmount / 10}
+                      getAriaValueText={valuetext}
+                      step={0}
+                      valueLabelDisplay="auto"
+                      marks={marks}
+                    />
+                  </Box>
                 </div>
               </div>
             </div>
