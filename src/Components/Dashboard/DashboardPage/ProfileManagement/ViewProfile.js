@@ -79,12 +79,6 @@ const ViewProfile = () => {
     },
   ];
 
-  function valuetext(value) {
-    // Calculate percentage
-    const percentage = Math.round((value / 100) * totalAmount);
-    return `${percentage}%`;
-  }
-
   return (
     <>
       <TopbarNav />
@@ -143,14 +137,16 @@ const ViewProfile = () => {
                   <br />
                   <br />
                   <Box sx={{ width: 400 }} className="slide_box">
-                    <Slider
-                      aria-label="Custom marks"
-                      defaultValue={totalAmount / 10}
-                      getAriaValueText={valuetext}
-                      step={0}
-                      valueLabelDisplay="auto"
-                      marks={marks}
-                    />
+                    {totalAmount && (
+                      <Slider
+                        aria-label="Custom marks"
+                        defaultValue={totalAmount}
+                        // getAriaValueText={valuetext}
+                        step={0}
+                        valueLabelDisplay="auto"
+                        marks={marks}
+                      />
+                    )}
                   </Box>
                 </div>
               </div>
