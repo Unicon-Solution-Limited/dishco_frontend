@@ -57,10 +57,7 @@ const SidebarNav = () => {
                     <Link className="nav-link collapse_sub_menu" to="/profile">
                       View Profile
                     </Link>
-                    <Link
-                      className="nav-link collapse_sub_menu"
-                      to="/createProduct"
-                    >
+                    <Link className="nav-link collapse_sub_menu" to="/coupon">
                       Coupon
                     </Link>
                   </nav>
