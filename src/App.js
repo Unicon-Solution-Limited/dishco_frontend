@@ -34,6 +34,7 @@ import CustomerList from "./Components/Dashboard/DashboardPage/CustomerList/Cust
 import ViewProfile from "./Components/Dashboard/DashboardPage/ProfileManagement/ViewProfile";
 import SingleCustomer from "./Components/Dashboard/DashboardPage/CustomerList/SingleCustomer";
 import EditProfile from "./Components/Dashboard/DashboardPage/ProfileManagement/EditProfile/EditProfile";
+import CouponGen from "./Components/Dashboard/DashboardPage/ProfileManagement/CouponGen/CouponGen";
 
 function App() {
   return (
@@ -92,6 +93,10 @@ function App() {
             </Route>
             <PrivateRoute path="/singleProduct/:viewDetails">
               <SingleProduct />
+            </PrivateRoute>
+
+            <PrivateRoute path="/coupon">
+              <CouponGen />
             </PrivateRoute>
 
             <PrivateRoute path="/singleCustomer/:singleCustomerEmail">
