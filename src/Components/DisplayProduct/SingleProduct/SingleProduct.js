@@ -224,7 +224,7 @@ const SingleProduct = () => {
                     type="submit"
                     onClick={selectedSize ? addToCart : null}
                   >
-                    <i class="bi bi-cart-plus-fill"></i> Add To Cart
+                    <i className="bi bi-cart-plus-fill"></i> Add To Cart
                   </button>
                 </div>
                 <div className="quantity_cart_button my-3">
@@ -232,7 +232,7 @@ const SingleProduct = () => {
                     className="MyBtn add_to_cart_button"
                     onClick={() => handleClearCart(data?._id)}
                   >
-                    <i class="bi bi-x-circle"></i> Clear Cart
+                    <i className="bi bi-x-circle"></i> Clear Cart
                   </button>
                   <button
                     className="MyBtn add_to_cart_button"

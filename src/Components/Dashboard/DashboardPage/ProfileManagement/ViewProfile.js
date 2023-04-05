@@ -66,14 +66,14 @@ const ViewProfile = () => {
   const marks = [
     {
       value: 0,
-      label: "Bronze",
+      // label: "Bronze",
     },
     {
-      value: 35,
+      value: 7.15,
       label: "Silver",
     },
     {
-      value: 70,
+      value: 43,
       label: "Gold",
     },
     {
@@ -139,15 +139,12 @@ const ViewProfile = () => {
                   <br />
                   <br />
                   <br />
-                  <Box sx={{ width: 400 }} className="slide_box">
+                  <Box className="slide_box">
                     {totalAmount && (
                       <Slider
-                        aria-label="Custom marks"
                         defaultValue={percentize}
-                        // getAriaValueText={valuetext}
-                        step={0}
-                        valueLabelDisplay="on"
-                        // marks={marks}
+                        marks={marks}
+                        disabled
                       />
                     )}
                   </Box>
