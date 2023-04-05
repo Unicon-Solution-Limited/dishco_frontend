@@ -30,6 +30,7 @@
 
 .add_to_cart_button {
   padding: 8px;
+  width: 120px;
 }
 
 .add_to_cart_button:hover {
@@ -51,6 +52,7 @@
 /*  */
 .quantity_cart_input {
   display: flex;
+  width: 120px;
 }
 .quantity_cart_input input {
   border: 0;
