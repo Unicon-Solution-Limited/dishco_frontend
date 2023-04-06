@@ -22,7 +22,7 @@ const CouponGen = () => {
         Generate Token
       </button>
       <br />
-      {token && <strong> {token}</strong>}
+      Token: {token && <strong> {token}</strong>}
     </div>
   );
 };
