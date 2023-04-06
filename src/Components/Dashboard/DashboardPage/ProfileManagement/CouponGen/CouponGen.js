@@ -31,7 +31,7 @@ const CouponGen = () => {
             <section className="wallet_top_section">
               <aside>
                 <p>Token: {token && <strong> {token}</strong>}</p>
-                <button className="btn MyBtn">Use</button>
+                <button className="btn MyBtn">Apply</button>
               </aside>
               <aside>
                 <p>Point Deduct</p>

@@ -17,11 +17,27 @@
   color: var(--dark-red);
 }
 .wallet_top_section aside:first-child {
-  background-color: var(--yellow);
+  background: rgb(0, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 255, 0.75) 0%,
+    rgba(0, 212, 255, 0.75) 100%
+  );
 }
 .wallet_top_section aside:nth-child(2) {
-  background-color: var(--red);
+  background: rgb(253, 41, 47);
+  background: linear-gradient(
+    180deg,
+    rgba(253, 41, 47, 0.75) 0%,
+    rgba(178, 0, 0, 0.75) 100%
+  );
 }
 .wallet_top_section aside:nth-child(3) {
-  background-color: var(--green);
+  background: rgb(135, 193, 89);
+  background: linear-gradient(
+    180deg,
+    rgba(135, 193, 89, 0.75) 0%,
+    rgba(5, 130, 64, 0.75) 100%
+  );
+  color: var(--white);
 }
