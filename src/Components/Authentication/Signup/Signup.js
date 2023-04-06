@@ -38,7 +38,7 @@ const Signup = () => {
         emailRef.current.value,
         passwordRef.current.value
       );
-      history.push("/login");
+      history.push("/");
     } catch (err) {
       setError(err.message);
     }
@@ -71,12 +71,12 @@ const Signup = () => {
                 Contact Number
               </label>
               <input
-                ref={nameRef}
+                // ref={nameRef}
                 type="number"
                 className="form-control"
                 id="displayNumber"
                 aria-describedby="phoneNumber"
-                required
+                // required
               />
             </div>
 
@@ -99,8 +99,8 @@ const Signup = () => {
                 Your address
               </label>
               <input
-                ref={emailRef}
-                required
+                // ref={emailRef}
+                // required
                 type="text"
                 className="form-control"
                 id="addressInput"
