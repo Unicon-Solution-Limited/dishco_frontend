@@ -136,3 +136,15 @@ textarea:focus {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--green);
 }
+
+/* Input Type Number default Arrows/Spinners Remove
+Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -48,11 +48,11 @@ const Signup = () => {
   return (
     <>
       <Header />
-      <section className="container my-5">
+      <section className="container-fluid my-5">
         <h4 className="text-center">Create an account</h4>
         <form onSubmit={handleSubmit} className="auth_form">
-          <div>
-            <div className="">
+          <div className="row">
+            <div className="col-md-6 mb-2">
               <label htmlFor="displayName" className="form-label">
                 Your Name
               </label>
@@ -63,6 +63,20 @@ const Signup = () => {
                 className="form-control"
                 id="displayName"
                 aria-describedby="nameHelp"
+              />
+            </div>
+
+            <div className="col-md-6 mb-2">
+              <label htmlFor="displayNumber" className="form-label">
+                Contact Number
+              </label>
+              <input
+                ref={nameRef}
+                type="number"
+                className="form-control"
+                id="displayNumber"
+                aria-describedby="phoneNumber"
+                required
               />
             </div>
 
@@ -81,6 +95,20 @@ const Signup = () => {
             </div>
 
             <div className="mb-2">
+              <label htmlFor="addressInput" className="form-label">
+                Your address
+              </label>
+              <input
+                ref={emailRef}
+                required
+                type="text"
+                className="form-control"
+                id="addressInput"
+                aria-describedby="address"
+              />
+            </div>
+
+            <div className="col-md-6 mb-2">
               <label htmlFor="exampleInputPassword1" className="form-label">
                 Password
               </label>
@@ -93,7 +121,7 @@ const Signup = () => {
               />
             </div>
 
-            <div className="">
+            <div className="col-md-6 mb-2">
               <label
                 htmlFor="exampleInputConfirmPassword"
                 className="form-label"
