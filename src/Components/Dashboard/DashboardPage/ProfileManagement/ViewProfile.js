@@ -21,7 +21,7 @@ const ViewProfile = () => {
       if (currentUser) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getCustomerOrders?email=${currentUser.email}`
+            `http://localhost:8000/getSingleCustomerOrderShipped?email=${currentUser.email}`
           );
           setAllCustomerOrders(response?.data);
         } catch (error) {
