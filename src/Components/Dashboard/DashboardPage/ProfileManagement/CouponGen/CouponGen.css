@@ -1,0 +1,27 @@
+.customer_point_wallet_main {
+  margin: 50px 0;
+  padding: 0 2% !important;
+}
+.wallet_top_section {
+  display: flex;
+  justify-content: space-between;
+}
+.wallet_top_section aside {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 50px 20px;
+  width: 340px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--dark-red);
+}
+.wallet_top_section aside:first-child {
+  background-color: var(--yellow);
+}
+.wallet_top_section aside:nth-child(2) {
+  background-color: var(--red);
+}
+.wallet_top_section aside:nth-child(3) {
+  background-color: var(--green);
+}

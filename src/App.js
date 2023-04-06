@@ -95,7 +95,7 @@ function App() {
               <SingleProduct />
             </PrivateRoute>
 
-            <PrivateRoute path="/coupon">
+            <PrivateRoute path="/wallet">
               <CouponGen />
             </PrivateRoute>
 

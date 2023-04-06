@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import TopbarNav from "../../../Layouts/TopbarNav";
+import SidebarNav from "../../../Layouts/SidebarNav";
+import "./CouponGen.css";
 
 const CouponGen = () => {
   const [token, setToken] = useState("");
@@ -16,14 +19,33 @@ const CouponGen = () => {
   }
 
   return (
-    <div className="container">
-      <button onClick={generateToken} className="btn btn-primary">
-        {" "}
-        Generate Token
-      </button>
-      <br />
-      Token: {token && <strong> {token}</strong>}
-    </div>
+    <>
+      <TopbarNav />
+      <div id="layoutSidenav">
+        <SidebarNav />
+        <div id="layoutSidenav_content">
+          <main className="customer_point_wallet_main">
+            <button onClick={generateToken} className="btn btn-info mb-4">
+              Generate Token
+            </button>
+            <section className="wallet_top_section">
+              <aside>
+                <p>Token: {token && <strong> {token}</strong>}</p>
+                <button className="btn MyBtn">Use</button>
+              </aside>
+              <aside>
+                <p>Point Deduct</p>
+                <p>1500</p>
+              </aside>
+              <aside>
+                <p>Total Points</p>
+                <p>1500</p>
+              </aside>
+            </section>
+          </main>
+        </div>
+      </div>
+    </>
   );
 };
 
