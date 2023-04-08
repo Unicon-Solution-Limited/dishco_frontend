@@ -171,17 +171,30 @@ const Checkout = () => {
             <div className="mandatory_note">
               Note: Start(*) Marks Fields are Mandatory.
             </div>
+
+            <form className="my-5">
+              <p>Apply your Coupon</p>
+              <div className="d-flex mt-2">
+                <input type="text" className="form-control" id="inputCoupon" />
+                <button className="btn MyBtn">Submit</button>
+              </div>
+            </form>
           </aside>
           <aside className="checkout_details">
             <h5 className="mb-5">Your Order</h5>
             <div className="table_row">
-              <strong>Product</strong>
+              <strong>Items</strong>
               <strong>Subtotal</strong>
             </div>
 
             <div className="table_row subtotal">
               <strong>Total Food Price</strong>
               <span>{subTotalPrice} Tk.</span>
+            </div>
+
+            <div className="table_row subtotal">
+              <strong>Discount</strong>
+              <span>0 Tk.</span>
             </div>
 
             <div className="table_row shipping">
