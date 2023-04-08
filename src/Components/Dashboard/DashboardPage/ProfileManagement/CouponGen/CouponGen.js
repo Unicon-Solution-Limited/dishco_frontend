@@ -25,23 +25,24 @@ const CouponGen = () => {
         <SidebarNav />
         <div id="layoutSidenav_content">
           <main className="customer_point_wallet_main">
-            <button onClick={generateToken} className="btn btn-info mb-4">
-              Generate Token
-            </button>
             <section className="wallet_top_section">
               <aside>
-                <p>Token: {token && <strong> {token}</strong>}</p>
-                <button className="btn MyBtn">Apply</button>
+                <p>{token && <strong> {token}</strong>}</p>
               </aside>
               <aside>
                 <p>Point Deduct</p>
                 <p>1500</p>
               </aside>
               <aside>
-                <p>Total Points</p>
+                <p>Usable Point</p>
                 <p>1500</p>
               </aside>
             </section>
+
+            <button className="btn apply_token_btn">Apply Token</button>
+            <button onClick={generateToken} className="btn Token_generate_btn">
+              Generate Token
+            </button>
           </main>
         </div>
       </div>

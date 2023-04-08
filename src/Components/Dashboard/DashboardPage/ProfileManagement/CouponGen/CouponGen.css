@@ -31,6 +31,7 @@
     rgba(253, 41, 47, 0.75) 0%,
     rgba(178, 0, 0, 0.75) 100%
   );
+  color: var(--white);
 }
 .wallet_top_section aside:nth-child(3) {
   background: rgb(135, 193, 89);
@@ -40,4 +41,37 @@
     rgba(5, 130, 64, 0.75) 100%
   );
   color: var(--white);
+}
+
+.apply_token_btn {
+  background: rgb(0, 106, 106);
+  color: var(--white);
+  display: block;
+  margin: 30px auto 0 auto;
+}
+.apply_token_btn:hover {
+  background: rgb(0, 166, 166);
+  transition: 0.3s;
+}
+.Token_generate_btn {
+  display: block;
+  margin: 50px auto;
+  background-color: rgb(135, 193, 89);
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Token_generate_btn:hover {
+  background-color: rgb(117, 192, 56);
+}
+
+@media only screen and (max-width: 600px) {
+  .wallet_top_section {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .wallet_top_section aside {
+    width: auto;
+  }
 }
