@@ -4,9 +4,12 @@ import Footer from "../Shared/Footer/Footer";
 import Header from "../Shared/Header/Header";
 import "./DisplayProduct.css";
 
+import loading from "../../Media/loading.gif";
+
 const DisplayProduct = () => {
   const { navItem } = useParams();
   const [food, setFood] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // getting data matching of navItem
   useEffect(() => {
@@ -17,6 +20,7 @@ const DisplayProduct = () => {
         );
         const data = await response.json();
         setFood(data);
+        setIsLoading(false);
       } catch (error) {
         console.log("err", error);
       }
@@ -68,6 +72,11 @@ const DisplayProduct = () => {
           </div>
 
           <div className="product_card_row">
+            {food.length === 0 && (
+              <div className="loading_spinner">
+                <img src={loading} alt="Loading..." />
+              </div>
+            )}
             {food.map((data, index) => (
               <div key={index}>
                 <div className="product_card_body">
