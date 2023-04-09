@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
+import loading from "../../../Media/loading.gif";
 
 const SearchProductDisplay = () => {
   const { searchProductName } = useParams();
   const [searchProduct, setSearchProduct] = useState([]);
   const [loadingSearch, setLoadingSearch] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   //search
   // this is for searching product
@@ -20,6 +22,7 @@ const SearchProductDisplay = () => {
         );
         const data = await response.json();
         setSearchProduct(data);
+        setIsLoading(false);
       } catch (error) {
         console.log("err", error);
       }
@@ -34,6 +37,11 @@ const SearchProductDisplay = () => {
       <section className="displayProduct_main">
         <div className="container my-5">
           <div className="product_card_row">
+            {searchProduct.length === 0 && (
+              <div className="loading_spinner">
+                <img src={loading} alt="Loading..." />
+              </div>
+            )}
             {searchProduct.map((data, index) => (
               <div key={index}>
                 <div className="product_card_body">
