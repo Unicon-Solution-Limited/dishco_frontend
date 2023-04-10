@@ -95,17 +95,17 @@ const CouponGen = () => {
               </aside>
             </section>
 
+            <button className="btn apply_token_btn" onClick={generateToken}>
+              Generate Token
+            </button>
             {token && (
-              <button className="btn apply_token_btn" onClick={generateToken}>
-                Generate Token
+              <button
+                onClick={() => sendToken()}
+                className="btn Token_generate_btn"
+              >
+                Apply Token
               </button>
             )}
-            <button
-              onClick={() => sendToken()}
-              className="btn Token_generate_btn"
-            >
-              Apply Token
-            </button>
             <h4 style={{ color: "red", textAlign: "center" }}>
               {tokenMessage}
             </h4>
