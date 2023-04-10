@@ -47,7 +47,7 @@ const CouponGen = () => {
       const responseData = await response.json();
       if (response.ok) {
         // Reload the page after successfully adding the comment
-        // window.location.reload();
+        window.location.reload();
       } else {
         // Display the error message from the server
         setTokenMessage(responseData.error);
