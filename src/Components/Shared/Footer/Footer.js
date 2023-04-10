@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import ReactDOM from "react-dom";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
@@ -105,6 +107,11 @@ const Footer = () => {
               Shop-9007, 9th Floor, Shimanto Shambhar, Dhanmondi 2, Dhaka, 1205.
             </p>
           </aside>
+          <MessengerCustomerChat
+            pageId="<PAGE_ID>"
+            appId="<APP_ID>"
+            className="messenger_chat"
+          />
         </div>
       </section>
       <div className="header-separater"></div>
