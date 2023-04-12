@@ -6,12 +6,17 @@ import "./CouponGen.css";
 import axios from "axios";
 import { useAuth } from "../../../../Authentication/AuthContext/AuthContext";
 import { useEffect } from "react";
+import { useMemo } from "react";
 
 const CouponGen = () => {
   const [token, setToken] = useState("");
   const { currentUser } = useAuth();
   const [tokenMessage, setTokenMessage] = useState([]);
   const [tokendata, setTokenData] = useState([]);
+  const [allCustomerOrders, setAllCustomerOrders] = useState([]);
+  const [customerPosition, setCustomerPosition] = useState("");
+
+  console.log(customerPosition);
 
   //generate the dynamic token
   function generateToken() {
@@ -31,6 +36,7 @@ const CouponGen = () => {
     const requestData = {
       token: token,
       customerCuponEmail: currentUser?.email,
+      customerPosition: customerPosition,
       submitTime: now.toISOString(),
     };
     const url = "http://localhost:8000/addTokenData";
@@ -57,7 +63,7 @@ const CouponGen = () => {
     }
   };
 
-  //getting token data
+  //getting token data according to the email
   useEffect(() => {
     const fetchTokenData = async () => {
       if (currentUser.email) {
@@ -73,6 +79,45 @@ const CouponGen = () => {
     };
     fetchTokenData();
   }, [currentUser.email]);
+
+  //getting the customer order according the email
+  useEffect(() => {
+    const fetchCustomerOrders = async () => {
+      if (currentUser) {
+        try {
+          const response = await axios.get(
+            `http://localhost:8000/getSingleCustomerOrderShipped?email=${currentUser.email}`
+          );
+          setAllCustomerOrders(response?.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+    fetchCustomerOrders();
+  }, [currentUser]);
+
+  // calculate the total product cost (all)
+  const totalAmount = useMemo(() => {
+    return allCustomerOrders.reduce(
+      (accumulator, currentValue) =>
+        accumulator + (currentValue?.total_amount ?? 0),
+      0
+    );
+  }, [allCustomerOrders]);
+
+  //calculate the silver/gold/platinum for set role and send it the backend
+  useEffect(() => {
+    if (totalAmount <= 4990) {
+      setCustomerPosition("Bronze");
+    } else if (totalAmount <= 29990) {
+      setCustomerPosition("Silver");
+    } else if (totalAmount <= 69990) {
+      setCustomerPosition("Gold");
+    } else {
+      setCustomerPosition("Platinum");
+    }
+  }, [totalAmount]);
 
   return (
     <>

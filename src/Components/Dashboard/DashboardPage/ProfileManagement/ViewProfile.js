@@ -14,6 +14,7 @@ const ViewProfile = () => {
   const [profileData, setProfileData] = useState([]);
   const { currentUser } = useAuth();
   const [loading, setLoading] = useState(false);
+  const [rankLogo, setRankLogo] = useState("");
 
   //getting the customer order according the email
   useEffect(() => {
@@ -58,8 +59,28 @@ const ViewProfile = () => {
     );
   }, [allCustomerOrders]);
 
-  console.log(totalAmount);
+  //condition set for logo showing
+  useEffect(() => {
+    if (totalAmount <= 4990) {
+      setRankLogo(
+        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1679982155/Frontend_images/logo/caj3pktvujd45qvbjm61.webp"
+      );
+    } else if (totalAmount <= 29990) {
+      setRankLogo(
+        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1679982155/Frontend_images/logo/ezbuvfohme2cdiiphgiu.webp"
+      );
+    } else if (totalAmount <= 69990) {
+      setRankLogo(
+        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1679982155/Frontend_images/logo/bzczji4nlplgwwjud8bi.webp"
+      );
+    } else {
+      setRankLogo(
+        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1680676068/Frontend_images/logo/ikwdurwsltnd3zl1il3d.webp"
+      );
+    }
+  }, [totalAmount]);
 
+  //calculation for rank range
   const totalPoint = totalAmount / 10;
   const percentize = totalPoint * 0.0143;
 
@@ -123,30 +144,17 @@ const ViewProfile = () => {
                 </div>
 
                 <div>
-                  {(totalAmount <= 4990 && (
-                    <>
-                      <img
-                        src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1679982155/Frontend_images/logo/caj3pktvujd45qvbjm61.webp"
-                        alt="Rank"
-                        className="view_profile_rank_img"
-                      />
-                    </>
-                  )) ||
-                    (totalAmount <= 29990 && "Silver") ||
-                    (totalAmount <= 69990 && "Gold") ||
-                    (totalAmount <= 70000 && "Platinum")}
+                  <img
+                    src={rankLogo}
+                    alt="Rank"
+                    className="view_profile_rank_img"
+                  />
 
                   <br />
                   <br />
                   <br />
                   <Box className="slide_box">
-                    {totalAmount && (
-                      <Slider
-                        defaultValue={percentize}
-                        marks={marks}
-                        disabled
-                      />
-                    )}
+                    <Slider defaultValue={percentize} marks={marks} disabled />
                   </Box>
                 </div>
               </div>
