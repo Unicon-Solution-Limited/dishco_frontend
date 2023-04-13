@@ -152,47 +152,70 @@ const EditProfile = () => {
       });
   };
 
+  //delete profile image from data base
+  const handlePreviousImgDelete = async (id) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:8000/deleteProfileImage/${id}`
+      );
+      const data = response.data;
+      if (data) {
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
+      }
+    } catch (error) {
+      console.log("Error deleting product:", error);
+    }
+  };
+
   return (
     <div className="container my-5">
       <Link to="/profile" className="btn MyBtn">
         <i className="bi bi-chevron-double-left"></i> Back
       </Link>
-      <form onSubmit={handleImageSubmit} className="upload_image_section">
-        <div>
-          <label htmlFor="image-upload">
-            {image ? (
-              <img
-                src={image}
-                alt="uploaded profile"
-                className="uploaded_image"
-              />
-            ) : (
-              <>
-                <div className="image-upload-circle">
-                  <i className="bi bi-upload"></i>
-                </div>
-              </>
-            )}
-          </label>
-          <input
-            id="image-upload"
-            className="ProfilePicInput"
-            type="file"
-            accept=".jpg,.jpeg,.png,.webp"
-            maxLength="20480"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="image_note">
-          <p>NB:</p>
-          <p>Image Size Max: 20kb</p>
-          <p>width: 150px, height: 150px.</p>
-        </div>
-        <button type="submit" className="btn MyBtn">
-          Save Image
+      {profileData.length ? (
+        <button onClick={() => handlePreviousImgDelete(profileData[0]?._id)}>
+          Delete previous image
         </button>
-      </form>
+      ) : (
+        <form onSubmit={handleImageSubmit} className="upload_image_section">
+          <div>
+            <label htmlFor="image-upload">
+              {image ? (
+                <img
+                  src={image}
+                  alt="uploaded profile"
+                  className="uploaded_image"
+                />
+              ) : (
+                <>
+                  <div className="image-upload-circle">
+                    <i className="bi bi-upload"></i>
+                  </div>
+                </>
+              )}
+            </label>
+            <input
+              id="image-upload"
+              className="ProfilePicInput"
+              type="file"
+              accept=".jpg,.jpeg,.png,.webp"
+              maxLength="20480"
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="image_note">
+            <p>NB:</p>
+            <p>Image Size Max: 20kb</p>
+            <p>width: 150px, height: 150px.</p>
+          </div>
+          <button type="submit" className="btn MyBtn">
+            Save Image
+          </button>
+        </form>
+      )}
       <br />
       {/* name edit*/}
       <form onSubmit={handleNameSubmit}>
