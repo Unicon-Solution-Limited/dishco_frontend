@@ -45,7 +45,7 @@
 .uploaded_image {
   width: 150px;
   height: 150px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 50%;
   display: block;
   margin-left: auto;
@@ -114,6 +114,16 @@
   position: absolute;
   right: 20px;
   font-size: 20px;
+}
+.successful_msg {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--green);
+  padding: 10px;
+  border-radius: 5px;
 }
 @media only screen and (max-width: 960px) {
   .profile_card {

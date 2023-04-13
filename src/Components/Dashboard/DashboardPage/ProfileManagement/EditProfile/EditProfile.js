@@ -69,6 +69,9 @@ const EditProfile = () => {
       .then((response) => {
         console.log(response.data);
         setUploadImgSuccessMsg(true);
+        setTimeout(() => {
+          setUploadImgSuccessMsg(false);
+        }, 5000);
       })
       .catch((error) => {
         console.log(error);
@@ -274,8 +277,12 @@ const EditProfile = () => {
         </form>
       </div>
 
-      {loading && <strong>Loading...</strong>}
-      {uploadImgSuccessMsg && <strong>Image submitted successfully..</strong>}
+      {loading && <strong className="successful_msg">Uploading...</strong>}
+      {uploadImgSuccessMsg && (
+        <strong className="successful_msg">
+          Image submitted successfully..
+        </strong>
+      )}
       {error && (
         <div className="alert alert-danger" role="alert">
           {error}

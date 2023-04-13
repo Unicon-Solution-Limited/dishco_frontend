@@ -11,7 +11,7 @@ const TopbarNav = () => {
       <nav className="sb-topnav navbar-d navbar-expand navbar-dark bg-dark top_nav">
         <div>
           <Link className="navbar-brand ps-3" to="/dashboard">
-            Admin Dashboard
+            Dashboard
           </Link>
           <button
             className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
