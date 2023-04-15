@@ -9,12 +9,15 @@ import { useEffect } from "react";
 import { useMemo } from "react";
 
 const CouponGen = () => {
+  //token number
   const [token, setToken] = useState("");
   const { currentUser } = useAuth();
   const [tokenMessage, setTokenMessage] = useState([]);
   const [FixedTokendata, setFixedTokenData] = useState([]);
+  const [sevenDaysTokenData, setSevenDaysTokenData] = useState([]);
   const [allCustomerOrders, setAllCustomerOrders] = useState([]);
   const [customerPosition, setCustomerPosition] = useState("");
+  const [totalPoint, setTotalPoint] = useState();
 
   //generate the dynamic token
   function generateToken() {
@@ -29,10 +32,6 @@ const CouponGen = () => {
   }
 
   //send cupon in the backend
-  const [totalPoint, setTotalPoint] = useState();
-
-  console.log(FixedTokendata, "tokendata");
-
   const sendToken = async () => {
     if (totalPoint < 200) {
       setTokenMessage(
@@ -48,7 +47,7 @@ const CouponGen = () => {
       submitTime: now.toISOString(),
       totalSuccessCount: 1,
     };
-    // add token info at mongodb(it will vanish after 7days)
+    // add 7days token info at mongodb(it will vanish after 7days)
     try {
       const url = "http://localhost:8000/addTokenData";
       setTokenMessage("");
@@ -101,9 +100,26 @@ const CouponGen = () => {
       if (currentUser.email) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getTokenData?email=${currentUser.email}`
+            `http://localhost:8000/getFixedTokenData?email=${currentUser.email}`
           );
           setFixedTokenData(response?.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+    fetchTokenData();
+  }, [currentUser.email]);
+
+  //getting 7 days(temporary)  token data according to the email
+  useEffect(() => {
+    const fetchTokenData = async () => {
+      if (currentUser.email) {
+        try {
+          const response = await axios.get(
+            `http://localhost:8000/getTemporaryTokenData?email=${currentUser.email}`
+          );
+          setSevenDaysTokenData(response?.data);
         } catch (error) {
           console.log(error);
         }
