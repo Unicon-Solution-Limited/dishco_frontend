@@ -9,14 +9,15 @@ import { useEffect } from "react";
 import { useMemo } from "react";
 
 const CouponGen = () => {
+  //token number
   const [token, setToken] = useState("");
   const { currentUser } = useAuth();
   const [tokenMessage, setTokenMessage] = useState([]);
-  const [tokendata, setTokenData] = useState([]);
+  const [FixedTokendata, setFixedTokenData] = useState([]);
+  const [sevenDaysTokenData, setSevenDaysTokenData] = useState([]);
   const [allCustomerOrders, setAllCustomerOrders] = useState([]);
   const [customerPosition, setCustomerPosition] = useState("");
-
-  console.log(customerPosition);
+  const [totalPoint, setTotalPoint] = useState();
 
   //generate the dynamic token
   function generateToken() {
@@ -32,15 +33,23 @@ const CouponGen = () => {
 
   //send cupon in the backend
   const sendToken = async () => {
+    if (totalPoint < 200) {
+      setTokenMessage(
+        "You do not have enough points to apply this coupon code"
+      );
+      return;
+    }
     const now = new Date();
     const requestData = {
       token: token,
       customerCuponEmail: currentUser?.email,
       customerPosition: customerPosition,
       submitTime: now.toISOString(),
+      totalSuccessCount: 1,
     };
-    const url = "http://localhost:8000/addTokenData";
+    // add 7days token info at mongodb(it will vanish after 7days)
     try {
+      const url = "http://localhost:8000/addTokenData";
       setTokenMessage("");
       const option = {
         method: "POST",
@@ -52,8 +61,11 @@ const CouponGen = () => {
       const response = await fetch(url, option);
       const responseData = await response.json();
       if (response.ok) {
-        // Reload the page after successfully adding the comment
+        // Deduct $200 from the money variable if the request was successful
         window.location.reload();
+        setTokenMessage(
+          "Congratulations! You've successfully applied your coupon!"
+        );
       } else {
         // Display the error message from the server
         setTokenMessage(responseData.error);
@@ -61,17 +73,55 @@ const CouponGen = () => {
     } catch (error) {
       console.log("err", error);
     }
+
+    // add  fixed token info at mongodb
+    if (!sevenDaysTokenData.length) {
+      try {
+        const url = "http://localhost:8000/FixedAddTokenData";
+        const option = {
+          method: "POST",
+          body: JSON.stringify(requestData),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        };
+        const response = await fetch(url, option);
+        const data = await response.json();
+        if (data) {
+          console.log("fixed data added");
+        }
+      } catch (error) {
+        console.log("err", error);
+      }
+    }
   };
 
-  //getting token data according to the email
+  //getting fixed token data according to the email
   useEffect(() => {
     const fetchTokenData = async () => {
       if (currentUser.email) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getTokenData?email=${currentUser.email}`
+            `http://localhost:8000/getFixedTokenData?email=${currentUser.email}`
           );
-          setTokenData(response?.data);
+          setFixedTokenData(response?.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+    fetchTokenData();
+  }, [currentUser.email]);
+
+  //getting 7 days(temporary)  token data according to the email
+  useEffect(() => {
+    const fetchTokenData = async () => {
+      if (currentUser.email) {
+        try {
+          const response = await axios.get(
+            `http://localhost:8000/getTemporaryTokenData?email=${currentUser.email}`
+          );
+          setSevenDaysTokenData(response?.data);
         } catch (error) {
           console.log(error);
         }
@@ -106,6 +156,10 @@ const CouponGen = () => {
     );
   }, [allCustomerOrders]);
 
+  useEffect(() => {
+    setTotalPoint(totalAmount / 10);
+  }, [totalAmount]);
+
   //calculate the silver/gold/platinum for set role and send it the backend
   useEffect(() => {
     if (totalAmount <= 4990) {
@@ -132,17 +186,24 @@ const CouponGen = () => {
               </aside>
               <aside>
                 <p>Point Deduct</p>
-                <p>1500</p>
+                <p>{FixedTokendata.length * 200}</p>
               </aside>
               <aside>
                 <p>Usable Point</p>
-                <p>1500</p>
+                <p>{totalAmount / 10 - FixedTokendata.length * 200}</p>
               </aside>
             </section>
 
-            <button className="btn apply_token_btn" onClick={generateToken}>
-              Generate Token
-            </button>
+            {totalPoint >= 200 ? (
+              <button className="btn apply_token_btn" onClick={generateToken}>
+                Generate Token
+              </button>
+            ) : (
+              <h1 style={{ marginTop: "50px", textAlign: "center" }}>
+                You do not have enough points to apply this coupon code{" "}
+              </h1>
+            )}
+
             {token && (
               <button
                 onClick={() => sendToken()}

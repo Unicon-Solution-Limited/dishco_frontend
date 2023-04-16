@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./Checkout.css";
 import Header from "../../Shared/Header/Header";
@@ -6,6 +6,7 @@ import Footer from "../../Shared/Footer/Footer";
 import { Link } from "react-router-dom";
 import { CartProvider } from "../../AllContext/CartContext";
 import { useAuth } from "./../../Authentication/AuthContext/AuthContext";
+import axios from "axios";
 
 const Checkout = () => {
   const cityRef = useRef();
@@ -20,9 +21,88 @@ const Checkout = () => {
   const [cartData, setCartData, finaltotalAddonPrice, subTotalPrice] =
     useContext(CartProvider);
   const [termCondition, setTermCondition] = useState(false);
+  const [grandTotal, setGrandTotal] = useState(0);
+  //coupon
+  const couponRef = useRef();
+  const [sevenDaysTokenData, setSevenDaysTokenData] = useState([]);
+  const [couponCondition, SetCouponCondition] = useState(false);
+  const [couponMessage, setCouponMessage] = useState("");
+  const [discountPrice, setDicountPrice] = useState(0);
+
+  console.log(couponCondition);
+
+  //getting 7 days(temporary)  token data according to the email
+  useEffect(() => {
+    const fetchTokenData = async () => {
+      if (currentUser.email) {
+        try {
+          const response = await axios.get(
+            `http://localhost:8000/getTemporaryTokenData?email=${currentUser.email}`
+          );
+          setSevenDaysTokenData(response?.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+    fetchTokenData();
+  }, [currentUser.email]);
+
+  //conditionally token applied
+  const tokenApplySubmit = (event) => {
+    event.preventDefault();
+    if (sevenDaysTokenData[0]?.token == couponRef?.current?.value) {
+      SetCouponCondition(true);
+      setCouponMessage("Coupon applied successfully");
+      couponRef.current.value = "";
+    } else {
+      SetCouponCondition(false);
+      setCouponMessage(
+        "Oops, it looks like there's a problem with your coupon."
+      );
+      couponRef.current.value = "";
+    }
+  };
+
+  //calculation and condition of discount price
+  useEffect(() => {
+    if (
+      couponCondition === true &&
+      sevenDaysTokenData[0].customerPosition == "Bronze"
+    ) {
+      setDicountPrice(subTotalPrice * (2 / 100));
+    } else if (
+      couponCondition === true &&
+      sevenDaysTokenData[0].customerPosition == "Silver"
+    ) {
+      setDicountPrice(subTotalPrice * (5 / 100));
+    } else if (
+      couponCondition === true &&
+      sevenDaysTokenData[0].customerPosition == "Gold"
+    ) {
+      setDicountPrice(subTotalPrice * (10 / 100));
+    } else if (
+      couponCondition === true &&
+      sevenDaysTokenData[0].customerPosition == "Platinum"
+    ) {
+      setDicountPrice(subTotalPrice * (15 / 100));
+    }
+  }, [couponCondition, sevenDaysTokenData, subTotalPrice]);
+
+  console.log(discountPrice, "discountPrice");
 
   //calculation of grand total
-  const grandTotal = Number(finaltotalAddonPrice) + Number(subTotalPrice) + 80;
+  useEffect(() => {
+    // discountPrice
+    setGrandTotal(
+      Number(finaltotalAddonPrice) +
+        Number(subTotalPrice) -
+        Number(discountPrice) +
+        80
+    );
+  }, [discountPrice, finaltotalAddonPrice, subTotalPrice]);
+
+  // const grandTotal = Number(finaltotalAddonPrice) + Number(subTotalPrice) + 80;
 
   const handleConfirmOrder = (e) => {
     e.preventDefault();
@@ -172,13 +252,31 @@ const Checkout = () => {
               Note: Start(*) Marks Fields are Mandatory.
             </div>
 
-            <form className="my-5">
+            {/* <form className="my-5" onSubmit={tokenApplySubmit}>
               <p>Apply your Coupon</p>
+              {sevenDaysTokenData.length ? (
+                <p>
+                  Your Token:{" "}
+                  <span style={{ color: "green" }}>
+                    {sevenDaysTokenData[0]?.token}
+                  </span>
+                </p>
+              ) : (
+                ""
+              )}
               <div className="d-flex mt-2">
-                <input type="text" className="form-control" id="inputCoupon" />
-                <button className="btn MyBtn">Submit</button>
+                <input
+                  ref={couponRef}
+                  type="text"
+                  className="form-control"
+                  id="inputCoupon"
+                  required
+                />
+                <button className="btn MyBtn" type="submit">
+                  Submit
+                </button>
               </div>
-            </form>
+            </form> */}
           </aside>
           <aside className="checkout_details">
             <h5 className="mb-5">Your Order</h5>
@@ -194,7 +292,7 @@ const Checkout = () => {
 
             <div className="table_row subtotal">
               <strong>Discount</strong>
-              <span>0 Tk.</span>
+              <span>{discountPrice} Tk.</span>
             </div>
 
             <div className="table_row shipping">
@@ -209,7 +307,8 @@ const Checkout = () => {
             <div className="table_row total">
               <strong>Total</strong>
               <span>
-                {cartData.length && finaltotalAddonPrice + subTotalPrice + 80}{" "}
+                {/* {cartData.length && finaltotalAddonPrice + subTotalPrice + 80} */}
+                {grandTotal}
                 Tk.
               </span>
             </div>
@@ -270,6 +369,32 @@ const Checkout = () => {
               )}
             </button>
           </aside>
+        </form>
+        <form className="my-5" onSubmit={tokenApplySubmit}>
+          <p>Apply your Coupon</p>
+          {subTotalPrice > 0 && sevenDaysTokenData.length ? (
+            <p>
+              Your Token:{" "}
+              <span style={{ color: "green" }}>
+                {sevenDaysTokenData[0]?.token}
+              </span>
+            </p>
+          ) : (
+            ""
+          )}
+          <div className="d-flex mt-2">
+            <input
+              ref={couponRef}
+              type="text"
+              className="form-control"
+              id="inputCoupon"
+              required
+            />
+            <button className="btn MyBtn" type="submit">
+              Submit
+            </button>
+          </div>
+          <h1>{couponMessage}</h1>
         </form>
       </section>
       <Footer />
