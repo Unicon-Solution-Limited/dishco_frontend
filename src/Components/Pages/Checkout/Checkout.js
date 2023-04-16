@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { CartProvider } from "../../AllContext/CartContext";
 import { useAuth } from "./../../Authentication/AuthContext/AuthContext";
 import axios from "axios";
+import CouponModal from "./CouponModal";
 
 const Checkout = () => {
   const cityRef = useRef();
@@ -157,6 +158,32 @@ const Checkout = () => {
       <Header />
       <section className="container-fluid my-5 checkout_main">
         <h2 className="mb-5 px-5">Checkout</h2>
+        {/* <form className="coupon_form" onSubmit={tokenApplySubmit}>
+          <p>Apply your Coupon</p>
+          {subTotalPrice > 0 && sevenDaysTokenData.length ? (
+            <p>
+              Your Token:{" "}
+              <span style={{ color: "green" }}>
+                {sevenDaysTokenData[0]?.token}
+              </span>
+            </p>
+          ) : (
+            ""
+          )}
+          <div className="d-flex">
+            <input
+              ref={couponRef}
+              type="text"
+              className="form-control"
+              id="inputCoupon"
+              required
+            />
+            <button className="btn MyBtn" type="submit">
+              Submit
+            </button>
+          </div>
+          <h1>{couponMessage}</h1>
+        </form> */}
         <form className="checkout_body" onSubmit={handleConfirmOrder}>
           <aside className="billing_form">
             <h5>Shipping Address</h5>
@@ -252,31 +279,15 @@ const Checkout = () => {
               Note: Start(*) Marks Fields are Mandatory.
             </div>
 
-            {/* <form className="my-5" onSubmit={tokenApplySubmit}>
-              <p>Apply your Coupon</p>
-              {sevenDaysTokenData.length ? (
-                <p>
-                  Your Token:{" "}
-                  <span style={{ color: "green" }}>
-                    {sevenDaysTokenData[0]?.token}
-                  </span>
-                </p>
-              ) : (
-                ""
-              )}
-              <div className="d-flex mt-2">
-                <input
-                  ref={couponRef}
-                  type="text"
-                  className="form-control"
-                  id="inputCoupon"
-                  required
-                />
-                <button className="btn MyBtn" type="submit">
-                  Submit
-                </button>
-              </div>
-            </form> */}
+            <a
+              href="/"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#couponModal"
+              className="apply_coupon_btn"
+            >
+              Apply your Coupon
+            </a>
           </aside>
           <aside className="checkout_details">
             <h5 className="mb-5">Your Order</h5>
@@ -370,32 +381,7 @@ const Checkout = () => {
             </button>
           </aside>
         </form>
-        <form className="my-5" onSubmit={tokenApplySubmit}>
-          <p>Apply your Coupon</p>
-          {subTotalPrice > 0 && sevenDaysTokenData.length ? (
-            <p>
-              Your Token:{" "}
-              <span style={{ color: "green" }}>
-                {sevenDaysTokenData[0]?.token}
-              </span>
-            </p>
-          ) : (
-            ""
-          )}
-          <div className="d-flex mt-2">
-            <input
-              ref={couponRef}
-              type="text"
-              className="form-control"
-              id="inputCoupon"
-              required
-            />
-            <button className="btn MyBtn" type="submit">
-              Submit
-            </button>
-          </div>
-          <h1>{couponMessage}</h1>
-        </form>
+        <CouponModal />
       </section>
       <Footer />
     </>
