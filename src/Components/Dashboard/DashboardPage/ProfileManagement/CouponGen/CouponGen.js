@@ -75,22 +75,24 @@ const CouponGen = () => {
     }
 
     // add  fixed token info at mongodb
-    try {
-      const url = "http://localhost:8000/FixedAddTokenData";
-      const option = {
-        method: "POST",
-        body: JSON.stringify(requestData),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      };
-      const response = await fetch(url, option);
-      const data = await response.json();
-      if (data) {
-        console.log("fixed data added");
+    if (!sevenDaysTokenData.length) {
+      try {
+        const url = "http://localhost:8000/FixedAddTokenData";
+        const option = {
+          method: "POST",
+          body: JSON.stringify(requestData),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        };
+        const response = await fetch(url, option);
+        const data = await response.json();
+        if (data) {
+          console.log("fixed data added");
+        }
+      } catch (error) {
+        console.log("err", error);
       }
-    } catch (error) {
-      console.log("err", error);
     }
   };
 
