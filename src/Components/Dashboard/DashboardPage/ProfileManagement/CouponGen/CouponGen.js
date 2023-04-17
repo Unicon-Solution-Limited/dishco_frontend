@@ -183,7 +183,16 @@ const CouponGen = () => {
           <main className="customer_point_wallet_main">
             <section className="wallet_top_section">
               <aside>
-                <p>{token && <strong> {token}</strong>}</p>
+                {/* <p>{token && <strong> {token}</strong>}</p> */}
+
+                {sevenDaysTokenData.length ? (
+                  <>
+                    <p>Your Token: </p>
+                    <p>{sevenDaysTokenData[0].token}</p>
+                  </>
+                ) : (
+                  <p>{token && <strong> {token}</strong>}</p>
+                )}
               </aside>
               <aside>
                 <p>Point Deduct</p>
@@ -195,16 +204,19 @@ const CouponGen = () => {
               </aside>
             </section>
 
-            {totalPoint >= 200 ? (
-              <button className="btn apply_token_btn" onClick={generateToken}>
-                Generate Token
-              </button>
-            ) : (
-              <h1 style={{ marginTop: "50px", textAlign: "center" }}>
-                You do not have enough points to apply this coupon code{" "}
-              </h1>
-            )}
+            {/* token generate button */}
+            {!sevenDaysTokenData.length &&
+              (totalPoint >= 200 ? (
+                <button className="btn apply_token_btn" onClick={generateToken}>
+                  Generate Token
+                </button>
+              ) : (
+                <h1 style={{ marginTop: "50px", textAlign: "center" }}>
+                  You do not have enough points to apply this coupon code{" "}
+                </h1>
+              ))}
 
+            {/* apply token button */}
             {token && (
               <button
                 onClick={() => sendToken()}
@@ -216,7 +228,8 @@ const CouponGen = () => {
             <h4 style={{ color: "red", textAlign: "center" }}>
               {tokenMessage}
             </h4>
-            <TimingSystem />
+            {/* timing matching */}
+            {sevenDaysTokenData && <TimingSystem />}
           </main>
         </div>
       </div>
