@@ -108,6 +108,7 @@ const Checkout = () => {
     const confirmOderData = {
       total_amount: grandTotal,
       orderedData: cartData,
+      discountPrice: discountPrice,
       cus_name: currentUser?.displayName,
       cus_city: cityRef?.current.value,
       cus_email: currentUser?.email,
