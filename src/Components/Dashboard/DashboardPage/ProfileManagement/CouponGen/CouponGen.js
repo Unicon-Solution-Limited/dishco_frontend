@@ -7,6 +7,7 @@ import axios from "axios";
 import { useAuth } from "../../../../Authentication/AuthContext/AuthContext";
 import { useEffect } from "react";
 import { useMemo } from "react";
+import TimingSystem from "../TimingSystem/TimingSystem";
 
 const CouponGen = () => {
   //token number
@@ -215,6 +216,7 @@ const CouponGen = () => {
             <h4 style={{ color: "red", textAlign: "center" }}>
               {tokenMessage}
             </h4>
+            <TimingSystem />
           </main>
         </div>
       </div>
