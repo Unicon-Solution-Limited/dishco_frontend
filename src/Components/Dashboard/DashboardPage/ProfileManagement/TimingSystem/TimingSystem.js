@@ -56,20 +56,26 @@ const TimingSystem = () => {
   }
 
   return (
-    <div>
-      <span style={{ color: remainingTime.days > 0 ? "green" : "red" }}>
-        {remainingTime.days} days{" "}
-      </span>
-      <span style={{ color: remainingTime.hours > 0 ? "green" : "red" }}>
-        {remainingTime.hours} hours{" "}
-      </span>
-      <span style={{ color: remainingTime.minutes > 0 ? "green" : "red" }}>
-        {remainingTime.minutes} minutes{" "}
-      </span>
-      <span style={{ color: remainingTime.seconds > 0 ? "green" : "red" }}>
-        {remainingTime.seconds} seconds
-      </span>
-    </div>
+    <main className="time_counter_section">
+      <h4>Your Current Coupon Expired In:</h4>
+      <section className="time_counter_body">
+        <span>
+          {remainingTime.days} <br /> days
+        </span>
+        <span>
+          {remainingTime.hours}
+          <br /> hours
+        </span>
+        <span>
+          {remainingTime.minutes}
+          <br /> minutes
+        </span>
+        <span>
+          {remainingTime.seconds}
+          <br /> seconds
+        </span>
+      </section>
+    </main>
   );
 };
 
