@@ -85,8 +85,12 @@ const Invoice = () => {
             </span>{" "}
             <br />
             <span>
-              <strong>Delivery Charge:</strong> 80 TK.
+              <strong>Delivery Charge:</strong> +80 TK.
             </span>{" "}
+            <br />
+            <span>
+              <strong>Discount:</strong> -{data?.discountPrice} TK.
+            </span>
             <br />
             <span>
               <strong>Grand Total:</strong> {data.total_amount} TK.

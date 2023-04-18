@@ -95,10 +95,11 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
                 ))}
                 <aside className="discount_delivery_charge">
                   <p>
-                    <strong>Delivery Charge:</strong> 80 tk.
+                    <strong>Delivery Charge:</strong> +80 tk.
                   </p>
                   <p>
-                    <strong>Discount:</strong> 00 tk.
+                    <strong>Discount:</strong> -
+                    {customerOrderDtls?.discountPrice} tk.
                   </p>
                   <p>
                     <strong>Total:</strong> {customerOrderDtls?.total_amount}{" "}
