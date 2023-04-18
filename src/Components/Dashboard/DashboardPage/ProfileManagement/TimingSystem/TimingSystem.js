@@ -51,30 +51,32 @@ const TimingSystem = () => {
     };
   }, [sevenDaysTokenData]);
 
-  if (!remainingTime) {
-    return <div>Token Expired , You need to generate it again</div>;
-  }
+  // if (!remainingTime) {
+  //   return <div>Token Expired , You need to generate it again</div>;
+  // }
 
   return (
     <main className="time_counter_section">
-      <h4>Your Current Coupon Expired In:</h4>
-      <section className="time_counter_body">
-        <span>
-          {remainingTime.days} <br /> days
-        </span>
-        <span>
-          {remainingTime.hours}
-          <br /> hours
-        </span>
-        <span>
-          {remainingTime.minutes}
-          <br /> minutes
-        </span>
-        <span>
-          {remainingTime.seconds}
-          <br /> seconds
-        </span>
-      </section>
+      <h4 className="mb-4">Your Current Coupon Expired In:</h4>
+      {remainingTime && (
+        <section className="time_counter_body">
+          <span>
+            {remainingTime.days} <br /> days
+          </span>
+          <span>
+            {remainingTime.hours}
+            <br /> hours
+          </span>
+          <span>
+            {remainingTime.minutes}
+            <br /> minutes
+          </span>
+          <span>
+            {remainingTime.seconds}
+            <br /> seconds
+          </span>
+        </section>
+      )}
     </main>
   );
 };
