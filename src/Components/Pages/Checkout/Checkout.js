@@ -162,7 +162,7 @@ const Checkout = () => {
               Apply your Coupon{" "}
               {(sevenDaysTokenData &&
                 sevenDaysTokenData[0]?.customerPosition == "Bronze" &&
-                "for 0 discount") ||
+                "for 2% discount") ||
                 (sevenDaysTokenData[0]?.customerPosition == "Silver" &&
                   "for 5% discount") ||
                 (sevenDaysTokenData[0]?.customerPosition == "Gold" &&
