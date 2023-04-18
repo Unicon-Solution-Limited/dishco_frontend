@@ -229,7 +229,7 @@ const CouponGen = () => {
               {tokenMessage}
             </h4>
             {/* timing matching */}
-            {sevenDaysTokenData && <TimingSystem />}
+            {sevenDaysTokenData[0]?.token && <TimingSystem />}
           </main>
         </div>
       </div>
