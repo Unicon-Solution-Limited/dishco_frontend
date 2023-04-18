@@ -68,7 +68,7 @@ const Checkout = () => {
       couponCondition === true &&
       sevenDaysTokenData[0].customerPosition == "Bronze"
     ) {
-      setDicountPrice(subTotalPrice * (0 / 100));
+      setDicountPrice(subTotalPrice * (2 / 100));
     } else if (
       couponCondition === true &&
       sevenDaysTokenData[0].customerPosition == "Silver"
