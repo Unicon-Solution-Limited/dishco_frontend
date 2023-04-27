@@ -34,12 +34,13 @@ const CouponGen = () => {
 
   //send cupon in the backend
   const sendToken = async () => {
-    if (totalPoint < 200) {
-      setTokenMessage(
-        "You do not have enough points to apply this coupon code"
-      );
-      return;
-    }
+    // if (totalPoint < 200) {
+    // setTokenMessage(
+    //   "You do not have enough points to apply this coupon code"
+    // );
+    //   return;
+    // }
+
     const now = new Date();
     const requestData = {
       token: token,
@@ -48,35 +49,41 @@ const CouponGen = () => {
       submitTime: now.toISOString(),
       totalSuccessCount: 1,
     };
+
     // add 7days token info at mongodb(it will vanish after 7days)
-    try {
-      const url = "http://localhost:8000/addTokenData";
-      setTokenMessage("");
-      const option = {
-        method: "POST",
-        body: JSON.stringify(requestData),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      };
-      const response = await fetch(url, option);
-      const responseData = await response.json();
-      if (response.ok) {
-        // Deduct $200 from the money variable if the request was successful
-        window.location.reload();
-        setTokenMessage(
-          "Congratulations! You've successfully applied your coupon!"
-        );
-      } else {
-        // Display the error message from the server
-        setTokenMessage(responseData.error);
+    if (totalAmount / 10 - FixedTokendata.length * 200 >= 200) {
+      try {
+        const url = "http://localhost:8000/addTokenData";
+        setTokenMessage("");
+        const option = {
+          method: "POST",
+          body: JSON.stringify(requestData),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        };
+        const response = await fetch(url, option);
+        const responseData = await response.json();
+        if (response.ok) {
+          // Deduct $200 from the money variable if the request was successful
+          window.location.reload();
+          setTokenMessage(
+            "Congratulations! You've successfully applied your coupon!"
+          );
+        } else {
+          // Display the error message from the server
+          setTokenMessage(responseData.error);
+        }
+      } catch (error) {
+        console.log("err", error);
       }
-    } catch (error) {
-      console.log("err", error);
     }
 
     // add  fixed token info at mongodb
-    if (!sevenDaysTokenData.length) {
+    if (
+      totalAmount / 10 - FixedTokendata.length * 200 >= 200 &&
+      !sevenDaysTokenData.length
+    ) {
       try {
         const url = "http://localhost:8000/FixedAddTokenData";
         const option = {
