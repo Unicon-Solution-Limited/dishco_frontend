@@ -154,7 +154,13 @@ const ViewProfile = () => {
                   <br />
                   <br />
                   <Box className="slide_box">
-                    <Slider defaultValue={percentize} marks={marks} disabled />
+                    {totalAmount && percentize && (
+                      <Slider
+                        defaultValue={percentize}
+                        marks={marks}
+                        disabled
+                      />
+                    )}
                   </Box>
                 </div>
               </div>
