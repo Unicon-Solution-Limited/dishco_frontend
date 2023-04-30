@@ -91,9 +91,9 @@ function App() {
             <Route path="/products/:navItem">
               <DisplayProduct />
             </Route>
-            <PrivateRoute path="/singleProduct/:viewDetails">
+            <Route path="/singleProduct/:viewDetails">
               <SingleProduct />
-            </PrivateRoute>
+            </Route>
 
             <PrivateRoute path="/wallet">
               <CouponGen />
