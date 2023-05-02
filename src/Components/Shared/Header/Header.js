@@ -190,6 +190,14 @@ const Header = () => {
                       DishCo Platter
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      className="dropdown-item nav_sub_link"
+                      to={`/products/${"RamenSpecial"}`}
+                    >
+                      Ramen Special
+                    </Link>
+                  </li>
                 </ul>
               </li>
               <li className="nav-item dropdown navbarItems">

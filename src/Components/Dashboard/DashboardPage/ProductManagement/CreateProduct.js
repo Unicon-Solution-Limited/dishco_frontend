@@ -249,6 +249,7 @@ const CreateProduct = () => {
                       <>
                         <option value="">Choose</option>
                         <option value="DishCoPlatter">DishCo Platter</option>
+                        <option value="RamenSpecial">Ramen Special</option>
                       </>
                     )}
 
@@ -257,7 +258,7 @@ const CreateProduct = () => {
                         <option value="">Choose</option>
                         <option value="MeatBox">Meat Box</option>
                         <option value="RiceBowl">Rice Bowl</option>
-                        <option value="PlatterCuisine"></option>
+                        <option value="PlatterCuisine">Platter Cuisine</option>
                       </>
                     )}
 
