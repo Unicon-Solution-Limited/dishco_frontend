@@ -86,7 +86,7 @@ const DisplayProduct = () => {
                     className="product_img"
                     loading="lazy"
                   />
-                  <h6 className="product_name">{data.name.slice(0, 30)}</h6>
+                  <h6 className="product_name">{data.name.slice(0, 29)}</h6>
                   <p className="product_price">
                     {data.sizePriceItem.map((sizePrice, index2) => (
                       <span key={index2}>
