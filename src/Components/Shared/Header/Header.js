@@ -275,9 +275,6 @@ const Header = () => {
                     <Link
                       to={`/products/${"ChineseCuisines"}`}
                       className="nav_link2"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
                     >
                       Chinese Cuisines
                     </Link>
