@@ -291,7 +291,7 @@ const CreateProduct = () => {
                       <>
                         <option value="">Choose</option>
                         <option value="PeyalaTea">Peyala Tea</option>
-                        <option value="DishCoDrinks">Hot Drinks</option>
+                        <option value="DishCoDrinks">DishCo Drinks</option>
                       </>
                     )}
                   </select>
