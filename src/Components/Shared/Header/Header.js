@@ -374,17 +374,9 @@ const Header = () => {
                   <li>
                     <Link
                       className="dropdown-item nav_sub_link"
-                      to={`/products/${"HotDrinks"}`}
+                      to={`/products/${"DishCoDrinks"}`}
                     >
-                      Hot Drinks
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="dropdown-item nav_sub_link"
-                      to={`/products/${"ColdDrinks"}`}
-                    >
-                      Cold Drinks
+                      DishCo Drinks
                     </Link>
                   </li>
                 </ul>
