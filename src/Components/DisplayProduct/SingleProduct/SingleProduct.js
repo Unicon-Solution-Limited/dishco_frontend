@@ -189,60 +189,65 @@ const SingleProduct = () => {
                         className="form-check-label"
                         htmlFor={`inlineCheckbox${index}`}
                       >
-                        {addon.addonName} (${addon.addonPrice})
+                        {addon.addonName} ({addon.addonPrice} Tk.)
                       </label>
                     </div>
                   ))}
                 </div>
 
-                <div className="quantity_cart_button my-3">
-                  <span className="quantity_cart_input">
-                    <button
-                      className="value-button"
-                      id="decrease"
-                      onClick={() => handleDecrease()}
-                    >
-                      -
-                    </button>
-                    <input
-                      type="number"
-                      id="number"
-                      value={quantity}
-                      readOnly
-                    />
-                    <button
-                      className="value-button"
-                      id="increase"
-                      onClick={() => handleIncrease()}
-                    >
-                      +
-                    </button>
-                  </span>
-                  <button
-                    // onClick={addToCart}
-                    className="MyBtn add_to_cart_button"
-                    type="submit"
-                    onClick={selectedSize ? addToCart : null}
-                  >
-                    <i className="bi bi-cart-plus-fill"></i> Add To Cart
-                  </button>
-                </div>
-                <div className="quantity_cart_button my-3">
-                  <button
-                    className="MyBtn add_to_cart_button"
-                    onClick={() => handleClearCart(data?._id)}
-                  >
-                    <i className="bi bi-x-circle"></i> Clear Cart
-                  </button>
-                  <button
-                    className="MyBtn add_to_cart_button"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#cart"
-                    aria-controls="cart"
-                  >
-                    <i className="bi bi-cart-fill"></i> Basket
-                  </button>
-                </div>
+                {data?.stock === "Stock_In" && (
+                  <>
+                    <div className="quantity_cart_button my-3">
+                      <span className="quantity_cart_input">
+                        <button
+                          className="value-button"
+                          id="decrease"
+                          onClick={() => handleDecrease()}
+                        >
+                          -
+                        </button>
+                        <input
+                          type="number"
+                          id="number"
+                          value={quantity}
+                          readOnly
+                        />
+                        <button
+                          className="value-button"
+                          id="increase"
+                          onClick={() => handleIncrease()}
+                        >
+                          +
+                        </button>
+                      </span>
+                      <button
+                        // onClick={addToCart}
+                        className="MyBtn add_to_cart_button"
+                        type="submit"
+                        onClick={selectedSize ? addToCart : null}
+                      >
+                        <i className="bi bi-cart-plus-fill"></i> Add To Cart
+                      </button>
+                    </div>
+                    <div className="quantity_cart_button my-3">
+                      <button
+                        className="MyBtn add_to_cart_button"
+                        onClick={() => handleClearCart(data?._id)}
+                      >
+                        <i className="bi bi-x-circle"></i> Clear Cart
+                      </button>
+
+                      <button
+                        className="MyBtn add_to_cart_button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#cart"
+                        aria-controls="cart"
+                      >
+                        <i className="bi bi-cart-fill"></i> Basket
+                      </button>
+                    </div>
+                  </>
+                )}
                 {successMsg && (
                   <p className="mt-2" style={{ color: "green" }}>
                     Food Successfully added to the cart
