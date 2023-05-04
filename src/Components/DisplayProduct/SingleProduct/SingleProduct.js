@@ -189,7 +189,7 @@ const SingleProduct = () => {
                         className="form-check-label"
                         htmlFor={`inlineCheckbox${index}`}
                       >
-                        {addon.addonName} (${addon.addonPrice})
+                        {addon.addonName} ({addon.addonPrice} Tk.)
                       </label>
                     </div>
                   ))}
