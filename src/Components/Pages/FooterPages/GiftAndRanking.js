@@ -51,7 +51,9 @@ const GiftAndRanking = () => {
             <p>
               <strong>Purchased 10 Tk. equivalent food = 1 Point</strong>
             </p>
-            <strong>Bronze:</strong> They Don't get any Discount.{" "}
+            <strong>Bronze:</strong> They Can Collect a Coupon using 200 points.
+            After collecting a coupon they get 2% discount of all products
+            within 7 days.{" "}
           </div>
           <div>
             <strong>Silver:</strong> They Can Collect a Coupon using 200 points.
@@ -59,14 +61,17 @@ const GiftAndRanking = () => {
             within 7 days.
           </div>
           <div>
-            <strong>Gold:</strong> They Can Collect a Coupon using 300 points.
+            <strong>Gold:</strong> They Can Collect a Coupon using 200 points.
             After collecting a coupon they get 10% discount of all products
             within 7 days.
           </div>
           <div>
-            <strong>Platinum:</strong> They Can Collect a Coupon using 500
+            <strong>Platinum:</strong> They Can Collect a Coupon using 200
             points. After collecting a coupon they get 15% discount of all
             products within 7 days.
+          </div>
+          <div className="mt-2 text-danger">
+            * The DishCo authority may change all of rules at any time.
           </div>
         </section>
       </main>

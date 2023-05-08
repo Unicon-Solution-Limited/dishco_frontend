@@ -49,12 +49,8 @@ const Returnpolicy = () => {
                 <h5>• Gift cards</h5>
               </li>
             </ul>
-            <p className="text-danger">
-              N.B: To complete your return, we require a receipt or proof of
-              purchase.
-            </p>
           </div>
-          <div className="mt-5">
+          <div className="mt-1">
             <p>
               * The rules and regulations of DishCo authority is very strict.
               You always need to obey the rules and regulations.
@@ -71,10 +67,14 @@ const Returnpolicy = () => {
           <div className="mt-5">
             <h3>TAXES</h3>
             <p>
-              You have to bear all kinds of taxes according to the government
-              tax policy when you buy our product.
+              We bear all kinds of taxes according to the government tax policy
+              when you buy our product.
             </p>
           </div>
+          <p className="text-danger mt-3">
+            N.B: To complete your return, we require a receipt or proof of
+            purchase.
+          </p>
         </div>
       </section>
       <Footer />
