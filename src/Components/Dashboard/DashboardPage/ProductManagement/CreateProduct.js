@@ -3,9 +3,11 @@ import axios from "axios";
 import TopbarNav from "../../Layouts/TopbarNav";
 import SidebarNav from "../../Layouts/SidebarNav";
 import "./ProductManagement.css";
+import { useAuth } from "../../../Authentication/AuthContext/AuthContext";
 
 const CreateProduct = () => {
   const [loading, setLoading] = useState(false);
+  const { currentUser } = useAuth();
   const [photo, setPhoto] = useState("");
   const nameRef = useRef();
   const foodCodeRef = useRef();
@@ -90,12 +92,13 @@ const CreateProduct = () => {
     };
     // add product info at mongodb
     try {
-      const url = "http://localhost:8000/addFood";
+      const url = `http://localhost:8000/addFood?email=${currentUser?.email}`;
       const option = {
         method: "POST",
         body: JSON.stringify(allData),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
+          authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
         },
       };
       const response = await fetch(url, option);
