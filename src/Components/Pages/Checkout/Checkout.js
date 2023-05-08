@@ -122,10 +122,11 @@ const Checkout = () => {
 
     //conditionally check the payment and hit the api
     if (confirmOderData.payment_method === "Online Payment") {
-      fetch(`http://localhost:8000/onileInit`, {
+      fetch(`http://localhost:8000/onileInit?email=${currentUser?.email}`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
         },
         body: JSON.stringify(confirmOderData),
       })
@@ -135,19 +136,23 @@ const Checkout = () => {
           window.location.replace(data);
         });
     } else {
-      fetch(`http://localhost:8000/cashonDeliveryInit`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(confirmOderData),
-      })
+      fetch(
+        `http://localhost:8000/cashonDeliveryInit?email=${currentUser?.email}`,
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+          body: JSON.stringify(confirmOderData),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setPaymentLoading(false);
           console.log(data);
+          history.push("/success/cashOnDelivery");
         });
-      history.push("/success/cashOnDelivery");
     }
   };
 
