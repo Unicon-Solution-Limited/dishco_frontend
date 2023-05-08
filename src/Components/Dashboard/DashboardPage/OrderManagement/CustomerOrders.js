@@ -19,7 +19,12 @@ const CustomerOrders = () => {
       if (currentUser) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getCustomerOrders?email=${currentUser.email}`
+            `http://localhost:8000/getCustomerOrders?email=${currentUser.email}`,
+            {
+              headers: {
+                authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+              },
+            }
           );
           setallCustomerOrders(response?.data);
         } catch (error) {

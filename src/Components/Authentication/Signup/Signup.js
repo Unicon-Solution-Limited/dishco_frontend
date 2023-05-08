@@ -38,7 +38,27 @@ const Signup = () => {
         emailRef.current.value,
         passwordRef.current.value
       );
-      history.push("/");
+
+      //get jwt token
+      const currentUser = {
+        email: emailRef.current.value,
+      };
+      console.log(currentUser);
+
+      fetch("http://localhost:8000/jwt", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(currentUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data) {
+            localStorage.setItem("dishco-token", data.token);
+            history.push("/");
+          }
+        });
     } catch (err) {
       setError(err.message);
     }
