@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./ProductManagement.css";
+import { useAuth } from "../../../Authentication/AuthContext/AuthContext";
 
 const EditProduct = () => {
   const { editPdId } = useParams();
@@ -13,6 +14,7 @@ const EditProduct = () => {
   const descriptionRef = useRef();
   const [addons, setAddons] = useState([{ addonName: "", addonPrice: "" }]);
   const [sizePrice, setSizePrice] = useState([{ size: "", price: "" }]);
+  const { currentUser } = useAuth();
 
   // Handle Image Upload (image upload by api in cloudenery)
   const imageUploadHandler = async (e) => {
@@ -42,11 +44,16 @@ const EditProduct = () => {
     };
 
     axios
-      .patch(`http://localhost:8000/updateImage/${editPdId}`, editImg, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      .patch(
+        `http://localhost:8000/updateImage/${editPdId}?email=${currentUser?.email}`,
+        editImg,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+        }
+      )
       .then((response) => {
         if (response.data) {
           console.log("suceesfully added");
@@ -66,11 +73,16 @@ const EditProduct = () => {
     };
 
     axios
-      .patch(`http://localhost:8000/updateName/${editPdId}`, editName, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      .patch(
+        `http://localhost:8000/updateName/${editPdId}?email=${currentUser?.email}`,
+        editName,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+        }
+      )
       .then((response) => {
         if (response.data) {
           foodNameRef.current.value = "";
@@ -91,11 +103,16 @@ const EditProduct = () => {
     };
 
     axios
-      .patch(`http://localhost:8000/updateCode/${editPdId}`, editCode, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      .patch(
+        `http://localhost:8000/updateCode/${editPdId}?email=${currentUser?.email}`,
+        editCode,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+        }
+      )
       .then((response) => {
         if (response.data) {
           foodCodeRef.current.value = "";
@@ -116,11 +133,16 @@ const EditProduct = () => {
     };
 
     axios
-      .patch(`http://localhost:8000/updateStock/${editPdId}`, editStock, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      .patch(
+        `http://localhost:8000/updateStock/${editPdId}?email=${currentUser?.email}`,
+        editStock,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+        }
+      )
       .then((response) => {
         if (response.data) {
           stockRef.current.value = "";
@@ -142,11 +164,12 @@ const EditProduct = () => {
 
     axios
       .patch(
-        `http://localhost:8000/updateDescription/${editPdId}`,
+        `http://localhost:8000/updateDescription/${editPdId}?email=${currentUser?.email}`,
         editDescription,
         {
           headers: {
             "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
           },
         }
       )
@@ -166,7 +189,12 @@ const EditProduct = () => {
   const deleteAllAddon = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/deleteAddons/${id}`
+        `http://localhost:8000/deleteAddons/${id}?email=${currentUser?.email}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+        }
       );
       const data = response.data;
       if (data) {
@@ -203,11 +231,16 @@ const EditProduct = () => {
     };
     // update the new adon info at mongodb
     axios
-      .patch(`http://localhost:8000/updateNewAddons/${editPdId}`, allData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      .patch(
+        `http://localhost:8000/updateNewAddons/${editPdId}?email=${currentUser?.email}`,
+        allData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+        }
+      )
       .then((response) => {
         if (response.data) {
           stockRef.current.value = "";
@@ -245,7 +278,12 @@ const EditProduct = () => {
   const deleteAllSizePrice = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/deleteSizePriceEdit/${id}`
+        `http://localhost:8000/deleteSizePriceEdit/${id}?email=${currentUser?.email}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+        }
       );
       const data = response.data;
       if (data) {
@@ -267,11 +305,16 @@ const EditProduct = () => {
     };
     // update the new size price info at mongodb
     axios
-      .patch(`http://localhost:8000/updateNewSizePrice/${editPdId}`, allData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      .patch(
+        `http://localhost:8000/updateNewSizePrice/${editPdId}?email=${currentUser?.email}`,
+        allData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+        }
+      )
       .then((response) => {
         if (response.data) {
           stockRef.current.value = "";
