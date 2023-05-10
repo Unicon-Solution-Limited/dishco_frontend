@@ -61,11 +61,19 @@ const EditProfile = () => {
     e.preventDefault();
     const data = {
       profileImage: image,
-      profileEmail: currentUser.email,
+      profileEmail: currentUser?.email,
     };
 
     axios
-      .post("http://localhost:8000/profileImageUpload", data)
+      .post(
+        `http://localhost:8000/profileImageUpload?email=${currentUser?.email}`,
+        data,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+        }
+      )
       .then((response) => {
         console.log(response.data);
         setUploadImgSuccessMsg(true);
