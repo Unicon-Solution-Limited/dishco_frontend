@@ -26,7 +26,12 @@ const AllOrdersForAdmin = () => {
   const orderDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/deleteOrder/${id}`
+        `http://localhost:8000/deleteOrder/${id}?email=${currentUser?.email}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+        }
       );
       const data = response.data;
       if (data) {
