@@ -5,11 +5,13 @@ import "./OrderManagement.css";
 import axios from "axios";
 import PopupOrderAdmin from "./PopupOrderAdmin";
 import { DebounceInput } from "react-debounce-input";
+import { useAuth } from "../../../Authentication/AuthContext/AuthContext";
 
 const AllOrdersForAdmin = () => {
   const [orders, setOrders] = useState([]);
   const [orderDetailsForPopup, setOrderDetailsForPopup] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const { currentUser } = useAuth();
 
   // filter the orders based on search term
   const filteredOrders = orders.filter((order) =>
@@ -42,7 +44,12 @@ const AllOrdersForAdmin = () => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/getAllOrderAdmin"
+          `http://localhost:8000/getAllOrderAdmin?email=${currentUser?.email}`,
+          {
+            headers: {
+              authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+            },
+          }
         );
         setOrders(response?.data);
       } catch (error) {
@@ -55,7 +62,7 @@ const AllOrdersForAdmin = () => {
     }, 300000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentUser?.email]);
 
   //handle the trand_id and matching it with the backend of order for show it in the popup page by props
   const handleOrderInfoAdmin = (tran_id) => {
