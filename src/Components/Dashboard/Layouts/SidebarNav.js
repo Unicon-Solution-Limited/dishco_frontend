@@ -12,7 +12,11 @@ const SidebarNav = () => {
 
   // FIND ADMIN
   useEffect(() => {
-    fetch(`http://localhost:8000/findAdmin?email=${currentUser.email}`)
+    fetch(`http://localhost:8000/findAdmin?email=${currentUser.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+      },
+    })
       .then((res) => res.json())
       .then((result) => {
         setIsAdmin(true);
