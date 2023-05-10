@@ -2,19 +2,25 @@ import React, { useRef, useState } from "react";
 import TopbarNav from "../../Layouts/TopbarNav";
 import "./MakeAdmin.css";
 import SidebarNav from "./../../Layouts/SidebarNav";
+import { useAuth } from "../../../Authentication/AuthContext/AuthContext";
 
 const MakeAdmin = () => {
   const adminRef = useRef();
   const [isAdminAdd, setIsAdminAdd] = useState(false);
+  const { currentUser } = useAuth();
 
   const handleAdminSubmit = () => {
     const mailEmail = {
       adminEmail: adminRef?.current?.value,
     };
+
     // INSERT A ADMIN AT THE DATABASE
-    fetch("http://localhost:8000/admin", {
+    fetch(`http://localhost:8000/admin?email=${currentUser?.email}`, {
       method: "POST",
-      headers: { "Content-type": "application/json" },
+      headers: {
+        "Content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+      },
       body: JSON.stringify(mailEmail),
     })
       .then((res) => res.json())
