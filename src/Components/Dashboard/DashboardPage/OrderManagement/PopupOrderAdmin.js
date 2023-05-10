@@ -1,9 +1,11 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../../Authentication/AuthContext/AuthContext";
 
 const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
   const statusRef = useRef();
   const [statusMessage, setStatusMessage] = useState(false);
+  const { currentUser } = useAuth();
 
   // For Order ID
   const orderTime = new Date(orderDetailsForPopup?.orderTime);
@@ -25,12 +27,13 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
     const product_status = statusRef?.current?.value;
 
     try {
-      const url = `http://localhost:8000/updateStatus/${id}`;
+      const url = `http://localhost:8000/updateStatus/${id}?email=${currentUser?.email}`;
       const option = {
         method: "PATCH",
         body: JSON.stringify({ product_status }),
         headers: {
           "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
         },
       };
       await fetch(url, option);

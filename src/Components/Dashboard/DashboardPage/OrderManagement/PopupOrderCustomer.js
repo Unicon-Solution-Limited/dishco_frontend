@@ -1,16 +1,20 @@
 import React from "react";
 import "./OrderManagement.css";
+import { useAuth } from "../../../Authentication/AuthContext/AuthContext";
 
 const PopupOrderCustomer = ({ customerOrderDetails }) => {
+  const { currentUser } = useAuth();
+
   const handleCancel = async (value, id) => {
     const product_status = value;
     try {
-      const url = `http://localhost:8000/updateStatus/${id}`;
+      const url = `http://localhost:8000/updateStatus/${id}?email=${currentUser?.email}`;
       const option = {
         method: "PATCH",
         body: JSON.stringify({ product_status }),
         headers: {
           "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
         },
       };
       await fetch(url, option);
