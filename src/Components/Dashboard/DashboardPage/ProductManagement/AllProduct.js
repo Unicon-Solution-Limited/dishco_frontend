@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 import ViewProductDetails from "./ViewProductDetails";
 import axios from "axios";
 import { DebounceInput } from "react-debounce-input";
+import { useAuth } from "../../../Authentication/AuthContext/AuthContext";
 
 const AllProduct = () => {
   const [allFoods, setAllFoods] = useState([]);
   const [deleteMessage, setDeleteMessage] = useState("");
+  const { currentUser } = useAuth();
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -38,7 +40,12 @@ const AllProduct = () => {
     try {
       setDeleteMessage("");
       const response = await axios.delete(
-        `http://localhost:8000/deleteFood/${id}`
+        `http://localhost:8000/deleteFood/${id}?email=${currentUser?.email}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+        }
       );
       const data = response.data;
       if (data) {
