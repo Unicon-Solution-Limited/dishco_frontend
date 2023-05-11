@@ -53,13 +53,14 @@ const CouponGen = () => {
     // add 7days token info at mongodb(it will vanish after 7days)
     if (totalAmount / 10 - FixedTokendata.length * 200 >= 200) {
       try {
-        const url = "http://localhost:8000/addTokenData";
+        const url = `http://localhost:8000/addTokenData?email=${currentUser?.email}`;
         setTokenMessage("");
         const option = {
           method: "POST",
           body: JSON.stringify(requestData),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
           },
         };
         const response = await fetch(url, option);
