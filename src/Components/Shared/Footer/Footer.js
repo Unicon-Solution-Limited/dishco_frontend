@@ -3,8 +3,14 @@ import ReactDOM from "react-dom";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import AOS from "aos";
 
 const Footer = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
   return (
     <footer>
       <section className="container footer_top">
@@ -108,7 +114,7 @@ const Footer = () => {
             </p>
           </aside>
           <MessengerCustomerChat
-            pageId="<PAGE_ID>"
+            pageId="101975605485880"
             appId="<APP_ID>"
             className="messenger_chat"
           />
