@@ -164,7 +164,12 @@ const EditProfile = () => {
   const handlePreviousImgDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/deleteProfileImage/${id}`
+        `http://localhost:8000/deleteProfileImage/${id}?email=${currentUser?.email}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+        }
       );
       const data = response.data;
       if (data) {
