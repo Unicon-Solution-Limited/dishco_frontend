@@ -86,12 +86,13 @@ const CouponGen = () => {
       !sevenDaysTokenData.length
     ) {
       try {
-        const url = "http://localhost:8000/FixedAddTokenData";
+        const url = `http://localhost:8000/FixedAddTokenData?email=${currentUser.email}`;
         const option = {
           method: "POST",
           body: JSON.stringify(requestData),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
           },
         };
         const response = await fetch(url, option);
@@ -111,7 +112,12 @@ const CouponGen = () => {
       if (currentUser.email) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getFixedTokenData?email=${currentUser.email}`
+            `http://localhost:8000/getFixedTokenData?email=${currentUser.email}`,
+            {
+              headers: {
+                authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+              },
+            }
           );
           setFixedTokenData(response?.data);
         } catch (error) {
