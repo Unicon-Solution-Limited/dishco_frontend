@@ -45,7 +45,7 @@
 .uploaded_image {
   width: 150px;
   height: 150px;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 50%;
   display: block;
   margin-left: auto;
@@ -105,6 +105,11 @@
   width: fit-content;
   margin-left: auto !important;
   margin-right: auto !important;
+}
+.delete-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .ProfilePicInput {
   display: none;

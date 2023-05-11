@@ -16,6 +16,7 @@ const EditProfile = () => {
   const history = useHistory();
   const [uploadImgSuccessMsg, setUploadImgSuccessMsg] = useState(false);
   const [profileData, setProfileData] = useState([]);
+  const [getProfileData, setGetProfileData] = useState([]);
 
   const handleChange = async (event) => {
     setLoading(true);
@@ -182,15 +183,42 @@ const EditProfile = () => {
     }
   };
 
+  //get profile image according to the email
+  useEffect(() => {
+    const fetchCustomerOrders = async () => {
+      if (currentUser) {
+        try {
+          const response = await axios.get(
+            `http://localhost:8000/getProfileImage?profileEmail=${currentUser.email}`
+          );
+          setGetProfileData(response?.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+    fetchCustomerOrders();
+  }, [currentUser]);
+
   return (
     <div className="container my-5">
       <Link to="/profile" className="btn MyBtn">
         <i className="bi bi-chevron-double-left"></i> Back
       </Link>
       {profileData.length ? (
-        <button onClick={() => handlePreviousImgDelete(profileData[0]?._id)}>
-          Delete previous image
-        </button>
+        <div className="remove_previous">
+          <img
+            src={getProfileData[0]?.profileImage}
+            alt="Old_image"
+            className="uploaded_image mb-2"
+          />
+          <button
+            onClick={() => handlePreviousImgDelete(profileData[0]?._id)}
+            className="btn delete-btn MyBtn"
+          >
+            Delete
+          </button>
+        </div>
       ) : (
         <form onSubmit={handleImageSubmit} className="upload_image_section">
           <div>
