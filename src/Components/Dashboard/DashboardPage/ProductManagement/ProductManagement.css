@@ -25,6 +25,10 @@
 .action_button button {
   margin: 0 5px;
 }
+.product_price_span:nth-child(1)::after,
+.product_price_span:nth-child(2)::after {
+  content: " / ";
+}
 
 /* Modal content Design */
 .single_product_modal_image {

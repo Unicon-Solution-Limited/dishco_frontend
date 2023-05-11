@@ -104,8 +104,8 @@ const AllProduct = () => {
                       <td>
                         {" "}
                         {foodDt?.sizePriceItem?.map((sizePrice, k) => (
-                          <span key={k}>
-                            <span>{sizePrice.price} </span>
+                          <span key={k} className="product_price_span">
+                            <span>{sizePrice.price}</span>
                           </span>
                         ))}{" "}
                         tk.
