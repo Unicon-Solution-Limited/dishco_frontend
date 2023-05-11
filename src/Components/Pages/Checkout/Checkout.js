@@ -92,8 +92,6 @@ const Checkout = () => {
     }
   }, [couponCondition, sevenDaysTokenData, subTotalPrice]);
 
-  console.log(discountPrice, "discountPrice");
-
   //calculation of grand total
   useEffect(() => {
     // discountPrice
