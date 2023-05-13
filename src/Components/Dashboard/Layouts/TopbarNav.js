@@ -6,6 +6,11 @@ import toggler from "./toggler";
 const TopbarNav = () => {
   const { logout, currentUser } = useAuth();
 
+  //remove dishco token
+  const removeDishcoToken = () => {
+    localStorage.removeItem("dishco-token");
+  };
+
   return (
     <>
       <nav className="sb-topnav navbar-d navbar-expand navbar-dark bg-dark top_nav">
@@ -57,7 +62,13 @@ const TopbarNav = () => {
               <li>
                 <hr className="dropdown-divider" />
               </li>
-              <li onClick={logout} className="logout_dropdown_btn">
+              <li
+                onClick={() => {
+                  logout();
+                  removeDishcoToken();
+                }}
+                className="logout_dropdown_btn"
+              >
                 <div className="dropdown-item">
                   <i onClick={logout} className="bi bi-box-arrow-left"></i>{" "}
                   <Link to="/">Logout</Link>
