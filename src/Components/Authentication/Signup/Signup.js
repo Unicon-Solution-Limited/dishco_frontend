@@ -21,7 +21,49 @@ const Signup = () => {
     setIsNavigate(true);
   });
 
-  // sign with email and password
+  // // sign with email and password
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (passwordRef.current.value.length < 6) {
+  //     return setError("password must be at least 6 characters");
+  //   }
+  //   if (passwordRef.current.value !== confirmPasswordRef.current.value) {
+  //     return setError("Password does not matched!");
+  //   }
+  //   try {
+  //     setError("");
+  //     setLoading(true);
+  //     await signup(
+  //       nameRef.current.value,
+  //       emailRef.current.value,
+  //       passwordRef.current.value
+  //     );
+
+  //     //get jwt token
+  //     const currentUser = {
+  //       email: emailRef.current.value,
+  //     };
+  //     console.log(currentUser);
+
+  //     fetch("http://localhost:8000/jwt", {
+  //       method: "POST",
+  //       headers: {
+  //         "content-type": "application/json",
+  //       },
+  //       body: JSON.stringify(currentUser),
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         if (data) {
+  //           localStorage.setItem("dishco-token", data.token);
+  //         }
+  //       });
+  //   } catch (err) {
+  //     setError(err.message);
+  //   }
+  //   setLoading(false);
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (passwordRef.current.value.length < 6) {
@@ -39,30 +81,36 @@ const Signup = () => {
         passwordRef.current.value
       );
 
-      //get jwt token
+      // Firebase signup succeeded, get jwt token
       const currentUser = {
         email: emailRef.current.value,
       };
       console.log(currentUser);
 
-      fetch("http://localhost:8000/jwt", {
+      const response = await fetch("http://localhost:8000/jwt", {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
         body: JSON.stringify(currentUser),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data) {
-            localStorage.setItem("dishco-token", data.token);
-            history.push("/");
-          }
-        });
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+
+        // store jwt token in local storage
+        localStorage.setItem("dishco-token", data.token);
+        setLoading(false);
+
+        // navigate to home page
+        history.push("/");
+      } else {
+        throw new Error("Failed to get jwt token");
+      }
     } catch (err) {
       setError(err.message);
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
