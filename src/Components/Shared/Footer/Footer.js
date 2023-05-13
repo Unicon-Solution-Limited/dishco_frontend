@@ -115,7 +115,7 @@ const Footer = () => {
           </aside>
           <MessengerCustomerChat
             pageId="101975605485880"
-            appId="<APP_ID>"
+            appId="650259003597895"
             className="messenger_chat"
           />
         </div>
