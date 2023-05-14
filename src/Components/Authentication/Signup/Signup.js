@@ -23,114 +23,8 @@ const Signup = () => {
     setIsNavigate(true);
   });
 
-  // // sign with email and password
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (passwordRef.current.value.length < 6) {
-  //     return setError("password must be at least 6 characters");
-  //   }
-  //   if (passwordRef.current.value !== confirmPasswordRef.current.value) {
-  //     return setError("Password does not matched!");
-  //   }
-  //   try {
-  //     setError("");
-  //     setLoading(true);
-  //     await signup(
-  //       nameRef.current.value,
-  //       emailRef.current.value,
-  //       passwordRef.current.value
-  //     );
-
-  //     //get jwt token
-  //     const currentUser = {
-  //       email: emailRef.current.value,
-  //     };
-  //     console.log(currentUser);
-
-  //     fetch("http://localhost:8000/jwt", {
-  //       method: "POST",
-  //       headers: {
-  //         "content-type": "application/json",
-  //       },
-  //       body: JSON.stringify(currentUser),
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         if (data) {
-  //           localStorage.setItem("dishco-token", data.token);
-  //         }
-  //       });
-  //   } catch (err) {
-  //     setError(err.message);
-  //   }
-  //   setLoading(false);
-  // };
-
+  // sign with email and password
   //without user details
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (passwordRef.current.value.length < 6) {
-  //     return setError("password must be at least 6 characters");
-  //   }
-  //   if (passwordRef.current.value !== confirmPasswordRef.current.value) {
-  //     return setError("Password does not matched!");
-  //   }
-  //   try {
-  //     setError("");
-  //     setLoading(true);
-  //     await signup(
-  //       nameRef.current.value,
-  //       emailRef.current.value,
-  //       passwordRef.current.value
-  //     );
-
-  //     // Firebase signup succeeded, get jwt token
-  //     const currentUser = {
-  //       email: emailRef.current.value,
-  //     };
-
-  //     const userExtraData = {
-  //       phoneNumber: numberRef?.current?.value,
-  //       customerAdress: addressRef?.current?.value,
-  //     };
-
-  //     const response = await fetch("http://localhost:8000/jwt", {
-  //       method: "POST",
-  //       headers: {
-  //         "content-type": "application/json",
-  //       },
-  //       body: JSON.stringify(currentUser),
-  //     });
-
-  //     const responseUserDetails = await fetch(
-  //       "http://localhost:8000/userDetails",
-  //       {
-  //         method: "POST",
-  //         headers: {
-  //           "content-type": "application/json",
-  //         },
-  //         body: JSON.stringify(userExtraData),
-  //       }
-  //     );
-
-  //     if (response.ok && responseUserDetails.ok) {
-  //       const data = await response.json();
-
-  //       // store jwt token in local storage
-  //       localStorage.setItem("dishco-token", data.token);
-  //       setLoading(false);
-
-  //       // navigate to home page
-  //       history.push("/");
-  //     } else {
-  //       throw new Error("Failed to get jwt token");
-  //     }
-  //   } catch (err) {
-  //     setError(err.message);
-  //     setLoading(false);
-  //   }
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (passwordRef.current.value.length < 6) {
@@ -166,31 +60,10 @@ const Signup = () => {
 
         // store jwt token in local storage
         localStorage.setItem("dishco-token", data.token);
+        setLoading(false);
 
-        const userExtraData = {
-          phoneNumber: numberRef?.current?.value,
-          customerAdress: addressRef?.current?.value,
-        };
-
-        const responseUserDetails = await fetch(
-          "http://localhost:8000/userDetails",
-          {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(userExtraData),
-          }
-        );
-
-        if (responseUserDetails.ok) {
-          setLoading(false);
-
-          // navigate to home page
-          history.push("/");
-        } else {
-          throw new Error("Failed to post user details");
-        }
+        // navigate to home page
+        history.push("/");
       } else {
         throw new Error("Failed to get jwt token");
       }
@@ -199,6 +72,76 @@ const Signup = () => {
       setLoading(false);
     }
   };
+
+  //signup with user details
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (passwordRef.current.value.length < 6) {
+  //     return setError("password must be at least 6 characters");
+  //   }
+  //   if (passwordRef.current.value !== confirmPasswordRef.current.value) {
+  //     return setError("Password does not matched!");
+  //   }
+  //   try {
+  //     setError("");
+  //     setLoading(true);
+  //     await signup(
+  //       nameRef.current.value,
+  //       emailRef.current.value,
+  //       passwordRef.current.value
+  //     );
+
+  //     // Firebase signup succeeded, get jwt token
+  //     const currentUser = {
+  //       email: emailRef.current.value,
+  //     };
+
+  //     const response = await fetch("http://localhost:8000/jwt", {
+  //       method: "POST",
+  //       headers: {
+  //         "content-type": "application/json",
+  //       },
+  //       body: JSON.stringify(currentUser),
+  //     });
+
+  //     if (response.ok) {
+  //       const data = await response.json();
+
+  //       // store jwt token in local storage
+  //       localStorage.setItem("dishco-token", data.token);
+
+  //       const userExtraData = {
+  //         phoneNumber: numberRef?.current?.value,
+  //         customerAdress: addressRef?.current?.value,
+  //       };
+
+  //       const responseUserDetails = await fetch(
+  //         "http://localhost:8000/userDetails",
+  //         {
+  //           method: "POST",
+  //           headers: {
+  //             "content-type": "application/json",
+  //           },
+  //           body: JSON.stringify(userExtraData),
+  //         }
+  //       );
+
+  //       if (responseUserDetails.ok) {
+  //         setLoading(false);
+
+  //         // navigate to home page
+  //         history.push("/");
+  //       } else {
+  //         throw new Error("Failed to post user details");
+  //       }
+  //     } else {
+  //       throw new Error("Failed to get jwt token");
+  //     }
+  //   } catch (err) {
+  //     setError(err.message);
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <>
