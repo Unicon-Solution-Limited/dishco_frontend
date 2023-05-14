@@ -47,7 +47,7 @@ const Signup = () => {
         email: emailRef.current.value,
       };
 
-      const response = await fetch("http://localhost:8000/jwt", {
+      const response = await fetch("https://server.dishcofood.com/jwt", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -96,7 +96,7 @@ const Signup = () => {
   //       email: emailRef.current.value,
   //     };
 
-  //     const response = await fetch("http://localhost:8000/jwt", {
+  //     const response = await fetch("https://server.dishcofood.com/jwt", {
   //       method: "POST",
   //       headers: {
   //         "content-type": "application/json",
@@ -116,7 +116,7 @@ const Signup = () => {
   //       };
 
   //       const responseUserDetails = await fetch(
-  //         "http://localhost:8000/userDetails",
+  //         "https://server.dishcofood.com/userDetails",
   //         {
   //           method: "POST",
   //           headers: {

@@ -18,7 +18,7 @@ const SingleProduct = () => {
     const fetchFood = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/getSingleFood?singleFoodId=${viewDetails}`
+          `https://server.dishcofood.com/getSingleFood?singleFoodId=${viewDetails}`
         );
         const data = await response.json();
         setFood(data);
@@ -300,7 +300,7 @@ export default SingleProduct;
 //     const fetchFood = async () => {
 //       try {
 //         const response = await fetch(
-//           `http://localhost:8000/getSingleFood?singleFoodId=${viewDetails}`
+//           `https://server.dishcofood.com/getSingleFood?singleFoodId=${viewDetails}`
 //         );
 //         const data = await response.json();
 //         setFood(data);

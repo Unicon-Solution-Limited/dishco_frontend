@@ -9,7 +9,7 @@ const ViewProductDetails = ({ viewProductId }) => {
     const fetchFood = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/getFoodForEdit?foodEditId=${viewProductId}`
+          `https://server.dishcofood.com/getFoodForEdit?foodEditId=${viewProductId}`
         );
         const data = await response.json();
         setSelectedFood(data);
