@@ -293,12 +293,7 @@ const Signup = () => {
             </div>
           </div>
           <p className="error mb-2">{error}</p>
-          {/* <input
-            type="submit"
-            disabled={loading}
-            value="Sign up"
-            className="MyBtn auth_btn d-grid mx-auto"
-          /> */}
+
           <button type="submit" className="MyBtn auth_btn d-grid mx-auto">
             {loading ? (
               <div className="d-flex justify-content-center">

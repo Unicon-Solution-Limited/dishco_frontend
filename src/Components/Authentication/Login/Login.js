@@ -101,17 +101,23 @@ const Login = () => {
           </div>
           <Link to="/forgotPassword">Forget Password ?</Link>
           {/* error showing */}
-          <p className="error">{error}</p>
-          <input
-            type="submit"
-            disabled={loading}
-            value="Login"
-            className="mt-1 MyBtn auth_btn d-grid mx-auto"
-          />
+          <p className="error mb-2">{error}</p>
+
+          <button type="submit" className="mt-1 MyBtn auth_btn d-grid mx-auto">
+            {loading ? (
+              <div className="d-flex justify-content-center">
+                <div className="spinner-border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            ) : (
+              "Login"
+            )}
+          </button>
         </form>
         <p className="text-center mt-2">-------Or-------</p>
         {/* google sign button*/}
-        <div onClick={handleGoogleSignup} className="google_auth">
+        {/* <div onClick={handleGoogleSignup} className="google_auth">
           <button>
             <img
               src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1676276581/Frontend_images/logo/f9v6yxevk0isj4d8k4w1.svg"
@@ -120,7 +126,7 @@ const Login = () => {
             />
             <span>Continue with google</span>
           </button>
-        </div>
+        </div> */}
 
         <div className="auth_footer">
           <p>Do not have an account?</p>
