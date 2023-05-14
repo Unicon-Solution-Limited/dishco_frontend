@@ -150,7 +150,7 @@ const Signup = () => {
         <h4 className="text-center">Create an account</h4>
         <form onSubmit={handleSubmit} className="auth_form">
           <div className="row">
-            <div className="col-md-6 mb-2">
+            <div className="col-md-12 mb-2">
               <label htmlFor="displayName" className="form-label">
                 Your Name
               </label>
@@ -164,7 +164,7 @@ const Signup = () => {
               />
             </div>
 
-            <div className="col-md-6 mb-2">
+            {/* <div className="col-md-6 mb-2">
               <label htmlFor="displayNumber" className="form-label">
                 Contact Number
               </label>
@@ -176,7 +176,7 @@ const Signup = () => {
                 aria-describedby="phoneNumber"
                 required
               />
-            </div>
+            </div> */}
 
             <div className="mb-2">
               <label htmlFor="exampleInputEmail1" className="form-label">
@@ -192,7 +192,7 @@ const Signup = () => {
               />
             </div>
 
-            <div className="mb-2">
+            {/* <div className="mb-2">
               <label htmlFor="addressInput" className="form-label">
                 Your address
               </label>
@@ -204,7 +204,7 @@ const Signup = () => {
                 id="addressInput"
                 aria-describedby="address"
               />
-            </div>
+            </div> */}
 
             <div className="col-md-6 mb-2">
               <label htmlFor="exampleInputPassword1" className="form-label">
