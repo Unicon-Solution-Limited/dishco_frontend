@@ -15,6 +15,8 @@ const Signup = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
+  const numberRef = useRef();
+  const addressRef = useRef();
 
   // navigation changer
   useEffect(() => {
@@ -22,6 +24,7 @@ const Signup = () => {
   });
 
   // sign with email and password
+  //without user details
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (passwordRef.current.value.length < 6) {
@@ -39,31 +42,106 @@ const Signup = () => {
         passwordRef.current.value
       );
 
-      //get jwt token
+      // Firebase signup succeeded, get jwt token
       const currentUser = {
         email: emailRef.current.value,
       };
-      console.log(currentUser);
 
-      fetch("http://localhost:8000/jwt", {
+      const response = await fetch("http://localhost:8000/jwt", {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
         body: JSON.stringify(currentUser),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data) {
-            localStorage.setItem("dishco-token", data.token);
-            history.push("/");
-          }
-        });
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+
+        // store jwt token in local storage
+        localStorage.setItem("dishco-token", data.token);
+        setLoading(false);
+
+        // navigate to home page
+        history.push("/");
+      } else {
+        throw new Error("Failed to get jwt token");
+      }
     } catch (err) {
       setError(err.message);
+      setLoading(false);
     }
-    setLoading(false);
   };
+
+  //signup with user details
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (passwordRef.current.value.length < 6) {
+  //     return setError("password must be at least 6 characters");
+  //   }
+  //   if (passwordRef.current.value !== confirmPasswordRef.current.value) {
+  //     return setError("Password does not matched!");
+  //   }
+  //   try {
+  //     setError("");
+  //     setLoading(true);
+  //     await signup(
+  //       nameRef.current.value,
+  //       emailRef.current.value,
+  //       passwordRef.current.value
+  //     );
+
+  //     // Firebase signup succeeded, get jwt token
+  //     const currentUser = {
+  //       email: emailRef.current.value,
+  //     };
+
+  //     const response = await fetch("http://localhost:8000/jwt", {
+  //       method: "POST",
+  //       headers: {
+  //         "content-type": "application/json",
+  //       },
+  //       body: JSON.stringify(currentUser),
+  //     });
+
+  //     if (response.ok) {
+  //       const data = await response.json();
+
+  //       // store jwt token in local storage
+  //       localStorage.setItem("dishco-token", data.token);
+
+  //       const userExtraData = {
+  //         phoneNumber: numberRef?.current?.value,
+  //         customerAdress: addressRef?.current?.value,
+  //       };
+
+  //       const responseUserDetails = await fetch(
+  //         "http://localhost:8000/userDetails",
+  //         {
+  //           method: "POST",
+  //           headers: {
+  //             "content-type": "application/json",
+  //           },
+  //           body: JSON.stringify(userExtraData),
+  //         }
+  //       );
+
+  //       if (responseUserDetails.ok) {
+  //         setLoading(false);
+
+  //         // navigate to home page
+  //         history.push("/");
+  //       } else {
+  //         throw new Error("Failed to post user details");
+  //       }
+  //     } else {
+  //       throw new Error("Failed to get jwt token");
+  //     }
+  //   } catch (err) {
+  //     setError(err.message);
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <>
@@ -91,12 +169,12 @@ const Signup = () => {
                 Contact Number
               </label>
               <input
-                // ref={nameRef}
+                ref={numberRef}
                 type="number"
                 className="form-control"
                 id="displayNumber"
                 aria-describedby="phoneNumber"
-                // required
+                required
               />
             </div>
 
@@ -119,8 +197,8 @@ const Signup = () => {
                 Your address
               </label>
               <input
-                // ref={emailRef}
-                // required
+                ref={addressRef}
+                required
                 type="text"
                 className="form-control"
                 id="addressInput"
@@ -157,17 +235,23 @@ const Signup = () => {
               />
             </div>
           </div>
-          <p className="error">{error}</p>
-          <input
-            type="submit"
-            disabled={loading}
-            value="Sign up"
-            className="MyBtn auth_btn d-grid mx-auto"
-          />
+          <p className="error mb-2">{error}</p>
+
+          <button type="submit" className="MyBtn auth_btn d-grid mx-auto">
+            {loading ? (
+              <div className="d-flex justify-content-center">
+                <div className="spinner-border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            ) : (
+              "Sign up"
+            )}
+          </button>
         </form>
         <p className="text-center mt-2">-------Or-------</p>
         {/* google sign button*/}
-        <div className="google_auth">
+        {/* <div className="google_auth">
           <button>
             <img
               src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1676276581/Frontend_images/logo/f9v6yxevk0isj4d8k4w1.svg"
@@ -176,7 +260,7 @@ const Signup = () => {
             />
             <span>Continue with google</span>
           </button>
-        </div>
+        </div> */}
 
         <div className="auth_footer">
           <p>Already have an account?</p>

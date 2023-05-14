@@ -20,13 +20,25 @@ const AuthProvider = ({ children }) => {
   };
 
   // sign up user method
-  const signup = (name, email, password) => {
-    auth.createUserWithEmailAndPassword(email, password).then((res) => {
+  // const signup = (name, email, password) => {
+  //   auth.createUserWithEmailAndPassword(email, password).then((res) => {
+  //     const user = auth.currentUser;
+  //     return user.updateProfile({
+  //       displayName: name,
+  //     });
+  //   });
+  // };
+  const signup = async (name, email, password) => {
+    try {
+      const res = await auth.createUserWithEmailAndPassword(email, password);
       const user = auth.currentUser;
-      return user.updateProfile({
+      await user.updateProfile({
         displayName: name,
       });
-    });
+      return user;
+    } catch (err) {
+      throw err;
+    }
   };
 
   // login user method
