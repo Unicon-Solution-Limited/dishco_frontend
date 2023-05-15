@@ -77,7 +77,7 @@ const Footer = () => {
             <aside className="links">
               <ul>
                 <li>
-                  <Link to="/">My Account</Link>
+                  <Link to="/dashboard">My Account</Link>
                 </li>
                 <li>
                   <Link to="/contact-us">Contact Us</Link>
