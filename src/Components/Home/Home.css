@@ -189,6 +189,7 @@
   background-attachment: fixed;
   background-size: cover;
   position: relative; /* For background Box Shadow */
+  overflow-x: hidden;
 }
 .facilities_main::before {
   content: "";
