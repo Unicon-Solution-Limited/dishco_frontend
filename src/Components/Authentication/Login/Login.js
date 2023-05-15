@@ -37,7 +37,7 @@ const Login = () => {
       };
       console.log(currentUser);
 
-      fetch("https://server.dishcofood.com/jwt", {
+      fetch("http://localhost:8000/jwt", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -22,7 +22,7 @@ const ViewProfile = () => {
       if (currentUser) {
         try {
           const response = await axios.get(
-            `https://server.dishcofood.com/getSingleCustomerOrderShipped?email=${currentUser.email}`
+            `http://localhost:8000/getSingleCustomerOrderShipped?email=${currentUser.email}`
           );
           setAllCustomerOrders(response?.data);
         } catch (error) {
@@ -39,7 +39,7 @@ const ViewProfile = () => {
       if (currentUser) {
         try {
           const response = await axios.get(
-            `https://server.dishcofood.com/getProfileImage?profileEmail=${currentUser.email}`
+            `http://localhost:8000/getProfileImage?profileEmail=${currentUser.email}`
           );
           setProfileData(response?.data);
         } catch (error) {

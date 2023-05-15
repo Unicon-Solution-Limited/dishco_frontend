@@ -17,7 +17,7 @@ const CustomerList = () => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          `https://server.dishcofood.com/getUniqueOrderAdmin?email=${currentUser?.email}`,
+          `http://localhost:8000/getUniqueOrderAdmin?email=${currentUser?.email}`,
           {
             headers: {
               authorization: `Bearer ${localStorage.getItem("dishco-token")}`,

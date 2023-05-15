@@ -17,7 +17,7 @@ const CustomerOrders = () => {
       if (currentUser) {
         try {
           const response = await axios.get(
-            `https://server.dishcofood.com/getCustomerOrders?email=${currentUser?.email}`,
+            `http://localhost:8000/getCustomerOrders?email=${currentUser?.email}`,
             {
               headers: {
                 authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
@@ -36,9 +36,7 @@ const CustomerOrders = () => {
   //customer order data details according to the train id
   const handleCustomerTranId = async (tran_id) => {
     await axios
-      .get(
-        `https://server.dishcofood.com/customerOrderDetails?tran_id=` + tran_id
-      )
+      .get(`http://localhost:8000/customerOrderDetails?tran_id=` + tran_id)
       .then((response) => {
         setCustomerOrderDetails(response?.data);
       })
