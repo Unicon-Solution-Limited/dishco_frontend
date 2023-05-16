@@ -102,34 +102,34 @@ const Header = () => {
 
             <section className="mobile_display_dots">
               <i
-                class="bi bi-three-dots-vertical"
+                className="bi bi-three-dots-vertical"
                 data-bs-toggle="modal"
                 data-bs-target="#mobilePopup"
               ></i>
             </section>
 
             <div
-              class="modal fade"
+              className="modal fade"
               id="mobilePopup"
               tabindex="-1"
               aria-labelledby="mobilePopupLabel"
               aria-hidden="true"
             >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
                     <button
                       type="button"
-                      class="btn-close"
+                      className="btn-close"
                       data-bs-dismiss="modal"
                       aria-label="Close"
                     ></button>
                   </div>
-                  <div class="modal-body">
+                  <div className="modal-body">
                     {currentUser ? (
                       <span data-bs-dismiss="modal">
                         <Link to="/dashboard" className="auth_login_mobile">
-                          <i class="bi bi-speedometer2"></i> Dashboard
+                          <i className="bi bi-speedometer2"></i> Dashboard
                         </Link>
                       </span>
                     ) : (
@@ -137,13 +137,13 @@ const Header = () => {
                         <aside className="auth_links_mobile">
                           <span data-bs-dismiss="modal">
                             <Link className="myLinks" to="/login">
-                              <i class="bi bi-box-arrow-in-right"></i> Login
+                              <i className="bi bi-box-arrow-in-right"></i> Login
                             </Link>
                           </span>
                           <br />
                           <span data-bs-dismiss="modal">
                             <Link className="myLinks" to="/signup">
-                              <i class="bi bi-pencil-square"></i> Sign Up
+                              <i className="bi bi-pencil-square"></i> Sign Up
                             </Link>
                           </span>
                         </aside>
