@@ -100,6 +100,60 @@ const Header = () => {
               )}
             </form>
 
+            <section className="mobile_display_dots">
+              <i
+                class="bi bi-three-dots-vertical"
+                data-bs-toggle="modal"
+                data-bs-target="#mobilePopup"
+              ></i>
+            </section>
+
+            <div
+              class="modal fade"
+              id="mobilePopup"
+              tabindex="-1"
+              aria-labelledby="mobilePopupLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    {currentUser ? (
+                      <span data-bs-dismiss="modal">
+                        <Link to="/dashboard" className="auth_login_mobile">
+                          <i class="bi bi-speedometer2"></i> Dashboard
+                        </Link>
+                      </span>
+                    ) : (
+                      <>
+                        <aside className="auth_links_mobile">
+                          <span data-bs-dismiss="modal">
+                            <Link className="myLinks" to="/login">
+                              <i class="bi bi-box-arrow-in-right"></i> Login
+                            </Link>
+                          </span>
+                          <br />
+                          <span data-bs-dismiss="modal">
+                            <Link className="myLinks" to="/signup">
+                              <i class="bi bi-pencil-square"></i> Sign Up
+                            </Link>
+                          </span>
+                        </aside>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {currentUser ? (
               <>
                 <Link to="/dashboard" className="auth_login">

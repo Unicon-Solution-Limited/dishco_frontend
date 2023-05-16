@@ -197,6 +197,12 @@
 /* Offcanvas Cart Design **** */
 
 /* ================= Media queries =================== */
+/* For Device which are (769px and up) */
+@media only screen and (min-width: 769px) {
+  .mobile_display_dots {
+    display: none;
+  }
+}
 /* For Mobile Device (768px and below) */
 @media only screen and (max-width: 768px) {
   .site_logo {
@@ -216,11 +222,11 @@
     display: none !important;
   }
   .search_bar {
-    width: 85vw;
+    width: 75vw;
     padding: 8px 6px;
   }
   .search_button {
-    padding: 8px;
+    padding: 8px 9px 9px 9px;
   }
 
   .dropdown-content {
@@ -232,6 +238,20 @@
   }
   .nav_sub_link {
     border-bottom: 0;
+  }
+  .mobile_display_dots {
+    font-size: 30px;
+    display: inline;
+  }
+  .auth_links_mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .auth_login_mobile,
+  .auth_links_mobile .myLinks {
+    color: var(--black);
+    font-size: 20px;
+    padding: 5px;
   }
 }
 
