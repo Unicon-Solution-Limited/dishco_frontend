@@ -48,6 +48,12 @@ const Header = () => {
     history.push(`/Search/${searchValue}`);
   };
 
+  // Navbar Toggle on/off
+  const [collapseOpen, setCollapseOpen] = useState(false);
+  const handleNavLinkClick = () => {
+    setCollapseOpen(!collapseOpen);
+  };
+
   return (
     <>
       {/* TOP Header */}
@@ -93,6 +99,60 @@ const Header = () => {
                 </div>
               )}
             </form>
+
+            <section className="mobile_display_dots">
+              <i
+                className="bi bi-three-dots-vertical"
+                data-bs-toggle="modal"
+                data-bs-target="#mobilePopup"
+              ></i>
+            </section>
+
+            <div
+              className="modal fade"
+              id="mobilePopup"
+              tabindex="-1"
+              aria-labelledby="mobilePopupLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    {currentUser ? (
+                      <span data-bs-dismiss="modal">
+                        <Link to="/dashboard" className="auth_login_mobile">
+                          <i className="bi bi-speedometer2"></i> Dashboard
+                        </Link>
+                      </span>
+                    ) : (
+                      <>
+                        <aside className="auth_links_mobile">
+                          <span data-bs-dismiss="modal">
+                            <Link className="myLinks" to="/login">
+                              <i className="bi bi-box-arrow-in-right"></i> Login
+                            </Link>
+                          </span>
+                          <br />
+                          <span data-bs-dismiss="modal">
+                            <Link className="myLinks" to="/signup">
+                              <i className="bi bi-pencil-square"></i> Sign Up
+                            </Link>
+                          </span>
+                        </aside>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {currentUser ? (
               <>
@@ -141,7 +201,12 @@ const Header = () => {
               <span className="navbar-toggler-icon navToggleBtn"></span>
             </button>
           </div>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            id="navbarSupportedContent"
+            className={`collapse navbar-collapse ${
+              collapseOpen ? "collapse" : ""
+            }`}
+          >
             <ul className="navbar-nav mx-auto mb-lg-0 navbarItems_main_div">
               <li className="nav-item dropdown navbarItems">
                 <a
@@ -158,6 +223,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"Appetizer"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Appetizer
                     </Link>
@@ -166,6 +232,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"riceCuisine"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Rice Cuisine
                     </Link>
@@ -186,6 +253,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"DishCoPlatter"}`}
+                      onClick={handleNavLinkClick}
                     >
                       DishCo Platter
                     </Link>
@@ -194,6 +262,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"RamenSpecial"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Ramen Special
                     </Link>
@@ -214,6 +283,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"MeatBox"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Meat Box
                     </Link>
@@ -222,6 +292,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"RiceBowl"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Rice Bowl
                     </Link>
@@ -230,6 +301,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"PlatterCuisine"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Platter Cuisine
                     </Link>
@@ -250,6 +322,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"IndianCuisines"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Indian Cuisines
                     </Link>
@@ -258,6 +331,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"JapaneseCuisines"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Japanese Cuisines
                     </Link>
@@ -266,6 +340,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"KoreanCuisines"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Korean Cuisines
                     </Link>
@@ -283,6 +358,7 @@ const Header = () => {
                         <Link
                           to={`/products/${"Soup"}`}
                           className="dropdown-items-sub"
+                          onClick={handleNavLinkClick}
                         >
                           Soup
                         </Link>
@@ -297,6 +373,7 @@ const Header = () => {
                   to={`/products/${"Steak"}`}
                   className="nav-link nav_link"
                   aria-current="page"
+                  onClick={handleNavLinkClick}
                 >
                   Steak
                 </Link>
@@ -315,6 +392,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"Pizza"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Pizza
                     </Link>
@@ -323,6 +401,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"BurgerSandwich"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Burger and Sandwich
                     </Link>
@@ -331,6 +410,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"FryBasket"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Fry Basket
                     </Link>
@@ -339,6 +419,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"Pasta"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Pasta
                     </Link>
@@ -349,6 +430,7 @@ const Header = () => {
                 <Link
                   to={`/products/${"Dessert"}`}
                   className="nav-link nav_link"
+                  onClick={handleNavLinkClick}
                 >
                   Dessert
                 </Link>
@@ -367,6 +449,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"PeyalaTea"}`}
+                      onClick={handleNavLinkClick}
                     >
                       Peyala Tea
                     </Link>
@@ -375,6 +458,7 @@ const Header = () => {
                     <Link
                       className="dropdown-item nav_sub_link"
                       to={`/products/${"DishCoDrinks"}`}
+                      onClick={handleNavLinkClick}
                     >
                       DishCo Drinks
                     </Link>

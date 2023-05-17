@@ -13,7 +13,7 @@ const Dashboard = () => {
           <main>
             <div className="container-fluid p-4">
               <section className="dashboard_welcome_page">
-                <h1>Welcome to DishCo Admin Dashboard!</h1>
+                <h1>Welcome to Dashboard!</h1>
               </section>
             </div>
           </main>
