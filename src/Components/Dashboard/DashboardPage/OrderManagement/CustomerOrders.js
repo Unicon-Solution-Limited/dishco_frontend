@@ -64,6 +64,12 @@ const CustomerOrders = () => {
                 key={allCustomerOrder._id}
                 onClick={() => handleCustomerTranId(allCustomerOrder?.tran_id)}
               >
+                <p>
+                  <strong className="mt-2">
+                    Please call to confirm your order.
+                  </strong>
+                  <p>+88 01810-098389</p>
+                </p>
                 {new Date(allCustomerOrder?.orderTime).toLocaleString("en-GB", {
                   dateStyle: "long",
                   timeStyle: "short",
