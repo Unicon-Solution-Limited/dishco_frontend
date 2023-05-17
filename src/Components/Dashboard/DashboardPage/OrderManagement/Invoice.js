@@ -6,9 +6,6 @@ const Invoice = () => {
   const location = useLocation();
   const data = location.state.orderDetailsForInvoice;
 
-  //all context
-  console.log(data);
-
   return (
     <>
       <div className="invoice">

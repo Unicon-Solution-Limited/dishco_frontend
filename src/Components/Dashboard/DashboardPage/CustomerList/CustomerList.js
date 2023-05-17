@@ -30,7 +30,7 @@ const CustomerList = () => {
       }
     };
     fetchOrders();
-  }, []);
+  }, [currentUser?.email]);
 
   //get selected email for the single customer page
   const handleSelectedEmail = (email) => {
