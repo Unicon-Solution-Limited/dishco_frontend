@@ -148,6 +148,20 @@
 .order_cancel button {
   color: var(--white) !important;
 }
+.customer_order_table {
+  background: rgb(229, 227, 228);
+  background: linear-gradient(
+    90deg,
+    rgba(229, 227, 228, 1) 0%,
+    rgba(204, 204, 204, 1) 100%
+  );
+}
+.loading_spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 @media only screen and (max-width: 960px) {
   .single_order_section {
