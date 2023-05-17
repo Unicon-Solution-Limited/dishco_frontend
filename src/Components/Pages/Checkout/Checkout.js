@@ -99,7 +99,7 @@ const Checkout = () => {
       Number(finaltotalAddonPrice) +
         Number(subTotalPrice) -
         Number(discountPrice) +
-        80
+        60
     );
   }, [discountPrice, finaltotalAddonPrice, subTotalPrice]);
 
@@ -351,7 +351,7 @@ const Checkout = () => {
 
             <div className="table_row shipping">
               <strong>Shipping Charges</strong>
-              <span>Flat rate: 80.00 Tk.</span>
+              <span>Flat rate: 60.00 Tk.</span>
             </div>
             <div className="table_row total">
               <strong>Total</strong>

@@ -81,11 +81,11 @@ const Invoice = () => {
 
           <div className="total_calculation">
             <span>
-              <strong>Total:</strong> {data.total_amount - 80} TK.
+              <strong>Total:</strong> {data.total_amount - 60} TK.
             </span>{" "}
             <br />
             <span>
-              <strong>Delivery Charge:</strong> +80 TK.
+              <strong>Delivery Charge:</strong> +60 TK.
             </span>{" "}
             <br />
             <span>

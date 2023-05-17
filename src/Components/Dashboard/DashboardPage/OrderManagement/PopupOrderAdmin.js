@@ -133,7 +133,7 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
                     {orderDetailsForPopup?.discountPrice} tk.{" "}
                   </p>
                   <p>
-                    <strong>Delivery Charge:</strong> + 80 tk.{" "}
+                    <strong>Delivery Charge:</strong> + 60 tk.{" "}
                   </p>
                   <p>
                     <strong>Total=</strong> {orderDetailsForPopup?.total_amount}{" "}

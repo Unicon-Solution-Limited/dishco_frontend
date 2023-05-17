@@ -163,13 +163,13 @@ const Cart = () => {
               <b>Subtotal:</b> {subTotalPrice + finaltotalAddonPrice} tk.
             </p>
             <p>
-              <b> Shipping Flat rate:</b> 80.00৳ Shipping to Dhaka.
+              <b> Shipping Flat rate:</b> 60.00৳ Shipping to Dhaka.
             </p>
             {cartData.length && (
               <p>
                 <b> Grand Total:</b>
-                {""} {subTotalPrice + finaltotalAddonPrice} + 80 ={" "}
-                {subTotalPrice + finaltotalAddonPrice + 80} tk.
+                {""} {subTotalPrice + finaltotalAddonPrice} + 60 ={" "}
+                {subTotalPrice + finaltotalAddonPrice + 60} tk.
               </p>
             )}
             <Link to="/checkout" className="btn MyBtn">
