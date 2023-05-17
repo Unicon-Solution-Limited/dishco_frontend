@@ -249,9 +249,20 @@
   }
   .auth_login_mobile,
   .auth_links_mobile .myLinks {
-    color: var(--black);
+    color: var(--white);
     font-size: 20px;
     padding: 5px;
+  }
+  .mobile_threeDot {
+    background-color: var(--black);
+    color: var(--white) !important;
+  }
+  .mobile_threeDot_header {
+    border-bottom: 1px solid var(--red) !important;
+  }
+  .mobile_threeDot_close {
+    color: var(--white) !important;
+    font-size: 25px !important;
   }
 }
 

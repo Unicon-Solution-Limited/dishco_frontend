@@ -107,23 +107,25 @@ const Header = () => {
                 data-bs-target="#mobilePopup"
               ></i>
             </section>
-
+            {/* For Mobile Display */}
             <div
               className="modal fade"
               id="mobilePopup"
-              tabindex="-1"
+              tabIndex="-1"
               aria-labelledby="mobilePopupLabel"
               aria-hidden="true"
             >
               <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
+                <div className="modal-content mobile_threeDot">
+                  <div className="modal-header mobile_threeDot_header">
                     <button
                       type="button"
-                      className="btn-close"
+                      className="btn-close mobile_threeDot_close"
                       data-bs-dismiss="modal"
                       aria-label="Close"
-                    ></button>
+                    >
+                      <i className="bi bi-x-lg"></i>
+                    </button>
                   </div>
                   <div className="modal-body">
                     {currentUser ? (
