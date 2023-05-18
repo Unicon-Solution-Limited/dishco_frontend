@@ -53,7 +53,7 @@ const CouponGen = () => {
     // add 7days token info at mongodb(it will vanish after 7days)
     if (totalAmount / 10 - FixedTokendata.length * 200 >= 200) {
       try {
-        const url = `http://localhost:8000/addTokenData?email=${currentUser?.email}`;
+        const url = `https://server.dishcofood.com/addTokenData?email=${currentUser?.email}`;
         setTokenMessage("");
         const option = {
           method: "POST",
@@ -86,7 +86,7 @@ const CouponGen = () => {
       !sevenDaysTokenData.length
     ) {
       try {
-        const url = `http://localhost:8000/FixedAddTokenData?email=${currentUser.email}`;
+        const url = `https://server.dishcofood.com/FixedAddTokenData?email=${currentUser.email}`;
         const option = {
           method: "POST",
           body: JSON.stringify(requestData),
@@ -112,7 +112,7 @@ const CouponGen = () => {
       if (currentUser.email) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getFixedTokenData?email=${currentUser.email}`,
+            `https://server.dishcofood.com/getFixedTokenData?email=${currentUser.email}`,
             {
               headers: {
                 authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
@@ -134,7 +134,7 @@ const CouponGen = () => {
       if (currentUser.email) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getTemporaryTokenData?email=${currentUser.email}`,
+            `https://server.dishcofood.com/getTemporaryTokenData?email=${currentUser.email}`,
             {
               headers: {
                 authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
@@ -156,7 +156,7 @@ const CouponGen = () => {
       if (currentUser) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getSingleCustomerOrderShipped?email=${currentUser.email}`
+            `https://server.dishcofood.com/getSingleCustomerOrderShipped?email=${currentUser.email}`
           );
           setAllCustomerOrders(response?.data);
         } catch (error) {

@@ -15,7 +15,7 @@ const MakeAdmin = () => {
     };
 
     // INSERT A ADMIN AT THE DATABASE
-    fetch(`http://localhost:8000/admin?email=${currentUser?.email}`, {
+    fetch(`https://server.dishcofood.com/admin?email=${currentUser?.email}`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

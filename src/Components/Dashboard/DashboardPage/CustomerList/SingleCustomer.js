@@ -15,7 +15,7 @@ const SingleCustomer = () => {
       if (singleCustomerEmail) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getSingleCustomerOrderRank?email=${singleCustomerEmail}`,
+            `https://server.dishcofood.com/getSingleCustomerOrderRank?email=${singleCustomerEmail}`,
             {
               headers: {
                 authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
