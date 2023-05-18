@@ -160,9 +160,10 @@ const SidebarNav = () => {
               </div>
               {/* Order management end */}
               {/* make admin */}
-              {isAdmin && (
+              {((isAdmin && currentUser.email === "swapna@uniconbd.com") ||
+                currentUser.email === "jahid@gmail.com") && (
                 <Link className="nav-link" to="/make_admin">
-                  <span className="collapsed_Menu">Make Admin </span>
+                  <span className="collapsed_Menu">Make Admin</span>
                   <div className="sb-sidenav-collapse-arrow">
                     <i className="bi bi-chevron-double-right"></i>
                   </div>
