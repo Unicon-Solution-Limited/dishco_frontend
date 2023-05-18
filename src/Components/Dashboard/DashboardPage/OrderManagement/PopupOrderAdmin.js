@@ -161,6 +161,7 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
                 <option value="Pending">Pending</option>
                 <option value="Processing">Processing</option>
                 <option value="Shipped">Shipped</option>
+                <option value="Deliverd">Deliverd</option>
               </select>
               <button
                 className="btn"
