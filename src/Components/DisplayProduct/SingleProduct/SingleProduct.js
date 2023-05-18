@@ -13,6 +13,7 @@ const SingleProduct = () => {
   const [quantity, setQuantity] = useState(1);
   const [cartData, setCartData] = useContext(CartProvider);
   const [successMsg, setSuccessMsg] = useState(false);
+  const [canOrder, setCanOrder] = useState(false);
 
   useEffect(() => {
     const fetchFood = async () => {
@@ -124,7 +125,33 @@ const SingleProduct = () => {
     }, 1000);
   };
 
-  // Order Timing
+  // Order Timing 11am - 9pm
+  useEffect(() => {
+    const checkOrderAvailability = () => {
+      const currentTime = new Date();
+      const currentHour = currentTime.getHours();
+
+      const startHour = 11;
+      const endHour = 21;
+
+      if (currentHour >= startHour && currentHour < endHour) {
+        setCanOrder(true);
+      } else {
+        setCanOrder(false);
+      }
+    };
+
+    checkOrderAvailability();
+
+    // const interval = setInterval(() => {
+    //   checkOrderAvailability();
+    // }, 60000);
+    const interval = setInterval(checkOrderAvailability, 60000);
+
+    checkOrderAvailability(); // Initial call to check availability
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -172,7 +199,6 @@ const SingleProduct = () => {
                     </option>
                   ))}
                 </select>
-
                 <div className="addons_checkbox my-5">
                   {data?.addonsItem?.map((addon, index) => {
                     if (!addon.addonName || !addon.addonPrice) {
@@ -206,60 +232,70 @@ const SingleProduct = () => {
                     );
                   })}
                 </div>
-
-                {data?.stock === "Stock_In" && (
-                  <>
-                    <div className="quantity_cart_button my-3">
-                      <span className="quantity_cart_input">
+                {data?.stock === "Stock_In" ? (
+                  canOrder ? (
+                    <>
+                      <div className="quantity_cart_button my-3">
+                        <span className="quantity_cart_input">
+                          <button
+                            className="value-button"
+                            id="decrease"
+                            onClick={() => handleDecrease()}
+                          >
+                            -
+                          </button>
+                          <input
+                            type="number"
+                            id="number"
+                            value={quantity}
+                            readOnly
+                          />
+                          <button
+                            className="value-button"
+                            id="increase"
+                            onClick={() => handleIncrease()}
+                          >
+                            +
+                          </button>
+                        </span>
                         <button
-                          className="value-button"
-                          id="decrease"
-                          onClick={() => handleDecrease()}
+                          // onClick={addToCart}
+                          className="MyBtn add_to_cart_button"
+                          type="submit"
+                          onClick={selectedSize ? addToCart : null}
                         >
-                          -
+                          <i className="bi bi-cart-plus-fill"></i> Add To Cart
                         </button>
-                        <input
-                          type="number"
-                          id="number"
-                          value={quantity}
-                          readOnly
-                        />
+                      </div>
+                      <div className="quantity_cart_button my-3">
                         <button
-                          className="value-button"
-                          id="increase"
-                          onClick={() => handleIncrease()}
+                          className="MyBtn add_to_cart_button"
+                          onClick={() => handleClearCart(data?._id)}
                         >
-                          +
+                          <i className="bi bi-x-circle"></i> Clear Cart
                         </button>
-                      </span>
-                      <button
-                        // onClick={addToCart}
-                        className="MyBtn add_to_cart_button"
-                        type="submit"
-                        onClick={selectedSize ? addToCart : null}
-                      >
-                        <i className="bi bi-cart-plus-fill"></i> Add To Cart
-                      </button>
-                    </div>
-                    <div className="quantity_cart_button my-3">
-                      <button
-                        className="MyBtn add_to_cart_button"
-                        onClick={() => handleClearCart(data?._id)}
-                      >
-                        <i className="bi bi-x-circle"></i> Clear Cart
-                      </button>
 
-                      <button
-                        className="MyBtn add_to_cart_button"
-                        data-bs-toggle="offcanvas"
-                        data-bs-target="#cart"
-                        aria-controls="cart"
-                      >
-                        <i className="bi bi-cart-fill"></i> Basket
-                      </button>
-                    </div>
-                  </>
+                        <button
+                          className="MyBtn add_to_cart_button"
+                          data-bs-toggle="offcanvas"
+                          data-bs-target="#cart"
+                          aria-controls="cart"
+                        >
+                          <i className="bi bi-cart-fill"></i> Basket
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    <h3 style={{ color: "red" }}>
+                      You can order food only 11.00 AM to 9.00 PM
+                    </h3>
+                  )
+                ) : (
+                  <h3 style={{ color: "red" }}>
+                    Stock out , or can not be served in the online right now..!
+                  </h3>
                 )}
+
                 {successMsg && (
                   <p className="mt-2" style={{ color: "green" }}>
                     Food Successfully added to the cart
