@@ -147,12 +147,15 @@ const AllOrdersForAdmin = () => {
                         >
                           Details
                         </button>
-                        <button
-                          className="btn MyBtn"
-                          onClick={() => orderDelete(order?.tran_id)}
-                        >
-                          <i className="bi bi-trash"></i>
-                        </button>
+                        {(currentUser?.email === "swapna@uniconbd.com" ||
+                          currentUser?.email === "jahid@gmail.com") && (
+                          <button
+                            className="btn MyBtn"
+                            onClick={() => orderDelete(order?.tran_id)}
+                          >
+                            <i className="bi bi-trash"></i>
+                          </button>
+                        )}
                       </td>
                     </tr>
                   ))}
