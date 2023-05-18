@@ -124,6 +124,8 @@ const SingleProduct = () => {
     }, 1000);
   };
 
+  // Order Timing
+
   return (
     <>
       <Header />
@@ -172,30 +174,35 @@ const SingleProduct = () => {
                 </select>
 
                 <div className="addons_checkbox my-5">
-                  <h6>Extra Items</h6>
                   {data?.addonsItem?.map((addon, index) => {
                     if (!addon.addonName || !addon.addonPrice) {
                       return <div key={index}></div>;
                     }
                     return (
-                      <div key={index} className="form-check form-check-inline">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id={`inlineCheckbox${index}`}
-                          value={`${addon.addonName},${addon.addonPrice}`}
-                          onChange={handleExtraChange}
-                          checked={selectedExtras.some(
-                            (extra) => extra.nameOfAddon === addon.addonName
-                          )}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor={`inlineCheckbox${index}`}
+                      <>
+                        <h6>Extra Items</h6>
+                        <div
+                          key={index}
+                          className="form-check form-check-inline"
                         >
-                          {addon.addonName} ({addon.addonPrice} Tk.)
-                        </label>
-                      </div>
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            id={`inlineCheckbox${index}`}
+                            value={`${addon.addonName},${addon.addonPrice}`}
+                            onChange={handleExtraChange}
+                            checked={selectedExtras.some(
+                              (extra) => extra.nameOfAddon === addon.addonName
+                            )}
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor={`inlineCheckbox${index}`}
+                          >
+                            {addon.addonName} ({addon.addonPrice} Tk.)
+                          </label>
+                        </div>
+                      </>
                     );
                   })}
                 </div>
