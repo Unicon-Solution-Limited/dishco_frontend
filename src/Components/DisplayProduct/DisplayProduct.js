@@ -16,7 +16,7 @@ const DisplayProduct = () => {
     const fetchFood = async () => {
       try {
         const response = await fetch(
-          "https://server.dishcofood.com/getSelectedFood?navItem=" + navItem
+          "http://localhost:8000/getSelectedFood?navItem=" + navItem
         );
         const data = await response.json();
         setFood(data);

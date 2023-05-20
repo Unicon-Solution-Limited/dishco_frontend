@@ -20,7 +20,7 @@ const CustomerOrders = () => {
         try {
           setLoading(true);
           const response = await axios.get(
-            `https://server.dishcofood.com/getCustomerOrders?email=${currentUser?.email}`,
+            `http://localhost:8000/getCustomerOrders?email=${currentUser?.email}`,
             {
               headers: {
                 authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
@@ -43,7 +43,7 @@ const CustomerOrders = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `https://server.dishcofood.com/customerOrderDetails?tran_id=${tran_id}`
+        `http://localhost:8000/customerOrderDetails?tran_id=${tran_id}`
       );
       setCustomerOrderDetails(response?.data);
     } catch (error) {
