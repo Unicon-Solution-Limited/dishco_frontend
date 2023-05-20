@@ -540,7 +540,7 @@ const EditProduct = () => {
         {/* size and price */}
       </div>
 
-      <h3 style={{ color: "green", textAlign: "center" }}>{message}</h3>
+      <h3 className="success_msg">{message}</h3>
     </section>
   );
 };

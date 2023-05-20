@@ -69,7 +69,7 @@ const TopbarNav = () => {
                 }}
                 className="logout_dropdown_btn"
               >
-                <div className="dropdown-item">
+                <div className="dropdown-item MyBtn">
                   <i onClick={logout} className="bi bi-box-arrow-left"></i>{" "}
                   <Link to="/">Logout</Link>
                 </div>

@@ -123,3 +123,9 @@
 .apply_coupon_btn:hover {
   background-color: var(--green);
 }
+
+@media only screen and (max-width: 768px) {
+  .success_redirect_button {
+    flex-direction: column;
+  }
+}
