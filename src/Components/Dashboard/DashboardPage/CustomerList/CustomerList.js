@@ -5,24 +5,17 @@ import SingleCustomer from "./SingleCustomer";
 import "./CustomerList.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../../Authentication/AuthContext/AuthContext";
 
 const CustomerList = () => {
   const [orders, setOrders] = useState([]);
   const [selectedEmail, setSelectedEmail] = useState("");
-  const { currentUser } = useAuth();
 
   //get all the orders for admin, update every 5 minutes
   useEffect(() => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/getUniqueOrderAdmin?email=${currentUser?.email}`,
-          {
-            headers: {
-              authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
-            },
-          }
+          "http://localhost:8000/getUniqueOrderAdmin"
         );
         setOrders(response?.data);
       } catch (error) {
@@ -30,7 +23,7 @@ const CustomerList = () => {
       }
     };
     fetchOrders();
-  }, [currentUser?.email]);
+  }, []);
 
   //get selected email for the single customer page
   const handleSelectedEmail = (email) => {
