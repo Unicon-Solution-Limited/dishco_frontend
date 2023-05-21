@@ -15,14 +15,9 @@ const SingleCustomer = () => {
       if (singleCustomerEmail) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getSingleCustomerOrderRank?email=${singleCustomerEmail}`,
-            {
-              headers: {
-                authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
-              },
-            }
+            `http://localhost:8000/getSingleCustomerOrderRank?email=${singleCustomerEmail}`
           );
-          setSingleOrder(response?.data ?? []);
+          setSingleOrder(response?.data);
         } catch (error) {
           console.log(error);
         }
