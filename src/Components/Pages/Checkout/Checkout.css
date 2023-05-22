@@ -39,8 +39,8 @@
 }
 
 .cash_delivery_text {
-  background-color: var(--green);
-  padding: 10px;
+  color: var(--red);
+  padding: 5px;
 }
 
 .TandC_text {
