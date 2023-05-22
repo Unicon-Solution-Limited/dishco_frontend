@@ -9,7 +9,7 @@ const AboutUs = () => {
       <Header />
       <section className="footerPage_basic about_us_body">
         <div className="container">
-          <h1 className="text-center mb-5">About Dishco</h1>
+          <h1 className="text-center mb-5">About DishCo</h1>
           <p className="mb-2">
             Do you want to get authentic taste? Do you want to get multi-cuisine
             food taste at a reasonable price? Don't worry, Dishco is your
