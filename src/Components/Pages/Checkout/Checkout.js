@@ -420,7 +420,7 @@ const Checkout = () => {
               Your personal data(name and email address) will be used to process
               your order, support your experience throughout this website, and
               for other purposes described in our{" "}
-              <Link to="/" className="myLinks TandC_link">
+              <Link to="/privacy-policy" className="myLinks TandC_link">
                 privacy policy
               </Link>
               .
