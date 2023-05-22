@@ -166,7 +166,7 @@ const Checkout = () => {
     <>
       <Header />
       <section className="container-fluid my-5 checkout_main">
-        <h2 className="mb-5 px-5 row">Checkout</h2>
+        <h2 className="mb-5 text-center">Checkout</h2>
         {subTotalPrice ? (
           <form
             className="container-fluid my-5 col-md-6"
