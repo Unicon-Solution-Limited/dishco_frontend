@@ -1,3 +1,46 @@
+/*  */
+.homepage#blur.active {
+  filter: blur(10px);
+  pointer-events: none;
+  user-select: none;
+  overflow-x: hidden !important;
+}
+.adsPopup {
+  background-color: #ffc400;
+  max-width: 100%;
+  height: auto;
+  padding: 30px 40px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 8px;
+  display: none;
+  text-align: center;
+}
+.adsPopup button {
+  display: block;
+  margin: 0 0 20px auto;
+  background-color: transparent;
+  font-size: 30px;
+  color: #c5c5c5;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.adsPopup p {
+  font-size: 14px;
+  text-align: justify;
+  margin: 20px 0;
+  line-height: 25px;
+}
+
+#close {
+  color: #0f72e5;
+}
+/*  */
+
 /* ************ Video Components */
 #video_content {
   object-fit: cover;
