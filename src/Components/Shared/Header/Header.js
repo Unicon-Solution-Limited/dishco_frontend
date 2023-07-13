@@ -180,7 +180,7 @@ const Header = () => {
       </nav>
       <div className="header-separater"></div>
       {/* Bottom Header */}
-      <nav className="navbar navbar-expand-lg header_main_body">
+      <nav className="navbar navbar-expand-lg header_main_body sticky-header">
         <div className="container lower_header">
           <div className="logo_bar">
             <Link to="/">

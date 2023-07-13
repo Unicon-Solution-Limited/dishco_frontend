@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../Shared/Footer/Footer";
 import Header from "../Shared/Header/Header";
 

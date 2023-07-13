@@ -37,57 +37,29 @@ const OfferSection = () => {
         <p>Only for Dine In</p>
         <div>
           <div className="offer_img_divs">
-            <span
-              data-bs-toggle="modal"
-              data-bs-target="#sat"
-              data-aos="zoom-in"
-            >
+            <span data-bs-toggle="modal" data-bs-target="#sat">
               <img src={satM} alt="" className="offer_img_m" loading="lazy" />
             </span>
-            <span
-              data-bs-toggle="modal"
-              data-bs-target="#sun"
-              data-aos="zoom-in"
-            >
+            <span data-bs-toggle="modal" data-bs-target="#sun">
               <img src={sunM} alt="" className="offer_img_m" loading="lazy" />
             </span>
           </div>
           <div className="offer_img_divs">
-            <span
-              data-bs-toggle="modal"
-              data-bs-target="#mon"
-              data-aos="zoom-in"
-            >
+            <span data-bs-toggle="modal" data-bs-target="#mon">
               <img src={monM} alt="" className="offer_img_m" loading="lazy" />
             </span>
-            <span
-              data-bs-toggle="modal"
-              data-bs-target="#tue"
-              data-aos="zoom-in"
-            >
+            <span data-bs-toggle="modal" data-bs-target="#tue">
               <img src={tueM} alt="" className="offer_img_m" loading="lazy" />
             </span>
-            <span
-              data-bs-toggle="modal"
-              data-bs-target="#wed"
-              data-aos="zoom-in"
-            >
+            <span data-bs-toggle="modal" data-bs-target="#wed">
               <img src={wedM} alt="" className="offer_img_m" loading="lazy" />
             </span>
           </div>
           <div className="offer_img_divs">
-            <span
-              data-bs-toggle="modal"
-              data-bs-target="#thu"
-              data-aos="zoom-in"
-            >
+            <span data-bs-toggle="modal" data-bs-target="#thu">
               <img src={thuM} alt="" className="offer_img_m" loading="lazy" />
             </span>
-            <span
-              data-bs-toggle="modal"
-              data-bs-target="#fri"
-              data-aos="zoom-in"
-            >
+            <span data-bs-toggle="modal" data-bs-target="#fri">
               <img src={friM} alt="" className="offer_img_m" loading="lazy" />
             </span>
           </div>
