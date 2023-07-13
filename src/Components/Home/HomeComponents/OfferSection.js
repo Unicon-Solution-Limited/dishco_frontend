@@ -31,201 +31,231 @@ const OfferSection = () => {
     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1675070172/Frontend_images/Weekly-offer/psqwrtlb6vx06cqbi8ez.png";
 
   return (
-    <section className="offer_main">
-      <h2>Daily Deals</h2>
-      <p>Only for Dine In</p>
-      <div>
-        <div className="offer_img_divs">
-          <span data-bs-toggle="modal" data-bs-target="#sat" data-aos="zoom-in">
-            <img src={satM} alt="" className="offer_img_m" loading="lazy" />
-          </span>
-          <span data-bs-toggle="modal" data-bs-target="#sun" data-aos="zoom-in">
-            <img src={sunM} alt="" className="offer_img_m" loading="lazy" />
-          </span>
+    <>
+      <section className="offer_main">
+        <h2>Daily Deals</h2>
+        <p>Only for Dine In</p>
+        <div>
+          <div className="offer_img_divs">
+            <span
+              data-bs-toggle="modal"
+              data-bs-target="#sat"
+              data-aos="zoom-in"
+            >
+              <img src={satM} alt="" className="offer_img_m" loading="lazy" />
+            </span>
+            <span
+              data-bs-toggle="modal"
+              data-bs-target="#sun"
+              data-aos="zoom-in"
+            >
+              <img src={sunM} alt="" className="offer_img_m" loading="lazy" />
+            </span>
+          </div>
+          <div className="offer_img_divs">
+            <span
+              data-bs-toggle="modal"
+              data-bs-target="#mon"
+              data-aos="zoom-in"
+            >
+              <img src={monM} alt="" className="offer_img_m" loading="lazy" />
+            </span>
+            <span
+              data-bs-toggle="modal"
+              data-bs-target="#tue"
+              data-aos="zoom-in"
+            >
+              <img src={tueM} alt="" className="offer_img_m" loading="lazy" />
+            </span>
+            <span
+              data-bs-toggle="modal"
+              data-bs-target="#wed"
+              data-aos="zoom-in"
+            >
+              <img src={wedM} alt="" className="offer_img_m" loading="lazy" />
+            </span>
+          </div>
+          <div className="offer_img_divs">
+            <span
+              data-bs-toggle="modal"
+              data-bs-target="#thu"
+              data-aos="zoom-in"
+            >
+              <img src={thuM} alt="" className="offer_img_m" loading="lazy" />
+            </span>
+            <span
+              data-bs-toggle="modal"
+              data-bs-target="#fri"
+              data-aos="zoom-in"
+            >
+              <img src={friM} alt="" className="offer_img_m" loading="lazy" />
+            </span>
+          </div>
         </div>
-        <div className="offer_img_divs">
-          <span data-bs-toggle="modal" data-bs-target="#mon" data-aos="zoom-in">
-            <img src={monM} alt="" className="offer_img_m" loading="lazy" />
-          </span>
-          <span data-bs-toggle="modal" data-bs-target="#tue" data-aos="zoom-in">
-            <img src={tueM} alt="" className="offer_img_m" loading="lazy" />
-          </span>
-          <span data-bs-toggle="modal" data-bs-target="#wed" data-aos="zoom-in">
-            <img src={wedM} alt="" className="offer_img_m" loading="lazy" />
-          </span>
-        </div>
-        <div className="offer_img_divs">
-          <span data-bs-toggle="modal" data-bs-target="#thu" data-aos="zoom-in">
-            <img src={thuM} alt="" className="offer_img_m" loading="lazy" />
-          </span>
-          <span data-bs-toggle="modal" data-bs-target="#fri" data-aos="zoom-in">
-            <img src={friM} alt="" className="offer_img_m" loading="lazy" />
-          </span>
-        </div>
-      </div>
 
-      {/* Saturday */}
-      <div
-        className="modal fade modal_body"
-        id="sat"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content home_page_modal_content">
-            <div className="modal-body home_page_modal_body">
-              <button
-                type="button"
-                className="btn-close active modal_close_btn"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-              <img src={sat} alt="" className="offer_img" />
+        {/* Saturday */}
+        <div
+          className="modal fade modal_body"
+          id="sat"
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content home_page_modal_content">
+              <div className="modal-body home_page_modal_body">
+                <button
+                  type="button"
+                  className="btn-close active modal_close_btn"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img src={sat} alt="" className="offer_img" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/*  */}
-      {/* Sunday */}
-      <div
-        className="modal fade modal_body"
-        id="sun"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content home_page_modal_content">
-            <div className="modal-body home_page_modal_body">
-              <button
-                type="button"
-                className="btn-close active modal_close_btn"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-              <img src={sun} alt="" className="offer_img" loading="lazy" />
+        {/*  */}
+        {/* Sunday */}
+        <div
+          className="modal fade modal_body"
+          id="sun"
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content home_page_modal_content">
+              <div className="modal-body home_page_modal_body">
+                <button
+                  type="button"
+                  className="btn-close active modal_close_btn"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img src={sun} alt="" className="offer_img" loading="lazy" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/*  */}
-      {/* Monday */}
-      <div
-        className="modal fade modal_body"
-        id="mon"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content home_page_modal_content">
-            <div className="modal-body home_page_modal_body">
-              <button
-                type="button"
-                className="btn-close active modal_close_btn"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-              <img src={mon} alt="" className="offer_img" loading="lazy" />
+        {/*  */}
+        {/* Monday */}
+        <div
+          className="modal fade modal_body"
+          id="mon"
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content home_page_modal_content">
+              <div className="modal-body home_page_modal_body">
+                <button
+                  type="button"
+                  className="btn-close active modal_close_btn"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img src={mon} alt="" className="offer_img" loading="lazy" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/*  */}
-      {/* Tuesday */}
-      <div
-        className="modal fade modal_body"
-        id="tue"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content home_page_modal_content">
-            <div className="modal-body home_page_modal_body">
-              <button
-                type="button"
-                className="btn-close active modal_close_btn"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-              <img src={tue} alt="" className="offer_img" loading="lazy" />
+        {/*  */}
+        {/* Tuesday */}
+        <div
+          className="modal fade modal_body"
+          id="tue"
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content home_page_modal_content">
+              <div className="modal-body home_page_modal_body">
+                <button
+                  type="button"
+                  className="btn-close active modal_close_btn"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img src={tue} alt="" className="offer_img" loading="lazy" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/*  */}
-      {/* wednesday */}
-      <div
-        className="modal fade modal_body"
-        id="wed"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content home_page_modal_content">
-            <div className="modal-body home_page_modal_body">
-              <button
-                type="button"
-                className="btn-close active modal_close_btn"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-              <img src={wed} alt="" className="offer_img" loading="lazy" />
+        {/*  */}
+        {/* wednesday */}
+        <div
+          className="modal fade modal_body"
+          id="wed"
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content home_page_modal_content">
+              <div className="modal-body home_page_modal_body">
+                <button
+                  type="button"
+                  className="btn-close active modal_close_btn"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img src={wed} alt="" className="offer_img" loading="lazy" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/*  */}
-      {/* Thursday */}
-      <div
-        className="modal fade modal_body"
-        id="thu"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content home_page_modal_content">
-            <div className="modal-body home_page_modal_body">
-              <button
-                type="button"
-                className="btn-close active modal_close_btn"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-              <img src={thu} alt="" className="offer_img" loading="lazy" />
+        {/*  */}
+        {/* Thursday */}
+        <div
+          className="modal fade modal_body"
+          id="thu"
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content home_page_modal_content">
+              <div className="modal-body home_page_modal_body">
+                <button
+                  type="button"
+                  className="btn-close active modal_close_btn"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img src={thu} alt="" className="offer_img" loading="lazy" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/*  */}
-      {/* Friday */}
-      <div
-        className="modal fade modal_body"
-        id="fri"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content home_page_modal_content">
-            <div className="modal-body home_page_modal_body">
-              <button
-                type="button"
-                className="btn-close active modal_close_btn"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-              <img src={fri} alt="" className="offer_img" loading="lazy" />
+        {/*  */}
+        {/* Friday */}
+        <div
+          className="modal fade modal_body"
+          id="fri"
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content home_page_modal_content">
+              <div className="modal-body home_page_modal_body">
+                <button
+                  type="button"
+                  className="btn-close active modal_close_btn"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img src={fri} alt="" className="offer_img" loading="lazy" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/*  */}
-    </section>
+        {/*  */}
+      </section>
+    </>
   );
 };
 
