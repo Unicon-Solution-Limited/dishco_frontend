@@ -6,34 +6,31 @@
   overflow-x: hidden !important;
 }
 .adsPopup {
-  background-color: #ffc400;
   max-width: 100%;
   height: auto;
-  padding: 30px 40px;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
-  border-radius: 8px;
   display: none;
   text-align: center;
 }
 .adsPopup button {
-  display: block;
-  margin: 0 0 20px auto;
-  background-color: transparent;
   font-size: 30px;
-  color: #c5c5c5;
-  border: none;
-  outline: none;
+  color: var(--white) !important;
+  border: 2px solid var(--green);
   cursor: pointer;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background-color: var(--red);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
-.adsPopup p {
-  font-size: 14px;
-  text-align: justify;
-  margin: 20px 0;
-  line-height: 25px;
+.adsPopup img {
+  width: 100%;
+  height: 90vh;
 }
 
 #close {
@@ -316,5 +313,11 @@
     display: block;
     border: none;
     padding-top: 0;
+  }
+  /* Ads Popup */
+  .adsPopup img {
+    width: 98vw;
+    height: 50vh;
+    object-fit: cover;
   }
 }

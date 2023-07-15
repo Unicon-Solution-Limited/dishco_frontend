@@ -62,13 +62,10 @@ const Home = () => {
         <button id="close" onClick={handleClose}>
           &times;
         </button>
-        <h2>This Is The Title</h2>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita
-          distinctio fugiat alias iure qui, commodi minima magni ullam aliquam
-          dignissimos?
-        </p>
-        <a href="#">Let's Go</a>
+        <img
+          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1689413575/Frontend_images/sszpnropu5ez9ngyxnpr.webp"
+          alt="10% Discount"
+        />
       </div>
     </>
   );
