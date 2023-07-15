@@ -35,6 +35,7 @@ import ViewProfile from "./Components/Dashboard/DashboardPage/ProfileManagement/
 import SingleCustomer from "./Components/Dashboard/DashboardPage/CustomerList/SingleCustomer";
 import EditProfile from "./Components/Dashboard/DashboardPage/ProfileManagement/EditProfile/EditProfile";
 import CouponGen from "./Components/Dashboard/DashboardPage/ProfileManagement/CouponGen/CouponGen";
+import HowToBuy from "./Components/Pages/FooterPages/HowToBuy";
 
 function App() {
   return (
@@ -133,6 +134,9 @@ function App() {
             </Route>
             <Route path="/tc">
               <TandC />
+            </Route>
+            <Route path="/How-to-buy">
+              <HowToBuy />
             </Route>
 
             <Route path="/Search/:searchProductName">

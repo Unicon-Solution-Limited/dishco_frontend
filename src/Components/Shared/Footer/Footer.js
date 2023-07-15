@@ -21,7 +21,11 @@ const Footer = () => {
         <aside data-aos="flip-up">
           <div className="icons company_social_icon" data-animation="to-top">
             <li>
-              <a href="https://www.facebook.com/DishCo.Food/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.facebook.com/DishCo.Food/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <span className="icon-top">
                   <i className="bi bi-facebook"></i>
                 </span>
@@ -51,7 +55,11 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://api.whatsapp.com/send?phone=01810098389" target="_blank" rel="noreferrer">
+              <a
+                href="https://api.whatsapp.com/send?phone=01810098389"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <span className="icon-top">
                   <i className="bi bi-whatsapp"></i>
                 </span>
@@ -87,6 +95,9 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link to="/tc">Terms & Conditions</Link>
+                </li>
+                <li>
+                  <Link to="/How-to-buy">How to Buy</Link>
                 </li>
               </ul>
             </aside>

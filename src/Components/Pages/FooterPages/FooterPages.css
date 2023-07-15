@@ -107,3 +107,52 @@
   }
 }
 /* Gift and Ranking *********** */
+
+/* *********** How to buy */
+.how-to-buy-body {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+}
+.how-to-buy-content {
+  width: 50%;
+}
+.how-to-buy-content h3 {
+  font-size: 2vw;
+}
+.how-to-buy-content h1 {
+  font-size: 3vw;
+}
+.how-to-buy-details ul li {
+  list-style-type: square;
+  font-size: 1.2vw;
+  text-align: justify;
+}
+#how-to-buy {
+  width: 100%;
+  max-width: fit-content;
+  height: 80vh;
+}
+@media only screen and (max-width: 960px) {
+  .how-to-buy-body {
+    flex-direction: column;
+    gap: 0;
+  }
+  .how-to-buy-content {
+    width: 100%;
+    padding: 0 5%;
+  }
+  .how-to-buy-content h3 {
+    font-size: 5vw;
+  }
+  .how-to-buy-content h1 {
+    font-size: 6vw;
+  }
+  .how-to-buy-details ul li {
+    font-size: 3.5vw;
+  }
+}
+/* How to buy *********** */
