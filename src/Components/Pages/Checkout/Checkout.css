@@ -125,7 +125,14 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .success_body {
+    width: 100%;
+    padding: 30px 10px;
+  }
   .success_redirect_button {
     flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+    gap: 10px;
   }
 }
