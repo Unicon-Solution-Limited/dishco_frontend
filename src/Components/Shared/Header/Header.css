@@ -81,9 +81,10 @@
   max-width: 120px;
   height: auto;
 }
+
 .navToggleBtn {
   font-size: 20px !important;
-  color: var(--white) !important;
+  background-image: url("https://res.cloudinary.com/dnz6zg4on/image/upload/v1689509347/Frontend_images/qj01wo3csd2rdrwodeho.png");
 }
 
 .cartLogo {
