@@ -1,5 +1,5 @@
 import React from "react";
-import v from "../../../Media/Final Web Video 2023.mp4";
+import v from "../../../Media/dishco.webm";
 
 const Video = () => {
   const fallback =
@@ -15,7 +15,7 @@ const Video = () => {
         playsInline
         poster={fallback}
       >
-        <source src={v} type="video/mp4" />
+        <source src={v} type="video/webm" />
         <img
           src={fallback}
           title="Your browser does not support the <video> tag"

@@ -92,7 +92,7 @@ const CreateProduct = () => {
     };
     // add product info at mongodb
     try {
-      const url = `http://localhost:8000/addFood?email=${currentUser?.email}`;
+      const url = `https://server.dishcofood.com/addFood?email=${currentUser?.email}`;
       const option = {
         method: "POST",
         body: JSON.stringify(allData),

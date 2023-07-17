@@ -10,7 +10,7 @@ const TandC = () => {
       <section className="footerPage_basic termsAndCondition">
         <div className="container">
           <h1 className="text-center mb-5">Terms and Condition</h1>
-          <h2>Pricing and Payment Methods:</h2>
+          <h2>Pricing and Payment Methods</h2>
 
           <p>
             In order to buy food, you must pay the price of the food at the time
@@ -36,7 +36,7 @@ const TandC = () => {
             your chosen payment method.
           </p>
           <div className="mt-5">
-            <h5>ACCESS TO THE WEBSITE CONTINUOUSLY:</h5>
+            <h2>Access to the website continuously</h2>
             <p>
               We will take all reasonable steps to ensure that access to the
               Site is always available and error-free. However, this cannot be

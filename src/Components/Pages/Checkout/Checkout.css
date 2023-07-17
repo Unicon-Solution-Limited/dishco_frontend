@@ -39,8 +39,8 @@
 }
 
 .cash_delivery_text {
-  background-color: var(--green);
-  padding: 10px;
+  color: var(--red);
+  padding: 5px;
 }
 
 .TandC_text {
@@ -125,7 +125,14 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .success_body {
+    width: 100%;
+    padding: 30px 10px;
+  }
   .success_redirect_button {
     flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+    gap: 10px;
   }
 }

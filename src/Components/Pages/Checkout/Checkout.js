@@ -37,7 +37,7 @@ const Checkout = () => {
       if (currentUser.email) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getTemporaryTokenData?email=${currentUser.email}`,
+            `https://server.dishcofood.com/getTemporaryTokenData?email=${currentUser.email}`,
             {
               headers: {
                 authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
@@ -127,14 +127,17 @@ const Checkout = () => {
 
     //conditionally check the payment and hit the api
     if (confirmOderData.payment_method === "Online Payment") {
-      fetch(`http://localhost:8000/onileInit?email=${currentUser?.email}`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
-        },
-        body: JSON.stringify(confirmOderData),
-      })
+      fetch(
+        `https://server.dishcofood.com/onileInit?email=${currentUser?.email}`,
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+          body: JSON.stringify(confirmOderData),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setPaymentLoading(false);
@@ -142,7 +145,7 @@ const Checkout = () => {
         });
     } else {
       fetch(
-        `http://localhost:8000/cashonDeliveryInit?email=${currentUser?.email}`,
+        `https://server.dishcofood.com/cashonDeliveryInit?email=${currentUser?.email}`,
         {
           method: "POST",
           headers: {
@@ -165,11 +168,14 @@ const Checkout = () => {
     <>
       <Header />
       <section className="container-fluid my-5 checkout_main">
-        <h2 className="mb-5 px-5 row">Checkout</h2>
+        <h2 className="mb-5 text-center">Checkout</h2>
         {subTotalPrice ? (
-          <form className="my-5 col-md-6" onSubmit={tokenApplySubmit}>
+          <form
+            className="container-fluid my-5 col-md-6"
+            onSubmit={tokenApplySubmit}
+          >
             <p>
-              Apply your Coupon{" "}
+              Apply your Coupon(If any){" "}
               {(sevenDaysTokenData &&
                 sevenDaysTokenData[0]?.customerPosition == "Bronze" &&
                 "for 2% discount") ||
@@ -234,9 +240,44 @@ const Checkout = () => {
                 required
               >
                 <option value="">Select Your Area</option>
+                <option value="60 Feet">60 Feet</option>
+                <option value="Adabor">Adabor</option>
+                <option value="Agargion">Agargion</option>
+                <option value="Asad Gate">Asad Gate</option>
+                <option value="Azimpur">Azimpur</option>
+                <option value="Baily Road">Baily Road</option>
+                <option value="Bangla Motor">Bangla Motor</option>
+                <option value="Bijoy Soroni">Bijoy Soroni</option>
+                <option value="Bosila">Bosila</option>
                 <option value="Dhanmondi">Dhanmondi</option>
+                <option value="Firm gate">Firm gate</option>
+                <option value="Hatirpull (central road)">
+                  Hatirpull (central road)
+                </option>
+                <option value="Hazaribag">Hazaribag</option>
+                <option value="Jigatola">Jigatola</option>
+                <option value="Kakrail">Kakrail</option>
+                <option value="Kallanpur">Kallanpur</option>
+                <option value="Kamrangichor">Kamrangichor</option>
+                <option value="Kawran Bazar">Kawran Bazar</option>
+                <option value="Khamar Bari">Khamar Bari</option>
+                <option value="Kolabagan">Kolabagan</option>
+                <option value="Lalbag">Lalbag</option>
                 <option value="Mohammadpur">Mohammadpur</option>
-                <option value="Elephant Road">Elephant Road</option>
+                <option value="New Elephant Road">New Elephant Road</option>
+                <option value="New Market">New Market</option>
+                <option value="Panthopath">Panthopath</option>
+                <option value="Rayer bazar">Rayer bazar</option>
+                <option value="Romna Thana Area">Romna Thana Area</option>
+                <option value="Sat Rowza">Sat Rowza</option>
+                <option value="Science Lab">Science Lab</option>
+                <option value="Shahabag">Shahabag</option>
+                <option value="Shukrabad">Shukrabad</option>
+                <option value="Shyamoli">Shyamoli</option>
+                <option value="Tejgaon Industrial Area">
+                  Tejgaon Industrial Area
+                </option>
+                <option value="Washpur">Washpur</option>
               </select>
             </div>
             <div className="mb-3">
@@ -378,14 +419,15 @@ const Checkout = () => {
               <option value="Online Payment">Online Payment</option>
               <option value="Cash on delivery">Cash on delivery</option>
             </select>
-            <p className="cash_delivery_text">
-              <b>Cash on delivery:</b> Pay with cash upon delivery.
-            </p>
             <p className="my-5 TandC_text">
+              <span className="cash_delivery_text">
+                <b>* Cash on delivery:</b> Pay with cash upon delivery.
+              </span>
+              <br />
               Your personal data(name and email address) will be used to process
               your order, support your experience throughout this website, and
               for other purposes described in our{" "}
-              <Link to="/" className="myLinks TandC_link">
+              <Link to="/privacy-policy" className="myLinks TandC_link">
                 privacy policy
               </Link>
               .

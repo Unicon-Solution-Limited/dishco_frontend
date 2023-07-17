@@ -35,7 +35,7 @@ const Header = () => {
   useEffect(() => {
     const fetchAllFood = () => {
       axios
-        .get("http://localhost:8000/getAllProducts")
+        .get("https://server.dishcofood.com/getAllProducts")
         .then((response) => setAllFoods(response?.data))
         .catch((error) => console.log(error));
     };
@@ -180,7 +180,7 @@ const Header = () => {
       </nav>
       <div className="header-separater"></div>
       {/* Bottom Header */}
-      <nav className="navbar navbar-dark navbar-expand-lg sticky-top header_main_body">
+      <nav className="navbar navbar-expand-lg header_main_body sticky-header">
         <div className="container lower_header">
           <div className="logo_bar">
             <Link to="/">

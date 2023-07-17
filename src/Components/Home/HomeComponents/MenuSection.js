@@ -20,7 +20,7 @@ const MenuSection = () => {
           <h2 className="my-3">Our Menu</h2>
           <h5 className="my-4">Quality Ingredients, Tasty Meals</h5>
           <div className="my-5">
-            <Link to="/" className="menu_link">
+            <Link to="/menus" className="menu_link">
               Entire Menu <i className="bi bi-arrow-right-short"></i>
             </Link>
           </div>
@@ -83,7 +83,7 @@ const MenuSection = () => {
             </div>
           </div>
           <div className="my-5">
-            <Link to="/" className="menu_link">
+            <Link to="/menus" className="menu_link">
               Entire Menu <i className="bi bi-arrow-right-short"></i>
             </Link>
           </div>

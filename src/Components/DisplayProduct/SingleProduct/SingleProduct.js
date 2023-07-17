@@ -19,7 +19,7 @@ const SingleProduct = () => {
     const fetchFood = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/getSingleFood?singleFoodId=${viewDetails}`
+          `https://server.dishcofood.com/getSingleFood?singleFoodId=${viewDetails}`
         );
         const data = await response.json();
         setFood(data);
@@ -200,13 +200,13 @@ const SingleProduct = () => {
                   ))}
                 </select>
                 <div className="addons_checkbox my-5">
+                  <h6>Extra Items</h6>
                   {data?.addonsItem?.map((addon, index) => {
                     if (!addon.addonName || !addon.addonPrice) {
                       return <div key={index}></div>;
                     }
                     return (
                       <>
-                        <h6>Extra Items</h6>
                         <div
                           key={index}
                           className="form-check form-check-inline"
@@ -343,7 +343,7 @@ export default SingleProduct;
 //     const fetchFood = async () => {
 //       try {
 //         const response = await fetch(
-//           `http://localhost:8000/getSingleFood?singleFoodId=${viewDetails}`
+//           `https://server.dishcofood.com/getSingleFood?singleFoodId=${viewDetails}`
 //         );
 //         const data = await response.json();
 //         setFood(data);
