@@ -54,7 +54,10 @@ const Invoice = () => {
                     <td>{dt?.name}</td>
                     <td className="qty">{dt?.quantity}</td>
 
-                    <td>TK. {dt?.price}</td>
+                    <td>
+                      TK. {dt?.price - (dt?.price * 10) / 100} (with 10%
+                      discount)
+                    </td>
                     <td>
                       TK.{" "}
                       {dt?.extras.reduce(
@@ -64,7 +67,7 @@ const Invoice = () => {
                     </td>
                     <td className="total">
                       TK.{" "}
-                      {dt?.quantity * dt?.price +
+                      {dt?.quantity * (dt?.price - (dt?.price * 10) / 100) +
                         dt?.extras.reduce(
                           (acc, addon) => acc + addon.priceOfAddon,
                           0
@@ -78,7 +81,7 @@ const Invoice = () => {
 
           <div className="total_calculation">
             <span>
-              <strong>Total:</strong> {data.total_amount - 60} TK.
+              {/* <strong>Total:</strong> {data.total_amount - 60} TK. */}
             </span>{" "}
             <br />
             <span>

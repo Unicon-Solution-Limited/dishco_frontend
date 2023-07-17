@@ -29,6 +29,8 @@ const Checkout = () => {
   const [couponMessage, setCouponMessage] = useState("");
   const [discountPrice, setDicountPrice] = useState(0);
 
+  console.log(cartData);
+
   //getting 7 days(temporary)  token data according to the email
   useEffect(() => {
     const fetchTokenData = async () => {
@@ -109,7 +111,7 @@ const Checkout = () => {
     e.preventDefault();
     setPaymentLoading(true);
     const confirmOderData = {
-      total_amount: grandTotal,
+      total_amount: grandTotal - (subTotalPrice * 10) / 100,
       orderedData: cartData,
       discountPrice: discountPrice,
       cus_name: currentUser?.displayName,
@@ -344,6 +346,11 @@ const Checkout = () => {
               <span>{discountPrice} Tk.</span>
             </div>
 
+            <div className="table_row subtotal">
+              <strong>Special Discount</strong>
+              <span>{(subTotalPrice * 10) / 100} Tk.</span>
+            </div>
+
             <div className="table_row shipping">
               <strong>Total Extra Item Price</strong>
               <span>{finaltotalAddonPrice} tk.</span>
@@ -357,7 +364,7 @@ const Checkout = () => {
               <strong>Total</strong>
               <span>
                 {/* {cartData.length && finaltotalAddonPrice + subTotalPrice + 80} */}
-                {grandTotal}
+                {grandTotal - (subTotalPrice * 10) / 100}
                 Tk.
               </span>
             </div>
