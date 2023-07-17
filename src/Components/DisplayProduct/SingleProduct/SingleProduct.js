@@ -200,13 +200,13 @@ const SingleProduct = () => {
                   ))}
                 </select>
                 <div className="addons_checkbox my-5">
+                  <h6>Extra Items</h6>
                   {data?.addonsItem?.map((addon, index) => {
                     if (!addon.addonName || !addon.addonPrice) {
                       return <div key={index}></div>;
                     }
                     return (
                       <>
-                        <h6>Extra Items</h6>
                         <div
                           key={index}
                           className="form-check form-check-inline"
