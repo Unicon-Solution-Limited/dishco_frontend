@@ -92,7 +92,7 @@ const EditProduct = () => {
       .catch((error) => {
         console.log(error);
       });
-    setMessage("Your Product Udpade Successfully");
+    setMessage("Your Product Update Successfully");
   };
 
   //product code update
