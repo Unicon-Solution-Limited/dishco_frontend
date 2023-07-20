@@ -15,7 +15,7 @@ const CustomerList = () => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          "https://server.dishcofood.com/getUniqueOrderAdmin"
+          "http://localhost:8000/getUniqueOrderAdmin"
         );
         setOrders(response?.data);
       } catch (error) {

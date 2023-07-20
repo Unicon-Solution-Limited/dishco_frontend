@@ -12,7 +12,7 @@ const SidebarNav = () => {
 
   // FIND ADMIN
   useEffect(() => {
-    fetch(`https://server.dishcofood.com/findAdmin?email=${currentUser.email}`, {
+    fetch(`http://localhost:8000/findAdmin?email=${currentUser.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
       },

@@ -27,7 +27,7 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
     const product_status = statusRef?.current?.value;
 
     try {
-      const url = `https://server.dishcofood.com/updateStatus/${id}?email=${currentUser?.email}`;
+      const url = `http://localhost:8000/updateStatus/${id}?email=${currentUser?.email}`;
       const option = {
         method: "PATCH",
         body: JSON.stringify({ product_status }),

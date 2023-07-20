@@ -17,7 +17,7 @@ const SearchProductDisplay = () => {
       try {
         setLoadingSearch(true);
         const response = await fetch(
-          "https://server.dishcofood.com/allProductForSearch?searchProductName=" +
+          "http://localhost:8000/allProductForSearch?searchProductName=" +
             searchProductName
         );
         const data = await response.json();

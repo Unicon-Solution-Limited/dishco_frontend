@@ -8,7 +8,7 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
   const handleCancel = async (value, id) => {
     const product_status = value;
     try {
-      const url = `https://server.dishcofood.com/updateStatus/${id}?email=${currentUser?.email}`;
+      const url = `http://localhost:8000/updateStatus/${id}?email=${currentUser?.email}`;
       const option = {
         method: "PATCH",
         body: JSON.stringify({ product_status }),

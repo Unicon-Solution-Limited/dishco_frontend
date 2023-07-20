@@ -26,7 +26,7 @@ const AllOrdersForAdmin = () => {
   const orderDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `https://server.dishcofood.com/deleteOrder/${id}?email=${currentUser?.email}`,
+        `http://localhost:8000/deleteOrder/${id}?email=${currentUser?.email}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
@@ -49,7 +49,7 @@ const AllOrdersForAdmin = () => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          `https://server.dishcofood.com/getAllOrderAdmin?email=${currentUser?.email}`,
+          `http://localhost:8000/getAllOrderAdmin?email=${currentUser?.email}`,
           {
             headers: {
               authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
@@ -72,7 +72,7 @@ const AllOrdersForAdmin = () => {
   //handle the trand_id and matching it with the backend of order for show it in the popup page by props
   const handleOrderInfoAdmin = (tran_id) => {
     axios
-      .get(`https://server.dishcofood.com/adminOrdersDetails?tran_id=` + tran_id)
+      .get(`http://localhost:8000/adminOrdersDetails?tran_id=` + tran_id)
       .then((response) => {
         setOrderDetailsForPopup(response?.data);
       })

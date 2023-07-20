@@ -15,7 +15,7 @@ const SingleCustomer = () => {
       if (singleCustomerEmail) {
         try {
           const response = await axios.get(
-            `https://server.dishcofood.com/getSingleCustomerOrderRank?email=${singleCustomerEmail}`
+            `http://localhost:8000/getSingleCustomerOrderRank?email=${singleCustomerEmail}`
           );
           setSingleOrder(response?.data);
         } catch (error) {

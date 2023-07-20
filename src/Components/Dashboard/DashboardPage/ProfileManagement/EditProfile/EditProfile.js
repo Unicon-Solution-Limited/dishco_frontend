@@ -46,7 +46,7 @@ const EditProfile = () => {
       if (currentUser) {
         try {
           const response = await axios.get(
-            `https://server.dishcofood.com/getProfileImage?profileEmail=${currentUser.email}`
+            `http://localhost:8000/getProfileImage?profileEmail=${currentUser.email}`
           );
           setProfileData(response?.data);
         } catch (error) {
@@ -67,7 +67,7 @@ const EditProfile = () => {
 
     axios
       .post(
-        `https://server.dishcofood.com/profileImageUpload?email=${currentUser?.email}`,
+        `http://localhost:8000/profileImageUpload?email=${currentUser?.email}`,
         data,
         {
           headers: {
@@ -165,7 +165,7 @@ const EditProfile = () => {
   const handlePreviousImgDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `https://server.dishcofood.com/deleteProfileImage/${id}?email=${currentUser?.email}`,
+        `http://localhost:8000/deleteProfileImage/${id}?email=${currentUser?.email}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
@@ -189,7 +189,7 @@ const EditProfile = () => {
       if (currentUser) {
         try {
           const response = await axios.get(
-            `https://server.dishcofood.com/getProfileImage?profileEmail=${currentUser.email}`
+            `http://localhost:8000/getProfileImage?profileEmail=${currentUser.email}`
           );
           setGetProfileData(response?.data);
         } catch (error) {
