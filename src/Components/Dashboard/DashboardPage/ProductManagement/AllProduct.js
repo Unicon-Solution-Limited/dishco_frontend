@@ -119,7 +119,7 @@ const AllProduct = () => {
                           View
                         </button>
                         <Link
-                          to={`/editProduct/${foodDt._id} `}
+                          to={`/editProduct/${foodDt._id}`}
                           className="btn btn-success"
                         >
                           Edit
