@@ -20,7 +20,7 @@ const CustomerOrders = () => {
         try {
           setLoading(true);
           const response = await axios.get(
-            `http://localhost:8000/getCustomerOrders?email=${currentUser?.email}`,
+            `${process.env.REACT_APP_BACKEND_URL}/getCustomerOrders?email=${currentUser?.email}`,
             {
               headers: {
                 authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
@@ -43,7 +43,7 @@ const CustomerOrders = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:8000/customerOrderDetails?tran_id=${tran_id}`
+        `${process.env.REACT_APP_BACKEND_URL}/customerOrderDetails?tran_id=${tran_id}`
       );
       setCustomerOrderDetails(response?.data);
     } catch (error) {

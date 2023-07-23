@@ -37,7 +37,7 @@ const Checkout = () => {
       if (currentUser.email) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getTemporaryTokenData?email=${currentUser.email}`,
+            `${process.env.REACT_APP_BACKEND_URL}/getTemporaryTokenData?email=${currentUser.email}`,
             {
               headers: {
                 authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
@@ -127,14 +127,17 @@ const Checkout = () => {
 
     //conditionally check the payment and hit the api
     if (confirmOderData.payment_method === "Online Payment") {
-      fetch(`http://localhost:8000/onileInit?email=${currentUser?.email}`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
-        },
-        body: JSON.stringify(confirmOderData),
-      })
+      fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/onileInit?email=${currentUser?.email}`,
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+          body: JSON.stringify(confirmOderData),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setPaymentLoading(false);
@@ -142,7 +145,7 @@ const Checkout = () => {
         });
     } else {
       fetch(
-        `http://localhost:8000/cashonDeliveryInit?email=${currentUser?.email}`,
+        `${process.env.REACT_APP_BACKEND_URL}/cashonDeliveryInit?email=${currentUser?.email}`,
         {
           method: "POST",
           headers: {

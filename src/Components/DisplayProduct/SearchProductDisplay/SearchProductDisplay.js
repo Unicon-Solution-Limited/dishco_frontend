@@ -17,7 +17,7 @@ const SearchProductDisplay = () => {
       try {
         setLoadingSearch(true);
         const response = await fetch(
-          "http://localhost:8000/allProductForSearch?searchProductName=" +
+          `${process.env.REACT_APP_BACKEND_URL}/allProductForSearch?searchProductName=` +
             searchProductName
         );
         const data = await response.json();

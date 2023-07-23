@@ -15,7 +15,7 @@ const SingleCustomer = () => {
       if (singleCustomerEmail) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getSingleCustomerOrderRank?email=${singleCustomerEmail}`
+            `${process.env.REACT_APP_BACKEND_URL}/getSingleCustomerOrderRank?email=${singleCustomerEmail}`
           );
           setSingleOrder(response?.data);
         } catch (error) {

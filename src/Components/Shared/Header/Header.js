@@ -35,7 +35,7 @@ const Header = () => {
   useEffect(() => {
     const fetchAllFood = () => {
       axios
-        .get("http://localhost:8000/getAllProducts")
+        .get(`${process.env.REACT_APP_BACKEND_URL}/getAllProducts`)
         .then((response) => setAllFoods(response?.data))
         .catch((error) => console.log(error));
     };

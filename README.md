@@ -6,3 +6,5 @@ URL: https://dishcofood.com/
 1. React-router-dom: v5.3.0 (url: https://www.npmjs.com/package/react-router-dom/v/5.3.0)
 
 2. Aos: https://michalsnik.github.io/aos/
+
+3. DotEnv: https://github.com/motdotla/dotenv

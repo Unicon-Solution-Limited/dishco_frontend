@@ -15,14 +15,17 @@ const MakeAdmin = () => {
     };
 
     // INSERT A ADMIN AT THE DATABASE
-    fetch(`http://localhost:8000/admin?email=${currentUser?.email}`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
-      },
-      body: JSON.stringify(mailEmail),
-    })
+    fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/admin?email=${currentUser?.email}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+        },
+        body: JSON.stringify(mailEmail),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
         if (result) {

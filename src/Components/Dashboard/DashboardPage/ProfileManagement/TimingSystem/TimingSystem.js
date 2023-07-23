@@ -15,7 +15,7 @@ const TimingSystem = () => {
       if (currentUser.email) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getTemporaryTokenData?email=${currentUser.email}`,
+            `${process.env.REACT_APP_BACKEND_URL}/getTemporaryTokenData?email=${currentUser.email}`,
             {
               headers: {
                 authorization: `Bearer ${localStorage.getItem("dishco-token")}`,

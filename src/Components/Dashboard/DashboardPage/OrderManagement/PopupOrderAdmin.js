@@ -27,7 +27,7 @@ const PopupOrderAdmin = ({ orderDetailsForPopup }) => {
     const product_status = statusRef?.current?.value;
 
     try {
-      const url = `http://localhost:8000/updateStatus/${id}?email=${currentUser?.email}`;
+      const url = `${process.env.REACT_APP_BACKEND_URL}/updateStatus/${id}?email=${currentUser?.email}`;
       const option = {
         method: "PATCH",
         body: JSON.stringify({ product_status }),

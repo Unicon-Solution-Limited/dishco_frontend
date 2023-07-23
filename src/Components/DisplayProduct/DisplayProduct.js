@@ -16,7 +16,8 @@ const DisplayProduct = () => {
     const fetchFood = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/getSelectedFood?navItem=" + navItem
+          `${process.env.REACT_APP_BACKEND_URL}/getSelectedFood?navItem=` +
+            navItem
         );
         const data = await response.json();
         setFood(data);

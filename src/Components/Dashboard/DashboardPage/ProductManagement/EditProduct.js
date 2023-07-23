@@ -45,7 +45,7 @@ const EditProduct = () => {
 
     axios
       .patch(
-        `http://localhost:8000/updateImage/${editPdId}?email=${currentUser?.email}`,
+        `${process.env.REACT_APP_BACKEND_URL}/updateImage/${editPdId}?email=${currentUser?.email}`,
         editImg,
         {
           headers: {
@@ -74,7 +74,7 @@ const EditProduct = () => {
 
     axios
       .patch(
-        `http://localhost:8000/updateName/${editPdId}?email=${currentUser?.email}`,
+        `${process.env.REACT_APP_BACKEND_URL}/updateName/${editPdId}?email=${currentUser?.email}`,
         editName,
         {
           headers: {
@@ -104,7 +104,7 @@ const EditProduct = () => {
 
     axios
       .patch(
-        `http://localhost:8000/updateCode/${editPdId}?email=${currentUser?.email}`,
+        `${process.env.REACT_APP_BACKEND_URL}/updateCode/${editPdId}?email=${currentUser?.email}`,
         editCode,
         {
           headers: {
@@ -134,7 +134,7 @@ const EditProduct = () => {
 
     axios
       .patch(
-        `http://localhost:8000/updateStock/${editPdId}?email=${currentUser?.email}`,
+        `${process.env.REACT_APP_BACKEND_URL}/updateStock/${editPdId}?email=${currentUser?.email}`,
         editStock,
         {
           headers: {
@@ -164,7 +164,7 @@ const EditProduct = () => {
 
     axios
       .patch(
-        `http://localhost:8000/updateDescription/${editPdId}?email=${currentUser?.email}`,
+        `${process.env.REACT_APP_BACKEND_URL}/updateDescription/${editPdId}?email=${currentUser?.email}`,
         editDescription,
         {
           headers: {
@@ -189,7 +189,7 @@ const EditProduct = () => {
   const deleteAllAddon = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/deleteAddons/${id}?email=${currentUser?.email}`,
+        `${process.env.REACT_APP_BACKEND_URL}/deleteAddons/${id}?email=${currentUser?.email}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
@@ -232,7 +232,7 @@ const EditProduct = () => {
     // update the new adon info at mongodb
     axios
       .patch(
-        `http://localhost:8000/updateNewAddons/${editPdId}?email=${currentUser?.email}`,
+        `${process.env.REACT_APP_BACKEND_URL}/updateNewAddons/${editPdId}?email=${currentUser?.email}`,
         allData,
         {
           headers: {
@@ -278,7 +278,7 @@ const EditProduct = () => {
   const deleteAllSizePrice = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/deleteSizePriceEdit/${id}?email=${currentUser?.email}`,
+        `${process.env.REACT_APP_BACKEND_URL}/deleteSizePriceEdit/${id}?email=${currentUser?.email}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
@@ -306,7 +306,7 @@ const EditProduct = () => {
     // update the new size price info at mongodb
     axios
       .patch(
-        `http://localhost:8000/updateNewSizePrice/${editPdId}?email=${currentUser?.email}`,
+        `${process.env.REACT_APP_BACKEND_URL}/updateNewSizePrice/${editPdId}?email=${currentUser?.email}`,
         allData,
         {
           headers: {

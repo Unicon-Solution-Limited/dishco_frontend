@@ -37,7 +37,7 @@ const Login = () => {
       };
       console.log(currentUser);
 
-      fetch("http://localhost:8000/jwt", {
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/jwt`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

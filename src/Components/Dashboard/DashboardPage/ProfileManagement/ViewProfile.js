@@ -22,7 +22,7 @@ const ViewProfile = () => {
       if (currentUser) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getSingleCustomerOrderShipped?email=${currentUser.email}`
+            `${process.env.REACT_APP_BACKEND_URL}/getSingleCustomerOrderShipped?email=${currentUser.email}`
           );
           setAllCustomerOrders(response?.data);
         } catch (error) {
@@ -39,7 +39,7 @@ const ViewProfile = () => {
       if (currentUser) {
         try {
           const response = await axios.get(
-            `http://localhost:8000/getProfileImage?profileEmail=${currentUser.email}`
+            `${process.env.REACT_APP_BACKEND_URL}/getProfileImage?profileEmail=${currentUser.email}`
           );
           setProfileData(response?.data);
         } catch (error) {

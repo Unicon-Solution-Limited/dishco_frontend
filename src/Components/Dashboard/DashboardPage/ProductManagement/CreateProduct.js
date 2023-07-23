@@ -92,7 +92,7 @@ const CreateProduct = () => {
     };
     // add product info at mongodb
     try {
-      const url = `http://localhost:8000/addFood?email=${currentUser?.email}`;
+      const url = `${process.env.REACT_APP_BACKEND_URL}/addFood?email=${currentUser?.email}`;
       const option = {
         method: "POST",
         body: JSON.stringify(allData),

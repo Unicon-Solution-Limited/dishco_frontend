@@ -28,7 +28,7 @@ const AllProduct = () => {
   useEffect(() => {
     const fetchAllFood = () => {
       axios
-        .get("http://localhost:8000/getAllProducts")
+        .get(`${process.env.REACT_APP_BACKEND_URL}/getAllProducts`)
         .then((response) => setAllFoods(response?.data))
         .catch((error) => console.log(error));
     };
@@ -40,7 +40,7 @@ const AllProduct = () => {
     try {
       setDeleteMessage("");
       const response = await axios.delete(
-        `http://localhost:8000/deleteFood/${id}?email=${currentUser?.email}`,
+        `${process.env.REACT_APP_BACKEND_URL}/deleteFood/${id}?email=${currentUser?.email}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
