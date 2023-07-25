@@ -12,7 +12,7 @@ const Facilities = () => {
           <p>Takeaway</p>
           <p>Dine In</p>
           <p>Online Order</p>
-          <p>Halal Food</p>
+          <p>Catering</p>
         </div>
       </section>
     </>
