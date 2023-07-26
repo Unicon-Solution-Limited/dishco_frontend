@@ -157,13 +157,17 @@
 .offer_main p {
   font-size: 20px;
 }
-.offer_img_divs {
-  display: flex;
-  justify-content: center;
+
+.offer-img-spans {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-items: stretch;
   gap: 50px;
   margin: 50px 0;
 }
-
+.offer-img-span:last-child {
+  grid-column-start: 2;
+}
 .offer_img {
   width: 100% !important;
   height: auto;
@@ -172,12 +176,12 @@
   width: 300px;
   height: auto;
 }
-.offer_img_divs span {
+.offer-img-span {
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
-.offer_img_divs span::before {
+.offer-img-span::before {
   content: " ";
   position: absolute;
   background-color: rgba(255, 255, 255, 0.3);
@@ -295,6 +299,15 @@
 
   .offer_img_m {
     width: 100%;
+  }
+
+  .offer-img-spans {
+    grid-template-columns: auto auto;
+  }
+
+  .offer-img-span:last-child {
+    grid-column: 1 / 3;
+    padding: 0 100px;
   }
 
   /* On smaller screens, decrease text size */

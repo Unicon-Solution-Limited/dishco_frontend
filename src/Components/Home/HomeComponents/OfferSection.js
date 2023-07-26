@@ -35,34 +35,56 @@ const OfferSection = () => {
       <section className="offer_main">
         <h2>Daily Deals</h2>
         <p>Only for Dine In</p>
-        <div>
-          <div className="offer_img_divs">
-            <span data-bs-toggle="modal" data-bs-target="#sat">
-              <img src={satM} alt="" className="offer_img_m" loading="lazy" />
-            </span>
-            <span data-bs-toggle="modal" data-bs-target="#sun">
-              <img src={sunM} alt="" className="offer_img_m" loading="lazy" />
-            </span>
-          </div>
-          <div className="offer_img_divs">
-            <span data-bs-toggle="modal" data-bs-target="#mon">
-              <img src={monM} alt="" className="offer_img_m" loading="lazy" />
-            </span>
-            <span data-bs-toggle="modal" data-bs-target="#tue">
-              <img src={tueM} alt="" className="offer_img_m" loading="lazy" />
-            </span>
-            <span data-bs-toggle="modal" data-bs-target="#wed">
-              <img src={wedM} alt="" className="offer_img_m" loading="lazy" />
-            </span>
-          </div>
-          <div className="offer_img_divs">
-            <span data-bs-toggle="modal" data-bs-target="#thu">
-              <img src={thuM} alt="" className="offer_img_m" loading="lazy" />
-            </span>
-            <span data-bs-toggle="modal" data-bs-target="#fri">
-              <img src={friM} alt="" className="offer_img_m" loading="lazy" />
-            </span>
-          </div>
+        <div className="offer-img-spans">
+          <span
+            data-bs-toggle="modal"
+            data-bs-target="#sat"
+            className="offer-img-span"
+          >
+            <img src={satM} alt="" className="offer_img_m" loading="lazy" />
+          </span>
+          <span
+            data-bs-toggle="modal"
+            data-bs-target="#sun"
+            className="offer-img-span"
+          >
+            <img src={sunM} alt="" className="offer_img_m" loading="lazy" />
+          </span>
+          <span
+            data-bs-toggle="modal"
+            data-bs-target="#mon"
+            className="offer-img-span"
+          >
+            <img src={monM} alt="" className="offer_img_m" loading="lazy" />
+          </span>
+          <span
+            data-bs-toggle="modal"
+            data-bs-target="#tue"
+            className="offer-img-span"
+          >
+            <img src={tueM} alt="" className="offer_img_m" loading="lazy" />
+          </span>
+          <span
+            data-bs-toggle="modal"
+            data-bs-target="#wed"
+            className="offer-img-span"
+          >
+            <img src={wedM} alt="" className="offer_img_m" loading="lazy" />
+          </span>
+          <span
+            data-bs-toggle="modal"
+            data-bs-target="#thu"
+            className="offer-img-span"
+          >
+            <img src={thuM} alt="" className="offer_img_m" loading="lazy" />
+          </span>
+          <span
+            data-bs-toggle="modal"
+            data-bs-target="#fri"
+            className="offer-img-span"
+          >
+            <img src={friM} alt="" className="offer_img_m" loading="lazy" />
+          </span>
         </div>
 
         {/* Saturday */}
