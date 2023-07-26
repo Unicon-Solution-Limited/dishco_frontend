@@ -146,6 +146,18 @@ const Footer = () => {
           </a>
         </p>
       </section>
+
+      {/* catering service */}
+      <section className="catering-logo">
+        <Link to="/">
+          <img
+            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1690357966/Frontend_images/logo/qztx64rusybxyxaqcp9v.gif"
+            alt=""
+            className="catering-gif"
+          />
+        </Link>
+      </section>
+      {/* catering service */}
     </footer>
   );
 };
