@@ -36,6 +36,7 @@ import SingleCustomer from "./Components/Dashboard/DashboardPage/CustomerList/Si
 import EditProfile from "./Components/Dashboard/DashboardPage/ProfileManagement/EditProfile/EditProfile";
 import CouponGen from "./Components/Dashboard/DashboardPage/ProfileManagement/CouponGen/CouponGen";
 import HowToBuy from "./Components/Pages/FooterPages/HowToBuy";
+import Catering from "./Components/Pages/CateringService/Catering";
 
 function App() {
   return (
@@ -137,6 +138,9 @@ function App() {
             </Route>
             <Route path="/How-to-buy">
               <HowToBuy />
+            </Route>
+            <Route path="/catering">
+              <Catering />
             </Route>
 
             <Route path="/Search/:searchProductName">

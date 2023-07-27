@@ -104,6 +104,9 @@ const Footer = () => {
             <aside className="links">
               <ul>
                 <li>
+                  <Link to="/catering">Catering Service</Link>
+                </li>
+                <li>
                   <Link to="/menus">Menu Card</Link>
                 </li>
                 <li>
@@ -149,7 +152,7 @@ const Footer = () => {
 
       {/* catering service */}
       <section className="catering-logo">
-        <Link to="/">
+        <Link to="/catering">
           <img
             src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1690357966/Frontend_images/logo/qztx64rusybxyxaqcp9v.gif"
             alt=""

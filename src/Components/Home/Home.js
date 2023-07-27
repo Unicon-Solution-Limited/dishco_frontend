@@ -58,7 +58,7 @@ const Home = () => {
         <Facilities />
         <Footer />
       </main>
-      <div class="adsPopup" ref={popupRef}>
+      <div className="adsPopup" ref={popupRef}>
         <button id="close" onClick={handleClose}>
           &times;
         </button>
