@@ -240,44 +240,47 @@ const Checkout = () => {
                 required
               >
                 <option value="">Select Your Area</option>
-                <option value="60 Feet">60 Feet</option>
-                <option value="Adabor">Adabor</option>
-                <option value="Agargion">Agargion</option>
-                <option value="Asad Gate">Asad Gate</option>
                 <option value="Azimpur">Azimpur</option>
-                <option value="Baily Road">Baily Road</option>
-                <option value="Bangla Motor">Bangla Motor</option>
-                <option value="Bijoy Soroni">Bijoy Soroni</option>
-                <option value="Bosila">Bosila</option>
-                <option value="Dhanmondi">Dhanmondi</option>
-                <option value="Firm gate">Firm gate</option>
-                <option value="Hatirpull (central road)">
-                  Hatirpull (central road)
+                <option value="Chankharpul">Chankharpul</option>
+                <option value="Dhaka University Hall">
+                  Dhaka University Hall
                 </option>
-                <option value="Hazaribag">Hazaribag</option>
-                <option value="Jigatola">Jigatola</option>
-                <option value="Kakrail">Kakrail</option>
-                <option value="Kallanpur">Kallanpur</option>
-                <option value="Kamrangichor">Kamrangichor</option>
-                <option value="Kawran Bazar">Kawran Bazar</option>
-                <option value="Khamar Bari">Khamar Bari</option>
-                <option value="Kolabagan">Kolabagan</option>
-                <option value="Lalbag">Lalbag</option>
-                <option value="Mohammadpur">Mohammadpur</option>
-                <option value="New Elephant Road">New Elephant Road</option>
-                <option value="New Market">New Market</option>
-                <option value="Panthopath">Panthopath</option>
-                <option value="Rayer bazar">Rayer bazar</option>
-                <option value="Romna Thana Area">Romna Thana Area</option>
-                <option value="Sat Rowza">Sat Rowza</option>
-                <option value="Science Lab">Science Lab</option>
-                <option value="Shahabag">Shahabag</option>
-                <option value="Shukrabad">Shukrabad</option>
-                <option value="Shyamoli">Shyamoli</option>
-                <option value="Tejgaon Industrial Area">
-                  Tejgaon Industrial Area
+                <option value="Darussalam">Darussalam</option>
+                <option value="Elephent Road">Elephent Road</option>
+                <option value="Farmgate">Farmgate</option>
+                <option value="Gulistan">Gulistan</option>
+                <option value="Green Road">Green Road</option>
+                <option value="Kola Bagan">Kola Bagan</option>
+                <option value="Kamrangirchar">Kamrangirchar</option>
+                <option value="Kallyanpur">Kallyanpur</option>
+                <option value="Mohammadpur Bus Stand">
+                  Mohammadpur Bus Stand
                 </option>
-                <option value="Washpur">Washpur</option>
+                <option value="Mohammadpur beribadh">
+                  Mohammadpur beribadh
+                </option>
+                <option value="Mohammadpur Adabor">Mohammadpur Adabor</option>
+                <option value="Mohammadpur Asad Gate">
+                  Mohammadpur Asad Gate
+                </option>
+                <option value="Mirpur-1">Mirpur-1</option>
+                <option value="New Market, Dhaka">New Market, Dhaka</option>
+                <option value="Nakhalpara West Tejgaon">
+                  Nakhalpara West Tejgaon
+                </option>
+                <option value="Nakhalpara south">Nakhalpara south</option>
+                <option value="Shahbag">Shahbag</option>
+                <option value="Shyamoli-1">Shyamoli-1</option>
+                <option value="Shyamoli-2">Shyamoli-2</option>
+                <option value="Panthopath Chattor">Panthopath Chattor</option>
+                <option value="Polashi">Polashi</option>
+                <option value="Puran Dhaka(Bangshal)">
+                  Puran Dhaka(Bangshal)
+                </option>
+                <option value="Puran Dhaka (Dholaikhal)">
+                  Puran Dhaka (Dholaikhal)
+                </option>
+                <option value="Rayer Bazaar">Rayer Bazaar</option>
               </select>
             </div>
             <div className="mb-3">
