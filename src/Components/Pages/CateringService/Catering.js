@@ -14,10 +14,13 @@ const Catering = () => {
         <div>
           <h5>Combo 1</h5>
           <Link to={`cateringDetils/${1}`}>
-            <button>HI</button>
+            <button>suppose this is food 1</button>
           </Link>
-
-          <p>HI</p>
+          <br />
+          <br />
+          <Link to={`cateringDetils/${2}`}>
+            <button>suppose this is food 2</button>
+          </Link>
         </div>
       </main>
       <Footer />
