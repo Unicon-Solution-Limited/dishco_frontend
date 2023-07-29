@@ -37,6 +37,8 @@ import EditProfile from "./Components/Dashboard/DashboardPage/ProfileManagement/
 import CouponGen from "./Components/Dashboard/DashboardPage/ProfileManagement/CouponGen/CouponGen";
 import HowToBuy from "./Components/Pages/FooterPages/HowToBuy";
 import Catering from "./Components/Pages/CateringService/Catering";
+import CateringDetails from "./Components/Pages/CateringService/CateringDetails";
+import CateringCheckoutPage from "./Components/Pages/CateringService/CateringCheckoutPage";
 
 function App() {
   return (
@@ -142,6 +144,14 @@ function App() {
             <Route path="/catering">
               <Catering />
             </Route>
+
+            <Route path="/cateringDetils/:cateringDetils">
+              <CateringDetails />
+            </Route>
+
+            <PrivateRoute path="/cateringCheckoutPage">
+              <CateringCheckoutPage />
+            </PrivateRoute>
 
             <Route path="/Search/:searchProductName">
               <SearchProductDisplay />

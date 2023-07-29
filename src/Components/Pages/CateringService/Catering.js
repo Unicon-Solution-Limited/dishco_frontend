@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../Shared/Header/Header";
 import Footer from "../../Shared/Footer/Footer";
+import { Link } from "react-router-dom";
 
 const Catering = () => {
   return (
@@ -12,7 +13,10 @@ const Catering = () => {
         <h2>Special</h2>
         <div>
           <h5>Combo 1</h5>
-          <p>HI</p>
+          <Link to={`cateringDetils/${1}`}>
+            <button>HI</button>
+          </Link>
+
           <p>HI</p>
         </div>
       </main>
