@@ -8,3 +8,5 @@ URL: https://dishcofood.com/
 2. Aos: https://michalsnik.github.io/aos/
 
 3. DotEnv: https://github.com/motdotla/dotenv
+
+4. React Date picker: https://github.com/Hacker0x01/react-datepicker
