@@ -8,6 +8,7 @@ import MenuSection from "./HomeComponents/MenuSection";
 import OfferSection from "./HomeComponents/OfferSection";
 import Video from "./HomeComponents/Video";
 import Welcome from "./HomeComponents/Welcome";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const popupRef = useRef(null);
@@ -58,6 +59,17 @@ const Home = () => {
         <Facilities />
         <Footer />
       </main>
+      {/* catering service */}
+      <section className="catering-logo">
+        <Link to="/catering">
+          <img
+            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1690357966/Frontend_images/logo/qztx64rusybxyxaqcp9v.gif"
+            alt=""
+            className="catering-gif"
+          />
+        </Link>
+      </section>
+      {/* catering service */}
       <div className="adsPopup" ref={popupRef}>
         <button id="close" onClick={handleClose}>
           &times;

@@ -122,17 +122,6 @@ footer {
   bottom: 20px;
   right: 20px;
 }
-.catering-logo {
-  position: fixed;
-  bottom: -15px;
-  left: -15px;
-}
-.catering-gif {
-  width: 200px;
-  height: 200px;
-  object-fit: cover !important;
-  filter: drop-shadow(0 0 4px var(--white));
-}
 
 @media only screen and (max-width: 768px) {
   .footer_top {
