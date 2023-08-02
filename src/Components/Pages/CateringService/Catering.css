@@ -1,0 +1,34 @@
+.catering_services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.package_buttons {
+  padding: 10px;
+  display: block;
+  width: fit-content;
+  margin: 10px auto;
+  font-weight: bold;
+}
+
+.catering_services_img {
+  max-width: 650px;
+  max-height: 450px;
+}
+
+.catering_services_body {
+  padding: 50px 0;
+}
+
+@media only screen and (max-width: 992px) {
+  .catering_services {
+    flex-direction: column;
+  }
+  .catering_services_img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+}

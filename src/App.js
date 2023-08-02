@@ -145,7 +145,7 @@ function App() {
               <Catering />
             </Route>
 
-            <Route path="/cateringDetils/:cateringDetils">
+            <Route path="/cateringDetails/:cateringDetails">
               <CateringDetails />
             </Route>
 

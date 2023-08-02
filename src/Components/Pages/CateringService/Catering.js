@@ -2,26 +2,36 @@ import React from "react";
 import Header from "../../Shared/Header/Header";
 import Footer from "../../Shared/Footer/Footer";
 import { Link } from "react-router-dom";
+import "./Catering.css";
 
 const Catering = () => {
   return (
     <>
       <Header />
-      <main>
-        <h1>Our Catering Services</h1>
-        <h2>Regular</h2>
-        <h2>Special</h2>
-        <div>
-          <h5>Combo 1</h5>
-          <Link to={`cateringDetils/${1}`}>
-            <button>suppose this is food 1</button>
-          </Link>
-          <br />
-          <br />
-          <Link to={`cateringDetils/${2}`}>
-            <button>suppose this is food 2</button>
-          </Link>
-        </div>
+      <main className="container catering_services_body">
+        <h1 className="text-center mb-3">Our Catering Services</h1>
+        <section className="catering_services">
+          <aside className="packages">
+            <img
+              src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1690977514/Frontend_images/Catering/om9iedu3zxklclfemb1x.webp"
+              alt=""
+              className="catering_services_img"
+            />
+            <Link to={`cateringDetails/${1}`} className="MyBtn package_buttons">
+              View Details
+            </Link>
+          </aside>
+          <aside className="packages">
+            <img
+              src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1690977514/Frontend_images/Catering/ileigdxtqxcvii0iftva.webp"
+              alt=""
+              className="catering_services_img"
+            />
+            <Link to={`cateringDetails/${2}`} className="MyBtn package_buttons">
+              View Details
+            </Link>
+          </aside>
+        </section>
       </main>
       <Footer />
     </>
