@@ -36,7 +36,7 @@ const Catering = () => {
                 className="catering_services_img"
               />
               <img
-                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691056073/Frontend_images/Catering/vln1dz226uzw8slwb3ig.webp"
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691060531/Frontend_images/Catering/kp8m34vilqdeznb3jvoh.webp"
                 alt=""
                 className="catering_service_sub_img_right sub_img"
               />

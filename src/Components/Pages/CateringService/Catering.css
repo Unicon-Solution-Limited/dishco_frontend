@@ -1,3 +1,7 @@
+.catering_services_body {
+  padding: 50px 0;
+}
+
 .catering_services {
   display: flex;
   justify-content: center;
@@ -18,10 +22,6 @@
   max-height: 450px;
 }
 
-.catering_services_body {
-  padding: 50px 0;
-}
-
 .catering_services_img_section {
   position: relative;
 }
@@ -31,14 +31,15 @@
   animation-duration: 50000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  overflow-x: hidden !important;
 }
 .catering_service_sub_img_left {
   top: 32%;
   left: 0;
 }
 .catering_service_sub_img_right {
-  top: 25%;
-  right: 0;
+  top: 32%;
+  right: 5%;
 }
 
 @keyframes spin {
@@ -51,6 +52,11 @@
 }
 
 @media only screen and (max-width: 992px) {
+  .sub_img {
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+  }
   .catering_services {
     flex-direction: column;
   }
