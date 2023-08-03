@@ -12,21 +12,35 @@ const Catering = () => {
         <h1 className="text-center mb-3">Our Catering Services</h1>
         <section className="catering_services">
           <aside className="packages">
-            <img
-              src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1690977514/Frontend_images/Catering/om9iedu3zxklclfemb1x.webp"
-              alt=""
-              className="catering_services_img"
-            />
+            <div className="catering_services_img_section">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691056073/Frontend_images/Catering/bw7h7jtlbifgn9hokmgu.webp"
+                alt=""
+                className="catering_services_img"
+              />
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691056073/Frontend_images/Catering/egcllz8haxr47awtcfmw.webp"
+                alt=""
+                className="catering_service_sub_img_left sub_img"
+              />
+            </div>
             <Link to={`cateringDetails/${1}`} className="MyBtn package_buttons">
               View Details
             </Link>
           </aside>
           <aside className="packages">
-            <img
-              src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1690977514/Frontend_images/Catering/ileigdxtqxcvii0iftva.webp"
-              alt=""
-              className="catering_services_img"
-            />
+            <div className="catering_services_img_section">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691056073/Frontend_images/Catering/lqsqi2mypgjrmgmv5tu8.webp"
+                alt=""
+                className="catering_services_img"
+              />
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691056073/Frontend_images/Catering/vln1dz226uzw8slwb3ig.webp"
+                alt=""
+                className="catering_service_sub_img_right sub_img"
+              />
+            </div>
             <Link to={`cateringDetails/${2}`} className="MyBtn package_buttons">
               View Details
             </Link>

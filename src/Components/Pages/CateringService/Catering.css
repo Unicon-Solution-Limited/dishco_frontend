@@ -22,6 +22,34 @@
   padding: 50px 0;
 }
 
+.catering_services_img_section {
+  position: relative;
+}
+.sub_img {
+  position: absolute;
+  animation-name: spin;
+  animation-duration: 50000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.catering_service_sub_img_left {
+  top: 32%;
+  left: 0;
+}
+.catering_service_sub_img_right {
+  top: 25%;
+  right: 0;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .catering_services {
     flex-direction: column;
