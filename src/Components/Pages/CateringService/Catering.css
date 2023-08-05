@@ -32,6 +32,7 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   overflow-x: hidden !important;
+  filter: brightness(1.2);
 }
 .catering_service_sub_img_left {
   top: 32%;

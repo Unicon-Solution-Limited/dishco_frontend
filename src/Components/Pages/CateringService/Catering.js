@@ -24,7 +24,10 @@ const Catering = () => {
                 className="catering_service_sub_img_left sub_img"
               />
             </div>
-            <Link to={`cateringDetails/${1}`} className="MyBtn package_buttons">
+            <Link
+              to={`cateringDetails/Regular`}
+              className="MyBtn package_buttons"
+            >
               View Details
             </Link>
           </aside>
@@ -41,7 +44,10 @@ const Catering = () => {
                 className="catering_service_sub_img_right sub_img"
               />
             </div>
-            <Link to={`cateringDetails/${2}`} className="MyBtn package_buttons">
+            <Link
+              to={`cateringDetails/Special`}
+              className="MyBtn package_buttons"
+            >
               View Details
             </Link>
           </aside>
