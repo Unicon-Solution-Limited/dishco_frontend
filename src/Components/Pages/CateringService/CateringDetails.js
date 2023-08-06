@@ -1,15 +1,43 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Header from "./../../Shared/Header/Header";
+import Footer from "./../../Shared/Footer/Footer";
 
 const CateringDetails = () => {
-  const { cateringDetail } = useParams();
   return (
-    <div>
-      <h1>{cateringDetail}</h1>
+    <>
+      <Header />
+      <main className="container-fluid">
+        <h2>Select your weekly meal</h2>
+        <section>
+          <aside>Regular</aside>
+          <aside>Special</aside>
+          <hr />
+          <aside>Regular</aside>
+          <aside>Special</aside>
+          <hr />
+          <aside>Regular</aside>
+          <aside>Special</aside>
+          <hr />
+          <aside>Regular</aside>
+          <aside>Special</aside>
+          <hr />
+          <aside>Regular</aside>
+          <aside>Special</aside>
+          <hr />
+          <aside>Regular</aside>
+          <aside>Special</aside>
+          <hr />
+          <aside>Regular</aside>
+          <aside>Special</aside>
+          <hr />
+        </section>
+      </main>
       <Link to="/cateringCheckoutPage">
         <button>checkout page</button>
       </Link>
-    </div>
+      <Footer />
+    </>
   );
 };
 
