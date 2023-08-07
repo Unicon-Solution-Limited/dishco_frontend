@@ -51,7 +51,6 @@
     transform: rotate(360deg);
   }
 }
-
 @media only screen and (max-width: 992px) {
   .sub_img {
     width: 180px;
@@ -67,3 +66,32 @@
     padding: 10px;
   }
 }
+
+/* *********************** Catering Display page design */
+.package_headline {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 15px 45px;
+}
+.package_items {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+.package_items h4 {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.package_sub_headline {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 10px;
+}
+/* Catering Display page design *********************** */
