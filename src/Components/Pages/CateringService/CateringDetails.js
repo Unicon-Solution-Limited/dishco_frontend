@@ -7,64 +7,215 @@ const CateringDetails = () => {
   return (
     <>
       <Header />
-      <main className="container my-5">
+      <main className="container my-5 package-body">
         <h2 className="package_headline">সাপ্তাহিক প্যাকেজ</h2>
-        <div className="package_items">
+        <div className="package_items-header">
           <h4>রেগুলার আইটেম</h4>
-          <h4>স্পেসিয়াল আইটেম</h4>
+          <h4>স্পেশিয়াল আইটেম</h4>
         </div>
         <hr />
         <section>
           <h4 className="package_sub_headline">শুক্রবার</h4>
-          <div>
-            <aside>Regular</aside>
-            <aside>Special</aside>
+          <div className="package_items">
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp"
+                alt=""
+                className="package_items_img_left"
+              />
+              <figcaption>ভাত + মুরগি + ডাল + সবজি = ৮০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="friday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/mpjx2teriodgxb71ywe0.webp"
+                alt=""
+                className="package_items_img_right"
+              />
+              <figcaption>বিফ খিচুরি = ১২০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="friday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
           </div>
           <hr />
           <h4 className="package_sub_headline">শনিবার</h4>
-          <div>
-            <aside>Regular</aside>
-            <aside>Special</aside>
+          <div className="package_items">
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp"
+                alt=""
+                className="package_items_img_left"
+              />
+              <figcaption>ভাত + ডিম + ডাল + সবজি = ৮০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="saturday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/ddhl9phljy5wzksfifw4.webp"
+                alt=""
+                className="package_items_img_right"
+              />
+              <figcaption>চিকেন পোলাও = ১২০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="saturday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
           </div>
           <hr />
           <h4 className="package_sub_headline">রবিবার</h4>
-
-          <div>
-            <aside>Regular</aside>
-            <aside>Special</aside>
+          <div className="package_items">
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp"
+                alt=""
+                className="package_items_img_left"
+              />
+              <figcaption>ভাত + মাছ + ডাল + সবজি = ৮০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="sunday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zer5bzwungxyhzvngm82.webp"
+                alt=""
+                className="package_items_img_right"
+              />
+              <figcaption>বিফ তেহারি = ১২০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="sunday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
           </div>
           <hr />
           <h4 className="package_sub_headline">সোমবার</h4>
-
-          <div>
-            <aside>Regular</aside>
-            <aside>Special</aside>
+          <div className="package_items">
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zam03uy7zifx3u5uiekc.webp"
+                alt=""
+                className="package_items_img_left"
+              />
+              <figcaption>ভাত + বিফ + ডাল + সবজি = ৮০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="monday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/cspimz68z9s14zfi8whm.webp"
+                alt=""
+                className="package_items_img_right"
+              />
+              <figcaption>ডিম খিচুরি = ৮০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="monday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
           </div>
           <hr />
           <h4 className="package_sub_headline">মঙ্গলবার</h4>
-
-          <div>
-            <aside>Regular</aside>
-            <aside>Special</aside>
+          <div className="package_items">
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp"
+                alt=""
+                className="package_items_img_left"
+              />
+              <figcaption>ভাত + মুরগি + ডাল + সবজি = ৮০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="tuesday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/mpjx2teriodgxb71ywe0.webp"
+                alt=""
+                className="package_items_img_right"
+              />
+              <figcaption>বিফ খিচুরি = ১২০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="tuesday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
           </div>
           <hr />
           <h4 className="package_sub_headline">বুধবার</h4>
-
-          <div>
-            <aside>Regular</aside>
-            <aside>Special</aside>
+          <div className="package_items">
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp"
+                alt=""
+                className="package_items_img_left"
+              />
+              <figcaption>ভাত + মাছ + ডাল + সবজি = ৮০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="wednesday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zer5bzwungxyhzvngm82.webp"
+                alt=""
+                className="package_items_img_right"
+              />
+              <figcaption>বিফ তেহারি = ১২০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="wednesday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
           </div>
           <hr />
           <h4 className="package_sub_headline">বৃহস্পতিবার</h4>
-
-          <div>
-            <aside>Regular</aside>
-            <aside>Special</aside>
+          <div className="package_items">
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp"
+                alt=""
+                className="package_items_img_left"
+              />
+              <figcaption>ভাত + ডিম + ডাল + সবজি = ৮০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="thursday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
+            <aside className="package_single">
+              <img
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/ddhl9phljy5wzksfifw4.webp"
+                alt=""
+                className="package_items_img_right"
+              />
+              <figcaption>চিকেন পোলাও = ১২০ টাকা</figcaption>
+              <label class="custom-radio">
+                <input type="radio" name="thursday" class="hidden-radio" />
+                <span class="custom-checkbox"></span> Select
+              </label>
+            </aside>
           </div>
           <hr />
         </section>
         <Link to="/cateringCheckoutPage">
-          <button>checkout page</button>
+          <button className="MyBtn package_checkout_btn">
+            Process to Checkout
+          </button>
         </Link>
       </main>
 

@@ -14,7 +14,7 @@ const Catering = () => {
           <aside className="packages">
             <div className="catering_services_img_section">
               <img
-                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691056073/Frontend_images/Catering/bw7h7jtlbifgn9hokmgu.webp"
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471646/Frontend_images/Catering/nl0iuhrikd1citgxvdf1.webp"
                 alt=""
                 className="catering_services_img"
               />
@@ -28,7 +28,7 @@ const Catering = () => {
           <aside className="packages">
             <div className="catering_services_img_section">
               <img
-                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691056073/Frontend_images/Catering/lqsqi2mypgjrmgmv5tu8.webp"
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471646/Frontend_images/Catering/dgnculuucyoq6e49swjc.webp"
                 alt=""
                 className="catering_services_img"
               />
