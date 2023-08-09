@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./../../Shared/Header/Header";
 import Footer from "./../../Shared/Footer/Footer";
 
 const CateringDetails = () => {
+  const [food, setFood] = useState([]);
+  // console.log(food);
+  const saturdayRegRef = useRef();
+  const sundayRegRef = useRef();
+  const mondayRegRef = useRef();
+  const tuesdayRegRef = useRef();
+  const thursdayRegRef = useRef();
+  const fridayRegRef = useRef();
+  const saturdaySpclRef = useRef();
+  const sundaySpclRef = useRef();
+  const mondaySpclRef = useRef();
+  const tuesdaySpclRef = useRef();
+  const thursdaySpclRef = useRef();
+  const fridaySpclRef = useRef();
+
+  const handlePackageClick = (data) => {
+    // Check if an item with the same number already exists in the food array
+    const existingIndex = food.findIndex((item) => item.number === data.number);
+
+    // If an existing item with the same number is found, replace it with the new item
+    if (existingIndex !== -1) {
+      const updatedFood = [...food];
+      updatedFood[existingIndex] = data;
+      setFood(updatedFood);
+    } else {
+      // If no existing item with the same number is found, add the new item
+      setFood([...food, data]);
+    }
+  };
+
+  const handleSubmitFood = () => {
+    localStorage.setItem("cateringFood", JSON.stringify(food));
+  };
+
   return (
     <>
       <Header />
@@ -25,7 +59,19 @@ const CateringDetails = () => {
               />
               <figcaption>ভাত + মুরগি + ডাল + সবজি = ৮০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="friday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="friday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Chicken Meal",
+                      tk: 80,
+                      day: "friday",
+                      number: 1,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -37,7 +83,19 @@ const CateringDetails = () => {
               />
               <figcaption>বিফ খিচুরি = ১২০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="friday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="friday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Beef khichuri",
+                      tk: 120,
+                      day: "friday",
+                      number: 1,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -53,7 +111,19 @@ const CateringDetails = () => {
               />
               <figcaption>ভাত + ডিম + ডাল + সবজি = ৮০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="saturday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="saturday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Egg Meal",
+                      tk: 80,
+                      day: "Saturday",
+                      number: 2,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -65,7 +135,19 @@ const CateringDetails = () => {
               />
               <figcaption>চিকেন পোলাও = ১২০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="saturday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="saturday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Chicken Polao",
+                      tk: 120,
+                      day: "Saturday",
+                      number: 2,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -81,7 +163,19 @@ const CateringDetails = () => {
               />
               <figcaption>ভাত + মাছ + ডাল + সবজি = ৮০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="sunday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="sunday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Fish Meal",
+                      tk: 80,
+                      day: "Sunday",
+                      number: 3,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -93,7 +187,19 @@ const CateringDetails = () => {
               />
               <figcaption>বিফ তেহারি = ১২০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="sunday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="sunday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Beef Teheri",
+                      tk: 120,
+                      day: "Sunday",
+                      number: 3,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -109,7 +215,19 @@ const CateringDetails = () => {
               />
               <figcaption>ভাত + বিফ + ডাল + সবজি = ৮০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="monday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="monday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Beef Meal",
+                      tk: 80,
+                      day: "Monday",
+                      number: 4,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -121,7 +239,19 @@ const CateringDetails = () => {
               />
               <figcaption>ডিম খিচুরি = ৮০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="monday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="monday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Egg khichuri",
+                      tk: 80,
+                      day: "Monday",
+                      number: 4,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -137,7 +267,19 @@ const CateringDetails = () => {
               />
               <figcaption>ভাত + মুরগি + ডাল + সবজি = ৮০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="tuesday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="tuesday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Chicken Meal",
+                      tk: 80,
+                      day: "Monday",
+                      number: 5,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -149,7 +291,19 @@ const CateringDetails = () => {
               />
               <figcaption>বিফ খিচুরি = ১২০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="tuesday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="tuesday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Beef khichuri",
+                      tk: 120,
+                      day: "tuesday",
+                      number: 5,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -165,7 +319,19 @@ const CateringDetails = () => {
               />
               <figcaption>ভাত + মাছ + ডাল + সবজি = ৮০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="wednesday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="wednesday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Fish Meal",
+                      tk: 80,
+                      day: "wednesday",
+                      number: 6,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -177,7 +343,19 @@ const CateringDetails = () => {
               />
               <figcaption>বিফ তেহারি = ১২০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="wednesday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="wednesday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Beef Teheri",
+                      tk: 120,
+                      day: "wednesday",
+                      number: 6,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -193,7 +371,19 @@ const CateringDetails = () => {
               />
               <figcaption>ভাত + ডিম + ডাল + সবজি = ৮০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="thursday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="thursday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Egg Meal",
+                      tk: 80,
+                      day: "thursday",
+                      number: 7,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -205,7 +395,19 @@ const CateringDetails = () => {
               />
               <figcaption>চিকেন পোলাও = ১২০ টাকা</figcaption>
               <label class="custom-radio">
-                <input type="radio" name="thursday" class="hidden-radio" />
+                <input
+                  type="radio"
+                  name="thursday"
+                  class="hidden-radio"
+                  onClick={() =>
+                    handlePackageClick({
+                      name: "Chicken Polao",
+                      tk: 120,
+                      day: "thursday",
+                      number: 7,
+                    })
+                  }
+                />
                 <span class="custom-checkbox"></span> Select
               </label>
             </aside>
@@ -213,7 +415,10 @@ const CateringDetails = () => {
           <hr />
         </section>
         <Link to="/cateringCheckoutPage">
-          <button className="MyBtn package_checkout_btn">
+          <button
+            className="MyBtn package_checkout_btn"
+            onClick={() => handleSubmitFood()}
+          >
             Process to Checkout
           </button>
         </Link>
