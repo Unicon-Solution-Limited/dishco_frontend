@@ -38,6 +38,7 @@ import CouponGen from "./Components/Dashboard/DashboardPage/ProfileManagement/Co
 import HowToBuy from "./Components/Pages/FooterPages/HowToBuy";
 import CateringDetails from "./Components/Pages/CateringService/CateringDetails";
 import CateringCheckoutPage from "./Components/Pages/CateringService/CateringCheckoutPage";
+import CateringSuccess from "./Components/Pages/CateringService/CateringSuccess";
 
 function App() {
   return (
@@ -139,6 +140,10 @@ function App() {
             </Route>
             <Route path="/How-to-buy">
               <HowToBuy />
+            </Route>
+
+            <Route path="/cateringSuccess">
+              <CateringSuccess />
             </Route>
 
             <Route path="/cateringDetails">

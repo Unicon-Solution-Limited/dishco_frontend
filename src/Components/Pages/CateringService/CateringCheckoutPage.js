@@ -1,33 +1,29 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../Authentication/AuthContext/AuthContext";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 
 const CateringCheckoutPage = () => {
+  const history = useHistory();
   const cityRef = useRef();
   const addressRef = useRef();
   const phoneNumberRef = useRef();
   const emailRef = useRef();
   const extra_informationRef = useRef();
   const { currentUser } = useAuth();
+  const [food, setFood] = useState([]);
 
-  //  multipe date picker
-  const [selectedDates, setSelectedDates] = useState([]);
-
-  const handleDateChange = (date) => {
-    setSelectedDates([...selectedDates, date]);
-  };
-
-  const handleRemoveDate = (dateToRemove) => {
-    setSelectedDates(selectedDates.filter((date) => date !== dateToRemove));
-  };
+  useEffect(() => {
+    const foods = localStorage.getItem("cateringFood");
+    setFood(foods);
+  }, []);
 
   //confirm order
-  const handleConfirmOrder = (e) => {
+  const handleConfirmOrder = async (e) => {
     e.preventDefault();
+
     const confimOrderData = {
+      food: food,
       cus_name: currentUser?.displayName,
       cus_city: cityRef?.current.value,
       cus_email: currentUser?.email,
@@ -35,10 +31,31 @@ const CateringCheckoutPage = () => {
       cus_phone: phoneNumberRef.current.value,
       cus_add1: addressRef.current.value,
       product_status: "Pending",
-      orderTime: Date(),
+      orderTime: new Date().toISOString(),
     };
 
-    console.log("it is working");
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/addCateringFood?email=${currentUser?.email}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+          body: JSON.stringify(confimOrderData),
+        }
+      );
+
+      if (response.ok) {
+        console.log("Order placed successfully!");
+        history.push("/cateringSuccess");
+      } else {
+        console.log("Failed to place order.");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   };
 
   return (
@@ -165,36 +182,6 @@ const CateringCheckoutPage = () => {
               id="extraInfo"
               rows="3"
             ></textarea>
-          </div>
-
-          {/* date picker */}
-          <h2>Date Of Ordering Food</h2>
-          <DatePicker
-            selected={null}
-            onChange={handleDateChange}
-            inline
-            isClearable
-            showYearDropdown
-            scrollableYearDropdown
-            yearDropdownItemNumber={15}
-            placeholderText="Select dates"
-            dateFormat="dd/MM/yyyy"
-            excludeDates={selectedDates}
-          />
-          <div>
-            <h3>Selected Dates:</h3>
-            <ul>
-              {selectedDates.map((date, index) => (
-                <li key={index}>
-                  {date.toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                  <button onClick={() => handleRemoveDate(date)}>Remove</button>
-                </li>
-              ))}
-            </ul>
           </div>
 
           <button type="submit" className="btn MyBtn placeOrder_btn">
