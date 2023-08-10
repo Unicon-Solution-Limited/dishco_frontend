@@ -23,13 +23,17 @@ const CateringCheckoutPage = () => {
   }, []);
 
   //total tk
-  const totalTk = food.reduce((accumulator, item) => accumulator + item.tk, 0);
+  const total_amount = food.reduce(
+    (accumulator, item) => accumulator + item.tk,
+    0
+  );
 
   //confirm order
   const handleConfirmOrder = async (e) => {
     e.preventDefault();
 
     const confimOrderData = {
+      // total_amount: total_amount,
       food: food,
       cus_name: currentUser?.displayName,
       cus_city: cityRef?.current.value,
@@ -206,7 +210,7 @@ const CateringCheckoutPage = () => {
               {new Intl.NumberFormat("bn-BD").format(fd.tk)} টাকা
             </h1>
           ))}
-        <h1>Total bill: {totalTk}</h1>
+        <h1>Total bill: {total_amount}</h1>
       </div>
     </div>
   );
