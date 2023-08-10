@@ -61,7 +61,7 @@ const Home = () => {
       </main>
       {/* catering service */}
       <section className="catering-logo">
-        <Link to="/catering">
+        <Link to="/cateringDetails">
           <img
             src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1690357966/Frontend_images/logo/qztx64rusybxyxaqcp9v.gif"
             alt=""

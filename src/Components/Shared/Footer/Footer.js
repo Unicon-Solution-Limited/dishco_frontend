@@ -104,7 +104,7 @@ const Footer = () => {
             <aside className="links">
               <ul>
                 <li>
-                  <Link to="/catering">Catering Service</Link>
+                  <Link to="/cateringDetails">Catering Service</Link>
                 </li>
                 <li>
                   <Link to="/menus">Menu Card</Link>

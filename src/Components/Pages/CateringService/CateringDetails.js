@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./../../Shared/Header/Header";
 import Footer from "./../../Shared/Footer/Footer";
+import "./Catering.css";
 
 const CateringDetails = () => {
   const [food, setFood] = useState([]);
