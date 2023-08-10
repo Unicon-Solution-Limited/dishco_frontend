@@ -13,9 +13,15 @@ const CateringCheckoutPage = () => {
   const { currentUser } = useAuth();
   const [food, setFood] = useState([]);
 
+  console.log(food, "this is food");
+
+  //getting all food from local stroage
   useEffect(() => {
     const foods = localStorage.getItem("cateringFood");
-    setFood(foods);
+    if (foods) {
+      const parsedFoods = JSON.parse(foods);
+      setFood(parsedFoods);
+    }
   }, []);
 
   //confirm order
@@ -189,6 +195,17 @@ const CateringCheckoutPage = () => {
           </button>
         </aside>
       </form>
+
+      <div>
+        {food &&
+          food.length &&
+          food?.map((fd, index) => (
+            <h1 key={index}>
+              {fd?.day}: {fd?.package}------------
+              {new Intl.NumberFormat("bn-BD").format(fd.tk)} টাকা
+            </h1>
+          ))}
+      </div>
     </div>
   );
 };

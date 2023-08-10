@@ -66,10 +66,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Chicken Meal",
+                      name: "চিকেন মিল",
                       tk: 80,
-                      day: "friday",
+                      day: "শুক্রবার",
                       number: 1,
+                      package: "রেগুলার",
                     })
                   }
                 />
@@ -82,7 +83,7 @@ const CateringDetails = () => {
                 alt=""
                 className="package_items_img_right"
               />
-              <figcaption>বিফ খিচুরি = ১২০ টাকা</figcaption>
+              <figcaption>বীফ খিচুরি = ১২০ টাকা</figcaption>
               <label class="custom-radio">
                 <input
                   type="radio"
@@ -90,10 +91,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Beef khichuri",
+                      name: "বীফ খিচুরি",
                       tk: 120,
-                      day: "friday",
+                      day: "শুক্রবার",
                       number: 1,
+                      package: "স্পেশিয়াল",
                     })
                   }
                 />
@@ -118,10 +120,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Egg Meal",
+                      name: "এগ মিল",
                       tk: 80,
-                      day: "Saturday",
+                      day: "শনিবার",
                       number: 2,
+                      package: "রেগুলার",
                     })
                   }
                 />
@@ -142,10 +145,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Chicken Polao",
+                      name: "চিকেন পোলাও",
                       tk: 120,
-                      day: "Saturday",
+                      day: "শনিবার",
                       number: 2,
+                      package: "স্পেশিয়াল",
                     })
                   }
                 />
@@ -170,10 +174,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Fish Meal",
+                      name: "ফিশ মিল",
                       tk: 80,
-                      day: "Sunday",
+                      day: "রবিবার",
                       number: 3,
+                      package: "রেগুলার",
                     })
                   }
                 />
@@ -186,7 +191,7 @@ const CateringDetails = () => {
                 alt=""
                 className="package_items_img_right"
               />
-              <figcaption>বিফ তেহারি = ১২০ টাকা</figcaption>
+              <figcaption>বীফ তেহারি = ১২০ টাকা</figcaption>
               <label class="custom-radio">
                 <input
                   type="radio"
@@ -194,10 +199,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Beef Teheri",
+                      name: "বীফ তেহারি",
                       tk: 120,
-                      day: "Sunday",
+                      day: "রবিবার",
                       number: 3,
+                      package: "স্পেশিয়াল",
                     })
                   }
                 />
@@ -214,7 +220,7 @@ const CateringDetails = () => {
                 alt=""
                 className="package_items_img_left"
               />
-              <figcaption>ভাত + বিফ + ডাল + সবজি = ৮০ টাকা</figcaption>
+              <figcaption>ভাত + বীফ + ডাল + সবজি = ৮০ টাকা</figcaption>
               <label class="custom-radio">
                 <input
                   type="radio"
@@ -222,10 +228,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Beef Meal",
+                      name: "বীফ মিল",
                       tk: 80,
-                      day: "Monday",
+                      day: "সোমবার",
                       number: 4,
+                      package: "রেগুলার",
                     })
                   }
                 />
@@ -246,10 +253,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Egg khichuri",
+                      name: "ডিম খিচুরি",
                       tk: 80,
-                      day: "Monday",
+                      day: "সোমবার",
                       number: 4,
+                      package: "স্পেশিয়াল",
                     })
                   }
                 />
@@ -274,10 +282,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Chicken Meal",
+                      name: "চিকেন মিল",
                       tk: 80,
-                      day: "Monday",
+                      day: "মঙ্গলবার",
                       number: 5,
+                      package: "রেগুলার",
                     })
                   }
                 />
@@ -290,7 +299,7 @@ const CateringDetails = () => {
                 alt=""
                 className="package_items_img_right"
               />
-              <figcaption>বিফ খিচুরি = ১২০ টাকা</figcaption>
+              <figcaption>বীফ খিচুরি = ১২০ টাকা</figcaption>
               <label class="custom-radio">
                 <input
                   type="radio"
@@ -298,10 +307,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Beef khichuri",
+                      name: "বীফ খিচুরি",
                       tk: 120,
-                      day: "tuesday",
+                      day: "মঙ্গলবার",
                       number: 5,
+                      package: "স্পেশিয়াল",
                     })
                   }
                 />
@@ -326,10 +336,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Fish Meal",
+                      name: "ফিশ মিল",
                       tk: 80,
-                      day: "wednesday",
+                      day: "বুধবার",
                       number: 6,
+                      package: "রেগুলার",
                     })
                   }
                 />
@@ -342,7 +353,7 @@ const CateringDetails = () => {
                 alt=""
                 className="package_items_img_right"
               />
-              <figcaption>বিফ তেহারি = ১২০ টাকা</figcaption>
+              <figcaption>বীফ তেহারি = ১২০ টাকা</figcaption>
               <label class="custom-radio">
                 <input
                   type="radio"
@@ -350,10 +361,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Beef Teheri",
+                      name: "বীফ তেহারি",
                       tk: 120,
-                      day: "wednesday",
+                      day: "বুধবার",
                       number: 6,
+                      package: "স্পেশিয়াল",
                     })
                   }
                 />
@@ -378,10 +390,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Egg Meal",
+                      name: "এগ মিল",
                       tk: 80,
-                      day: "thursday",
+                      day: "বৃহস্পতিবার",
                       number: 7,
+                      package: "রেগুলার",
                     })
                   }
                 />
@@ -402,10 +415,11 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
-                      name: "Chicken Polao",
+                      name: "চিকেন পোলাও",
                       tk: 120,
-                      day: "thursday",
+                      day: "বৃহস্পতিবার",
                       number: 7,
+                      package: "স্পেশিয়াল",
                     })
                   }
                 />
