@@ -13,8 +13,6 @@ const CateringCheckoutPage = () => {
   const { currentUser } = useAuth();
   const [food, setFood] = useState([]);
 
-  console.log(food, "this is food");
-
   //getting all food from local stroage
   useEffect(() => {
     const foods = localStorage.getItem("cateringFood");
@@ -23,6 +21,9 @@ const CateringCheckoutPage = () => {
       setFood(parsedFoods);
     }
   }, []);
+
+  //total tk
+  const totalTk = food.reduce((accumulator, item) => accumulator + item.tk, 0);
 
   //confirm order
   const handleConfirmOrder = async (e) => {
@@ -205,6 +206,7 @@ const CateringCheckoutPage = () => {
               {new Intl.NumberFormat("bn-BD").format(fd.tk)} টাকা
             </h1>
           ))}
+        <h1>Total bill: {totalTk}</h1>
       </div>
     </div>
   );
