@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "./../../Shared/Header/Header";
 import Footer from "./../../Shared/Footer/Footer";
 import "./Catering.css";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const CateringDetails = () => {
   const [food, setFood] = useState([]);
@@ -19,6 +20,8 @@ const CateringDetails = () => {
   const tuesdaySpclRef = useRef();
   const thursdaySpclRef = useRef();
   const fridaySpclRef = useRef();
+  const [countMessage, setCountMessage] = useState("");
+  const history = useHistory();
 
   const handlePackageClick = (data) => {
     // Check if an item with the same number already exists in the food array
@@ -36,7 +39,12 @@ const CateringDetails = () => {
   };
 
   const handleSubmitFood = () => {
-    localStorage.setItem("cateringFood", JSON.stringify(food));
+    if (food.length >= 5) {
+      localStorage.setItem("cateringFood", JSON.stringify(food));
+      history.push("/cateringCheckoutPage");
+    } else {
+      setCountMessage("You have to order at least 5 days");
+    }
   };
 
   return (
@@ -429,14 +437,15 @@ const CateringDetails = () => {
           </div>
           <hr />
         </section>
-        <Link to="/cateringCheckoutPage">
+        <button>
           <button
             className="MyBtn package_checkout_btn"
             onClick={() => handleSubmitFood()}
           >
             Process to Checkout
           </button>
-        </Link>
+          <h1>{countMessage}</h1>
+        </button>
       </main>
 
       <Footer />
