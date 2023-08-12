@@ -210,7 +210,9 @@ const CateringCheckoutPage = () => {
               {new Intl.NumberFormat("bn-BD").format(fd.tk)} টাকা
             </h1>
           ))}
-        <h1>Total bill: {total_amount}</h1>
+        <h1>
+          মোট বিল: {new Intl.NumberFormat("bn-BD").format(total_amount)} টাকা
+        </h1>
       </div>
     </div>
   );
