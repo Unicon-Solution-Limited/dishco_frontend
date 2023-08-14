@@ -87,7 +87,7 @@ const CateringDetails = () => {
             </aside>
             <aside className="package_single">
               <img
-                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/mpjx2teriodgxb71ywe0.webp"
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009102/Frontend_images/Catering/qv318ra1nhsvoim0ioix.webp"
                 alt=""
                 className="package_items_img_right"
               />
@@ -141,7 +141,7 @@ const CateringDetails = () => {
             </aside>
             <aside className="package_single">
               <img
-                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/ddhl9phljy5wzksfifw4.webp"
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009101/Frontend_images/Catering/eheafpx22yyatxauzjqw.webp"
                 alt=""
                 className="package_items_img_right"
               />
@@ -195,7 +195,7 @@ const CateringDetails = () => {
             </aside>
             <aside className="package_single">
               <img
-                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zer5bzwungxyhzvngm82.webp"
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009101/Frontend_images/Catering/l6sjwzqhdvvhk5fsrqsq.webp"
                 alt=""
                 className="package_items_img_right"
               />
@@ -303,7 +303,7 @@ const CateringDetails = () => {
             </aside>
             <aside className="package_single">
               <img
-                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/mpjx2teriodgxb71ywe0.webp"
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009102/Frontend_images/Catering/qv318ra1nhsvoim0ioix.webp"
                 alt=""
                 className="package_items_img_right"
               />
@@ -357,7 +357,7 @@ const CateringDetails = () => {
             </aside>
             <aside className="package_single">
               <img
-                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zer5bzwungxyhzvngm82.webp"
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009101/Frontend_images/Catering/l6sjwzqhdvvhk5fsrqsq.webp"
                 alt=""
                 className="package_items_img_right"
               />
@@ -411,7 +411,7 @@ const CateringDetails = () => {
             </aside>
             <aside className="package_single">
               <img
-                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/ddhl9phljy5wzksfifw4.webp"
+                src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009101/Frontend_images/Catering/eheafpx22yyatxauzjqw.webp"
                 alt=""
                 className="package_items_img_right"
               />
@@ -437,15 +437,14 @@ const CateringDetails = () => {
           </div>
           <hr />
         </section>
-        <button>
-          <button
-            className="MyBtn package_checkout_btn"
-            onClick={() => handleSubmitFood()}
-          >
-            Process to Checkout
-          </button>
-          <h1>{countMessage}</h1>
+
+        <button
+          className="MyBtn package_checkout_btn"
+          onClick={() => handleSubmitFood()}
+        >
+          Process to Checkout
         </button>
+        <h1>{countMessage}</h1>
       </main>
 
       <Footer />
