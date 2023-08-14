@@ -159,6 +159,22 @@ const SidebarNav = () => {
                   <Link className="nav-link collapse_sub_menu" to="/MyOrder">
                     My Order
                   </Link>
+
+                  <Link
+                    className="nav-link collapse_sub_menu"
+                    to="/myCateringOrder"
+                  >
+                    My Catering Order
+                  </Link>
+
+                  {isAdmin && (
+                    <Link
+                      className="nav-link collapse_sub_menu"
+                      to="/adminCateringOrder"
+                    >
+                      list of Catering orders
+                    </Link>
+                  )}
                 </nav>
               </div>
               {/* Order management end */}

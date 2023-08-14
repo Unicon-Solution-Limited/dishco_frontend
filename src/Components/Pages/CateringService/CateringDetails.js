@@ -74,6 +74,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp",
                       name: "চিকেন মিল",
                       tk: 80,
                       day: "শুক্রবার",
@@ -99,6 +101,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/mpjx2teriodgxb71ywe0.webp",
                       name: "বীফ খিচুরি",
                       tk: 120,
                       day: "শুক্রবার",
@@ -128,6 +132,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp",
                       name: "এগ মিল",
                       tk: 80,
                       day: "শনিবার",
@@ -153,6 +159,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/ddhl9phljy5wzksfifw4.webp",
                       name: "চিকেন পোলাও",
                       tk: 120,
                       day: "শনিবার",
@@ -182,6 +190,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp",
                       name: "ফিশ মিল",
                       tk: 80,
                       day: "রবিবার",
@@ -207,6 +217,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zer5bzwungxyhzvngm82.webp",
                       name: "বীফ তেহারি",
                       tk: 120,
                       day: "রবিবার",
@@ -236,6 +248,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zam03uy7zifx3u5uiekc.webp",
                       name: "বীফ মিল",
                       tk: 80,
                       day: "সোমবার",
@@ -261,6 +275,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/cspimz68z9s14zfi8whm.webp",
                       name: "ডিম খিচুরি",
                       tk: 80,
                       day: "সোমবার",
@@ -290,6 +306,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp",
                       name: "চিকেন মিল",
                       tk: 80,
                       day: "মঙ্গলবার",
@@ -315,6 +333,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/mpjx2teriodgxb71ywe0.webp",
                       name: "বীফ খিচুরি",
                       tk: 120,
                       day: "মঙ্গলবার",
@@ -344,6 +364,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp",
                       name: "ফিশ মিল",
                       tk: 80,
                       day: "বুধবার",
@@ -369,6 +391,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zer5bzwungxyhzvngm82.webp",
                       name: "বীফ তেহারি",
                       tk: 120,
                       day: "বুধবার",
@@ -398,6 +422,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp",
                       name: "এগ মিল",
                       tk: 80,
                       day: "বৃহস্পতিবার",
@@ -423,6 +449,8 @@ const CateringDetails = () => {
                   class="hidden-radio"
                   onClick={() =>
                     handlePackageClick({
+                      image:
+                        "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/ddhl9phljy5wzksfifw4.webp",
                       name: "চিকেন পোলাও",
                       tk: 120,
                       day: "বৃহস্পতিবার",

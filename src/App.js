@@ -39,6 +39,9 @@ import HowToBuy from "./Components/Pages/FooterPages/HowToBuy";
 import CateringDetails from "./Components/Pages/CateringService/CateringDetails";
 import CateringCheckoutPage from "./Components/Pages/CateringService/CateringCheckoutPage";
 import CateringSuccess from "./Components/Pages/CateringService/CateringSuccess";
+import MyCateringOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/MyCateringOrder";
+import AdminCateringOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/AdminCateringOrder";
+import CateringInvoice from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/CateringInvoice";
 
 function App() {
   return (
@@ -84,8 +87,21 @@ function App() {
             <Route path="/MyOrder">
               <CustomerOrder />
             </Route>
+
+            <Route path="/myCateringOrder">
+              <MyCateringOrder />
+            </Route>
+
+            <Route path="/adminCateringOrder">
+              <AdminCateringOrder />
+            </Route>
+
             <Route path="/invoice">
               <Invoice />
+            </Route>
+
+            <Route path="/cateringInvoice">
+              <CateringInvoice />
             </Route>
             {/* Dashboard router end */}
 
