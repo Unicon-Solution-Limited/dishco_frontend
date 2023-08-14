@@ -101,11 +101,12 @@
 }
 
 .package_items_img_left {
-  width: 350px;
+  width: 450px;
   height: auto;
+  object-fit: cover;
 }
 .package_items_img_right {
-  width: 100px;
+  width: 120px;
   height: auto;
   display: block;
   margin-left: auto;
@@ -164,6 +165,12 @@
     align-items: center;
     flex-direction: column;
     gap: 50px;
+  }
+  .package_items_img_left {
+    width: 100%;
+  }
+  .package_items-header {
+    text-align: center;
   }
 }
 
