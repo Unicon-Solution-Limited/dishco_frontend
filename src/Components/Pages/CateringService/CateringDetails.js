@@ -5,23 +5,39 @@ import Footer from "./../../Shared/Footer/Footer";
 import "./Catering.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
+//dinamicly 7 days come
+const getNextDays = (numDays) => {
+  const days = [];
+  const today = new Date();
+
+  for (let i = 1; i <= numDays; i++) {
+    const nextDay = new Date(today);
+    nextDay.setDate(today.getDate() + i);
+    days.push(nextDay);
+  }
+
+  return days;
+};
+const formatDate = (date) => {
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    // hour: "numeric",
+    // minute: "numeric",
+    // second: "numeric",
+    // timeZoneName: "short",
+  };
+  return date.toLocaleDateString(undefined, options);
+};
+
 const CateringDetails = () => {
+  const [dates, setDates] = useState(getNextDays(7));
   const [food, setFood] = useState([]);
-  // console.log(food);
-  const saturdayRegRef = useRef();
-  const sundayRegRef = useRef();
-  const mondayRegRef = useRef();
-  const tuesdayRegRef = useRef();
-  const thursdayRegRef = useRef();
-  const fridayRegRef = useRef();
-  const saturdaySpclRef = useRef();
-  const sundaySpclRef = useRef();
-  const mondaySpclRef = useRef();
-  const tuesdaySpclRef = useRef();
-  const thursdaySpclRef = useRef();
-  const fridaySpclRef = useRef();
   const [countMessage, setCountMessage] = useState("");
   const history = useHistory();
+  const [quantity, setQuantity] = useState(1);
 
   const handlePackageClick = (data) => {
     // Check if an item with the same number already exists in the food array
@@ -47,10 +63,27 @@ const CateringDetails = () => {
     }
   };
 
+  //handlesatRegDecrese
+  const handleSatRegDecrease = () => {
+    setQuantity(Math.max(quantity - 1, 1));
+  };
+
+  //handleSatRegIncrease
+  const handlesatRegIncrease = () => {
+    setQuantity(quantity + 1);
+  };
+
   return (
     <>
       <Header />
       <main className="container my-5 package-body">
+        <div>
+          {dates.map((date, index) => (
+            <button key={index} onClick={() => console.log(formatDate(date))}>
+              {formatDate(date)}
+            </button>
+          ))}
+        </div>
         <h2 className="package_headline">সাপ্তাহিক প্যাকেজ</h2>
         <div className="package_items-header">
           <h4>রেগুলার আইটেম</h4>
@@ -86,6 +119,23 @@ const CateringDetails = () => {
                 />
                 <span class="custom-checkbox"></span> Select
               </label>
+              {/* <span className="quantity_cart_input">
+                <button
+                  className="value-button"
+                  id="decrease"
+                  onClick={() => handleDecrease()}
+                >
+                  -
+                </button>
+                <input type="number" id="number" value={quantity} readOnly />
+                <button
+                  className="value-button"
+                  id="increase"
+                  onClick={() => handleIncrease()}
+                >
+                  +
+                </button>
+              </span> */}
             </aside>
             <aside className="package_single">
               <img
