@@ -18,6 +18,20 @@ const getNextDays = (numDays) => {
 
   return days;
 };
+
+const getBanglaDayName = (dayName) => {
+  const dayNameInBangla = {
+    Sunday: "রবিবার",
+    Monday: "সোমবার",
+    Tuesday: "মঙ্গলবার",
+    Wednesday: "বুধবার",
+    Thursday: "বৃহস্পতিবার",
+    Friday: "শুক্রবার",
+    Saturday: "শনিবার",
+  };
+  return dayNameInBangla[dayName] || dayName;
+};
+
 const formatDate = (date) => {
   const options = {
     weekday: "long",
@@ -29,7 +43,11 @@ const formatDate = (date) => {
     // second: "numeric",
     // timeZoneName: "short",
   };
-  return date.toLocaleDateString(undefined, options);
+
+  const dayName = date.toLocaleDateString("en-US", options);
+  const banglaDayName = getBanglaDayName(dayName);
+
+  return banglaDayName;
 };
 
 const CateringDetails = () => {
@@ -60,7 +78,9 @@ const CateringDetails = () => {
       localStorage.setItem("cateringFood", JSON.stringify(food));
       history.push("/cateringCheckoutPage");
     } else {
-      setCountMessage("You have to order at least 5 days");
+      setCountMessage(
+        "চেকআউট পেজে যেতে হলে, আপনাকে কমপক্ষে ৫ দিনের খাবার অর্ডার করতে হবে"
+      );
     }
   };
 
@@ -86,7 +106,7 @@ const CateringDetails = () => {
         </div>
 
         <section>
-          {selectedDate === "Friday" && (
+          {selectedDate === "শুক্রবার" && (
             <>
               <h4 className="package_sub_headline">শুক্রবার</h4>
               <div className="package_items">
@@ -148,7 +168,7 @@ const CateringDetails = () => {
             </>
           )}
 
-          {selectedDate === "Saturday" && (
+          {selectedDate === "শনিবার" && (
             <>
               <h4 className="package_sub_headline">শনিবার</h4>
               <div className="package_items">
@@ -210,7 +230,7 @@ const CateringDetails = () => {
             </>
           )}
 
-          {selectedDate === "Sunday" && (
+          {selectedDate === "রবিবার" && (
             <>
               <h4 className="package_sub_headline">রবিবার</h4>
               <div className="package_items">
@@ -272,7 +292,7 @@ const CateringDetails = () => {
             </>
           )}
 
-          {selectedDate === "Monday" && (
+          {selectedDate === "সোমবার" && (
             <>
               <h4 className="package_sub_headline">সোমবার</h4>
               <div className="package_items">
@@ -334,7 +354,7 @@ const CateringDetails = () => {
             </>
           )}
 
-          {selectedDate === "Tuesday" && (
+          {selectedDate === "মঙ্গলবার" && (
             <>
               <h4 className="package_sub_headline">মঙ্গলবার</h4>
               <div className="package_items">
@@ -396,7 +416,7 @@ const CateringDetails = () => {
             </>
           )}
 
-          {selectedDate === "Wednesday" && (
+          {selectedDate === "বুধবার" && (
             <>
               <h4 className="package_sub_headline">বুধবার</h4>
               <div className="package_items">
@@ -458,7 +478,7 @@ const CateringDetails = () => {
             </>
           )}
 
-          {selectedDate === "Thursday" && (
+          {selectedDate === "বৃহস্পতিবার" && (
             <>
               <h4 className="package_sub_headline">বৃহস্পতিবার</h4>
               <div className="package_items">
@@ -521,13 +541,18 @@ const CateringDetails = () => {
           )}
         </section>
 
-        <button
-          className="MyBtn package_checkout_btn"
-          onClick={() => handleSubmitFood()}
-        >
-          Process to Checkout
-        </button>
-        <h1>{countMessage}</h1>
+        {food?.length >= 5 ? (
+          <button
+            className="MyBtn package_checkout_btn"
+            onClick={() => handleSubmitFood()}
+          >
+            Process to Checkout
+          </button>
+        ) : (
+          <h1>
+            চেকআউট পেজে যেতে হলে, আপনাকে কমপক্ষে ৫ দিনের খাবার অর্ডার করতে হবে
+          </h1>
+        )}
       </main>
 
       <Footer />
