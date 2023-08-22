@@ -87,7 +87,7 @@ const CateringDetails = () => {
   };
 
   const fallback =
-    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674641183/Frontend_images/Background_images/rh6vjlpg81xrbtrieyep.webp";
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1692686715/Frontend_images/Background_images/hpldnybpokkcekx0j2k4.webp";
   return (
     <>
       <Header />
