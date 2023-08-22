@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../../../Authentication/AuthContext/AuthContext";
 
-const PopupCateringOrder = ({ orderDetailsForPopup }) => {
+const PopupCateringOrderAdmin = ({ orderDetailsForPopup }) => {
   const statusRef = useRef();
   const [statusMessage, setStatusMessage] = useState(false);
   const { currentUser } = useAuth();
@@ -168,4 +168,4 @@ const PopupCateringOrder = ({ orderDetailsForPopup }) => {
   );
 };
 
-export default PopupCateringOrder;
+export default PopupCateringOrderAdmin;
