@@ -5,8 +5,6 @@ const CateringInvoice = () => {
   const location = useLocation();
   const data = location.state.orderDetailsForCateringInvoice;
 
-  console.log(data);
-
   //total tk
   const totalTk = data?.food.reduce(
     (accumulator, item) => accumulator + item.tk,
