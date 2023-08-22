@@ -5,12 +5,14 @@ import Footer from "./../../Shared/Footer/Footer";
 import "./Catering.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
+import video from "../../../Media/catering-bg.webm";
+
 //dinamicly 7 days come
 const getNextDays = (numDays) => {
   const days = [];
   const today = new Date();
 
-  for (let i = 1; i <= numDays; i++) {
+  for (let i = 2; i <= numDays; i++) {
     const nextDay = new Date(today);
     nextDay.setDate(today.getDate() + i);
     days.push(nextDay);
@@ -51,7 +53,7 @@ const formatDate = (date) => {
 };
 
 const CateringDetails = () => {
-  const [dates, setDates] = useState(getNextDays(7));
+  const [dates, setDates] = useState(getNextDays(8));
   const [selectedDate, setSelectedDate] = useState("");
   const [food, setFood] = useState([]);
   const [countMessage, setCountMessage] = useState("");
@@ -84,6 +86,8 @@ const CateringDetails = () => {
     }
   };
 
+  const fallback =
+    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1674641183/Frontend_images/Background_images/rh6vjlpg81xrbtrieyep.webp";
   return (
     <>
       <Header />
@@ -156,93 +160,116 @@ const CateringDetails = () => {
       >
         <div className="modal-dialog modal-dialog-centered modal-xl">
           <div className="modal-content">
-            <div className="modal-header">
+            <div className="modal-header catering-modal-header">
               <h1 className="modal-title fs-5" id="cateringModalLabel">
                 যেকোনো একটি প্যাকেজ সিলেক্ট করুন
               </h1>
               <button
                 type="button"
-                className="btn-close"
+                className="btn package-modal-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-              ></button>
+              >
+                <i className="bi bi-x-lg"></i>
+              </button>
             </div>
-            <div className="modal-body">
+            <div className="modal-body catering-modal-body">
               <>
                 {selectedDate === "শুক্রবার" && (
                   <>
-                    <h4 className="package_sub_headline">শুক্রবার</h4>
-                    <div className="package_items">
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>রেগুলার আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp"
-                          alt=""
-                          className="package_items_img_left"
-                        />
-                        <figcaption>
-                          ভাত + মুরগি + ডাল + সবজি = ৮০ টাকা
-                        </figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="friday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp",
-                                name: "চিকেন মিল",
-                                tk: 80,
-                                day: "শুক্রবার",
-                                number: 1,
-                                package: "রেগুলার",
-                              })
-                            }
+                    <video
+                      className="w-100 package-video"
+                      id="video_content"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      poster={fallback}
+                    >
+                      <source src={video} type="video/webm" />
+                      <img
+                        src={fallback}
+                        title="Your browser does not support the <video> tag"
+                        alt="DishCo- Dancing Deliciousness"
+                        loading="lazy"
+                      ></img>
+                    </video>
+                    <div className="package-item-main">
+                      <h4 className="package_sub_headline">শুক্রবার</h4>
+                      <div className="package_items">
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>রেগুলার আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp"
+                            alt=""
+                            className="package_items_img_left"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>স্পেশিয়াল আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009102/Frontend_images/Catering/qv318ra1nhsvoim0ioix.webp"
-                          alt=""
-                          className="package_items_img_right"
-                        />
-                        <figcaption>বীফ খিচুরি = ১২০ টাকা</figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="friday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/mpjx2teriodgxb71ywe0.webp",
-                                name: "বীফ খিচুরি",
-                                tk: 120,
-                                day: "শুক্রবার",
-                                number: 1,
-                                package: "স্পেশিয়াল",
-                              })
-                            }
+                          <figcaption className="package-img-caption">
+                            ভাত + মুরগি + ডাল + সবজি = ৮০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="friday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp",
+                                  name: "চিকেন মিল",
+                                  tk: 80,
+                                  day: "শুক্রবার",
+                                  number: 1,
+                                  package: "রেগুলার",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>স্পেশিয়াল আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009102/Frontend_images/Catering/qv318ra1nhsvoim0ioix.webp"
+                            alt=""
+                            className="package_items_img_right"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
+                          <figcaption className="package-img-caption">
+                            বীফ খিচুরি = ১২০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="friday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/mpjx2teriodgxb71ywe0.webp",
+                                  name: "বীফ খিচুরি",
+                                  tk: 120,
+                                  day: "শুক্রবার",
+                                  number: 1,
+                                  package: "স্পেশিয়াল",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                      </div>
                     </div>
                   </>
                 )}
