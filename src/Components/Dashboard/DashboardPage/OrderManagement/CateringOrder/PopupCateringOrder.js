@@ -111,6 +111,10 @@ const PopupCateringOrder = ({ orderDetailsForPopup }) => {
                 </span>
                 <span>
                   <p>
+                    <strong>Payment Method=</strong>{" "}
+                    {orderDetailsForPopup?.payment_method}
+                  </p>
+                  <p>
                     <strong>Total=</strong> {orderDetailsForPopup?.total_amount}{" "}
                     tk.{" "}
                   </p>
