@@ -12,6 +12,8 @@ const CateringCheckoutPage = () => {
   const extra_informationRef = useRef();
   const { currentUser } = useAuth();
   const [food, setFood] = useState([]);
+  const PaymentRef = useRef();
+  const [paymnetLoading, setPaymentLoading] = useState(false);
 
   //getting all food from local stroage
   useEffect(() => {
@@ -23,17 +25,14 @@ const CateringCheckoutPage = () => {
   }, []);
 
   //total tk
-  const total_amount = food.reduce(
-    (accumulator, item) => accumulator + item.tk,
-    0
-  );
+  const totalTk = food.reduce((accumulator, item) => accumulator + item.tk, 0);
 
   //confirm order
   const handleConfirmOrder = async (e) => {
     e.preventDefault();
-
+    setPaymentLoading(true);
     const confimOrderData = {
-      // total_amount: total_amount,
+      total_amount: totalTk,
       food: food,
       cus_name: currentUser?.displayName,
       cus_city: cityRef?.current.value,
@@ -42,12 +41,14 @@ const CateringCheckoutPage = () => {
       cus_phone: phoneNumberRef.current.value,
       cus_add1: addressRef.current.value,
       product_status: "Pending",
+      payment_method: PaymentRef.current.value,
       orderTime: new Date().toISOString(),
     };
 
-    try {
-      const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/addCateringFood?email=${currentUser?.email}`,
+    //conditionally check the payment and hit the api
+    if (confimOrderData?.payment_method === "Online Payment") {
+      fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/cateringOnileInit?email=${currentUser?.email}`,
         {
           method: "POST",
           headers: {
@@ -56,16 +57,30 @@ const CateringCheckoutPage = () => {
           },
           body: JSON.stringify(confimOrderData),
         }
-      );
-
-      if (response.ok) {
-        console.log("Order placed successfully!");
-        history.push("/cateringSuccess");
-      } else {
-        console.log("Failed to place order.");
-      }
-    } catch (error) {
-      console.error("An error occurred:", error);
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setPaymentLoading(false);
+          window.location.replace(data);
+        });
+    } else {
+      fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/cateringCashonDeliveryInit?email=${currentUser?.email}`,
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+          },
+          body: JSON.stringify(confimOrderData),
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setPaymentLoading(false);
+          console.log(data);
+          history.push("/cateringSuccess/cashOnDelivery");
+        });
     }
   };
 
@@ -195,8 +210,32 @@ const CateringCheckoutPage = () => {
             ></textarea>
           </div>
 
-          <button type="submit" className="btn MyBtn placeOrder_btn">
-            "Confirm Order"
+          <select
+            className="form-select"
+            aria-label="Default select example"
+            ref={PaymentRef}
+            required
+          >
+            <option value="">Select Payment Methods</option>
+            <option value="Online Payment">Online Payment</option>
+            <option value="Cash on delivery">Cash on delivery</option>
+          </select>
+          <br />
+          <br />
+          <button
+            type="submit"
+            className="btn MyBtn placeOrder_btn"
+            disabled={food.length === 0}
+          >
+            {paymnetLoading ? (
+              <div className="d-flex justify-content-center">
+                <div className="spinner-border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            ) : (
+              "Confirm Order"
+            )}
           </button>
         </aside>
       </form>
@@ -210,9 +249,7 @@ const CateringCheckoutPage = () => {
               {new Intl.NumberFormat("bn-BD").format(fd.tk)} টাকা
             </h1>
           ))}
-        <h1>
-          মোট বিল: {new Intl.NumberFormat("bn-BD").format(total_amount)} টাকা
-        </h1>
+        <h1>মোট বিল: {new Intl.NumberFormat("bn-BD").format(totalTk)} টাকা</h1>
       </div>
     </div>
   );

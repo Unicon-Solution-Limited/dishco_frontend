@@ -158,7 +158,7 @@ function App() {
               <HowToBuy />
             </Route>
 
-            <Route path="/cateringSuccess">
+            <Route path="/cateringSuccess/:tran_id">
               <CateringSuccess />
             </Route>
 
