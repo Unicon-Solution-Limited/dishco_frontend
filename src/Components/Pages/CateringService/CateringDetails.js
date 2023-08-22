@@ -277,78 +277,99 @@ const CateringDetails = () => {
               <>
                 {selectedDate === "শনিবার" && (
                   <>
-                    <h4 className="package_sub_headline">শনিবার</h4>
-                    <div className="package_items">
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>রেগুলার আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp"
-                          alt=""
-                          className="package_items_img_left"
-                        />
-                        <figcaption>
-                          ভাত + ডিম + ডাল + সবজি = ৮০ টাকা
-                        </figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="saturday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp",
-                                name: "এগ মিল",
-                                tk: 80,
-                                day: "শনিবার",
-                                number: 2,
-                                package: "রেগুলার",
-                              })
-                            }
+                    <video
+                      className="w-100 package-video"
+                      id="video_content"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      poster={fallback}
+                    >
+                      <source src={video} type="video/webm" />
+                      <img
+                        src={fallback}
+                        title="Your browser does not support the <video> tag"
+                        alt="DishCo- Dancing Deliciousness"
+                        loading="lazy"
+                      ></img>
+                    </video>
+                    <div className="package-item-main">
+                      <h4 className="package_sub_headline">শনিবার</h4>
+                      <div className="package_items">
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>রেগুলার আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp"
+                            alt=""
+                            className="package_items_img_left"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>স্পেশিয়াল আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009101/Frontend_images/Catering/eheafpx22yyatxauzjqw.webp"
-                          alt=""
-                          className="package_items_img_right"
-                        />
-                        <figcaption>চিকেন পোলাও = ১২০ টাকা</figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="saturday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/ddhl9phljy5wzksfifw4.webp",
-                                name: "চিকেন পোলাও",
-                                tk: 120,
-                                day: "শনিবার",
-                                number: 2,
-                                package: "স্পেশিয়াল",
-                              })
-                            }
+                          <figcaption className="package-img-caption">
+                            ভাত + ডিম + ডাল + সবজি = ৮০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="saturday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp",
+                                  name: "এগ মিল",
+                                  tk: 80,
+                                  day: "শনিবার",
+                                  number: 2,
+                                  package: "রেগুলার",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>স্পেশিয়াল আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009101/Frontend_images/Catering/eheafpx22yyatxauzjqw.webp"
+                            alt=""
+                            className="package_items_img_right"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
+                          <figcaption className="package-img-caption">
+                            চিকেন পোলাও = ১২০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="saturday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/ddhl9phljy5wzksfifw4.webp",
+                                  name: "চিকেন পোলাও",
+                                  tk: 120,
+                                  day: "শনিবার",
+                                  number: 2,
+                                  package: "স্পেশিয়াল",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                      </div>
                     </div>
                   </>
                 )}
@@ -356,78 +377,99 @@ const CateringDetails = () => {
               <>
                 {selectedDate === "রবিবার" && (
                   <>
-                    <h4 className="package_sub_headline">রবিবার</h4>
-                    <div className="package_items">
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>রেগুলার আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp"
-                          alt=""
-                          className="package_items_img_left"
-                        />
-                        <figcaption>
-                          ভাত + মাছ + ডাল + সবজি = ৮০ টাকা
-                        </figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="sunday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp",
-                                name: "ফিশ মিল",
-                                tk: 80,
-                                day: "রবিবার",
-                                number: 3,
-                                package: "রেগুলার",
-                              })
-                            }
+                    <video
+                      className="w-100 package-video"
+                      id="video_content"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      poster={fallback}
+                    >
+                      <source src={video} type="video/webm" />
+                      <img
+                        src={fallback}
+                        title="Your browser does not support the <video> tag"
+                        alt="DishCo- Dancing Deliciousness"
+                        loading="lazy"
+                      ></img>
+                    </video>
+                    <div className="package-item-main">
+                      <h4 className="package_sub_headline">রবিবার</h4>
+                      <div className="package_items">
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>রেগুলার আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp"
+                            alt=""
+                            className="package_items_img_left"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>স্পেশিয়াল আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009101/Frontend_images/Catering/l6sjwzqhdvvhk5fsrqsq.webp"
-                          alt=""
-                          className="package_items_img_right"
-                        />
-                        <figcaption>বীফ তেহারি = ১২০ টাকা</figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="sunday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zer5bzwungxyhzvngm82.webp",
-                                name: "বীফ তেহারি",
-                                tk: 120,
-                                day: "রবিবার",
-                                number: 3,
-                                package: "স্পেশিয়াল",
-                              })
-                            }
+                          <figcaption className="package-img-caption">
+                            ভাত + মাছ + ডাল + সবজি = ৮০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="sunday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp",
+                                  name: "ফিশ মিল",
+                                  tk: 80,
+                                  day: "রবিবার",
+                                  number: 3,
+                                  package: "রেগুলার",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>স্পেশিয়াল আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009101/Frontend_images/Catering/l6sjwzqhdvvhk5fsrqsq.webp"
+                            alt=""
+                            className="package_items_img_right"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
+                          <figcaption className="package-img-caption">
+                            বীফ তেহারি = ১২০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="sunday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zer5bzwungxyhzvngm82.webp",
+                                  name: "বীফ তেহারি",
+                                  tk: 120,
+                                  day: "রবিবার",
+                                  number: 3,
+                                  package: "স্পেশিয়াল",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                      </div>
                     </div>
                   </>
                 )}
@@ -435,78 +477,99 @@ const CateringDetails = () => {
               <>
                 {selectedDate === "সোমবার" && (
                   <>
-                    <h4 className="package_sub_headline">সোমবার</h4>
-                    <div className="package_items">
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>রেগুলার আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zam03uy7zifx3u5uiekc.webp"
-                          alt=""
-                          className="package_items_img_left"
-                        />
-                        <figcaption>
-                          ভাত + বীফ + ডাল + সবজি = ৮০ টাকা
-                        </figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="monday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zam03uy7zifx3u5uiekc.webp",
-                                name: "বীফ মিল",
-                                tk: 80,
-                                day: "সোমবার",
-                                number: 4,
-                                package: "রেগুলার",
-                              })
-                            }
+                    <video
+                      className="w-100 package-video"
+                      id="video_content"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      poster={fallback}
+                    >
+                      <source src={video} type="video/webm" />
+                      <img
+                        src={fallback}
+                        title="Your browser does not support the <video> tag"
+                        alt="DishCo- Dancing Deliciousness"
+                        loading="lazy"
+                      ></img>
+                    </video>
+                    <div className="package-item-main">
+                      <h4 className="package_sub_headline">সোমবার</h4>
+                      <div className="package_items">
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>রেগুলার আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zam03uy7zifx3u5uiekc.webp"
+                            alt=""
+                            className="package_items_img_left"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>স্পেশিয়াল আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/cspimz68z9s14zfi8whm.webp"
-                          alt=""
-                          className="package_items_img_right"
-                        />
-                        <figcaption>ডিম খিচুরি = ৮০ টাকা</figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="monday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/cspimz68z9s14zfi8whm.webp",
-                                name: "ডিম খিচুরি",
-                                tk: 80,
-                                day: "সোমবার",
-                                number: 4,
-                                package: "স্পেশিয়াল",
-                              })
-                            }
+                          <figcaption className="package-img-caption">
+                            ভাত + বীফ + ডাল + সবজি = ৮০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="monday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zam03uy7zifx3u5uiekc.webp",
+                                  name: "বীফ মিল",
+                                  tk: 80,
+                                  day: "সোমবার",
+                                  number: 4,
+                                  package: "রেগুলার",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>স্পেশিয়াল আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/cspimz68z9s14zfi8whm.webp"
+                            alt=""
+                            className="package_items_img_right"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
+                          <figcaption className="package-img-caption">
+                            ডিম খিচুরি = ৮০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="monday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/cspimz68z9s14zfi8whm.webp",
+                                  name: "ডিম খিচুরি",
+                                  tk: 80,
+                                  day: "সোমবার",
+                                  number: 4,
+                                  package: "স্পেশিয়াল",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                      </div>
                     </div>
                   </>
                 )}
@@ -514,78 +577,99 @@ const CateringDetails = () => {
               <>
                 {selectedDate === "মঙ্গলবার" && (
                   <>
-                    <h4 className="package_sub_headline">মঙ্গলবার</h4>
-                    <div className="package_items">
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>রেগুলার আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp"
-                          alt=""
-                          className="package_items_img_left"
-                        />
-                        <figcaption>
-                          ভাত + মুরগি + ডাল + সবজি = ৮০ টাকা
-                        </figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="tuesday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp",
-                                name: "চিকেন মিল",
-                                tk: 80,
-                                day: "মঙ্গলবার",
-                                number: 5,
-                                package: "রেগুলার",
-                              })
-                            }
+                    <video
+                      className="w-100 package-video"
+                      id="video_content"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      poster={fallback}
+                    >
+                      <source src={video} type="video/webm" />
+                      <img
+                        src={fallback}
+                        title="Your browser does not support the <video> tag"
+                        alt="DishCo- Dancing Deliciousness"
+                        loading="lazy"
+                      ></img>
+                    </video>
+                    <div className="package-item-main">
+                      <h4 className="package_sub_headline">মঙ্গলবার</h4>
+                      <div className="package_items">
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>রেগুলার আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp"
+                            alt=""
+                            className="package_items_img_left"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>স্পেশিয়াল আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009102/Frontend_images/Catering/qv318ra1nhsvoim0ioix.webp"
-                          alt=""
-                          className="package_items_img_right"
-                        />
-                        <figcaption>বীফ খিচুরি = ১২০ টাকা</figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="tuesday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/mpjx2teriodgxb71ywe0.webp",
-                                name: "বীফ খিচুরি",
-                                tk: 120,
-                                day: "মঙ্গলবার",
-                                number: 5,
-                                package: "স্পেশিয়াল",
-                              })
-                            }
+                          <figcaption className="package-img-caption">
+                            ভাত + মুরগি + ডাল + সবজি = ৮০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="tuesday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp",
+                                  name: "চিকেন মিল",
+                                  tk: 80,
+                                  day: "মঙ্গলবার",
+                                  number: 5,
+                                  package: "রেগুলার",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>স্পেশিয়াল আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009102/Frontend_images/Catering/qv318ra1nhsvoim0ioix.webp"
+                            alt=""
+                            className="package_items_img_right"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
+                          <figcaption className="package-img-caption">
+                            বীফ খিচুরি = ১২০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="tuesday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/mpjx2teriodgxb71ywe0.webp",
+                                  name: "বীফ খিচুরি",
+                                  tk: 120,
+                                  day: "মঙ্গলবার",
+                                  number: 5,
+                                  package: "স্পেশিয়াল",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                      </div>
                     </div>
                   </>
                 )}
@@ -593,78 +677,99 @@ const CateringDetails = () => {
               <>
                 {selectedDate === "বুধবার" && (
                   <>
-                    <h4 className="package_sub_headline">বুধবার</h4>
-                    <div className="package_items">
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>রেগুলার আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp"
-                          alt=""
-                          className="package_items_img_left"
-                        />
-                        <figcaption>
-                          ভাত + মাছ + ডাল + সবজি = ৮০ টাকা
-                        </figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="wednesday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp",
-                                name: "ফিশ মিল",
-                                tk: 80,
-                                day: "বুধবার",
-                                number: 6,
-                                package: "রেগুলার",
-                              })
-                            }
+                    <video
+                      className="w-100 package-video"
+                      id="video_content"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      poster={fallback}
+                    >
+                      <source src={video} type="video/webm" />
+                      <img
+                        src={fallback}
+                        title="Your browser does not support the <video> tag"
+                        alt="DishCo- Dancing Deliciousness"
+                        loading="lazy"
+                      ></img>
+                    </video>
+                    <div className="package-item-main">
+                      <h4 className="package_sub_headline">বুধবার</h4>
+                      <div className="package_items">
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>রেগুলার আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp"
+                            alt=""
+                            className="package_items_img_left"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>স্পেশিয়াল আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009101/Frontend_images/Catering/l6sjwzqhdvvhk5fsrqsq.webp"
-                          alt=""
-                          className="package_items_img_right"
-                        />
-                        <figcaption>বীফ তেহারি = ১২০ টাকা</figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="wednesday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zer5bzwungxyhzvngm82.webp",
-                                name: "বীফ তেহারি",
-                                tk: 120,
-                                day: "বুধবার",
-                                number: 6,
-                                package: "স্পেশিয়াল",
-                              })
-                            }
+                          <figcaption className="package-img-caption">
+                            ভাত + মাছ + ডাল + সবজি = ৮০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="wednesday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp",
+                                  name: "ফিশ মিল",
+                                  tk: 80,
+                                  day: "বুধবার",
+                                  number: 6,
+                                  package: "রেগুলার",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>স্পেশিয়াল আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009101/Frontend_images/Catering/l6sjwzqhdvvhk5fsrqsq.webp"
+                            alt=""
+                            className="package_items_img_right"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
+                          <figcaption className="package-img-caption">
+                            বীফ তেহারি = ১২০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="wednesday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zer5bzwungxyhzvngm82.webp",
+                                  name: "বীফ তেহারি",
+                                  tk: 120,
+                                  day: "বুধবার",
+                                  number: 6,
+                                  package: "স্পেশিয়াল",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                      </div>
                     </div>
                   </>
                 )}
@@ -672,78 +777,99 @@ const CateringDetails = () => {
               <>
                 {selectedDate === "বৃহস্পতিবার" && (
                   <>
-                    <h4 className="package_sub_headline">বৃহস্পতিবার</h4>
-                    <div className="package_items">
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>রেগুলার আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp"
-                          alt=""
-                          className="package_items_img_left"
-                        />
-                        <figcaption>
-                          ভাত + ডিম + ডাল + সবজি = ৮০ টাকা
-                        </figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="thursday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp",
-                                name: "এগ মিল",
-                                tk: 80,
-                                day: "বৃহস্পতিবার",
-                                number: 7,
-                                package: "রেগুলার",
-                              })
-                            }
+                    <video
+                      className="w-100 package-video"
+                      id="video_content"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      poster={fallback}
+                    >
+                      <source src={video} type="video/webm" />
+                      <img
+                        src={fallback}
+                        title="Your browser does not support the <video> tag"
+                        alt="DishCo- Dancing Deliciousness"
+                        loading="lazy"
+                      ></img>
+                    </video>
+                    <div className="package-item-main">
+                      <h4 className="package_sub_headline">বৃহস্পতিবার</h4>
+                      <div className="package_items">
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>রেগুলার আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp"
+                            alt=""
+                            className="package_items_img_left"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
-                      <aside className="package_single">
-                        <div className="package_items-header">
-                          <h4>স্পেশিয়াল আইটেম</h4>
-                        </div>
-                        <img
-                          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009101/Frontend_images/Catering/eheafpx22yyatxauzjqw.webp"
-                          alt=""
-                          className="package_items_img_right"
-                        />
-                        <figcaption>চিকেন পোলাও = ১২০ টাকা</figcaption>
-                        <label
-                          className="custom-radio"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <input
-                            type="radio"
-                            name="thursday"
-                            className="hidden-radio"
-                            onClick={() =>
-                              handlePackageClick({
-                                image:
-                                  "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/ddhl9phljy5wzksfifw4.webp",
-                                name: "চিকেন পোলাও",
-                                tk: 120,
-                                day: "বৃহস্পতিবার",
-                                number: 7,
-                                package: "স্পেশিয়াল",
-                              })
-                            }
+                          <figcaption className="package-img-caption">
+                            ভাত + ডিম + ডাল + সবজি = ৮০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="thursday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp",
+                                  name: "এগ মিল",
+                                  tk: 80,
+                                  day: "বৃহস্পতিবার",
+                                  number: 7,
+                                  package: "রেগুলার",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                        <aside className="package_single">
+                          <div className="package_items-header">
+                            <h4>স্পেশিয়াল আইটেম</h4>
+                          </div>
+                          <img
+                            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692009101/Frontend_images/Catering/eheafpx22yyatxauzjqw.webp"
+                            alt=""
+                            className="package_items_img_right"
                           />
-                          <span className="custom-checkbox"></span> Select
-                        </label>
-                      </aside>
+                          <figcaption className="package-img-caption">
+                            চিকেন পোলাও = ১২০ টাকা
+                          </figcaption>
+                          <label
+                            className="custom-radio"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <input
+                              type="radio"
+                              name="thursday"
+                              className="hidden-radio"
+                              onClick={() =>
+                                handlePackageClick({
+                                  image:
+                                    "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/ddhl9phljy5wzksfifw4.webp",
+                                  name: "চিকেন পোলাও",
+                                  tk: 120,
+                                  day: "বৃহস্পতিবার",
+                                  number: 7,
+                                  package: "স্পেশিয়াল",
+                                })
+                              }
+                            />
+                            <span className="custom-checkbox"></span> Select
+                          </label>
+                        </aside>
+                      </div>
                     </div>
                   </>
                 )}
