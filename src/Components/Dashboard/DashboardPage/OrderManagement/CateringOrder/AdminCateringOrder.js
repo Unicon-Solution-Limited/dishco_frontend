@@ -4,7 +4,7 @@ import { useAuth } from "../../../../Authentication/AuthContext/AuthContext";
 import TopbarNav from "../../../Layouts/TopbarNav";
 import SidebarNav from "../../../Layouts/SidebarNav";
 import { DebounceInput } from "react-debounce-input";
-import PopupCateringOrder from "./PopupCateringOrder";
+import PopupCateringOrderAdmin from "./PopupCateringOrderAdmin";
 
 const AdminCateringOrder = () => {
   const { currentUser } = useAuth();
@@ -167,7 +167,9 @@ const AdminCateringOrder = () => {
             </div>
 
             {/* Modal for single order */}
-            <PopupCateringOrder orderDetailsForPopup={orderDetailsForPopup} />
+            <PopupCateringOrderAdmin
+              orderDetailsForPopup={orderDetailsForPopup}
+            />
           </main>
         </div>
       </div>

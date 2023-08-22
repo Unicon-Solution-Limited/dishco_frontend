@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../../../Authentication/AuthContext/AuthContext";
 
-const PopupCateringOrder = ({ orderDetailsForPopup }) => {
+const PopupCateringOrderAdmin = ({ orderDetailsForPopup }) => {
   const statusRef = useRef();
   const [statusMessage, setStatusMessage] = useState(false);
   const { currentUser } = useAuth();
@@ -111,6 +111,10 @@ const PopupCateringOrder = ({ orderDetailsForPopup }) => {
                 </span>
                 <span>
                   <p>
+                    <strong>Payment Method=</strong>{" "}
+                    {orderDetailsForPopup?.payment_method}
+                  </p>
+                  <p>
                     <strong>Total=</strong> {orderDetailsForPopup?.total_amount}{" "}
                     tk.{" "}
                   </p>
@@ -164,4 +168,4 @@ const PopupCateringOrder = ({ orderDetailsForPopup }) => {
   );
 };
 
-export default PopupCateringOrder;
+export default PopupCateringOrderAdmin;
