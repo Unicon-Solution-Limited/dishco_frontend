@@ -89,7 +89,7 @@ const CateringDetails = () => {
       <Header />
       <main className="package-body">
         <section className="container package-body-main">
-          <h2 className="package_headline">সাপ্তাহিক প্যাকেজ</h2>
+          <h2 className="package-headline">সাপ্তাহিক প্যাকেজ</h2>
           {/* date button */}
           <section className="package-select-buttons">
             {dates.map((date, index) => {

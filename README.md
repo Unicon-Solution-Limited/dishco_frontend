@@ -10,3 +10,5 @@ URL: https://dishcofood.com/
 3. DotEnv: https://github.com/motdotla/dotenv
 
 4. React Date picker: https://github.com/Hacker0x01/react-datepicker
+
+5. Date bangla Formate: https://www.npmjs.com/package/intl-messageformat

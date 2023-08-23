@@ -85,7 +85,7 @@ const CateringCheckoutPage = () => {
   };
 
   return (
-    <div>
+    <>
       <form className="checkout_body container" onSubmit={handleConfirmOrder}>
         <aside className="billing_form">
           <h5>Shipping Address</h5>
@@ -251,7 +251,7 @@ const CateringCheckoutPage = () => {
           ))}
         <h1>মোট বিল: {new Intl.NumberFormat("bn-BD").format(totalTk)} টাকা</h1>
       </div>
-    </div>
+    </>
   );
 };
 
