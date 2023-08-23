@@ -4,10 +4,9 @@ import Header from "./../../Shared/Header/Header";
 import Footer from "./../../Shared/Footer/Footer";
 import "./Catering.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-
 import video from "../../../Media/catering-bg.webm";
+import { IntlMessageFormat } from "intl-messageformat";
 
-//dinamicly 7 days come
 const getNextDays = (numDays) => {
   const days = [];
   const today = new Date();
@@ -21,40 +20,37 @@ const getNextDays = (numDays) => {
   return days;
 };
 
-const getBanglaDayName = (dayName) => {
-  const dayNameInBangla = {
-    Sunday: "রবিবার",
-    Monday: "সোমবার",
-    Tuesday: "মঙ্গলবার",
-    Wednesday: "বুধবার",
-    Thursday: "বৃহস্পতিবার",
-    Friday: "শুক্রবার",
-    Saturday: "শনিবার",
-  };
-  return dayNameInBangla[dayName] || dayName;
-};
-
 const formatDate = (date) => {
+  const banglaLocale = "bn-BD";
+
   const options = {
     weekday: "long",
-    // year: "numeric",
-    // month: "long",
-    // day: "numeric",
-    // hour: "numeric",
-    // minute: "numeric",
-    // second: "numeric",
-    // timeZoneName: "short",
+    day: "numeric",
+    month: "long",
   };
 
-  const dayName = date.toLocaleDateString("en-US", options);
-  const banglaDayName = getBanglaDayName(dayName);
+  const formattedDate = new IntlMessageFormat(
+    `{weekday} {day} {month}`,
+    banglaLocale
+  ).format({
+    weekday: date.toLocaleDateString(banglaLocale, { weekday: "long" }),
+    day: date.toLocaleDateString(banglaLocale, { day: "numeric" }),
+    month: date.toLocaleDateString(banglaLocale, { month: "long" }),
+  });
 
-  return banglaDayName;
+  const [weekday, day, month] = formattedDate.split(" ");
+
+  return {
+    weekday,
+    day,
+    month,
+  };
 };
 
 const CateringDetails = () => {
   const [dates, setDates] = useState(getNextDays(8));
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState(null);
+  console.log(selectedDate?.weekday);
   const [food, setFood] = useState([]);
   const [countMessage, setCountMessage] = useState("");
   const history = useHistory();
@@ -96,21 +92,24 @@ const CateringDetails = () => {
           <h2 className="package_headline">সাপ্তাহিক প্যাকেজ</h2>
           {/* date button */}
           <section className="package-select-buttons">
-            {dates.map((date, index) => (
-              <button
-                key={index}
-                onClick={() => setSelectedDate(formatDate(date))}
-                data-bs-toggle="modal"
-                data-bs-target="#cateringModal"
-                className={`${
-                  food.some((dt) => dt?.day === formatDate(date))
-                    ? "package-select-button-active"
-                    : ""
-                }`}
-              >
-                {formatDate(date)}
-              </button>
-            ))}
+            {dates.map((date, index) => {
+              const formatted = formatDate(date);
+              return (
+                <button
+                  key={index}
+                  onClick={() => setSelectedDate(formatted)}
+                  data-bs-toggle="modal"
+                  data-bs-target="#cateringModal"
+                  className={`${
+                    food.some((dt) => dt?.selectedDay === formatted?.day)
+                      ? "package-select-button-active"
+                      : ""
+                  }`}
+                >
+                  {formatted.weekday},{formatted.day} {formatted.month}
+                </button>
+              );
+            })}
           </section>
 
           <>
@@ -119,8 +118,8 @@ const CateringDetails = () => {
               {food.length !== 0 ? (
                 <aside className="accepted-package-items">
                   <>
-                    {food.map((dt) => (
-                      <p>
+                    {food.map((dt, index) => (
+                      <p key={index}>
                         <span>{dt.day} :</span> <span>{dt.package}</span>
                       </p>
                     ))}
@@ -175,7 +174,7 @@ const CateringDetails = () => {
             </div>
             <div className="modal-body catering-modal-body">
               <>
-                {selectedDate === "শুক্রবার" && (
+                {selectedDate && selectedDate?.weekday === "শুক্রবার" && (
                   <>
                     <video
                       className="w-100 package-video"
@@ -227,6 +226,9 @@ const CateringDetails = () => {
                                   day: "শুক্রবার",
                                   number: 1,
                                   package: "রেগুলার",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -263,6 +265,9 @@ const CateringDetails = () => {
                                   day: "শুক্রবার",
                                   number: 1,
                                   package: "স্পেশিয়াল",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -275,7 +280,7 @@ const CateringDetails = () => {
                 )}
               </>
               <>
-                {selectedDate === "শনিবার" && (
+                {selectedDate && selectedDate?.weekday === "শনিবার" && (
                   <>
                     <video
                       className="w-100 package-video"
@@ -327,6 +332,9 @@ const CateringDetails = () => {
                                   day: "শনিবার",
                                   number: 2,
                                   package: "রেগুলার",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -363,6 +371,9 @@ const CateringDetails = () => {
                                   day: "শনিবার",
                                   number: 2,
                                   package: "স্পেশিয়াল",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -375,7 +386,7 @@ const CateringDetails = () => {
                 )}
               </>
               <>
-                {selectedDate === "রবিবার" && (
+                {selectedDate && selectedDate?.weekday === "রবিবার" && (
                   <>
                     <video
                       className="w-100 package-video"
@@ -427,6 +438,9 @@ const CateringDetails = () => {
                                   day: "রবিবার",
                                   number: 3,
                                   package: "রেগুলার",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -463,6 +477,9 @@ const CateringDetails = () => {
                                   day: "রবিবার",
                                   number: 3,
                                   package: "স্পেশিয়াল",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -475,7 +492,7 @@ const CateringDetails = () => {
                 )}
               </>
               <>
-                {selectedDate === "সোমবার" && (
+                {selectedDate && selectedDate?.weekday === "সোমবার" && (
                   <>
                     <video
                       className="w-100 package-video"
@@ -527,6 +544,9 @@ const CateringDetails = () => {
                                   day: "সোমবার",
                                   number: 4,
                                   package: "রেগুলার",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -563,6 +583,9 @@ const CateringDetails = () => {
                                   day: "সোমবার",
                                   number: 4,
                                   package: "স্পেশিয়াল",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -575,7 +598,7 @@ const CateringDetails = () => {
                 )}
               </>
               <>
-                {selectedDate === "মঙ্গলবার" && (
+                {selectedDate && selectedDate?.weekday === "মঙ্গলবার" && (
                   <>
                     <video
                       className="w-100 package-video"
@@ -627,6 +650,9 @@ const CateringDetails = () => {
                                   day: "মঙ্গলবার",
                                   number: 5,
                                   package: "রেগুলার",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -663,6 +689,9 @@ const CateringDetails = () => {
                                   day: "মঙ্গলবার",
                                   number: 5,
                                   package: "স্পেশিয়াল",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -675,7 +704,7 @@ const CateringDetails = () => {
                 )}
               </>
               <>
-                {selectedDate === "বুধবার" && (
+                {selectedDate && selectedDate?.weekday === "বুধবার" && (
                   <>
                     <video
                       className="w-100 package-video"
@@ -727,6 +756,9 @@ const CateringDetails = () => {
                                   day: "বুধবার",
                                   number: 6,
                                   package: "রেগুলার",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -763,6 +795,9 @@ const CateringDetails = () => {
                                   day: "বুধবার",
                                   number: 6,
                                   package: "স্পেশিয়াল",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -775,7 +810,7 @@ const CateringDetails = () => {
                 )}
               </>
               <>
-                {selectedDate === "বৃহস্পতিবার" && (
+                {selectedDate && selectedDate?.weekday === "বৃহস্পতিবার" && (
                   <>
                     <video
                       className="w-100 package-video"
@@ -827,6 +862,9 @@ const CateringDetails = () => {
                                   day: "বৃহস্পতিবার",
                                   number: 7,
                                   package: "রেগুলার",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />
@@ -863,6 +901,9 @@ const CateringDetails = () => {
                                   day: "বৃহস্পতিবার",
                                   number: 7,
                                   package: "স্পেশিয়াল",
+                                  selectedWeekday: selectedDate.weekday,
+                                  selectedDay: selectedDate.day,
+                                  selectedMonth: selectedDate.month,
                                 })
                               }
                             />

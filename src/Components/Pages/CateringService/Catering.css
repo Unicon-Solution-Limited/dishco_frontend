@@ -124,7 +124,7 @@
   border-radius: 15px;
   font-size: 18px;
   font-weight: 700;
-  width: 120px;
+  width: 150px;
   border: 1px solid var(--red);
 }
 .package-select-buttons button:hover {
