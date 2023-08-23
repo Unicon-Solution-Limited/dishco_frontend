@@ -322,3 +322,32 @@
 }
 
 /* Catering Display page design *********************** */
+
+/* *********************** Catering Checkout page design */
+.catering-checkout-page {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+.catering-table,
+.catering-table td,
+.catering-table th {
+  border: 1px solid var(--ash);
+  border-collapse: collapse;
+}
+.catering-checkout-page section:nth-child(1) {
+  width: 60%;
+}
+.catering-checkout-page section:nth-child(2) {
+  width: 40%;
+}
+@media only screen and (max-width: 992px) {
+  .catering-checkout-page {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .catering-checkout-page section {
+    width: 100% !important;
+  }
+}
+/* Catering Checkout page design *********************** */
