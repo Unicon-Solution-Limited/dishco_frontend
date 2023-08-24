@@ -75,7 +75,7 @@ const Home = () => {
           &times;
         </button>
         <img
-          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1689413575/Frontend_images/sszpnropu5ez9ngyxnpr.webp"
+          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692851341/Frontend_images/jslqp9bas1yet3nskafq.webp"
           alt="10% Discount"
         />
       </div>
