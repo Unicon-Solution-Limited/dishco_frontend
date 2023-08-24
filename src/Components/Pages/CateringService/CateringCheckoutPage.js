@@ -257,6 +257,11 @@ const CateringCheckoutPage = () => {
           </form>
         </section>
         <section>
+          <img
+            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692872250/Frontend_images/joh2ojg6s3gwwmqh3st0.png"
+            alt=""
+            className="img-fluid"
+          />
           <table className="table catering-table">
             <thead>
               <tr>
@@ -287,6 +292,11 @@ const CateringCheckoutPage = () => {
               </tr>
             </tfoot>
           </table>
+          <img
+            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692872250/Frontend_images/joh2ojg6s3gwwmqh3st0.png"
+            alt=""
+            className="img-fluid catering-checkout-patterns-bottom"
+          />
         </section>
       </main>
       <Footer />
