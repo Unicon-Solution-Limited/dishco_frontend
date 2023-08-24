@@ -50,11 +50,68 @@ const formatDate = (date) => {
 const CateringDetails = () => {
   const [dates, setDates] = useState(getNextDays(8));
   const [selectedDate, setSelectedDate] = useState(null);
-  console.log(selectedDate?.weekday);
   const [food, setFood] = useState([]);
   const [countMessage, setCountMessage] = useState("");
   const history = useHistory();
-  const [quantity, setQuantity] = useState(1);
+  //Sat handleDecrese/Increase
+  const [satQuantity, satSetQuantity] = useState(1);
+
+  const handleSatDecrease = () => {
+    satSetQuantity(Math.max(satQuantity - 1, 1));
+  };
+  const handleSatIncrease = () => {
+    satSetQuantity(satQuantity + 1);
+  };
+
+  //Sun handleDecrese/Increase
+  const [sunQuantity, sunSetQuantity] = useState(1);
+  const handleSunDecrease = () => {
+    sunSetQuantity(Math.max(sunQuantity - 1, 1));
+  };
+  const handleSunIncrease = () => {
+    sunSetQuantity(sunQuantity + 1);
+  };
+
+  //mon handleDecrese/Increase
+  const [monQuantity, monSetQuantity] = useState(1);
+  const handleMonDecrease = () => {
+    monSetQuantity(Math.max(monQuantity - 1, 1));
+  };
+  const handleMonIncrease = () => {
+    monSetQuantity(monQuantity + 1);
+  };
+  //tues handleDecrese/Increase
+  const [tuesQuantity, tuesSetQuantity] = useState(1);
+  const handleTuesDecrease = () => {
+    tuesSetQuantity(Math.max(tuesQuantity - 1, 1));
+  };
+  const handleTuesIncrease = () => {
+    tuesSetQuantity(tuesQuantity + 1);
+  };
+  //wed handleDecrese/Increase
+  const [wedQuantity, wedSetQuantity] = useState(1);
+  const handleWedDecrease = () => {
+    wedSetQuantity(Math.max(wedQuantity - 1, 1));
+  };
+  const handleWedIncrease = () => {
+    wedSetQuantity(wedQuantity + 1);
+  };
+  //thirs handleDecrese/Increase
+  const [thirsQuantity, thirsSetQuantity] = useState(1);
+  const handleThirsDecrease = () => {
+    thirsSetQuantity(Math.max(thirsQuantity - 1, 1));
+  };
+  const handleThirsIncrease = () => {
+    thirsSetQuantity(thirsQuantity + 1);
+  };
+  //friday handleDecrese/Increase
+  const [fridayQuantity, fridaySetQuantity] = useState(1);
+  const handleFridayDecrease = () => {
+    fridaySetQuantity(Math.max(fridayQuantity - 1, 1));
+  };
+  const handleFridayIncrease = () => {
+    fridaySetQuantity(fridayQuantity + 1);
+  };
 
   const handlePackageClick = (data) => {
     // Check if an item with the same number already exists in the food array
@@ -176,6 +233,30 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "শুক্রবার" && (
                   <>
+                    {/* quantity button start  */}
+                    <span className="quantity_cart_input">
+                      <button
+                        className="value-button"
+                        id="decrease"
+                        onClick={() => handleFridayDecrease()}
+                      >
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        id="number"
+                        value={fridayQuantity}
+                        readOnly
+                      />
+                      <button
+                        className="value-button"
+                        id="increase"
+                        onClick={() => handleFridayIncrease()}
+                      >
+                        +
+                      </button>
+                    </span>
+                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -229,6 +310,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: fridayQuantity,
                                 })
                               }
                             />
@@ -268,6 +350,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: fridayQuantity,
                                 })
                               }
                             />
@@ -282,6 +365,30 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "শনিবার" && (
                   <>
+                    {/* quantity button start  */}
+                    <span className="quantity_cart_input">
+                      <button
+                        className="value-button"
+                        id="decrease"
+                        onClick={() => handleSatDecrease()}
+                      >
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        id="number"
+                        value={satQuantity}
+                        readOnly
+                      />
+                      <button
+                        className="value-button"
+                        id="increase"
+                        onClick={() => handleSatIncrease()}
+                      >
+                        +
+                      </button>
+                    </span>
+                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -335,6 +442,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: satQuantity,
                                 })
                               }
                             />
@@ -374,6 +482,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: satQuantity,
                                 })
                               }
                             />
@@ -388,6 +497,30 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "রবিবার" && (
                   <>
+                    {/* quantity button start  */}
+                    <span className="quantity_cart_input">
+                      <button
+                        className="value-button"
+                        id="decrease"
+                        onClick={() => handleSunDecrease()}
+                      >
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        id="number"
+                        value={sunQuantity}
+                        readOnly
+                      />
+                      <button
+                        className="value-button"
+                        id="increase"
+                        onClick={() => handleSunIncrease()}
+                      >
+                        +
+                      </button>
+                    </span>
+                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -441,6 +574,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: sunQuantity,
                                 })
                               }
                             />
@@ -480,6 +614,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: sunQuantity,
                                 })
                               }
                             />
@@ -494,6 +629,30 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "সোমবার" && (
                   <>
+                    {/* quantity button start  */}
+                    <span className="quantity_cart_input">
+                      <button
+                        className="value-button"
+                        id="decrease"
+                        onClick={() => handleMonDecrease()}
+                      >
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        id="number"
+                        value={monQuantity}
+                        readOnly
+                      />
+                      <button
+                        className="value-button"
+                        id="increase"
+                        onClick={() => handleMonIncrease()}
+                      >
+                        +
+                      </button>
+                    </span>
+                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -547,6 +706,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: monQuantity,
                                 })
                               }
                             />
@@ -586,6 +746,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: monQuantity,
                                 })
                               }
                             />
@@ -600,6 +761,30 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "মঙ্গলবার" && (
                   <>
+                    {/* quantity button start  */}
+                    <span className="quantity_cart_input">
+                      <button
+                        className="value-button"
+                        id="decrease"
+                        onClick={() => handleWedDecrease()}
+                      >
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        id="number"
+                        value={wedQuantity}
+                        readOnly
+                      />
+                      <button
+                        className="value-button"
+                        id="increase"
+                        onClick={() => handleWedIncrease()}
+                      >
+                        +
+                      </button>
+                    </span>
+                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -653,6 +838,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: wedQuantity,
                                 })
                               }
                             />
@@ -692,6 +878,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: wedQuantity,
                                 })
                               }
                             />
@@ -706,6 +893,30 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "বুধবার" && (
                   <>
+                    {/* quantity button start  */}
+                    <span className="quantity_cart_input">
+                      <button
+                        className="value-button"
+                        id="decrease"
+                        onClick={() => handleTuesDecrease()}
+                      >
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        id="number"
+                        value={tuesQuantity}
+                        readOnly
+                      />
+                      <button
+                        className="value-button"
+                        id="increase"
+                        onClick={() => handleTuesIncrease()}
+                      >
+                        +
+                      </button>
+                    </span>
+                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -759,6 +970,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: tuesQuantity,
                                 })
                               }
                             />
@@ -798,6 +1010,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: tuesQuantity,
                                 })
                               }
                             />
@@ -812,6 +1025,30 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "বৃহস্পতিবার" && (
                   <>
+                    {/* quantity button start  */}
+                    <span className="quantity_cart_input">
+                      <button
+                        className="value-button"
+                        id="decrease"
+                        onClick={() => handleThirsDecrease()}
+                      >
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        id="number"
+                        value={thirsQuantity}
+                        readOnly
+                      />
+                      <button
+                        className="value-button"
+                        id="increase"
+                        onClick={() => handleThirsIncrease()}
+                      >
+                        +
+                      </button>
+                    </span>
+                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -865,6 +1102,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: thirsQuantity,
                                 })
                               }
                             />
@@ -904,6 +1142,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  quantity: thirsQuantity,
                                 })
                               }
                             />
