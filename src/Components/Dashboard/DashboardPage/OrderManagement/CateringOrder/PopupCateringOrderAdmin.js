@@ -75,28 +75,6 @@ const PopupCateringOrderAdmin = ({ orderDetailsForPopup }) => {
           </div>
           <div className="modal-body order_details">
             <div className="product_details">
-              {/* <table className="table table-bordered">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">দিন</th>
-                    <th scope="col">প্যাকেজ</th>
-                    <th scope="col">টাকা</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {orderDetailsForPopup?.food?.map((orderDt, index) => (
-                    <tr key={index}>
-                      <th scope="row">{index + 1}</th>
-                      <td>{orderDt?.day}</td>
-                      <td>{orderDt?.package}</td>
-                      <td>
-                        {new Intl.NumberFormat("bn-BD").format(orderDt.tk)} টাকা
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table> */}
               <table className="table catering-table">
                 <thead>
                   <tr>
