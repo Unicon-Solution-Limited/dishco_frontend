@@ -233,30 +233,6 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "শুক্রবার" && (
                   <>
-                    {/* quantity button start  */}
-                    <span className="quantity_cart_input">
-                      <button
-                        className="value-button"
-                        id="decrease"
-                        onClick={() => handleFridayDecrease()}
-                      >
-                        -
-                      </button>
-                      <input
-                        type="number"
-                        id="number"
-                        value={fridayQuantity}
-                        readOnly
-                      />
-                      <button
-                        className="value-button"
-                        id="increase"
-                        onClick={() => handleFridayIncrease()}
-                      >
-                        +
-                      </button>
-                    </span>
-                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -289,11 +265,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             ভাত + মুরগি + ডাল + সবজি = ৮০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="friday"
@@ -317,6 +289,48 @@ const CateringDetails = () => {
                             <span className="custom-checkbox"></span> Select
                           </label>
                         </aside>
+                        <aside className="catering-quantity-section">
+                          <span>
+                            <h4 className="catering-quantity-button-title">
+                              Quantity
+                            </h4>
+                            <span className="quantity_cart_input">
+                              <button
+                                className="catering-quantity-decrease-button"
+                                id="decrease"
+                                onClick={() => handleFridayDecrease()}
+                              >
+                                -
+                              </button>
+                              <input
+                                className="catering-quantity-input"
+                                type="number"
+                                id="number"
+                                value={fridayQuantity}
+                                readOnly
+                              />
+                              <button
+                                className="catering-quantity-increase-button"
+                                id="increase"
+                                onClick={() => handleFridayIncrease()}
+                              >
+                                +
+                              </button>
+                            </span>
+                          </span>
+                          <>
+                            {food?.length >= 1 && (
+                              <button
+                                className="catering-package-confirm-btn MyBtn"
+                                type="button"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                Confirm
+                              </button>
+                            )}
+                          </>
+                        </aside>
                         <aside className="package_single">
                           <div className="package_items-header">
                             <h4>স্পেশিয়াল আইটেম</h4>
@@ -329,11 +343,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             বীফ খিচুরি = ১২০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="friday"
@@ -365,30 +375,6 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "শনিবার" && (
                   <>
-                    {/* quantity button start  */}
-                    <span className="quantity_cart_input">
-                      <button
-                        className="value-button"
-                        id="decrease"
-                        onClick={() => handleSatDecrease()}
-                      >
-                        -
-                      </button>
-                      <input
-                        type="number"
-                        id="number"
-                        value={satQuantity}
-                        readOnly
-                      />
-                      <button
-                        className="value-button"
-                        id="increase"
-                        onClick={() => handleSatIncrease()}
-                      >
-                        +
-                      </button>
-                    </span>
-                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -421,11 +407,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             ভাত + ডিম + ডাল + সবজি = ৮০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="saturday"
@@ -449,6 +431,48 @@ const CateringDetails = () => {
                             <span className="custom-checkbox"></span> Select
                           </label>
                         </aside>
+                        <aside className="catering-quantity-section">
+                          <span>
+                            <h4 className="catering-quantity-button-title">
+                              Quantity
+                            </h4>
+                            <span className="quantity_cart_input">
+                              <button
+                                className="catering-quantity-decrease-button"
+                                id="decrease"
+                                onClick={() => handleSatDecrease()}
+                              >
+                                -
+                              </button>
+                              <input
+                                className="catering-quantity-input"
+                                type="number"
+                                id="number"
+                                value={satQuantity}
+                                readOnly
+                              />
+                              <button
+                                className="catering-quantity-increase-button"
+                                id="increase"
+                                onClick={() => handleSatIncrease()}
+                              >
+                                +
+                              </button>
+                            </span>
+                          </span>
+                          <>
+                            {food?.length >= 1 && (
+                              <button
+                                className="catering-package-confirm-btn MyBtn"
+                                type="button"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                Confirm
+                              </button>
+                            )}
+                          </>
+                        </aside>
                         <aside className="package_single">
                           <div className="package_items-header">
                             <h4>স্পেশিয়াল আইটেম</h4>
@@ -461,11 +485,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             চিকেন পোলাও = ১২০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="saturday"
@@ -497,30 +517,6 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "রবিবার" && (
                   <>
-                    {/* quantity button start  */}
-                    <span className="quantity_cart_input">
-                      <button
-                        className="value-button"
-                        id="decrease"
-                        onClick={() => handleSunDecrease()}
-                      >
-                        -
-                      </button>
-                      <input
-                        type="number"
-                        id="number"
-                        value={sunQuantity}
-                        readOnly
-                      />
-                      <button
-                        className="value-button"
-                        id="increase"
-                        onClick={() => handleSunIncrease()}
-                      >
-                        +
-                      </button>
-                    </span>
-                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -553,11 +549,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             ভাত + মাছ + ডাল + সবজি = ৮০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="sunday"
@@ -581,6 +573,48 @@ const CateringDetails = () => {
                             <span className="custom-checkbox"></span> Select
                           </label>
                         </aside>
+                        <aside className="catering-quantity-section">
+                          <span>
+                            <h4 className="catering-quantity-button-title">
+                              Quantity
+                            </h4>
+                            <span className="quantity_cart_input">
+                              <button
+                                className="catering-quantity-decrease-button"
+                                id="decrease"
+                                onClick={() => handleSunDecrease()}
+                              >
+                                -
+                              </button>
+                              <input
+                                className="catering-quantity-input"
+                                type="number"
+                                id="number"
+                                value={sunQuantity}
+                                readOnly
+                              />
+                              <button
+                                className="catering-quantity-increase-button"
+                                id="increase"
+                                onClick={() => handleSunIncrease()}
+                              >
+                                +
+                              </button>
+                            </span>
+                          </span>
+                          <>
+                            {food?.length >= 1 && (
+                              <button
+                                className="catering-package-confirm-btn MyBtn"
+                                type="button"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                Confirm
+                              </button>
+                            )}
+                          </>
+                        </aside>
                         <aside className="package_single">
                           <div className="package_items-header">
                             <h4>স্পেশিয়াল আইটেম</h4>
@@ -593,11 +627,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             বীফ তেহারি = ১২০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="sunday"
@@ -629,30 +659,6 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "সোমবার" && (
                   <>
-                    {/* quantity button start  */}
-                    <span className="quantity_cart_input">
-                      <button
-                        className="value-button"
-                        id="decrease"
-                        onClick={() => handleMonDecrease()}
-                      >
-                        -
-                      </button>
-                      <input
-                        type="number"
-                        id="number"
-                        value={monQuantity}
-                        readOnly
-                      />
-                      <button
-                        className="value-button"
-                        id="increase"
-                        onClick={() => handleMonIncrease()}
-                      >
-                        +
-                      </button>
-                    </span>
-                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -685,11 +691,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             ভাত + বীফ + ডাল + সবজি = ৮০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="monday"
@@ -713,6 +715,48 @@ const CateringDetails = () => {
                             <span className="custom-checkbox"></span> Select
                           </label>
                         </aside>
+                        <aside className="catering-quantity-section">
+                          <span>
+                            <h4 className="catering-quantity-button-title">
+                              Quantity
+                            </h4>
+                            <span className="quantity_cart_input">
+                              <button
+                                className="catering-quantity-decrease-button"
+                                id="decrease"
+                                onClick={() => handleMonDecrease()}
+                              >
+                                -
+                              </button>
+                              <input
+                                className="catering-quantity-input"
+                                type="number"
+                                id="number"
+                                value={monQuantity}
+                                readOnly
+                              />
+                              <button
+                                className="catering-quantity-increase-button"
+                                id="increase"
+                                onClick={() => handleMonIncrease()}
+                              >
+                                +
+                              </button>
+                            </span>
+                          </span>
+                          <>
+                            {food?.length >= 1 && (
+                              <button
+                                className="catering-package-confirm-btn MyBtn"
+                                type="button"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                Confirm
+                              </button>
+                            )}
+                          </>
+                        </aside>
                         <aside className="package_single">
                           <div className="package_items-header">
                             <h4>স্পেশিয়াল আইটেম</h4>
@@ -725,11 +769,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             ডিম খিচুরি = ৮০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="monday"
@@ -761,30 +801,6 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "মঙ্গলবার" && (
                   <>
-                    {/* quantity button start  */}
-                    <span className="quantity_cart_input">
-                      <button
-                        className="value-button"
-                        id="decrease"
-                        onClick={() => handleWedDecrease()}
-                      >
-                        -
-                      </button>
-                      <input
-                        type="number"
-                        id="number"
-                        value={wedQuantity}
-                        readOnly
-                      />
-                      <button
-                        className="value-button"
-                        id="increase"
-                        onClick={() => handleWedIncrease()}
-                      >
-                        +
-                      </button>
-                    </span>
-                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -817,11 +833,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             ভাত + মুরগি + ডাল + সবজি = ৮০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="tuesday"
@@ -838,12 +850,54 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
-                                  quantity: wedQuantity,
+                                  quantity: tuesQuantity,
                                 })
                               }
                             />
                             <span className="custom-checkbox"></span> Select
                           </label>
+                        </aside>
+                        <aside className="catering-quantity-section">
+                          <span>
+                            <h4 className="catering-quantity-button-title">
+                              Quantity
+                            </h4>
+                            <span className="quantity_cart_input">
+                              <button
+                                className="catering-quantity-decrease-button"
+                                id="decrease"
+                                onClick={() => handleTuesDecrease()}
+                              >
+                                -
+                              </button>
+                              <input
+                                className="catering-quantity-input"
+                                type="number"
+                                id="number"
+                                value={tuesQuantity}
+                                readOnly
+                              />
+                              <button
+                                className="catering-quantity-increase-button"
+                                id="increase"
+                                onClick={() => handleTuesIncrease()}
+                              >
+                                +
+                              </button>
+                            </span>
+                          </span>
+                          <>
+                            {food?.length >= 1 && (
+                              <button
+                                className="catering-package-confirm-btn MyBtn"
+                                type="button"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                Confirm
+                              </button>
+                            )}
+                          </>
                         </aside>
                         <aside className="package_single">
                           <div className="package_items-header">
@@ -857,11 +911,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             বীফ খিচুরি = ১২০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="tuesday"
@@ -878,7 +928,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
-                                  quantity: wedQuantity,
+                                  quantity: tuesQuantity,
                                 })
                               }
                             />
@@ -893,30 +943,6 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "বুধবার" && (
                   <>
-                    {/* quantity button start  */}
-                    <span className="quantity_cart_input">
-                      <button
-                        className="value-button"
-                        id="decrease"
-                        onClick={() => handleTuesDecrease()}
-                      >
-                        -
-                      </button>
-                      <input
-                        type="number"
-                        id="number"
-                        value={tuesQuantity}
-                        readOnly
-                      />
-                      <button
-                        className="value-button"
-                        id="increase"
-                        onClick={() => handleTuesIncrease()}
-                      >
-                        +
-                      </button>
-                    </span>
-                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -949,11 +975,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             ভাত + মাছ + ডাল + সবজি = ৮০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="wednesday"
@@ -970,12 +992,54 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
-                                  quantity: tuesQuantity,
+                                  quantity: wedQuantity,
                                 })
                               }
                             />
                             <span className="custom-checkbox"></span> Select
                           </label>
+                        </aside>
+                        <aside className="catering-quantity-section">
+                          <span>
+                            <h4 className="catering-quantity-button-title">
+                              Quantity
+                            </h4>
+                            <span className="quantity_cart_input">
+                              <button
+                                className="catering-quantity-decrease-button"
+                                id="decrease"
+                                onClick={() => handleWedDecrease()}
+                              >
+                                -
+                              </button>
+                              <input
+                                className="catering-quantity-input"
+                                type="number"
+                                id="number"
+                                value={wedQuantity}
+                                readOnly
+                              />
+                              <button
+                                className="catering-quantity-increase-button"
+                                id="increase"
+                                onClick={() => handleWedIncrease()}
+                              >
+                                +
+                              </button>
+                            </span>
+                          </span>
+                          <>
+                            {food?.length >= 1 && (
+                              <button
+                                className="catering-package-confirm-btn MyBtn"
+                                type="button"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                Confirm
+                              </button>
+                            )}
+                          </>
                         </aside>
                         <aside className="package_single">
                           <div className="package_items-header">
@@ -989,11 +1053,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             বীফ তেহারি = ১২০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="wednesday"
@@ -1010,7 +1070,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
-                                  quantity: tuesQuantity,
+                                  quantity: wedQuantity,
                                 })
                               }
                             />
@@ -1025,30 +1085,6 @@ const CateringDetails = () => {
               <>
                 {selectedDate && selectedDate?.weekday === "বৃহস্পতিবার" && (
                   <>
-                    {/* quantity button start  */}
-                    <span className="quantity_cart_input">
-                      <button
-                        className="value-button"
-                        id="decrease"
-                        onClick={() => handleThirsDecrease()}
-                      >
-                        -
-                      </button>
-                      <input
-                        type="number"
-                        id="number"
-                        value={thirsQuantity}
-                        readOnly
-                      />
-                      <button
-                        className="value-button"
-                        id="increase"
-                        onClick={() => handleThirsIncrease()}
-                      >
-                        +
-                      </button>
-                    </span>
-                    {/* quantity button end */}
                     <video
                       className="w-100 package-video"
                       id="video_content"
@@ -1081,11 +1117,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             ভাত + ডিম + ডাল + সবজি = ৮০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="thursday"
@@ -1109,6 +1141,48 @@ const CateringDetails = () => {
                             <span className="custom-checkbox"></span> Select
                           </label>
                         </aside>
+                        <aside className="catering-quantity-section">
+                          <span>
+                            <h4 className="catering-quantity-button-title">
+                              Quantity
+                            </h4>
+                            <span className="quantity_cart_input">
+                              <button
+                                className="catering-quantity-decrease-button"
+                                id="decrease"
+                                onClick={() => handleThirsDecrease()}
+                              >
+                                -
+                              </button>
+                              <input
+                                className="catering-quantity-input"
+                                type="number"
+                                id="number"
+                                value={thirsQuantity}
+                                readOnly
+                              />
+                              <button
+                                className="catering-quantity-increase-button"
+                                id="increase"
+                                onClick={() => handleThirsIncrease()}
+                              >
+                                +
+                              </button>
+                            </span>
+                          </span>
+                          <>
+                            {food?.length >= 1 && (
+                              <button
+                                className="catering-package-confirm-btn MyBtn"
+                                type="button"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                Confirm
+                              </button>
+                            )}
+                          </>
+                        </aside>
                         <aside className="package_single">
                           <div className="package_items-header">
                             <h4>স্পেশিয়াল আইটেম</h4>
@@ -1121,11 +1195,7 @@ const CateringDetails = () => {
                           <figcaption className="package-img-caption">
                             চিকেন পোলাও = ১২০ টাকা
                           </figcaption>
-                          <label
-                            className="custom-radio"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
+                          <label className="custom-radio">
                             <input
                               type="radio"
                               name="thursday"
