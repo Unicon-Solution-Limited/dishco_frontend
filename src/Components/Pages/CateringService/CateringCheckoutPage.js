@@ -106,7 +106,7 @@ const CateringCheckoutPage = () => {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control checkout-page-input"
                   id="inputName"
                   defaultValue={currentUser?.displayName}
                   readOnly
@@ -117,7 +117,7 @@ const CateringCheckoutPage = () => {
                   এলাকা
                 </label>
                 <select
-                  className="form-select"
+                  className="form-select checkout-page-input"
                   aria-label="Default select example"
                   ref={cityRef}
                   required
@@ -160,7 +160,7 @@ const CateringCheckoutPage = () => {
                 <input
                   ref={addressRef}
                   type="text"
-                  className="form-control"
+                  className="form-control checkout-page-input"
                   id="inputAddress"
                   required
                 />
@@ -176,7 +176,7 @@ const CateringCheckoutPage = () => {
                 <input
                   ref={phoneNumberRef}
                   type="phone"
-                  className="form-control"
+                  className="form-control checkout-page-input"
                   id="inputContact"
                   required
                 />
@@ -191,7 +191,7 @@ const CateringCheckoutPage = () => {
                 <input
                   ref={emailRef}
                   type="email"
-                  className="form-control"
+                  className="form-control checkout-page-input"
                   id="inputEmail"
                   defaultValue={currentUser?.email}
                   readOnly
@@ -204,14 +204,14 @@ const CateringCheckoutPage = () => {
                 </label>
                 <textarea
                   ref={extra_informationRef}
-                  className="form-control"
+                  className="form-control checkout-page-input"
                   id="extraInfo"
                   rows="3"
                 ></textarea>
               </div>
 
               <select
-                className="form-select"
+                className="form-select checkout-page-input"
                 aria-label="Default select example"
                 ref={PaymentRef}
                 required
