@@ -242,6 +242,7 @@ const Checkout = () => {
                 <option value="">Select Your Area</option>
                 <option value="Azimpur">Azimpur</option>
                 <option value="Chankharpul">Chankharpul</option>
+                <option value="Dhanmondi">Dhanmondi</option>
                 <option value="Dhaka University Hall">
                   Dhaka University Hall
                 </option>
