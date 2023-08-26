@@ -27,7 +27,7 @@ const CateringCheckoutPage = () => {
   }, []);
 
   //total tk
-  const totalTk = food.reduce((accumulator, item) => accumulator + item.tk, 0);
+  const totalTk = food.reduce((sum, item) => sum + item.tk * item.quantity, 0);
 
   //confirm order
   const handleConfirmOrder = async (e) => {
@@ -267,6 +267,7 @@ const CateringCheckoutPage = () => {
               <tr>
                 <th scope="col">Days</th>
                 <th scope="col">Package</th>
+                <th scope="col">Quantity</th>
                 <th scope="col">Amount</th>
               </tr>
             </thead>
@@ -278,8 +279,19 @@ const CateringCheckoutPage = () => {
                     <td>
                       {fd?.day}, {fd?.selectedDay} {fd?.selectedMonth}
                     </td>
-                    <td>{fd?.package}</td>
-                    <td>{new Intl.NumberFormat("bn-BD").format(fd.tk)} টাকা</td>
+                    <td>
+                      {fd?.package} {""} (
+                      {new Intl.NumberFormat("bn-BD").format(fd.tk)} টাকা)
+                    </td>
+                    <td>
+                      {new Intl.NumberFormat("bn-BD").format(fd?.quantity)}
+                    </td>
+                    <td>
+                      {new Intl.NumberFormat("bn-BD").format(
+                        fd.tk * fd?.quantity
+                      )}
+                      টাকা
+                    </td>
                   </tr>
                 ))}
             </tbody>
