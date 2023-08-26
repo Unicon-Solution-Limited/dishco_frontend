@@ -39,9 +39,9 @@ import HowToBuy from "./Components/Pages/FooterPages/HowToBuy";
 import CateringDetails from "./Components/Pages/CateringService/CateringDetails";
 import CateringCheckoutPage from "./Components/Pages/CateringService/CateringCheckoutPage";
 import CateringSuccess from "./Components/Pages/CateringService/CateringSuccess";
-import MyCateringOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/MyCateringOrder";
 import AdminCateringOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/AdminCateringOrder";
 import CateringInvoice from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/CateringInvoice";
+import CustomerCateringOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/CustomerCateringOrder";
 
 function App() {
   return (
@@ -89,7 +89,7 @@ function App() {
             </Route>
 
             <Route path="/myCateringOrder">
-              <MyCateringOrder />
+              <CustomerCateringOrder />
             </Route>
 
             <Route path="/adminCateringOrder">
