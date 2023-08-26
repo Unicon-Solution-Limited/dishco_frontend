@@ -64,7 +64,7 @@ const PopupCateringOrderAdmin = ({ orderDetailsForPopup }) => {
         <div className="modal-content">
           <div className="modal-header">
             <p className="modal-title fs-5" id="exampleModalLabel">
-              <strong>Order Id:</strong> {formattedDateTime}
+              <strong>অর্ডার আইডি:</strong> {formattedDateTime}
             </p>
             <button
               type="button"
@@ -111,7 +111,7 @@ const PopupCateringOrderAdmin = ({ orderDetailsForPopup }) => {
                 </tbody>
                 <tfoot>
                   <tr>
-                    <td colspan="3">
+                    <td colSpan="3">
                       <strong>মোট বিল: </strong>
                       {new Intl.NumberFormat("bn-BD").format(totalTk)} টাকা
                     </td>
