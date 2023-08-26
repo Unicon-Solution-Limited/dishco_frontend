@@ -368,7 +368,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
+}
+.checkout-page-input {
+  box-shadow: inset 8px 8px 8px rgba(0, 0, 0, 0.1),
+    inset -8px -8px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
 }
 .catering-table {
   margin: 8px 0;
@@ -388,6 +393,7 @@
 .catering-checkout-page section:nth-child(2) {
   width: 40%;
 }
+
 @media only screen and (max-width: 992px) {
   .catering-checkout-page {
     flex-direction: column-reverse;
