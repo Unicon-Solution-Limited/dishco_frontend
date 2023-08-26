@@ -114,7 +114,7 @@ const CateringCheckoutPage = () => {
               </div>
               <div className="mb-3">
                 <label htmlFor="area" className="form-label mandatory_field">
-                  Area
+                  এলাকা
                 </label>
                 <select
                   className="form-select"
@@ -122,50 +122,32 @@ const CateringCheckoutPage = () => {
                   ref={cityRef}
                   required
                 >
-                  <option value="">Select Your Area</option>
-                  <option value="Azimpur">Azimpur</option>
-                  <option value="Chankharpul">Chankharpul</option>
+                  <option value="">এলাকা নির্বাচন করুন</option>
+                  <option value="আজিমপুর">আজিমপুর</option>
 
-                  <option value="Dhanmondi">Dhanmondi</option>
-                  <option value="Dhaka University Hall">
-                    Dhaka University Hall
+                  <option value="ধানমন্ডি">ধানমন্ডি</option>
+                  <option value="ঢাকা ইউনিভার্সিটি">ঢাকা ইউনিভার্সিটি</option>
+
+                  <option value="এলিফেন্ট রোড">এলিফেন্ট রোড</option>
+                  <option value="ফার্মগেট">ফার্মগেট</option>
+
+                  <option value="গ্রীন রোড">গ্রীন রোড</option>
+                  <option value="কলা বাগান">কলা বাগান</option>
+
+                  <option value="মোহাম্মদপুর বাস স্ট্যান্ড">
+                    মোহাম্মদপুর বাস স্ট্যান্ড
                   </option>
-                  <option value="Darussalam">Darussalam</option>
-                  <option value="Elephent Road">Elephent Road</option>
-                  <option value="Farmgate">Farmgate</option>
-                  <option value="Gulistan">Gulistan</option>
-                  <option value="Green Road">Green Road</option>
-                  <option value="Kola Bagan">Kola Bagan</option>
-                  <option value="Kamrangirchar">Kamrangirchar</option>
-                  <option value="Kallyanpur">Kallyanpur</option>
-                  <option value="Mohammadpur Bus Stand">
-                    Mohammadpur Bus Stand
+
+                  <option value="নিউ মার্কেট, ঢাকা">নিউ মার্কেট, ঢাকা</option>
+
+                  <option value="শাহবাগ">শাহবাগ</option>
+
+                  <option value="কাওরান বাজার/পান্থপথ">
+                    কাওরান বাজার/পান্থপথ
                   </option>
-                  <option value="Mohammadpur beribadh">
-                    Mohammadpur beribadh
-                  </option>
-                  <option value="Mohammadpur Adabor">Mohammadpur Adabor</option>
-                  <option value="Mohammadpur Asad Gate">
-                    Mohammadpur Asad Gate
-                  </option>
-                  <option value="Mirpur-1">Mirpur-1</option>
-                  <option value="New Market, Dhaka">New Market, Dhaka</option>
-                  <option value="Nakhalpara West Tejgaon">
-                    Nakhalpara West Tejgaon
-                  </option>
-                  <option value="Nakhalpara south">Nakhalpara south</option>
-                  <option value="Shahbag">Shahbag</option>
-                  <option value="Shyamoli-1">Shyamoli-1</option>
-                  <option value="Shyamoli-2">Shyamoli-2</option>
-                  <option value="Panthopath Chattor">Panthopath Chattor</option>
-                  <option value="Polashi">Polashi</option>
-                  <option value="Puran Dhaka(Bangshal)">
-                    Puran Dhaka(Bangshal)
-                  </option>
-                  <option value="Puran Dhaka (Dholaikhal)">
-                    Puran Dhaka (Dholaikhal)
-                  </option>
-                  <option value="Rayer Bazaar">Rayer Bazaar</option>
+                  <option value="পলাশী">পলাশী</option>
+
+                  <option value="রায়ের বাজার">রায়ের বাজার</option>
                 </select>
               </div>
               <div className="mb-3">
