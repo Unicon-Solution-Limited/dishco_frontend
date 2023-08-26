@@ -44,25 +44,48 @@ const CateringInvoice = () => {
           </div>
 
           <div className="items">
-            <table>
+            <table className="table catering-table">
               <thead>
                 <tr>
-                  <th>Date</th>
-                  <th>Packages</th>
-                  <th>Price</th>
+                  <th scope="col">দিন</th>
+                  <th scope="col">প্যাকেজ</th>
+                  <th scope="col">পরিমাণ</th>
+                  <th scope="col">টাকা</th>
                 </tr>
               </thead>
-              {data?.food?.map((orderDt, index) => (
-                <tbody key={index}>
-                  <tr>
-                    <td>{orderDt?.day}</td>
-                    <td className="qty">{orderDt?.package}</td>
-                    <td>
-                      {new Intl.NumberFormat("bn-BD").format(orderDt?.tk)} টাকা
-                    </td>
-                  </tr>
-                </tbody>
-              ))}
+              <tbody>
+                {data?.food &&
+                  data?.food?.length &&
+                  data?.food?.map((fd, index) => (
+                    <tr key={index}>
+                      <td>
+                        {fd?.day}, {fd?.selectedDay} {fd?.selectedMonth}
+                      </td>
+                      <td>
+                        {fd?.package} {""} (
+                        {new Intl.NumberFormat("bn-BD").format(fd.tk)} টাকা)
+                      </td>
+                      <td>
+                        {new Intl.NumberFormat("bn-BD").format(fd?.quantity)}
+                      </td>
+                      <td>
+                        {new Intl.NumberFormat("bn-BD").format(
+                          fd.tk * fd?.quantity
+                        )}{" "}
+                        {""}
+                        টাকা
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3">
+                    <strong>মোট বিল: </strong>
+                    {new Intl.NumberFormat("bn-BD").format(totalTk)} টাকা
+                  </td>
+                </tr>
+              </tfoot>
             </table>
           </div>
 

@@ -27,7 +27,7 @@ const CateringCheckoutPage = () => {
   }, []);
 
   //total tk
-  const totalTk = food.reduce((accumulator, item) => accumulator + item.tk, 0);
+  const totalTk = food.reduce((sum, item) => sum + item.tk * item.quantity, 0);
 
   //confirm order
   const handleConfirmOrder = async (e) => {
@@ -96,13 +96,13 @@ const CateringCheckoutPage = () => {
             onSubmit={handleConfirmOrder}
           >
             <aside className="billing_form">
-              <h5>Shipping Address</h5>
+              <h5>প্রেরণের ঠিকানা</h5>
               <div className="mb-3">
                 <label
                   htmlFor="inputName"
                   className="form-label mandatory_field"
                 >
-                  Your name
+                  আপনার নাম
                 </label>
                 <input
                   type="text"
@@ -125,6 +125,8 @@ const CateringCheckoutPage = () => {
                   <option value="">Select Your Area</option>
                   <option value="Azimpur">Azimpur</option>
                   <option value="Chankharpul">Chankharpul</option>
+
+                  <option value="Dhanmondi">Dhanmondi</option>
                   <option value="Dhaka University Hall">
                     Dhaka University Hall
                   </option>
@@ -171,7 +173,7 @@ const CateringCheckoutPage = () => {
                   htmlFor="inputAddress"
                   className="form-label mandatory_field"
                 >
-                  Details Address
+                  পূর্ণাঙ্গ ঠিকানা
                 </label>
                 <input
                   ref={addressRef}
@@ -187,7 +189,7 @@ const CateringCheckoutPage = () => {
                   htmlFor="inputContact"
                   className="form-label mandatory_field"
                 >
-                  Contact Number
+                  মোবাইল নাম্বার
                 </label>
                 <input
                   ref={phoneNumberRef}
@@ -202,7 +204,7 @@ const CateringCheckoutPage = () => {
                   htmlFor="inputEmail"
                   className="form-label mandatory_field"
                 >
-                  Email
+                  ইমেল
                 </label>
                 <input
                   ref={emailRef}
@@ -216,7 +218,7 @@ const CateringCheckoutPage = () => {
 
               <div className="mb-3">
                 <label htmlFor="extraInfo" className="form-label">
-                  Order Note(Optional)
+                  অর্ডার নোট (ঐচ্ছিক)
                 </label>
                 <textarea
                   ref={extra_informationRef}
@@ -232,9 +234,9 @@ const CateringCheckoutPage = () => {
                 ref={PaymentRef}
                 required
               >
-                <option value="">Select Payment Methods</option>
-                <option value="Online Payment">Online Payment</option>
-                <option value="Cash on delivery">Cash on delivery</option>
+                <option value="">পেমেন্ট পদ্ধতি বাছাই করুন </option>
+                <option value="Online Payment">অনলাইন পেমেন্ট</option>
+                <option value="Cash on delivery">ক্যাশ অন ডেলিভারি</option>
               </select>
               <br />
               <br />
@@ -265,9 +267,10 @@ const CateringCheckoutPage = () => {
           <table className="table catering-table">
             <thead>
               <tr>
-                <th scope="col">Days</th>
-                <th scope="col">Package</th>
-                <th scope="col">Amount</th>
+                <th scope="col">দিন</th>
+                <th scope="col">প্যাকেজ</th>
+                <th scope="col">পরিমাণ</th>
+                <th scope="col">টাকা</th>
               </tr>
             </thead>
             <tbody>
@@ -278,8 +281,19 @@ const CateringCheckoutPage = () => {
                     <td>
                       {fd?.day}, {fd?.selectedDay} {fd?.selectedMonth}
                     </td>
-                    <td>{fd?.package}</td>
-                    <td>{new Intl.NumberFormat("bn-BD").format(fd.tk)} টাকা</td>
+                    <td>
+                      {fd?.package} {""} (
+                      {new Intl.NumberFormat("bn-BD").format(fd.tk)} টাকা)
+                    </td>
+                    <td>
+                      {new Intl.NumberFormat("bn-BD").format(fd?.quantity)}
+                    </td>
+                    <td>
+                      {new Intl.NumberFormat("bn-BD").format(
+                        fd.tk * fd?.quantity
+                      )}
+                      টাকা
+                    </td>
                   </tr>
                 ))}
             </tbody>

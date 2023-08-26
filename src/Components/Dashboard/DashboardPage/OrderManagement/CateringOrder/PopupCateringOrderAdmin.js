@@ -7,6 +7,12 @@ const PopupCateringOrderAdmin = ({ orderDetailsForPopup }) => {
   const [statusMessage, setStatusMessage] = useState(false);
   const { currentUser } = useAuth();
 
+  //total tk
+  const totalTk = orderDetailsForPopup?.food?.reduce(
+    (sum, item) => sum + item.tk * item.quantity,
+    0
+  );
+
   // For Order ID
   const orderTime = new Date(orderDetailsForPopup?.orderTime);
   const formattedDate = orderTime.toLocaleDateString(undefined, {
@@ -58,7 +64,7 @@ const PopupCateringOrderAdmin = ({ orderDetailsForPopup }) => {
         <div className="modal-content">
           <div className="modal-header">
             <p className="modal-title fs-5" id="exampleModalLabel">
-              <strong>Order Id:</strong> {formattedDateTime}
+              <strong>অর্ডার আইডি:</strong> {formattedDateTime}
             </p>
             <button
               type="button"
@@ -69,38 +75,49 @@ const PopupCateringOrderAdmin = ({ orderDetailsForPopup }) => {
           </div>
           <div className="modal-body order_details">
             <div className="product_details">
-              <table className="table table-bordered">
+              <table className="table catering-table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
                     <th scope="col">দিন</th>
                     <th scope="col">প্যাকেজ</th>
+                    <th scope="col">পরিমাণ</th>
                     <th scope="col">টাকা</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {orderDetailsForPopup?.food?.map((orderDt, index) => (
-                    <tr key={index}>
-                      <th scope="row">{index + 1}</th>
-                      <td>{orderDt?.day}</td>
-                      <td>{orderDt?.package}</td>
-                      <td>
-                        {new Intl.NumberFormat("bn-BD").format(orderDt.tk)} টাকা
-                      </td>
-                    </tr>
-                  ))}
+                  {orderDetailsForPopup?.food &&
+                    orderDetailsForPopup?.food?.length &&
+                    orderDetailsForPopup?.food?.map((fd, index) => (
+                      <tr key={index}>
+                        <td>
+                          {fd?.day}, {fd?.selectedDay} {fd?.selectedMonth}
+                        </td>
+                        <td>
+                          {fd?.package} {""} (
+                          {new Intl.NumberFormat("bn-BD").format(fd.tk)} টাকা)
+                        </td>
+                        <td>
+                          {new Intl.NumberFormat("bn-BD").format(fd?.quantity)}
+                        </td>
+                        <td>
+                          {new Intl.NumberFormat("bn-BD").format(
+                            fd.tk * fd?.quantity
+                          )}{" "}
+                          {""}
+                          টাকা
+                        </td>
+                      </tr>
+                    ))}
                 </tbody>
+                <tfoot>
+                  <tr>
+                    <td colSpan="3">
+                      <strong>মোট বিল: </strong>
+                      {new Intl.NumberFormat("bn-BD").format(totalTk)} টাকা
+                    </td>
+                  </tr>
+                </tfoot>
               </table>
-              {/* <h1>
-                {orderDetailsForPopup?.food?.map((orderDt, index) => (
-                  <div key={index}>
-                    <p>
-                      {orderDt?.day}: {orderDt?.package}-
-                      {new Intl.NumberFormat("bn-BD").format(orderDt.tk)} টাকা
-                    </p>
-                  </div>
-                ))}
-              </h1> */}
             </div>
 
             <div>
