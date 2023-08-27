@@ -234,6 +234,7 @@ const CateringDetails = () => {
                 className="btn package-modal-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
+                onClick={() => handleClick()}
               >
                 <i className="bi bi-x-lg"></i>
               </button>
