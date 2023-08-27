@@ -49,10 +49,9 @@ const AllProduct = () => {
       );
       const data = response.data;
       if (data) {
-        setDeleteMessage("food deleted successfully");
-        setTimeout(() => {
-          window.location.reload();
-        }, 500);
+        setAllFoods((singleProducts) =>
+          singleProducts.filter((product) => product._id !== id)
+        );
       }
     } catch (error) {
       console.log("Error deleting product:", error);

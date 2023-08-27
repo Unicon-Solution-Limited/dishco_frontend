@@ -174,9 +174,9 @@ const EditProfile = () => {
       );
       const data = response.data;
       if (data) {
-        setTimeout(() => {
-          window.location.reload();
-        }, 500);
+        setProfileData((profileImage) =>
+          profileImage.filter((image) => image._id !== id)
+        );
       }
     } catch (error) {
       console.log("Error deleting product:", error);
