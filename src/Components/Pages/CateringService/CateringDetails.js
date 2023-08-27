@@ -56,6 +56,9 @@ const CateringDetails = () => {
   //Sat handleDecrese/Increase
   const [satQuantity, satSetQuantity] = useState(1);
 
+  // Confirm button
+  const [isButtonVisible, setIsButtonVisible] = useState(false);
+
   const handleSatDecrease = () => {
     satSetQuantity(Math.max(satQuantity - 1, 1));
   };
@@ -126,6 +129,12 @@ const CateringDetails = () => {
       // If no existing item with the same number is found, add the new item
       setFood([...food, data]);
     }
+    // Handle Button
+    setIsButtonVisible(true);
+  };
+
+  const handleClick = () => {
+    setIsButtonVisible(false);
   };
 
   const handleSubmitFood = () => {
@@ -319,12 +328,13 @@ const CateringDetails = () => {
                             </span>
                           </span>
                           <>
-                            {food?.length >= 1 && (
+                            {isButtonVisible && (
                               <button
                                 className="catering-package-confirm-btn MyBtn"
                                 type="button"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"
+                                onClick={() => handleClick()}
                               >
                                 Confirm
                               </button>
@@ -461,16 +471,19 @@ const CateringDetails = () => {
                             </span>
                           </span>
                           <>
-                            {food?.length >= 1 && (
-                              <button
-                                className="catering-package-confirm-btn MyBtn"
-                                type="button"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              >
-                                Confirm
-                              </button>
-                            )}
+                            <>
+                              {isButtonVisible && (
+                                <button
+                                  className="catering-package-confirm-btn MyBtn"
+                                  type="button"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                  onClick={() => handleClick()}
+                                >
+                                  Confirm
+                                </button>
+                              )}
+                            </>
                           </>
                         </aside>
                         <aside className="package_single">
@@ -603,12 +616,13 @@ const CateringDetails = () => {
                             </span>
                           </span>
                           <>
-                            {food?.length >= 1 && (
+                            {isButtonVisible && (
                               <button
                                 className="catering-package-confirm-btn MyBtn"
                                 type="button"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"
+                                onClick={() => handleClick()}
                               >
                                 Confirm
                               </button>
@@ -745,16 +759,19 @@ const CateringDetails = () => {
                             </span>
                           </span>
                           <>
-                            {food?.length >= 1 && (
-                              <button
-                                className="catering-package-confirm-btn MyBtn"
-                                type="button"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              >
-                                Confirm
-                              </button>
-                            )}
+                            <>
+                              {isButtonVisible && (
+                                <button
+                                  className="catering-package-confirm-btn MyBtn"
+                                  type="button"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                  onClick={() => handleClick()}
+                                >
+                                  Confirm
+                                </button>
+                              )}
+                            </>
                           </>
                         </aside>
                         <aside className="package_single">
@@ -887,16 +904,19 @@ const CateringDetails = () => {
                             </span>
                           </span>
                           <>
-                            {food?.length >= 1 && (
-                              <button
-                                className="catering-package-confirm-btn MyBtn"
-                                type="button"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              >
-                                Confirm
-                              </button>
-                            )}
+                            <>
+                              {isButtonVisible && (
+                                <button
+                                  className="catering-package-confirm-btn MyBtn"
+                                  type="button"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                  onClick={() => handleClick()}
+                                >
+                                  Confirm
+                                </button>
+                              )}
+                            </>
                           </>
                         </aside>
                         <aside className="package_single">
@@ -1029,16 +1049,19 @@ const CateringDetails = () => {
                             </span>
                           </span>
                           <>
-                            {food?.length >= 1 && (
-                              <button
-                                className="catering-package-confirm-btn MyBtn"
-                                type="button"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              >
-                                Confirm
-                              </button>
-                            )}
+                            <>
+                              {isButtonVisible && (
+                                <button
+                                  className="catering-package-confirm-btn MyBtn"
+                                  type="button"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                  onClick={() => handleClick()}
+                                >
+                                  Confirm
+                                </button>
+                              )}
+                            </>
                           </>
                         </aside>
                         <aside className="package_single">
@@ -1170,13 +1193,15 @@ const CateringDetails = () => {
                               </button>
                             </span>
                           </span>
+
                           <>
-                            {food?.length >= 1 && (
+                            {isButtonVisible && (
                               <button
                                 className="catering-package-confirm-btn MyBtn"
                                 type="button"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"
+                                onClick={() => handleClick()}
                               >
                                 Confirm
                               </button>
