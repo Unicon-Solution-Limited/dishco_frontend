@@ -167,11 +167,18 @@ const Checkout = () => {
   return (
     <>
       <Header />
-      <section className="container-fluid my-5 checkout_main">
-        <h2 className="mb-5 text-center">Checkout</h2>
+      <section className="container-fluid checkout_main">
+        <span>
+          <h2 className="text-center">Checkout</h2>
+          <img
+            src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692872250/Frontend_images/joh2ojg6s3gwwmqh3st0.png"
+            alt=""
+            className="img-fluid checkout-patterns-bottom"
+          />
+        </span>
         {subTotalPrice ? (
           <form
-            className="container-fluid my-5 col-md-6"
+            className="container-fluid my-3 col-md-6"
             onSubmit={tokenApplySubmit}
           >
             <p>
@@ -200,10 +207,9 @@ const Checkout = () => {
               <input
                 ref={couponRef}
                 type="text"
-                className="form-control"
+                className="form-control coupon-input"
                 id="inputCoupon"
                 required
-                // style={{ width: "44%" }}
               />
               <button className="btn MyBtn" type="submit">
                 Submit
@@ -223,7 +229,7 @@ const Checkout = () => {
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control checkout-page-input"
                 id="inputName"
                 defaultValue={currentUser?.displayName}
                 readOnly
@@ -234,7 +240,7 @@ const Checkout = () => {
                 Area
               </label>
               <select
-                className="form-select"
+                className="form-select checkout-page-input"
                 aria-label="Default select example"
                 ref={cityRef}
                 required
@@ -249,7 +255,6 @@ const Checkout = () => {
                 <option value="Darussalam">Darussalam</option>
                 <option value="Elephent Road">Elephent Road</option>
                 <option value="Farmgate">Farmgate</option>
-                <option value="Gulistan">Gulistan</option>
                 <option value="Green Road">Green Road</option>
                 <option value="Kola Bagan">Kola Bagan</option>
                 <option value="Kamrangirchar">Kamrangirchar</option>
@@ -264,7 +269,6 @@ const Checkout = () => {
                 <option value="Mohammadpur Asad Gate">
                   Mohammadpur Asad Gate
                 </option>
-                <option value="Mirpur-1">Mirpur-1</option>
                 <option value="New Market, Dhaka">New Market, Dhaka</option>
                 <option value="Nakhalpara West Tejgaon">
                   Nakhalpara West Tejgaon
@@ -294,7 +298,7 @@ const Checkout = () => {
               <input
                 ref={addressRef}
                 type="text"
-                className="form-control"
+                className="form-control checkout-page-input"
                 id="inputAddress"
                 required
               />
@@ -310,7 +314,7 @@ const Checkout = () => {
               <input
                 ref={phoneNumberRef}
                 type="phone"
-                className="form-control"
+                className="form-control checkout-page-input"
                 id="inputContact"
                 required
               />
@@ -325,7 +329,7 @@ const Checkout = () => {
               <input
                 ref={emailRef}
                 type="email"
-                className="form-control"
+                className="form-control checkout-page-input"
                 id="inputEmail"
                 defaultValue={currentUser?.email}
                 readOnly
@@ -338,7 +342,7 @@ const Checkout = () => {
               </label>
               <textarea
                 ref={extra_informationRef}
-                className="form-control"
+                className="form-control checkout-page-input"
                 id="extraInfo"
                 rows="3"
               ></textarea>
@@ -414,7 +418,7 @@ const Checkout = () => {
               </span>
             </div>
             <select
-              className="form-select"
+              className="form-select checkout-page-input"
               aria-label="Default select example"
               ref={PaymentRef}
               required
