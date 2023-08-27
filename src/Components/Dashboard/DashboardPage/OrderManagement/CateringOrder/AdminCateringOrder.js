@@ -11,6 +11,8 @@ const AdminCateringOrder = () => {
   const [orders, setOrders] = useState([]);
   const [orderDetailsForPopup, setOrderDetailsForPopup] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  //this is not for refreshing page when i delete anything
+  const [removeId, setRemoveId] = useState(0);
 
   // filter the orders based on search term
   const filteredOrders = orders?.filter((order) =>
@@ -40,7 +42,7 @@ const AdminCateringOrder = () => {
     }, 300000);
 
     return () => clearInterval(interval);
-  }, [currentUser?.email]);
+  }, [currentUser?.email, removeId]);
 
   // handle search input change
   const handleSearchChange = (event) => {
@@ -60,9 +62,8 @@ const AdminCateringOrder = () => {
       );
       const data = response.data;
       if (data) {
-        setTimeout(() => {
-          window.location.reload();
-        }, 500);
+        //this is not for refreshing page when i delete anything
+        setRemoveId(id);
       }
     } catch (error) {
       console.log("Error deleting order:", error);

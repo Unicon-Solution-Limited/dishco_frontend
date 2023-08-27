@@ -12,6 +12,8 @@ const AllOrdersForAdmin = () => {
   const [orderDetailsForPopup, setOrderDetailsForPopup] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const { currentUser } = useAuth();
+  //this is not for refreshing page when i delete anything
+  const [removeId, setRemoveId] = useState(0);
 
   // filter the orders based on search term
   const filteredOrders = orders.filter((order) =>
@@ -35,9 +37,8 @@ const AllOrdersForAdmin = () => {
       );
       const data = response.data;
       if (data) {
-        setTimeout(() => {
-          window.location.reload();
-        }, 500);
+        //this is not for refreshing page when i delete anything
+        setRemoveId(id);
       }
     } catch (error) {
       console.log("Error deleting order:", error);
@@ -67,7 +68,7 @@ const AllOrdersForAdmin = () => {
     }, 300000);
 
     return () => clearInterval(interval);
-  }, [currentUser?.email]);
+  }, [currentUser?.email, removeId]);
 
   //handle the trand_id and matching it with the backend of order for show it in the popup page by props
   const handleOrderInfoAdmin = (tran_id) => {
