@@ -27,23 +27,26 @@ const formatDate = (date) => {
     weekday: "long",
     day: "numeric",
     month: "long",
+    year: "numeric",
   };
 
   const formattedDate = new IntlMessageFormat(
-    `{weekday} {day} {month}`,
+    `{weekday} {day} {month} {year}`,
     banglaLocale
   ).format({
     weekday: date.toLocaleDateString(banglaLocale, { weekday: "long" }),
     day: date.toLocaleDateString(banglaLocale, { day: "numeric" }),
     month: date.toLocaleDateString(banglaLocale, { month: "long" }),
+    year: date.toLocaleDateString(banglaLocale, { year: "numeric" }),
   });
 
-  const [weekday, day, month] = formattedDate.split(" ");
+  const [weekday, day, month, year] = formattedDate.split(" ");
 
   return {
     weekday,
     day,
     month,
+    year,
   };
 };
 
@@ -282,6 +285,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: fridayQuantity,
                                 })
                               }
@@ -360,6 +364,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: fridayQuantity,
                                 })
                               }
@@ -424,6 +429,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: satQuantity,
                                 })
                               }
@@ -502,6 +508,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: satQuantity,
                                 })
                               }
@@ -566,6 +573,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: sunQuantity,
                                 })
                               }
@@ -644,6 +652,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: sunQuantity,
                                 })
                               }
@@ -708,6 +717,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: monQuantity,
                                 })
                               }
@@ -786,6 +796,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: monQuantity,
                                 })
                               }
@@ -850,6 +861,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: tuesQuantity,
                                 })
                               }
@@ -928,6 +940,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: tuesQuantity,
                                 })
                               }
@@ -992,6 +1005,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: wedQuantity,
                                 })
                               }
@@ -1070,6 +1084,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: wedQuantity,
                                 })
                               }
@@ -1134,6 +1149,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: thirsQuantity,
                                 })
                               }
@@ -1212,6 +1228,7 @@ const CateringDetails = () => {
                                   selectedWeekday: selectedDate.weekday,
                                   selectedDay: selectedDate.day,
                                   selectedMonth: selectedDate.month,
+                                  selectedYear: selectedDate.year,
                                   quantity: thirsQuantity,
                                 })
                               }
