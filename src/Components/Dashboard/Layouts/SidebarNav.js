@@ -175,6 +175,15 @@ const SidebarNav = () => {
                       list of Catering orders
                     </Link>
                   )}
+
+                  {isAdmin && (
+                    <Link
+                      className="nav-link collapse_sub_menu"
+                      to="/todayCateringOrder"
+                    >
+                      Todays Catering Orders
+                    </Link>
+                  )}
                 </nav>
               </div>
               {/* Order management end */}
