@@ -38,9 +38,11 @@ const TopbarNav = () => {
               aria-expanded="false"
             >
               {currentUser ? (
-                <span className="userName_login">
-                  {currentUser.displayName.slice(0, 1)}
-                </span>
+                <>
+                  <span className="userName_login">
+                    {currentUser.displayName.slice(0, 1)}
+                  </span>
+                </>
               ) : (
                 <i className="bi bi-person"></i>
               )}

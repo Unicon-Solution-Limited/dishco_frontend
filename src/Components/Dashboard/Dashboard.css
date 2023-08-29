@@ -813,3 +813,28 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.dashboard-items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.dashboard-items a {
+  text-decoration: none;
+  color: var(--white);
+  cursor: pointer;
+  background-color: var(--deep-green);
+  width: 100px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 5px;
+}
+.dashboard-items a:last-child {
+  background-color: var(--red);
+}
+.dashboard-items a:hover,
+.dashboard-items a:hover a {
+  background-color: var(--red);
+}
