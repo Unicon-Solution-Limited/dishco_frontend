@@ -265,3 +265,15 @@
 .total_calculation {
   padding: 20px 0;
 }
+
+/* *********************** Todays Order */
+.todays-order-table {
+  margin: 30px 0;
+  text-align: center;
+}
+.todays-order-table,
+.todays-order-table th,
+.todays-order-table td {
+  border-collapse: collapse !important;
+  border: 1px solid var(--ash) !important;
+}

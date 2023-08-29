@@ -36,9 +36,10 @@ const Dashboard = () => {
                       logout();
                       removeDishcoToken();
                     }}
+                    to="/"
                   >
                     <i onClick={logout} className="bi bi-box-arrow-left"></i>{" "}
-                    <Link to="/">Logout</Link>
+                    Logout
                   </Link>
                 </span>
               </section>

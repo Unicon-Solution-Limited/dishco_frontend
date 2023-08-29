@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { IntlMessageFormat } from "intl-messageformat";
 import axios from "axios";
+import TopbarNav from "./../../../Layouts/TopbarNav";
+import SidebarNav from "./../../../Layouts/SidebarNav";
 
 const formatDate = (date) => {
   const banglaLocale = "bn-BD";
@@ -35,7 +37,7 @@ const formatDate = (date) => {
 const TodaysCateringOrder = () => {
   const [todayDate, setTodayDate] = useState(null);
   const [todaysOrder, setTodaysOrder] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const today = new Date();
@@ -45,6 +47,7 @@ const TodaysCateringOrder = () => {
 
   //get the todays order from backend
   const fatchProductAccordingDate = async () => {
+    setIsLoading(true);
     try {
       const response = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/sendTodaysDateData?todayDate=` +
@@ -60,50 +63,76 @@ const TodaysCateringOrder = () => {
   };
 
   return (
-    <div>
-      {isLoading && <p>Please wait...</p>}
-      <h1>{todayDate?.weekday}</h1>
-      <h1>{todayDate?.day}</h1>
-      <h1>{todayDate?.month}</h1>
-      <button onClick={() => fatchProductAccordingDate()}>
-        fatchProductAccordingDate
-      </button>
+    <>
+      <TopbarNav />
+      <div id="layoutSidenav">
+        <SidebarNav />
+        <div id="layoutSidenav_content">
+          <main>
+            <div className="container-fluid p-4">
+              <div>
+                {isLoading && <p>Please wait...</p>}
+                <h3>
+                  - {todayDate?.weekday}, {todayDate?.day} {todayDate?.month}{" "}
+                  {todayDate?.year}
+                </h3>
 
-      {todaysOrder.map((todayOrderDt) => (
-        <div key={todayOrderDt._id}>
-          <h1>Id: {todayOrderDt._id}</h1>
-          <h1>Customer city: {todayOrderDt.cus_city}</h1>
-          <h1>Customer address: {todayOrderDt.cus_add1}</h1>
-          <h1>Email: {todayOrderDt.cus_email}</h1>
-          <h1>Name: {todayOrderDt.cus_name}</h1>
-          <h1>Phone: {todayOrderDt.cus_phone}</h1>
-          <h1>Extra Information: {todayOrderDt.extra_information}</h1>
-          <h1>Payment Method?: {todayOrderDt.payment_method}</h1>
-        </div>
-      ))}
+                <button
+                  className="btn MyBtn mt-2"
+                  onClick={() => fatchProductAccordingDate()}
+                >
+                  View Today's Catering Orders
+                </button>
 
-      <h1>this is food</h1>
-      <div>
-        {todaysOrder.map((order, index) => (
-          <div key={index}>
-            {JSON.parse(order.food).map((foodItem, foodIndex) => (
-              <div key={foodIndex}>
-                <img src={foodItem.image} alt={foodItem.name} />
-                <p>Name: {foodItem.name}</p>
-                <p>Price: {foodItem.tk} Tk</p>
-                <p>Package: {foodItem.package}</p>
-                <p>Weekday: {foodItem.selectedWeekday}</p>
-                <p>date: {foodItem.selectedDay}</p>
-                <p>month: {foodItem.selectedMonth}</p>
-                <p>Year: {foodItem.selectedYear}</p>
-                <p>quantity: {foodItem.quantity}</p>
-                {/* Display other food item details */}
+                <table className="table todays-order-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Package</th>
+                      <th scope="col">Tk.</th>
+                      <th scope="col">Update Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {todaysOrder.map((todayOrderDt, i) => (
+                      <tr key={todayOrderDt._id}>
+                        <th scope="row">{i + 1}</th>
+                        <td>{todayOrderDt.cus_name}</td>
+                        <td>
+                          {todayOrderDt.cus_add1}, {todayOrderDt.cus_city}
+                        </td>
+                        <td>{todayOrderDt.cus_phone}</td>
+                        {JSON.parse(todayOrderDt.food).map(
+                          (foodItem, foodIndex) => (
+                            <>
+                              <span key={foodIndex}>
+                                <td>{foodItem.package}</td>
+                              </span>
+                              <td>{foodItem.tk} Tk.</td>
+                            </>
+                          )
+                        )}
+                        <td className="d-flex justify-content-around">
+                          <button className="btn btn-success">
+                            <i className="bi bi-check-circle"></i>
+                          </button>
+                          <button className="btn btn-danger">
+                            <i className="bi bi-x-circle"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-            ))}
-          </div>
-        ))}
+            </div>
+          </main>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
