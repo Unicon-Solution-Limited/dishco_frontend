@@ -119,11 +119,10 @@ const TodaysCateringOrder = () => {
                         <td>{todayOrderDt.cus_phone}</td>
                         {JSON.parse(todayOrderDt.food).map(
                           (foodItem, foodIndex) => (
-                            <div key={foodIndex}>
-                              <td>{foodItem.package}</td>
-
-                              <td>{foodItem.tk} Tk.</td>
-                            </div>
+                            <React.Fragment key={foodIndex}>
+                              <td>{foodItem?.package}</td>
+                              <td>{foodItem?.tk} Tk.</td>
+                            </React.Fragment>
                           )
                         )}
                         <td className="d-flex justify-content-around">
