@@ -134,20 +134,11 @@ const CateringCheckoutPage = () => {
                   <option value="গ্রীন রোড">গ্রীন রোড</option>
                   <option value="কলা বাগান">কলা বাগান</option>
 
-                  <option value="মোহাম্মদপুর বাস স্ট্যান্ড">
-                    মোহাম্মদপুর বাস স্ট্যান্ড
-                  </option>
-
                   <option value="নিউ মার্কেট, ঢাকা">নিউ মার্কেট, ঢাকা</option>
 
                   <option value="শাহবাগ">শাহবাগ</option>
 
-                  <option value="কাওরান বাজার/পান্থপথ">
-                    কাওরান বাজার/পান্থপথ
-                  </option>
                   <option value="পলাশী">পলাশী</option>
-
-                  <option value="রায়ের বাজার">রায়ের বাজার</option>
                 </select>
               </div>
               <div className="mb-3">
