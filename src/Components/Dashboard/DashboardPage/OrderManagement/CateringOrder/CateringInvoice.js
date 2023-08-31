@@ -51,6 +51,8 @@ const CateringInvoice = () => {
                   <th scope="col">প্যাকেজ</th>
                   <th scope="col">পরিমাণ</th>
                   <th scope="col">টাকা</th>
+                  <th scope="col">মন্তব্য</th>
+                  <th scope="col">স্বাক্ষর</th>
                 </tr>
               </thead>
               <tbody>
@@ -75,12 +77,14 @@ const CateringInvoice = () => {
                         {""}
                         টাকা
                       </td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   ))}
               </tbody>
               <tfoot>
                 <tr>
-                  <td colspan="3">
+                  <td colspan="4">
                     <strong>মোট বিল: </strong>
                     {new Intl.NumberFormat("bn-BD").format(totalTk)} টাকা
                   </td>
