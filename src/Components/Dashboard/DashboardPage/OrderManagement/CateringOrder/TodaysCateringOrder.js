@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { IntlMessageFormat } from "intl-messageformat";
-import axios from "axios";
 import TopbarNav from "./../../../Layouts/TopbarNav";
 import SidebarNav from "./../../../Layouts/SidebarNav";
 
@@ -49,7 +48,6 @@ const formatDate = (date) => {
 
 const TodaysCateringOrder = () => {
   const [dates, setDates] = useState(getBeforeDays(6));
-  const [selectedDate, setSelectedDate] = useState(null);
   const [todaysOrder, setTodaysOrder] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
