@@ -1,18 +1,6 @@
-// import React from "react";
-
-// const PopupCustomerCateringOrder = ({ customerCateringOrder }) => {
-//   console.log(customerCateringOrder);
-//   return (
-//     <div>
-//       <h1>PopupCustomerCateringOrder</h1>
-//     </div>
-//   );
-// };
-
-// export default PopupCustomerCateringOrder;
-
 import React from "react";
 import { useAuth } from "../../../../Authentication/AuthContext/AuthContext";
+import "../OrderManagement.css";
 
 const PopupOrderCustomer = ({ customerOrderDetails }) => {
   const { currentUser } = useAuth();
@@ -79,6 +67,7 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
               <table className="table catering-table">
                 <thead>
                   <tr>
+                    <th scope="col">স্ট্যাটাস</th>
                     <th scope="col">দিন</th>
                     <th scope="col">প্যাকেজ</th>
                     <th scope="col">পরিমাণ</th>
@@ -89,6 +78,15 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
                   {customerOrderDetails &&
                     customerOrderDetails?.food?.map((fd, index) => (
                       <tr key={index}>
+                        <td
+                          className={`bg-food-status ${
+                            (fd?.foodStatus === "Done" && " cat-done") ||
+                            (fd?.foodStatus === "Cancel" && " cat-cancel") ||
+                            " cat-pending"
+                          }`}
+                        >
+                          {fd?.foodStatus}
+                        </td>
                         <td>
                           {fd?.day}, {fd?.selectedDay} {fd?.selectedMonth}
                         </td>

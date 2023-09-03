@@ -107,7 +107,6 @@ const AdminCateringOrder = () => {
                 <thead>
                   <tr>
                     <th scope="col">Date and Time</th>
-
                     <th scope="col">Customer Name</th>
                     <th scope="col">Phone Number</th>
                     <th scope="col">Status</th>

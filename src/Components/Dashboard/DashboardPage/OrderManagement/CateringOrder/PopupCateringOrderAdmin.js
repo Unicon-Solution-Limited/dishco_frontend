@@ -78,6 +78,7 @@ const PopupCateringOrderAdmin = ({ orderDetailsForPopup }) => {
               <table className="table catering-table">
                 <thead>
                   <tr>
+                    <th scope="col">Status</th>
                     <th scope="col">দিন</th>
                     <th scope="col">প্যাকেজ</th>
                     <th scope="col">পরিমাণ</th>
@@ -89,6 +90,15 @@ const PopupCateringOrderAdmin = ({ orderDetailsForPopup }) => {
                     orderDetailsForPopup?.food?.length &&
                     orderDetailsForPopup?.food?.map((fd, index) => (
                       <tr key={index}>
+                        <td
+                          className={`bg-food-status ${
+                            (fd?.foodStatus === "Done" && " cat-done") ||
+                            (fd?.foodStatus === "Cancel" && " cat-cancel") ||
+                            " cat-pending"
+                          }`}
+                        >
+                          {fd?.foodStatus}
+                        </td>
                         <td>
                           {fd?.day}, {fd?.selectedDay} {fd?.selectedMonth}
                         </td>
@@ -96,6 +106,7 @@ const PopupCateringOrderAdmin = ({ orderDetailsForPopup }) => {
                           {fd?.package} {""} (
                           {new Intl.NumberFormat("bn-BD").format(fd.tk)} টাকা)
                         </td>
+
                         <td>
                           {new Intl.NumberFormat("bn-BD").format(fd?.quantity)}
                         </td>

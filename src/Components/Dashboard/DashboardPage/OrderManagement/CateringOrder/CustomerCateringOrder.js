@@ -60,8 +60,8 @@ const CustomerOrders = () => {
         <div id="layoutSidenav_content">
           <main className="customer_order">
             <div className="mb-5">
-              <h3>প্রতি তারিখে আপনার ক্যাটারিং অর্ডারের তালিকা।</h3>
-              <p>(বিস্তারিত দেখতে ক্লিক করুন)</p>
+              <h3>আপনার ক্যাটারিং অর্ডারের তালিকা।</h3>
+              <p>(বিস্তারিত দেখতে ভিউ(View) বাটনে ক্লিক করুন)</p>
             </div>
             {loading && (
               <img src={load} className="loading_spinner" alt="Loading....." />
