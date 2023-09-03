@@ -66,6 +66,7 @@
 .TandC_link {
   color: var(--red);
   font-size: 18px;
+  font-weight: 700;
 }
 .placeOrder_btn {
   width: 100%;

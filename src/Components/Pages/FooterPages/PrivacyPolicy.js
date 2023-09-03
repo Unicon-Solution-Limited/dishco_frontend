@@ -84,7 +84,13 @@ const PrivacyPolicy = () => {
             do not knowingly collect personal information from children. If you
             are a parent or guardian and believe we have collected personal
             information from a child under the children law.
-          </p>{" "}
+          </p>
+          <h2 className="mt-5">No Hidden Charge</h2>
+          <p>
+            Our restaurant proudly offers straightforward pricing with no hidden
+            fees, providing you with a delightful online order experience and
+            honest value.
+          </p>
         </div>
       </section>
       <Footer />

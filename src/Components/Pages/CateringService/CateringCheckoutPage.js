@@ -16,6 +16,7 @@ const CateringCheckoutPage = () => {
   const [food, setFood] = useState([]);
   const PaymentRef = useRef();
   const [paymnetLoading, setPaymentLoading] = useState(false);
+  const [termCondition, setTermCondition] = useState(false);
 
   //getting all food from local stroage
   useEffect(() => {
@@ -213,10 +214,28 @@ const CateringCheckoutPage = () => {
               </select>
               <br />
               <br />
+              <div className="mb-3 form-check checkBox_main">
+                <input
+                  type="checkbox"
+                  className="form-check-input checkBox_input"
+                  id="exampleCheck1"
+                  onChange={() => setTermCondition(!termCondition)}
+                />
+                <label
+                  className="form-check-label checkBox_label"
+                  htmlFor="exampleCheck1"
+                >
+                  I have read and agree to the website{" "}
+                  <Link to="/" className="myLinks TandC_link">
+                    Terms and Conditions
+                  </Link>
+                  *
+                </label>
+              </div>
               <button
                 type="submit"
                 className="btn MyBtn placeOrder_btn"
-                disabled={food.length === 0}
+                disabled={!termCondition || food.length === 0}
               >
                 {paymnetLoading ? (
                   <div className="d-flex justify-content-center">
@@ -237,6 +256,7 @@ const CateringCheckoutPage = () => {
             alt=""
             className="img-fluid"
           />
+
           <table className="table catering-table">
             <thead>
               <tr>
@@ -279,6 +299,19 @@ const CateringCheckoutPage = () => {
               </tr>
             </tfoot>
           </table>
+          <div className="my-5">
+            <span className="cash_delivery_text">
+              <b>* Cash on delivery:</b> Pay with cash upon delivery.
+            </span>
+            <br />
+            Your personal data(name and email address) will be used to process
+            your order, support your experience throughout this website, and for
+            other purposes described in our{" "}
+            <Link to="/privacy-policy" className="myLinks TandC_link">
+              Privacy Policy
+            </Link>
+            .{" "}
+          </div>
           <img
             src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692872250/Frontend_images/joh2ojg6s3gwwmqh3st0.png"
             alt=""

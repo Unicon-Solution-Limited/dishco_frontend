@@ -351,32 +351,6 @@ const Checkout = () => {
             <div className="mandatory_note">
               Note: Start(*) Marks Fields are Mandatory.
             </div>
-
-            {/* <form className="my-5" onSubmit={tokenApplySubmit}>
-              <p>Apply your Coupon</p>
-              {sevenDaysTokenData.length ? (
-                <p>
-                  Your Token:{" "}
-                  <span style={{ color: "green" }}>
-                    {sevenDaysTokenData[0]?.token}
-                  </span>
-                </p>
-              ) : (
-                ""
-              )}
-              <div className="d-flex mt-2">
-                <input
-                  ref={couponRef}
-                  type="text"
-                  className="form-control"
-                  id="inputCoupon"
-                  required
-                />
-                <button className="btn MyBtn" type="submit">
-                  Submit
-                </button>
-              </div>
-            </form> */}
           </aside>
           <aside className="checkout_details">
             <h5 className="mb-5">Your Order</h5>
@@ -436,8 +410,8 @@ const Checkout = () => {
               your order, support your experience throughout this website, and
               for other purposes described in our{" "}
               <Link to="/privacy-policy" className="myLinks TandC_link">
-                privacy policy
-              </Link>
+                Privacy Policy
+              </Link>{" "}
               .
             </p>
 
