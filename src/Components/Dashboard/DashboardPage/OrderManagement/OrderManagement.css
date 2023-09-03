@@ -265,6 +265,9 @@
 .total_calculation {
   padding: 20px 0;
 }
+.tAndc {
+  font-size: 12px;
+}
 
 /* *********************** Todays Order */
 .todays-order-table {

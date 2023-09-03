@@ -109,6 +109,10 @@ const CateringInvoice = () => {
             </span>
             <br />
           </div>
+
+          <p className="tAndc">
+            * ইনভয়েস থেকে অতিরিক্ত কোন অর্থ প্রদান থেকে বিরত থাকুন।
+          </p>
         </section>
         <section className="invoice_footer">
           <span>+88 018100 98389</span>

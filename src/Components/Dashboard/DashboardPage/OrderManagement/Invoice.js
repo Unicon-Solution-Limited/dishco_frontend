@@ -95,6 +95,9 @@ const Invoice = () => {
               <strong>Grand Total:</strong> {data.total_amount} TK.
             </span>
           </div>
+          <p className="tAndc">
+            * ইনভয়েস থেকে অতিরিক্ত কোন অর্থ প্রদান থেকে বিরত থাকুন।
+          </p>
         </div>
         <div className="invoice_footer">
           <span>+88 018100 98389</span>
