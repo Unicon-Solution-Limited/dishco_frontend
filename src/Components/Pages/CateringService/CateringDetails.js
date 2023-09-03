@@ -55,13 +55,24 @@ const CateringDetails = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [food, setFood] = useState([]);
   const [countMessage, setCountMessage] = useState("");
-  const history = useHistory();
-  //Sat handleDecrese/Increase
-  const [satQuantity, satSetQuantity] = useState(1);
-
   // Confirm button
   const [isButtonVisible, setIsButtonVisible] = useState(false);
+  const history = useHistory();
 
+  //generate the dynamic food id
+  const [foodId, setFoodId] = useState("");
+  function generateId() {
+    const characters =
+      "abcdefqwertyuioplkjhgfdaghijklmaadsrsdfnopqrstuvwxyzabcdesdfasdffghijklmnopqrstuvwxyz0123456789";
+    let result = "";
+    const charactersLength = characters.length;
+    for (let i = 0; i < 24; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    setFoodId(result);
+  }
+  //Sat handleDecrese/Increase
+  const [satQuantity, satSetQuantity] = useState(1);
   const handleSatDecrease = () => {
     satSetQuantity(Math.max(satQuantity - 1, 1));
   };
@@ -153,6 +164,7 @@ const CateringDetails = () => {
 
   const fallback =
     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1692686715/Frontend_images/Background_images/hpldnybpokkcekx0j2k4.webp";
+
   return (
     <>
       <Header />
@@ -166,7 +178,10 @@ const CateringDetails = () => {
               return (
                 <button
                   key={index}
-                  onClick={() => setSelectedDate(formatted)}
+                  onClick={() => {
+                    setSelectedDate(formatted);
+                    generateId();
+                  }}
                   data-bs-toggle="modal"
                   data-bs-target="#cateringModal"
                   className={`${
@@ -297,6 +312,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: fridayQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -377,6 +394,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: fridayQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -442,6 +461,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: satQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -524,6 +545,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: satQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -589,6 +612,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: sunQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -669,6 +694,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: sunQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -734,6 +761,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: monQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -816,6 +845,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: monQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -881,6 +912,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: tuesQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -963,6 +996,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: tuesQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -1028,6 +1063,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: wedQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -1110,6 +1147,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: wedQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -1175,6 +1214,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: thirsQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
@@ -1256,6 +1297,8 @@ const CateringDetails = () => {
                                   selectedMonth: selectedDate.month,
                                   selectedYear: selectedDate.year,
                                   quantity: thirsQuantity,
+                                  foodId: foodId,
+                                  foodStatus: "pending",
                                 })
                               }
                             />
