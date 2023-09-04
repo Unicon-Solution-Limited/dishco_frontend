@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { IntlMessageFormat } from "intl-messageformat";
 import TopbarNav from "./../../../Layouts/TopbarNav";
 import SidebarNav from "./../../../Layouts/SidebarNav";
+import { useAuth } from "../../../../Authentication/AuthContext/AuthContext";
 
 const getBeforeDays = (numDays) => {
   const days = [];
@@ -50,6 +51,7 @@ const TodaysCateringOrder = () => {
   const [dates, setDates] = useState(getBeforeDays(6));
   const [todaysOrder, setTodaysOrder] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { currentUser } = useAuth();
 
   //get the todays order from backend
   const fatchProductAccordingDate = async (selectedDate) => {
@@ -65,6 +67,58 @@ const TodaysCateringOrder = () => {
     } catch (error) {
       console.log("err", error);
       setIsLoading(false);
+    }
+  };
+
+  //status done update
+  const handleDone = async (id) => {
+    const foodStatus = "Done";
+
+    try {
+      const url = `${process.env.REACT_APP_BACKEND_URL}/updateFoodStatus/${id}?email=${currentUser?.email}`;
+      const option = {
+        method: "PATCH",
+        body: JSON.stringify({ foodStatus }),
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+        },
+      };
+      // await fetch(url, option);
+      const response = await fetch(url, option);
+      if (response.status === 200) {
+        console.log("success");
+      } else {
+        console.log("Error updating food status:", response.statusText);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //food status cancel change
+  const handleCancle = async (id) => {
+    const foodStatus = "Cancel";
+
+    try {
+      const url = `${process.env.REACT_APP_BACKEND_URL}/updateFoodStatus/${id}?email=${currentUser?.email}`;
+      const option = {
+        method: "PATCH",
+        body: JSON.stringify({ foodStatus }),
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("dishco-token")}`,
+        },
+      };
+      // await fetch(url, option);
+      const response = await fetch(url, option);
+      if (response.status === 200) {
+        console.log("success");
+      } else {
+        console.log("Error updating food status:", response.statusText);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -122,17 +176,23 @@ const TodaysCateringOrder = () => {
                             <React.Fragment key={foodIndex}>
                               <td>{foodItem?.package}</td>
                               <td>{foodItem?.tk} Tk.</td>
+                              <td className="d-flex justify-content-around">
+                                <button
+                                  className="btn btn-success"
+                                  onClick={() => handleDone(foodItem?.foodId)}
+                                >
+                                  <i className="bi bi-check-circle"></i>
+                                </button>
+                                <button
+                                  className="btn btn-danger"
+                                  onClick={() => handleCancle(foodItem?.foodId)}
+                                >
+                                  <i className="bi bi-x-circle"></i>
+                                </button>
+                              </td>
                             </React.Fragment>
                           )
                         )}
-                        <td className="d-flex justify-content-around">
-                          <button className="btn btn-success">
-                            <i className="bi bi-check-circle"></i>
-                          </button>
-                          <button className="btn btn-danger">
-                            <i className="bi bi-x-circle"></i>
-                          </button>
-                        </td>
                       </tr>
                     ))}
                   </tbody>
