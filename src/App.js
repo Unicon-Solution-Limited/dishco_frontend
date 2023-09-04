@@ -43,6 +43,8 @@ import AdminCateringOrder from "./Components/Dashboard/DashboardPage/OrderManage
 import CateringInvoice from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/CateringInvoice";
 import CustomerCateringOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/CustomerCateringOrder";
 import TodaysCateringOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/TodaysCateringOrder";
+import CustomerCateringOrderHistory from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/CateringOrderHistory/CustomerCateringOrderHistory";
+import AllAdminCateringOrderHistory from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/CateringOrderHistory/AllAdminCateringOrderHistory";
 
 function App() {
   return (
@@ -99,6 +101,14 @@ function App() {
 
             <Route path="/todayCateringOrder">
               <TodaysCateringOrder />
+            </Route>
+
+            <Route path="/myCateringOrderHistory">
+              <CustomerCateringOrderHistory />
+            </Route>
+
+            <Route path="/adminCateringOrderHistory">
+              <AllAdminCateringOrderHistory />
             </Route>
 
             <Route path="/invoice">
