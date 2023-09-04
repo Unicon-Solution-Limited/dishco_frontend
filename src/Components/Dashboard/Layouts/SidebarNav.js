@@ -153,7 +153,7 @@ const SidebarNav = () => {
                       className="nav-link collapse_sub_menu"
                       to="/allOrders"
                     >
-                      list of orders
+                      Admin list of orders
                     </Link>
                   )}
                   <Link className="nav-link collapse_sub_menu" to="/MyOrder">
@@ -167,12 +167,28 @@ const SidebarNav = () => {
                     My Catering Order
                   </Link>
 
+                  <Link
+                    className="nav-link collapse_sub_menu"
+                    to="/myCateringOrderHistory"
+                  >
+                    My Catering Order History
+                  </Link>
+
                   {isAdmin && (
                     <Link
                       className="nav-link collapse_sub_menu"
                       to="/adminCateringOrder"
                     >
-                      list of Catering orders
+                      Admin Catering orders
+                    </Link>
+                  )}
+
+                  {isAdmin && (
+                    <Link
+                      className="nav-link collapse_sub_menu"
+                      to="/adminCateringOrderHistory"
+                    >
+                      Admin Catering orders History
                     </Link>
                   )}
 
@@ -181,7 +197,7 @@ const SidebarNav = () => {
                       className="nav-link collapse_sub_menu"
                       to="/todayCateringOrder"
                     >
-                      Todays Catering Orders
+                      Admin Todays Catering Orders
                     </Link>
                   )}
                 </nav>
