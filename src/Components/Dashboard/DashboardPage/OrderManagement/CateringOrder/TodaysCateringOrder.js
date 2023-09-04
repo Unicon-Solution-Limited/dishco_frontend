@@ -88,7 +88,10 @@ const TodaysCateringOrder = () => {
       // await fetch(url, option);
       const response = await fetch(url, option);
       if (response.status === 200) {
-        setFoodStatusMsg("Successfully changed the status to Done");
+        setFoodStatusMsg("Successfully Confirmed the Order");
+        setTimeout(() => {
+          setFoodStatusMsg("");
+        }, 3000);
         //this is for update status show
         setTodaysOrder([]);
       } else {
@@ -116,7 +119,10 @@ const TodaysCateringOrder = () => {
       // await fetch(url, option);
       const response = await fetch(url, option);
       if (response.status === 200) {
-        setFoodStatusMsg("Successfully changed the status to Cancel");
+        setFoodStatusMsg("This Order Successfully Canceled");
+        setTimeout(() => {
+          setFoodStatusMsg("");
+        }, 3000);
         //this is for update status show
         setTodaysOrder([]);
       } else {
@@ -165,6 +171,7 @@ const TodaysCateringOrder = () => {
                       <th scope="col">Package</th>
                       <th scope="col">Tk.</th>
                       <th scope="col">Update Status</th>
+                      <th scope="col">Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -195,7 +202,17 @@ const TodaysCateringOrder = () => {
                                   <i className="bi bi-x-circle"></i>
                                 </button>
                               </td>
-                              <td>{foodItem.foodStatus}</td>
+                              <td
+                                className={`bg-food-status ${
+                                  (foodItem?.foodStatus === "Done" &&
+                                    " cat-done") ||
+                                  (foodItem?.foodStatus === "Cancel" &&
+                                    " cat-cancel") ||
+                                  " cat-pending"
+                                }`}
+                              >
+                                {foodItem.foodStatus}
+                              </td>
                             </React.Fragment>
                           )
                         )}
@@ -204,7 +221,7 @@ const TodaysCateringOrder = () => {
                   </tbody>
                 </table>
                 {foodStatusMsg && (
-                  <h1 className="text-center">{foodStatusMsg}</h1>
+                  <p className="status-change-msg">{foodStatusMsg}</p>
                 )}
               </div>
             </div>
