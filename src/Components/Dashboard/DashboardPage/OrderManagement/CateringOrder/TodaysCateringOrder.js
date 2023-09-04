@@ -52,6 +52,7 @@ const TodaysCateringOrder = () => {
   const [todaysOrder, setTodaysOrder] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const { currentUser } = useAuth();
+  const [foodStatusMsg, setFoodStatusMsg] = useState("");
 
   //get the todays order from backend
   const fatchProductAccordingDate = async (selectedDate) => {
@@ -87,7 +88,9 @@ const TodaysCateringOrder = () => {
       // await fetch(url, option);
       const response = await fetch(url, option);
       if (response.status === 200) {
-        console.log("success");
+        setFoodStatusMsg("Successfully changed the status to Done");
+        //this is for update status show
+        setTodaysOrder([]);
       } else {
         console.log("Error updating food status:", response.statusText);
       }
@@ -113,7 +116,9 @@ const TodaysCateringOrder = () => {
       // await fetch(url, option);
       const response = await fetch(url, option);
       if (response.status === 200) {
-        console.log("success");
+        setFoodStatusMsg("Successfully changed the status to Cancel");
+        //this is for update status show
+        setTodaysOrder([]);
       } else {
         console.log("Error updating food status:", response.statusText);
       }
@@ -190,6 +195,7 @@ const TodaysCateringOrder = () => {
                                   <i className="bi bi-x-circle"></i>
                                 </button>
                               </td>
+                              <td>{foodItem.foodStatus}</td>
                             </React.Fragment>
                           )
                         )}
@@ -197,6 +203,9 @@ const TodaysCateringOrder = () => {
                     ))}
                   </tbody>
                 </table>
+                {foodStatusMsg && (
+                  <h1 className="text-center">{foodStatusMsg}</h1>
+                )}
               </div>
             </div>
           </main>
