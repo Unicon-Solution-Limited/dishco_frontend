@@ -313,7 +313,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: fridayQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -395,7 +395,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: fridayQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -462,7 +462,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: satQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -546,7 +546,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: satQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -613,7 +613,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: sunQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -695,7 +695,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: sunQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -762,7 +762,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: monQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -846,7 +846,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: monQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -913,7 +913,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: tuesQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -997,7 +997,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: tuesQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -1064,7 +1064,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: wedQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -1148,7 +1148,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: wedQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -1215,7 +1215,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: thirsQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
@@ -1298,7 +1298,7 @@ const CateringDetails = () => {
                                   selectedYear: selectedDate.year,
                                   quantity: thirsQuantity,
                                   foodId: foodId,
-                                  foodStatus: "pending",
+                                  foodStatus: "Pending",
                                 })
                               }
                             />
