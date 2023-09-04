@@ -27,6 +27,17 @@ const TopbarNav = () => {
           </button>
         </div>
 
+        <span
+          onClick={() => {
+            logout();
+            removeDishcoToken();
+          }}
+          className="MyBtn extra-logout-btn"
+        >
+          <i onClick={logout} className="bi bi-box-arrow-left"></i>{" "}
+          <Link to="/">Logout</Link>
+        </span>
+
         <ul className="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
           <li className="nav-item dropdown">
             <Link

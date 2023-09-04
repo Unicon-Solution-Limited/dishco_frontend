@@ -75,7 +75,13 @@
   background-color: var(--red) !important;
   transition: 0.3s;
 }
-
+.extra-logout-btn {
+  padding: 5px;
+  text-decoration: none;
+}
+.extra-logout-btn a {
+  color: var(--white) !important;
+}
 @media only screen and (min-width: 960px) {
   .cross_btn {
     display: none;
