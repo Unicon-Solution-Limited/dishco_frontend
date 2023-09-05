@@ -181,7 +181,7 @@ const Header = () => {
       <div className="header-separater"></div>
       {/* Bottom Header */}
       <nav className="navbar navbar-expand-lg header_main_body sticky-header">
-        <div className="container lower_header">
+        <div className="container-xxl lower_header">
           <div className="logo_bar">
             <Link to="/">
               <img
@@ -466,6 +466,16 @@ const Header = () => {
                     </Link>
                   </li>
                 </ul>
+              </li>
+              <li className="nav-item navbarItems">
+                <Link
+                  to="/cateringDetails"
+                  className="nav-link nav_link"
+                  aria-current="page"
+                  onClick={handleNavLinkClick}
+                >
+                  Catering
+                </Link>
               </li>
             </ul>
             <div
