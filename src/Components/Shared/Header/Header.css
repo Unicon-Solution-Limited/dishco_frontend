@@ -24,7 +24,8 @@
   font-size: 16px;
   color: var(--white);
   background-color: var(--red);
-  padding: 0 5px;
+  padding: 1px 5px;
+  border-radius: 2px;
 }
 .auth_login:hover {
   background-color: var(--green);
@@ -148,7 +149,13 @@
   display: block !important;
 }
 /* 2nd Child Dropdown end */
-
+.catering-nav-link {
+  background-color: rgba(100, 188, 70, 0.5);
+  border-radius: 5px;
+}
+.catering-nav-link:hover {
+  background-color: var(--deep-green);
+}
 /* Cart Badge */
 .badge {
   padding-left: 9px;

@@ -470,7 +470,7 @@ const Header = () => {
               <li className="nav-item navbarItems">
                 <Link
                   to="/cateringDetails"
-                  className="nav-link nav_link"
+                  className="nav-link nav_link catering-nav-link"
                   aria-current="page"
                   onClick={handleNavLinkClick}
                 >
