@@ -402,7 +402,7 @@ const Checkout = () => {
               <option value="Cash on delivery">Cash on delivery</option>
             </select>
             <p className="my-5 TandC_text">
-              <span className="cash_delivery_text">
+              <span className="cash-On-delivery-text">
                 <b>* Cash on delivery:</b> Pay with cash upon delivery.
               </span>
               <br />

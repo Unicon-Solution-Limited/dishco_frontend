@@ -299,14 +299,16 @@ const CateringCheckoutPage = () => {
               </tr>
             </tfoot>
           </table>
-          <div className="my-5">
-            <span className="cash_delivery_text">
+          <div className="my-5 px-2">
+            <span className="cash-On-delivery-text">
               <b>* Cash on delivery:</b> Pay with cash upon delivery.
             </span>
             <br />
-            Your personal data(name and email address) will be used to process
-            your order, support your experience throughout this website, and for
-            other purposes described in our{" "}
+            <span className="text-wrap">
+              Your personal data(name and email address) will be used to process
+              your order, support your experience throughout this website, and
+              for other purposes described in our{" "}
+            </span>
             <Link to="/privacy-policy" className="myLinks TandC_link">
               Privacy Policy
             </Link>
