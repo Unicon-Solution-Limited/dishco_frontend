@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer>
       <section className="container footer_top">
-        <aside className="company_name" data-aos="flip-down">
+        <aside className="company-name" data-aos="flip-down">
           <h1>DishCo</h1>
           <h5>Dancing Deliciousness.</h5>
         </aside>
