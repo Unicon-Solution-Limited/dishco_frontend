@@ -134,10 +134,12 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
                   className={`status ${
                     customerOrderDetails?.product_status == "Pending"
                       ? "pending"
-                      : customerOrderDetails?.product_status == "canceled"
+                      : customerOrderDetails?.product_status == "Canceled"
                       ? "cancel"
-                      : customerOrderDetails?.product_status == "Shipped"
+                      : customerOrderDetails?.product_status == "Completed"
                       ? "shipped"
+                      : customerOrderDetails?.product_status == "Running"
+                      ? "processing"
                       : ""
                   }`}
                 >
