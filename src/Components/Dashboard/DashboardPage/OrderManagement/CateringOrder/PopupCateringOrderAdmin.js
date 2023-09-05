@@ -177,9 +177,8 @@ const PopupCateringOrderAdmin = ({ orderDetailsForPopup }) => {
               >
                 <option value="">Status</option>
                 <option value="Pending">Pending</option>
-                <option value="Processing">Processing</option>
-                <option value="Shipped">Shipped</option>
-                <option value="Deliverd">Deliverd</option>
+                <option value="Running">Running</option>
+                <option value="Completed">Completed</option>
                 <option value="Canceled">Canceled</option>
               </select>
               <button

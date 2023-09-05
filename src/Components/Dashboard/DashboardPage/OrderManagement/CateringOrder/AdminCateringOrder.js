@@ -131,9 +131,9 @@ const AdminCateringOrder = () => {
                           className={`status ${
                             order?.product_status == "Pending"
                               ? "pending"
-                              : order?.product_status == "Processing"
+                              : order?.product_status == "Running"
                               ? "processing"
-                              : order?.product_status == "Shipped"
+                              : order?.product_status == "Completed"
                               ? "shipped"
                               : ""
                           }`}
