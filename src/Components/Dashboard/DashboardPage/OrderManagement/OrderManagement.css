@@ -297,6 +297,10 @@
   font-weight: 700;
 }
 
+.catering-table {
+  text-align: center;
+}
+
 /* *********************** Todays Order */
 .todays-order-table {
   margin: 30px 0;

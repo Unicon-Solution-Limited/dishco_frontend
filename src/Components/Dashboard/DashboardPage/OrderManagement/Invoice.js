@@ -37,7 +37,7 @@ const Invoice = () => {
           </div>
 
           <div className="items">
-            <table>
+            <table className="table catering-table">
               <thead>
                 <tr>
                   <th>Item</th>
