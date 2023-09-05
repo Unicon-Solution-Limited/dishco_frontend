@@ -57,10 +57,11 @@
 }
 .userName_login {
   background-color: var(--red);
-  padding: 3px 10px;
+  padding: 5px 15px;
   color: var(--white) !important;
   border-radius: 5px;
   text-transform: uppercase;
+  font-weight: 700;
 }
 .userName_login:hover {
   background-color: var(--green);
@@ -74,13 +75,6 @@
 .logout_dropdown_btn div:hover {
   background-color: var(--red) !important;
   transition: 0.3s;
-}
-.extra-logout-btn {
-  padding: 5px;
-  text-decoration: none;
-}
-.extra-logout-btn a {
-  color: var(--white) !important;
 }
 @media only screen and (min-width: 960px) {
   .cross_btn {
