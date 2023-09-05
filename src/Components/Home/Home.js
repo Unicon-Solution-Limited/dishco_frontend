@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Footer from "../Shared/Footer/Footer";
 import Header from "../Shared/Header/Header";
-
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import "./Home.css";
 import Facilities from "./HomeComponents/Facilities";
 import MenuSection from "./HomeComponents/MenuSection";
@@ -79,6 +79,11 @@ const Home = () => {
           alt="10% Discount"
         />
       </div>
+      <MessengerCustomerChat
+        pageId="101975605485880"
+        appId="650259003597895"
+        className="messenger_chat"
+      />
     </>
   );
 };
