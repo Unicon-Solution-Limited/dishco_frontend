@@ -25,8 +25,8 @@ const Success = () => {
         <strong className="mt-2">Please call to confirm your order.</strong>
         <h3>+88 01810-098389</h3>
         <div className="success_redirect_button mt-4">
-          <Link to="/" className="btn MyBtn">
-            Continue Shopping
+          <Link to="/dashboard" className="btn MyBtn">
+            Dashboard
           </Link>
           <Link to="/" className="btn MyBtn">
             Back to Home

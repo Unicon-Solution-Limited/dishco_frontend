@@ -71,7 +71,7 @@ const HeaderOffcanvas = () => {
         ))}
         <div className="offcanvas_cart_footer">
           <h4>Subtotal: {subTotalPrice + finaltotalAddonPrice} Tk.</h4>
-          <span className="offcanvas_cart_buttons">
+          <span className="offcanvas_cart_buttons mt-3">
             <button className="btn" data-bs-dismiss="offcanvas">
               <Link to="/cart" className="MyBtn offcanvas_cart_button">
                 View Cart
