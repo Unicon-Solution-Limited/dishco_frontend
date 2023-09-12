@@ -102,7 +102,7 @@ const PopupOrderCustomer = ({ customerOrderDetails }) => {
                     <strong>Delivery Charge:</strong> +60 tk.
                   </p>
                   <p>
-                    <strong>Discount:</strong> -
+                    <strong>Coupon Discount:</strong> -
                     {customerOrderDtls?.discountPrice} tk.
                   </p>
                   <p>

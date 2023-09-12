@@ -365,29 +365,32 @@ const Checkout = () => {
             </div>
 
             <div className="table_row subtotal">
-              <strong>Discount</strong>
+              <strong>- Coupon Discount (only food)</strong>
               <span>{discountPrice} Tk.</span>
             </div>
 
             <div className="table_row subtotal">
-              <strong>Special Discount</strong>
-              <span>{(subTotalPrice * 10) / 100} Tk.</span>
+              <strong>- Special Discount (food + addonItem)</strong>
+              <span>
+                {((subTotalPrice + finaltotalAddonPrice) * 10) / 100} Tk.
+              </span>
             </div>
 
             <div className="table_row shipping">
-              <strong>Total Extra Item Price</strong>
+              <strong>+ Total Extra Item Price</strong>
               <span>{finaltotalAddonPrice} tk.</span>
             </div>
 
             <div className="table_row shipping">
-              <strong>Shipping Charges</strong>
+              <strong>+ Shipping Charges</strong>
               <span>Flat rate: 60.00 Tk.</span>
             </div>
             <div className="table_row total">
               <strong>Total</strong>
               <span>
-                {/* {cartData.length && finaltotalAddonPrice + subTotalPrice + 80} */}
-                {grandTotal - (subTotalPrice * 10) / 100}
+                {/* dishcount with in total food i mean (food + addonItem / 100) */}
+                {grandTotal -
+                  ((subTotalPrice + finaltotalAddonPrice) * 10) / 100}
                 Tk.
               </span>
             </div>

@@ -6,8 +6,6 @@ import toggler from "./toggler";
 const TopbarNav = () => {
   const { logout, currentUser } = useAuth();
 
-  console.log(currentUser);
-
   //remove dishco token
   const removeDishcoToken = () => {
     localStorage.removeItem("dishco-token");

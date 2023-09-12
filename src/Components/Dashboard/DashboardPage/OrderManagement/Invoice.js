@@ -43,7 +43,9 @@ const Invoice = () => {
                   <th>Item</th>
                   <th>Quantity</th>
                   <th>Food Price</th>
-                  <th>Extra Item Price</th>
+                  <th>Addon Item Price</th>
+                  <th>Total Food + Extra Item Price</th>
+                  <th>Special Discount(10%)</th>
                   <th>Total</th>
                 </tr>
               </thead>
@@ -52,11 +54,9 @@ const Invoice = () => {
                   <tr>
                     <td>{dt?.name}</td>
                     <td className="qty">{dt?.quantity}</td>
-
-                    <td>
-                      TK. {dt?.price - (dt?.price * 10) / 100} (with 10%
-                      discount)
-                    </td>
+                    {/* food price */}
+                    <td>{dt?.price}</td>
+                    {/* total addon price */}
                     <td>
                       TK.{" "}
                       {dt?.extras.reduce(
@@ -64,13 +64,42 @@ const Invoice = () => {
                         0
                       )}
                     </td>
-                    <td className="total">
-                      TK.{" "}
-                      {dt?.quantity * (dt?.price - (dt?.price * 10) / 100) +
+                    {/* total food price + addon price */}
+                    <td>
+                      {dt?.price * dt.quantity +
                         dt?.extras.reduce(
                           (acc, addon) => acc + addon.priceOfAddon,
                           0
                         )}
+                    </td>
+                    {/* dishcount price */}
+                    <td>
+                      (
+                      {(
+                        (dt?.price * dt.quantity +
+                          dt?.extras.reduce(
+                            (acc, addon) => acc + addon.priceOfAddon,
+                            0
+                          )) *
+                        0.1
+                      ).toFixed(2)}
+                      )
+                    </td>
+                    {/* grand total       */}
+                    <td className="total">
+                      {dt?.price * dt.quantity +
+                        dt?.extras.reduce(
+                          (acc, addon) => acc + addon.priceOfAddon,
+                          0
+                        ) -
+                        (
+                          (dt?.price * dt.quantity +
+                            dt?.extras.reduce(
+                              (acc, addon) => acc + addon.priceOfAddon,
+                              0
+                            )) *
+                          0.1
+                        ).toFixed(2)}
                     </td>
                   </tr>
                 </tbody>
@@ -88,7 +117,7 @@ const Invoice = () => {
             </span>{" "}
             <br />
             <span>
-              <strong>Discount:</strong> -{data?.discountPrice} TK.
+              <strong>Coupon Discount:</strong> -({data?.discountPrice}) TK.
             </span>
             <br />
             <span>
