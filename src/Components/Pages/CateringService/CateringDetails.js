@@ -291,7 +291,7 @@ const CateringDetails = () => {
                             className="package_items_img_left"
                           />
                           <figcaption className="package-img-caption">
-                            ভাত + মুরগি + ডাল + সবজি = ৮০ টাকা
+                            ভাত + মুরগি + ডাল + সবজি = ৯০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -373,7 +373,7 @@ const CateringDetails = () => {
                             className="package_items_img_right"
                           />
                           <figcaption className="package-img-caption">
-                            বীফ খিচুরি = ১২০ টাকা
+                            বীফ খিচুরি = ১৩০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -440,7 +440,7 @@ const CateringDetails = () => {
                             className="package_items_img_left"
                           />
                           <figcaption className="package-img-caption">
-                            ভাত + ডিম + ডাল + সবজি = ৮০ টাকা
+                            ভাত + ডিম + ডাল + সবজি = ৯০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -524,7 +524,7 @@ const CateringDetails = () => {
                             className="package_items_img_right"
                           />
                           <figcaption className="package-img-caption">
-                            চিকেন পোলাও = ১২০ টাকা
+                            চিকেন পোলাও = ১৩০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -591,7 +591,7 @@ const CateringDetails = () => {
                             className="package_items_img_left"
                           />
                           <figcaption className="package-img-caption">
-                            ভাত + মাছ + ডাল + সবজি = ৮০ টাকা
+                            ভাত + মাছ + ডাল + সবজি = ৯০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -673,7 +673,7 @@ const CateringDetails = () => {
                             className="package_items_img_right"
                           />
                           <figcaption className="package-img-caption">
-                            বীফ তেহারি = ১২০ টাকা
+                            বীফ তেহারি = ১৩০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -740,7 +740,7 @@ const CateringDetails = () => {
                             className="package_items_img_left"
                           />
                           <figcaption className="package-img-caption">
-                            ভাত + বীফ + ডাল + সবজি = ৮০ টাকা
+                            ভাত + বীফ + ডাল + সবজি = ৯০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -824,7 +824,7 @@ const CateringDetails = () => {
                             className="package_items_img_right"
                           />
                           <figcaption className="package-img-caption">
-                            ডিম খিচুরি = ৮০ টাকা
+                            ডিম খিচুরি = ৯০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -891,7 +891,7 @@ const CateringDetails = () => {
                             className="package_items_img_left"
                           />
                           <figcaption className="package-img-caption">
-                            ভাত + মুরগি + ডাল + সবজি = ৮০ টাকা
+                            ভাত + মুরগি + ডাল + সবজি = ৯০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -975,7 +975,7 @@ const CateringDetails = () => {
                             className="package_items_img_right"
                           />
                           <figcaption className="package-img-caption">
-                            বীফ খিচুরি = ১২০ টাকা
+                            বীফ খিচুরি = ১৩০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -1042,7 +1042,7 @@ const CateringDetails = () => {
                             className="package_items_img_left"
                           />
                           <figcaption className="package-img-caption">
-                            ভাত + মাছ + ডাল + সবজি = ৮০ টাকা
+                            ভাত + মাছ + ডাল + সবজি = ৯০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -1126,7 +1126,7 @@ const CateringDetails = () => {
                             className="package_items_img_right"
                           />
                           <figcaption className="package-img-caption">
-                            বীফ তেহারি = ১২০ টাকা
+                            বীফ তেহারি = ১৩০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -1193,7 +1193,7 @@ const CateringDetails = () => {
                             className="package_items_img_left"
                           />
                           <figcaption className="package-img-caption">
-                            ভাত + ডিম + ডাল + সবজি = ৮০ টাকা
+                            ভাত + ডিম + ডাল + সবজি = ৯০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
@@ -1276,7 +1276,7 @@ const CateringDetails = () => {
                             className="package_items_img_right"
                           />
                           <figcaption className="package-img-caption">
-                            চিকেন পোলাও = ১২০ টাকা
+                            চিকেন পোলাও = ১৩০ টাকা
                           </figcaption>
                           <label className="custom-radio">
                             <input
