@@ -303,7 +303,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp",
                                   name: "চিকেন মিল",
-                                  tk: 80,
+                                  tk: 90,
                                   day: "শুক্রবার",
                                   number: 1,
                                   package: "রেগুলার",
@@ -385,7 +385,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/mpjx2teriodgxb71ywe0.webp",
                                   name: "বীফ খিচুরি",
-                                  tk: 120,
+                                  tk: 130,
                                   day: "শুক্রবার",
                                   number: 1,
                                   package: "স্পেশিয়াল",
@@ -452,7 +452,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp",
                                   name: "এগ মিল",
-                                  tk: 80,
+                                  tk: 90,
                                   day: "শনিবার",
                                   number: 2,
                                   package: "রেগুলার",
@@ -536,7 +536,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/ddhl9phljy5wzksfifw4.webp",
                                   name: "চিকেন পোলাও",
-                                  tk: 120,
+                                  tk: 130,
                                   day: "শনিবার",
                                   number: 2,
                                   package: "স্পেশিয়াল",
@@ -603,7 +603,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp",
                                   name: "ফিশ মিল",
-                                  tk: 80,
+                                  tk: 90,
                                   day: "রবিবার",
                                   number: 3,
                                   package: "রেগুলার",
@@ -685,7 +685,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zer5bzwungxyhzvngm82.webp",
                                   name: "বীফ তেহারি",
-                                  tk: 120,
+                                  tk: 130,
                                   day: "রবিবার",
                                   number: 3,
                                   package: "স্পেশিয়াল",
@@ -752,7 +752,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zam03uy7zifx3u5uiekc.webp",
                                   name: "বীফ মিল",
-                                  tk: 80,
+                                  tk: 90,
                                   day: "সোমবার",
                                   number: 4,
                                   package: "রেগুলার",
@@ -836,7 +836,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/cspimz68z9s14zfi8whm.webp",
                                   name: "ডিম খিচুরি",
-                                  tk: 80,
+                                  tk: 90,
                                   day: "সোমবার",
                                   number: 4,
                                   package: "স্পেশিয়াল",
@@ -903,7 +903,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/viyhshqbzy8wlilpftxo.webp",
                                   name: "চিকেন মিল",
-                                  tk: 80,
+                                  tk: 90,
                                   day: "মঙ্গলবার",
                                   number: 5,
                                   package: "রেগুলার",
@@ -987,7 +987,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/mpjx2teriodgxb71ywe0.webp",
                                   name: "বীফ খিচুরি",
-                                  tk: 120,
+                                  tk: 130,
                                   day: "মঙ্গলবার",
                                   number: 5,
                                   package: "স্পেশিয়াল",
@@ -1054,7 +1054,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/x36wtqeiwwgfthzty20u.webp",
                                   name: "ফিশ মিল",
-                                  tk: 80,
+                                  tk: 90,
                                   day: "বুধবার",
                                   number: 6,
                                   package: "রেগুলার",
@@ -1138,7 +1138,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/zer5bzwungxyhzvngm82.webp",
                                   name: "বীফ তেহারি",
-                                  tk: 120,
+                                  tk: 130,
                                   day: "বুধবার",
                                   number: 6,
                                   package: "স্পেশিয়াল",
@@ -1205,7 +1205,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471893/Frontend_images/Catering/k2qrgifz0rrleka96ama.webp",
                                   name: "এগ মিল",
-                                  tk: 80,
+                                  tk: 90,
                                   day: "বৃহস্পতিবার",
                                   number: 7,
                                   package: "রেগুলার",
@@ -1288,7 +1288,7 @@ const CateringDetails = () => {
                                   image:
                                     "https://res.cloudinary.com/dnz6zg4on/image/upload/v1691471892/Frontend_images/Catering/ddhl9phljy5wzksfifw4.webp",
                                   name: "চিকেন পোলাও",
-                                  tk: 120,
+                                  tk: 130,
                                   day: "বৃহস্পতিবার",
                                   number: 7,
                                   package: "স্পেশিয়াল",

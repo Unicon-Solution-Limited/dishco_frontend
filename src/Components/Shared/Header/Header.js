@@ -42,7 +42,7 @@ const Header = () => {
     fetchAllFood();
   }, []);
 
-  // sendign the daynamic  search value into the browser search bar and also redrict search component
+  // sending the dynamic search value into the browser search bar and also redirect search component
   const handleSearch = (e) => {
     e.preventDefault();
     history.push(`/Search/${searchValue}`);
