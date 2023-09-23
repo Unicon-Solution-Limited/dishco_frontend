@@ -113,7 +113,7 @@ const Invoice = () => {
             </span>{" "}
             <br />
             <span>
-              <strong>Delivery Charge:</strong> +60 TK.
+              <strong>Delivery Charge:</strong> +40 TK.
             </span>{" "}
             <br />
             <span>
