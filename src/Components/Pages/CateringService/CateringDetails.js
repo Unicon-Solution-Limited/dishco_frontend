@@ -237,7 +237,7 @@ const CateringDetails = () => {
       <div
         className="modal fade"
         id="cateringModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="cateringModalLabel"
         aria-hidden="true"
       >

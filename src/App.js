@@ -45,8 +45,25 @@ import CustomerCateringOrder from "./Components/Dashboard/DashboardPage/OrderMan
 import TodaysCateringOrder from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/TodaysCateringOrder";
 import CustomerCateringOrderHistory from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/CateringOrderHistory/CustomerCateringOrderHistory";
 import AllAdminCateringOrderHistory from "./Components/Dashboard/DashboardPage/OrderManagement/CateringOrder/CateringOrderHistory/AllAdminCateringOrderHistory";
+import { useEffect } from "react";
 
 function App() {
+  //initial the service worker file into app.js and in the public folder make a service worker file
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/serviceWorker.js")
+        .then((registration) => {
+          console.log(
+            "Service Worker registered with scope:",
+            registration.scope
+          );
+        })
+        .catch((error) => {
+          console.error("Service Worker registration failed:", error);
+        });
+    }
+  }, []);
   return (
     <>
       <CartContext>
