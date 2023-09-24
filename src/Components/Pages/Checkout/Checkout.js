@@ -172,11 +172,12 @@ const Checkout = () => {
     const permission = await Notification.requestPermission();
     if (permission === "granted") {
       const registration = await navigator.serviceWorker.ready;
-      registration.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey:
-          "BHI-d6o1XN0qzUKkqIYbUO1-VOw7DvrNPevHjr2UV9be7GZRZeeBPDikXJq8GH14a0rn2gFsv3XNQmpjQPRjMmc",
-      });
+      //subscription the pc only one term then dont do if do the id will change
+      // registration.pushManager.subscribe({
+      //   userVisibleOnly: true,
+      //   applicationServerKey:
+      //     "BHI-d6o1XN0qzUKkqIYbUO1-VOw7DvrNPevHjr2UV9be7GZRZeeBPDikXJq8GH14a0rn2gFsv3XNQmpjQPRjMmc",
+      // });
       // Get the push subscription
       const subscription = await registration.pushManager.getSubscription();
 
