@@ -110,6 +110,10 @@ const CateringCheckoutPage = () => {
         const p256dhKey = keys.p256dh;
         const endpoint = subscription.endpoint;
 
+        console.log("authKey=", authKey);
+        console.log("p256dhKey=", p256dhKey);
+        console.log("endpoint", endpoint);
+
         // Send a push notification request to the server
         await fetch(
           `${process.env.REACT_APP_BACKEND_URL}/sendPushNotification`,
