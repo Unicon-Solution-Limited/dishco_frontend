@@ -96,11 +96,11 @@ const CateringCheckoutPage = () => {
     const permission = await Notification.requestPermission();
     if (permission === "granted") {
       const registration = await navigator.serviceWorker.ready;
-      registration.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey:
-          "BHI-d6o1XN0qzUKkqIYbUO1-VOw7DvrNPevHjr2UV9be7GZRZeeBPDikXJq8GH14a0rn2gFsv3XNQmpjQPRjMmc",
-      });
+      // registration.pushManager.subscribe({
+      //   userVisibleOnly: true,
+      //   applicationServerKey:
+      //     "BHI-d6o1XN0qzUKkqIYbUO1-VOw7DvrNPevHjr2UV9be7GZRZeeBPDikXJq8GH14a0rn2gFsv3XNQmpjQPRjMmc",
+      // });
       // Get the push subscription
       const subscription = await registration.pushManager.getSubscription();
 
@@ -109,10 +109,6 @@ const CateringCheckoutPage = () => {
         const authKey = keys.auth;
         const p256dhKey = keys.p256dh;
         const endpoint = subscription.endpoint;
-
-        console.log("authKey=", authKey);
-        console.log("p256dhKey=", p256dhKey);
-        console.log("endpoint", endpoint);
 
         // Send a push notification request to the server
         await fetch(
