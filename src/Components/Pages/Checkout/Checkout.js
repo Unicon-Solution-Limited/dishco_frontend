@@ -172,7 +172,6 @@ const Checkout = () => {
     const permission = await Notification.requestPermission();
     if (permission === "granted") {
       const registration = await navigator.serviceWorker.ready;
-      //subscription the pc only one term then dont do if do the id will change
       registration.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey:
