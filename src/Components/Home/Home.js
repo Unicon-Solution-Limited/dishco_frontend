@@ -75,8 +75,8 @@ const Home = () => {
           &times;
         </button>
         <img
-          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1692851341/Frontend_images/jslqp9bas1yet3nskafq.webp"
-          alt="10% Discount"
+          src="https://res.cloudinary.com/dnz6zg4on/image/upload/v1702203448/zmakxwyrifjr61nzrjsn.webp"
+          alt="15% Discount"
         />
       </div>
       <MessengerCustomerChat
