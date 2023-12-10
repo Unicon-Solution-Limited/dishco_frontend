@@ -81,7 +81,7 @@ const Invoice = () => {
                             (acc, addon) => acc + addon.priceOfAddon,
                             0
                           )) *
-                        0.1
+                        0.15
                       ).toFixed(2)}
                       )
                     </td>
@@ -98,7 +98,7 @@ const Invoice = () => {
                               (acc, addon) => acc + addon.priceOfAddon,
                               0
                             )) *
-                          0.1
+                          0.15
                         ).toFixed(2)}
                     </td>
                   </tr>

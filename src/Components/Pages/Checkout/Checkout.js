@@ -415,7 +415,7 @@ const Checkout = () => {
             <div className="table_row subtotal">
               <strong>- Special Discount (food + addonItem)</strong>
               <span>
-                {((subTotalPrice + finaltotalAddonPrice) * 10) / 100} Tk.
+                {((subTotalPrice + finaltotalAddonPrice) * 15) / 100} Tk.
               </span>
             </div>
 
@@ -433,7 +433,7 @@ const Checkout = () => {
               <span>
                 {/* dishcount with in total food i mean (food + addonItem / 100) */}
                 {grandTotal -
-                  ((subTotalPrice + finaltotalAddonPrice) * 10) / 100}
+                  ((subTotalPrice + finaltotalAddonPrice) * 15) / 100}
                 Tk.
               </span>
             </div>
